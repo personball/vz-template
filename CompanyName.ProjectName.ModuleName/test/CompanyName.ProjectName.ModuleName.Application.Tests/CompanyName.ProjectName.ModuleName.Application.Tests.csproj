@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>CompanyName.ProjectName.ModuleName</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\CompanyName.ProjectName.ModuleName.Application\CompanyName.ProjectName.ModuleName.Application.csproj" />
+    <ProjectReference Include="..\CompanyName.ProjectName.ModuleName.Domain.Tests\CompanyName.ProjectName.ModuleName.Domain.Tests.csproj" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.2.0" />
+  </ItemGroup>
+
+</Project>
