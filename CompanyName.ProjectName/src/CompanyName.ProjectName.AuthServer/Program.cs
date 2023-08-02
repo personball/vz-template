@@ -19,6 +19,12 @@ public class Program
             .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
 #endif
             .MinimumLevel.Override("Microsoft.EntityFrameworkCore", LogEventLevel.Warning)
+            .MinimumLevel.Override("Volo.Abp", LogEventLevel.Warning)
+#if DEBUG
+                .MinimumLevel.Override("CompanyName.ProjectName", LogEventLevel.Debug)
+#else
+                .MinimumLevel.Override("CompanyName.ProjectName", LogEventLevel.Information)
+#endif
             .Enrich.FromLogContext()
 #if DEBUG
             .WriteTo.Async(c => c.File("Logs/logs.txt"))

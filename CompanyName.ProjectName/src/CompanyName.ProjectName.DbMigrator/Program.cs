@@ -6,6 +6,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Serilog;
 using Serilog.Events;
+using Serilog.Formatting.Json;
 
 namespace CompanyName.ProjectName.DbMigrator;
 
@@ -23,8 +24,12 @@ class Program
                 .MinimumLevel.Override("CompanyName.ProjectName", LogEventLevel.Information)
 #endif
                 .Enrich.FromLogContext()
+#if DEBUG
             .WriteTo.Async(c => c.File("Logs/logs.txt"))
             .WriteTo.Async(c => c.Console())
+#else
+            .WriteTo.Async(c => c.Console(new JsonFormatter()))
+#endif
             .CreateLogger();
 
         await CreateHostBuilder(args).RunConsoleAsync();
