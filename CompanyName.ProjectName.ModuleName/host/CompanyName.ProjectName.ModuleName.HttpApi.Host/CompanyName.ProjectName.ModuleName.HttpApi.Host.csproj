@@ -6,6 +6,7 @@
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <RootNamespace>CompanyName.ProjectName.ModuleName</RootNamespace>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <PreserveCompilationReferences>true</PreserveCompilationReferences>
     <UserSecretsId>CompanyName.ProjectName.ModuleName-c2d31439-b723-48e2-b061-5ebd7aeb6010</UserSecretsId>
   </PropertyGroup>

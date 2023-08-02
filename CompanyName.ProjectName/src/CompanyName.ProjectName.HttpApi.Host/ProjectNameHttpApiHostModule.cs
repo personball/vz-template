@@ -28,6 +28,7 @@ using Volo.Abp.Localization;
 using Volo.Abp.Modularity;
 using Volo.Abp.Swashbuckle;
 using Volo.Abp.VirtualFileSystem;
+using CompanyName.ProjectName.Swagger;
 
 namespace CompanyName.ProjectName;
 
@@ -120,6 +121,15 @@ public class ProjectNameHttpApiHostModule : AbpModule
                 options.SwaggerDoc("v1", new OpenApiInfo { Title = "ProjectName API", Version = "v1" });
                 options.DocInclusionPredicate((docName, description) => true);
                 options.CustomSchemaIds(type => type.FullName);
+
+                options.DocumentFilter<SwaggerTagsFilter>();
+
+                options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, typeof(ProjectNameApplicationContractsModule).Assembly.GetName().Name + ".xml"));
+                options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, typeof(ProjectNameApplicationModule).Assembly.GetName().Name + ".xml"));
+                options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, typeof(ProjectNameHttpApiModule).Assembly.GetName().Name + ".xml"));
+                options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, typeof(ProjectNameDomainSharedModule).Assembly.GetName().Name + ".xml"));
+                options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, typeof(ProjectNameHttpApiHostModule).Assembly.GetName().Name + ".xml"));
+
             });
     }
 
