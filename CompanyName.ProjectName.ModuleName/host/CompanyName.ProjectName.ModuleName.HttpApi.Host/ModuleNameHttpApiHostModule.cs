@@ -59,6 +59,9 @@ public class ModuleNameHttpApiHostModule : AbpModule
         var hostingEnvironment = context.Services.GetHostingEnvironment();
         var configuration = context.Services.GetConfiguration();
 
+        // https://www.npgsql.org/efcore/release-notes/6.0.html#opting-out-of-the-new-timestamp-mapping-logic
+        AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+
         Configure<AbpDbContextOptions>(options =>
         {
             options.UseNpgsql();
@@ -88,7 +91,7 @@ public class ModuleNameHttpApiHostModule : AbpModule
             },
             options =>
             {
-                options.SwaggerDoc("v1", new OpenApiInfo {Title = "ModuleName API", Version = "v1"});
+                options.SwaggerDoc("v1", new OpenApiInfo { Title = "ModuleName API", Version = "v1" });
                 options.DocInclusionPredicate((docName, description) => true);
                 options.CustomSchemaIds(type => type.FullName);
             });
