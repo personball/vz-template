@@ -201,6 +201,8 @@ public class ModuleNameAuthServerModule : AbpModule
         var app = context.GetApplicationBuilder();
         var env = context.GetEnvironment();
 
+// app.UseForwardedHeaders(); // only need on k8s deploy behind a ingress gateway proxy
+
         if (env.IsDevelopment())
         {
             app.UseDeveloperExceptionPage();
