@@ -34,6 +34,9 @@ using Volo.Abp.Swashbuckle;
 using Volo.Abp.TenantManagement.EntityFrameworkCore;
 using Volo.Abp.VirtualFileSystem;
 using CompanyName.ProjectName.Swagger;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using Microsoft.AspNetCore.HttpOverrides;
 
 namespace CompanyName.ProjectName.ModuleName;
 
@@ -59,6 +62,13 @@ public class ModuleNameHttpApiHostModule : AbpModule
     {
         var hostingEnvironment = context.Services.GetHostingEnvironment();
         var configuration = context.Services.GetConfiguration();
+
+        context.Services.AddHealthChecks();
+        context.Services.Configure<HealthCheckPublisherOptions>(options =>
+        {
+            options.Delay = TimeSpan.FromSeconds(2);
+            options.Predicate = (check) => check.Tags.Contains("ready");
+        });
 
         // https://www.npgsql.org/efcore/release-notes/6.0.html#opting-out-of-the-new-timestamp-mapping-logic
         AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
@@ -95,7 +105,7 @@ public class ModuleNameHttpApiHostModule : AbpModule
                 options.SwaggerDoc("v1", new OpenApiInfo { Title = "ModuleName API", Version = "v1" });
                 options.DocInclusionPredicate((docName, description) => true);
                 options.CustomSchemaIds(type => type.FullName);
-                
+
                 options.DocumentFilter<SwaggerTagsFilter>();
 
                 options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, typeof(ModuleNameApplicationContractsModule).Assembly.GetName().Name + ".xml"));
@@ -167,6 +177,12 @@ public class ModuleNameHttpApiHostModule : AbpModule
                     .AllowCredentials();
             });
         });
+
+        context.Services.Configure<ForwardedHeadersOptions>(options =>
+        {
+            // see https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/proxy-load-balancer?view=aspnetcore-3.1
+            options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
+        });
     }
 
     public override void OnApplicationInitialization(ApplicationInitializationContext context)
@@ -209,5 +225,19 @@ public class ModuleNameHttpApiHostModule : AbpModule
         app.UseAuditing();
         app.UseAbpSerilogEnrichers();
         app.UseConfiguredEndpoints();
+        
+        app.UseEndpoints(endpoints =>
+        {
+            endpoints.MapControllers();
+            endpoints.MapHealthChecks("/health/ready", new HealthCheckOptions()
+            {
+                Predicate = (check) => check.Tags.Contains("ready"),
+            });
+
+            endpoints.MapHealthChecks("/health/live", new HealthCheckOptions()
+            {
+            });
+        });
+
     }
 }

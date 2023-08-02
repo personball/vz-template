@@ -29,6 +29,9 @@ using Volo.Abp.Modularity;
 using Volo.Abp.Swashbuckle;
 using Volo.Abp.VirtualFileSystem;
 using CompanyName.ProjectName.Swagger;
+using Microsoft.AspNetCore.HttpOverrides;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 
 namespace CompanyName.ProjectName;
 
@@ -49,6 +52,13 @@ public class ProjectNameHttpApiHostModule : AbpModule
     {
         var configuration = context.Services.GetConfiguration();
         var hostingEnvironment = context.Services.GetHostingEnvironment();
+        
+        context.Services.AddHealthChecks();
+        context.Services.Configure<HealthCheckPublisherOptions>(options =>
+        {
+            options.Delay = TimeSpan.FromSeconds(2);
+            options.Predicate = (check) => check.Tags.Contains("ready");
+        });
 
         ConfigureConventionalControllers();
         ConfigureAuthentication(context, configuration);
@@ -58,6 +68,12 @@ public class ProjectNameHttpApiHostModule : AbpModule
         ConfigureDistributedLocking(context, configuration);
         ConfigureCors(context, configuration);
         ConfigureSwaggerServices(context, configuration);
+
+        context.Services.Configure<ForwardedHeadersOptions>(options =>
+        {
+            // see https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/proxy-load-balancer?view=aspnetcore-3.1
+            options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
+        });
     }
 
     private void ConfigureCache(IConfiguration configuration)
@@ -218,5 +234,18 @@ public class ProjectNameHttpApiHostModule : AbpModule
         app.UseAbpSerilogEnrichers();
         app.UseUnitOfWork();
         app.UseConfiguredEndpoints();
+
+        app.UseEndpoints(endpoints =>
+        {
+            endpoints.MapControllers();
+            endpoints.MapHealthChecks("/health/ready", new HealthCheckOptions()
+            {
+                Predicate = (check) => check.Tags.Contains("ready"),
+            });
+
+            endpoints.MapHealthChecks("/health/live", new HealthCheckOptions()
+            {
+            });
+        });
     }
 }

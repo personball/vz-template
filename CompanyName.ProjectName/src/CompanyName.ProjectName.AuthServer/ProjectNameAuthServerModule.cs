@@ -35,6 +35,9 @@ using Volo.Abp.UI.Navigation.Urls;
 using Volo.Abp.UI;
 using Volo.Abp.VirtualFileSystem;
 using System.Security.Cryptography.X509Certificates;
+using Microsoft.AspNetCore.HttpOverrides;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 
 namespace CompanyName.ProjectName;
 
@@ -108,6 +111,13 @@ public class ProjectNameAuthServerModule : AbpModule
     {
         var hostingEnvironment = context.Services.GetHostingEnvironment();
         var configuration = context.Services.GetConfiguration();
+        
+        context.Services.AddHealthChecks();
+        context.Services.Configure<HealthCheckPublisherOptions>(options =>
+        {
+            options.Delay = TimeSpan.FromSeconds(2);
+            options.Predicate = (check) => check.Tags.Contains("ready");
+        });
 
         Configure<AbpLocalizationOptions>(options =>
         {
@@ -195,6 +205,12 @@ public class ProjectNameAuthServerModule : AbpModule
                     .AllowCredentials();
             });
         });
+
+        context.Services.Configure<ForwardedHeadersOptions>(options =>
+        {
+            // see https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/proxy-load-balancer?view=aspnetcore-3.1
+            options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
+        });
     }
 
     public override void OnApplicationInitialization(ApplicationInitializationContext context)
@@ -233,5 +249,18 @@ public class ProjectNameAuthServerModule : AbpModule
         app.UseAuditing();
         app.UseAbpSerilogEnrichers();
         app.UseConfiguredEndpoints();
+
+        app.UseEndpoints(endpoints =>
+        {
+            endpoints.MapControllers();
+            endpoints.MapHealthChecks("/health/ready", new HealthCheckOptions()
+            {
+                Predicate = (check) => check.Tags.Contains("ready"),
+            });
+
+            endpoints.MapHealthChecks("/health/live", new HealthCheckOptions()
+            {
+            });
+        });
     }
 }
