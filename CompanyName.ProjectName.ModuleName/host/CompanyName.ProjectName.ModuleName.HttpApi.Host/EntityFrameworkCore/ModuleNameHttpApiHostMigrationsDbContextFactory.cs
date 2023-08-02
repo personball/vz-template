@@ -12,7 +12,7 @@ public class ModuleNameHttpApiHostMigrationsDbContextFactory : IDesignTimeDbCont
         var configuration = BuildConfiguration();
 
         var builder = new DbContextOptionsBuilder<ModuleNameHttpApiHostMigrationsDbContext>()
-            .UseSqlServer(configuration.GetConnectionString("ModuleName"));
+            .UseNpgsql(configuration.GetConnectionString("ModuleName"));
 
         return new ModuleNameHttpApiHostMigrationsDbContext(builder.Options);
     }

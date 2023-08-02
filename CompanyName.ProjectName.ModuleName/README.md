@@ -1,10 +1,12 @@
 init by
 
 ```
-abp new CompanyName.ProjectName -dbms PostgreSQL --tiered --theme basic -csf
+mkdir CompanyName.ProjectName.ModuleName
+cd CompanyName.ProjectName.ModuleName
+abp new CompanyName.ProjectName.ModuleName -t module --no-ui
 ```
 
-
+- replace sqlserver with postgresql
 
 # TODO
 
