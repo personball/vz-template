@@ -34,6 +34,7 @@ using Volo.Abp.Modularity;
 using Volo.Abp.UI.Navigation.Urls;
 using Volo.Abp.UI;
 using Volo.Abp.VirtualFileSystem;
+using System.Security.Cryptography.X509Certificates;
 
 namespace CompanyName.ProjectName;
 
@@ -52,12 +53,52 @@ public class ProjectNameAuthServerModule : AbpModule
 {
     public override void PreConfigureServices(ServiceConfigurationContext context)
     {
-        PreConfigure<OpenIddictBuilder>(builder =>
+        PreConfigure<OpenIddictBuilder>(b =>
         {
-            builder.AddValidation(options =>
+            var configuration = context.Services.GetConfiguration();
+            var hostingEnvironment = context.Services.GetHostingEnvironment();
+
+            var issuer = new Uri(configuration["AuthServer:Authority"]);
+
+            b
+            // .AddServer(builder =>
+            // {
+            //     if (hostingEnvironment.IsDevelopment())
+            //     {
+            //         builder.UseAspNetCore().DisableTransportSecurityRequirement();
+            //     }
+            //     else
+            //     {
+            //         builder.UseAspNetCore();
+            //     }
+
+            //     builder.SetAccessTokenLifetime(TimeSpan.FromDays(90));
+
+            //     // override all endpoint uris
+            //     builder.SetIssuer(issuer);
+            //     builder.SetConfigurationEndpointUris(new Uri(configuration["AuthServer:Authority"] + "/.well-known/openid-configuration"));
+            //     builder.SetCryptographyEndpointUris(new Uri(configuration["AuthServer:Authority"] + "/.well-known/jwks"));
+            //     builder.SetAuthorizationEndpointUris(new Uri(configuration["AuthServer:Authority"] + "/connect/authorize"));
+            //     builder.SetTokenEndpointUris(new Uri(configuration["AuthServer:Authority"] + "/connect/token"));
+            //     builder.SetIntrospectionEndpointUris(new Uri(configuration["AuthServer:Authority"] + "/connect/introspect"));
+            //     builder.SetLogoutEndpointUris(new Uri(configuration["AuthServer:Authority"] + "/connect/logout"));
+            //     builder.SetRevocationEndpointUris(new Uri(configuration["AuthServer:Authority"] + "/connect/revocat"));
+            //     builder.SetUserinfoEndpointUris(new Uri(configuration["AuthServer:Authority"] + "/connect/userinfo"));
+            //     builder.SetDeviceEndpointUris(new Uri(configuration["AuthServer:Authority"] + "/connect/device"));
+            //     builder.SetVerificationEndpointUris(new Uri(configuration["AuthServer:Authority"] + "/connect/verify"));
+
+            //     // https://documentation.openiddict.com/configuration/encryption-and-signing-credentials.html
+            //     var certificate = new X509Certificate2(
+            //         Path.Combine(AppContext.BaseDirectory, configuration["OpenIddict:CAFilePath"]));
+            //     builder.AddSigningCertificate(certificate);
+            //     builder.AddEncryptionCertificate(certificate);
+
+            // })
+            .AddValidation(options =>
             {
                 options.AddAudiences("ProjectName");
-                options.UseLocalServer();
+                // builder.SetIssuer(issuer); // TODO: to be verify
+                options.UseLocalServer(); // TODO: only local development env
                 options.UseAspNetCore();
             });
         });
