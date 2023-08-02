@@ -5,10 +5,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": ".NET Core Launch (web)",
+            "name": "ApiHost",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build",
+            "preLaunchTask": "build_api",
             "program": "${workspaceFolder}/src/CompanyName.ProjectName.HttpApi.Host/bin/Debug/net7.0/CompanyName.ProjectName.HttpApi.Host.dll",
             "args": [],
             "cwd": "${workspaceFolder}/src/CompanyName.ProjectName.HttpApi.Host",
@@ -25,9 +25,70 @@
             }
         },
         {
-            "name": ".NET Core Attach",
+            "name": "Web",
             "type": "coreclr",
-            "request": "attach"
+            "request": "launch",
+            "preLaunchTask": "build_web",
+            "program": "${workspaceFolder}/src/CompanyName.ProjectName.Web/bin/Debug/net7.0/CompanyName.ProjectName.Web.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/src/CompanyName.ProjectName.Web",
+            "stopAtEntry": false,
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+            },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/Views"
+            }
+        },
+        {
+            "name": "AuthServer",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build_auth",
+            "program": "${workspaceFolder}/src/CompanyName.ProjectName.AuthServer/bin/Debug/net7.0/CompanyName.ProjectName.AuthServer.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/src/CompanyName.ProjectName.AuthServer",
+            "stopAtEntry": false,
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+            },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/Views"
+            }
+        },
+        // {
+        //     "name": ".NET Core Attach",
+        //     "type": "coreclr",
+        //     "request": "attach"
+        // }
+    ],
+    "compounds": [
+        {
+            "name": "ApiHost/AuthServer",
+            "configurations": [
+                "AuthServer",
+                "ApiHost"
+            ],
+            // "preLaunchTask": "${defaultBuildTask}",
+            "stopAll": true
+        },
+        {
+            "name": "Web/AuthServer",
+            "configurations": [
+                "AuthServer",
+                "ApiHost",
+                "Web"
+            ],
+            // "preLaunchTask": "${defaultBuildTask}",
+            "stopAll": true
         }
     ]
 }
