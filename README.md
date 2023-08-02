@@ -1,37 +1,39 @@
-vz project tempalte
+vz project templates
 
-backend:abp.io
+# backend
+abp.io
 
-microservice:
+## microservice:
+
+```
 abp new CompanyName.ProjectName -dbms PostgreSQL --tiered --theme basic -csf
 abp new CompanyName.ProjectName.ModuleName -t module --no-ui 
+```
 
+# frontend
 
-ui design: ant.design
- - Ant Design of React: https://ant.design/docs/react/introduce-cn
- - Ant Design of Angular(ng-zorro): https://ng.ant.design/docs/introduce/zh
- - Ant Design of Vue: https://antdv.com/docs/vue/introduce
-
-
-frontend-ui
  - angular: ng-alain
  - vue: element-plus
  - reactjs: react-admin 
  - Svelte: 国内比较小众
 
-typescript
 
+## ui design: ant.design
 
-Svelte-full-stack: SvelteKit
-vue-full-stack: Nuxt
-react-full-stack: Remix? Next.js?
+ - Ant Design of React: https://ant.design/docs/react/introduce-cn
+ - Ant Design of Angular(ng-zorro): https://ng.ant.design/docs/introduce/zh
+ - Ant Design of Vue: https://antdv.com/docs/vue/introduce
 
-Next.js: https://nextjs.org
-Remix: https://remix.run/docs/en/main
+# references
 
-Nuxt:https://nuxt.com
+Svelte-full-stack: SvelteKit  
+vue-full-stack: Nuxt  
+react-full-stack: Remix? Next.js?  
 
-SvelteKit: https://kit.svelte.dev 
+Next.js: https://nextjs.org  
+Remix: https://remix.run/docs/en/main  
+Nuxt:https://nuxt.com  
+SvelteKit: https://kit.svelte.dev   
 
-https://remix.run/blog/remix-vs-next
+blog: https://remix.run/blog/remix-vs-next  
 
