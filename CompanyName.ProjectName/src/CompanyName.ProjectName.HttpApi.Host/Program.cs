@@ -38,7 +38,7 @@ public class Program
         {
             Log.Information("Starting CompanyName.ProjectName.HttpApi.Host.");
             var builder = WebApplication.CreateBuilder(args);
-            builder.Host.AddAppSettingsSecretsJson()
+            builder.Host.AddAppSettingsSecretsJson(reloadOnChange: false)
                 .UseAutofac()
                  .UseSerilog((ctx, config) =>
                 {
@@ -51,7 +51,7 @@ public class Program
                         .WriteTo.Async(c => c.Console(new JsonFormatter()));
 #endif
                 });
-            await builder.AddApplicationAsync<ProjectNameHttpApiHostModule>();
+            await builder.AddApplicationAsync<ProjectNameHttpApiHostModule>(opt => opt.Configuration.ReloadOnChange = false);
             var app = builder.Build();
             await app.InitializeApplicationAsync();
             await app.RunAsync();
