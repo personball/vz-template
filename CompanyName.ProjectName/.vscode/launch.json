@@ -18,7 +18,10 @@
                 "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
             },
             "env": {
-                "ASPNETCORE_ENVIRONMENT": "Development"
+                "ASPNETCORE_ENVIRONMENT": "Development",
+                // "ASPNETCORE_HOSTINGSTARTUPASSEMBLIES":"SkyAPM.Agent.AspNetCore",
+                "COMPlus_ZapDisable": "1",
+                "COMPlus_ReadyToRun": "0"
             },
             "sourceFileMap": {
                 "/Views": "${workspaceFolder}/Views"
@@ -38,7 +41,10 @@
                 "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
             },
             "env": {
-                "ASPNETCORE_ENVIRONMENT": "Development"
+                "ASPNETCORE_ENVIRONMENT": "Development",
+                 // "ASPNETCORE_HOSTINGSTARTUPASSEMBLIES":"SkyAPM.Agent.AspNetCore",
+                 "COMPlus_ZapDisable": "1",
+                 "COMPlus_ReadyToRun": "0"
             },
             "sourceFileMap": {
                 "/Views": "${workspaceFolder}/Views"
