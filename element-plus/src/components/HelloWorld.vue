@@ -58,7 +58,7 @@ const toast = () => {
 
   <p>
     Edit
-    <code>components/HelloWorld.vue</code> to test components.
+    <code>components/HelloWorld.vue</code> to test components.22222222
   </p>
   <p>
     Edit
