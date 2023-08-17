@@ -971,7 +971,7 @@ export class EmailSettingsServiceProxy {
     /**
      * @return Success
      */
-    emailingGet( cancelToken?: CancelToken | undefined): Promise<EmailSettingsDto> {
+    emailingGET( cancelToken?: CancelToken | undefined): Promise<EmailSettingsDto> {
         let url_ = this.baseUrl + "/api/setting-management/emailing";
         url_ = url_.replace(/[?&]$/, "");
 
@@ -991,11 +991,11 @@ export class EmailSettingsServiceProxy {
                 throw _error;
             }
         }).then((_response: AxiosResponse) => {
-            return this.processEmailingGet(_response);
+            return this.processEmailingGET(_response);
         });
     }
 
-    protected processEmailingGet(response: AxiosResponse): Promise<EmailSettingsDto> {
+    protected processEmailingGET(response: AxiosResponse): Promise<EmailSettingsDto> {
         const status = response.status;
         let _headers: any = {};
         if (response.headers && typeof response.headers === "object") {
@@ -1065,7 +1065,7 @@ export class EmailSettingsServiceProxy {
      * @param body (optional) 
      * @return Success
      */
-    emailingPost(body: UpdateEmailSettingsDto | undefined, cancelToken?: CancelToken | undefined): Promise<void> {
+    emailingPOST(body: UpdateEmailSettingsDto | undefined, cancelToken?: CancelToken | undefined): Promise<void> {
         let url_ = this.baseUrl + "/api/setting-management/emailing";
         url_ = url_.replace(/[?&]$/, "");
 
@@ -1088,11 +1088,11 @@ export class EmailSettingsServiceProxy {
                 throw _error;
             }
         }).then((_response: AxiosResponse) => {
-            return this.processEmailingPost(_response);
+            return this.processEmailingPOST(_response);
         });
     }
 
-    protected processEmailingPost(response: AxiosResponse): Promise<void> {
+    protected processEmailingPOST(response: AxiosResponse): Promise<void> {
         const status = response.status;
         let _headers: any = {};
         if (response.headers && typeof response.headers === "object") {
@@ -1268,7 +1268,7 @@ export class FeaturesServiceProxy {
      * @param providerKey (optional) 
      * @return Success
      */
-    featuresGet(providerName: string | undefined, providerKey: string | undefined, cancelToken?: CancelToken | undefined): Promise<GetFeatureListResultDto> {
+    featuresGET(providerName: string | undefined, providerKey: string | undefined, cancelToken?: CancelToken | undefined): Promise<GetFeatureListResultDto> {
         let url_ = this.baseUrl + "/api/feature-management/features?";
         if (providerName === null)
             throw new Error("The parameter 'providerName' cannot be null.");
@@ -1296,11 +1296,11 @@ export class FeaturesServiceProxy {
                 throw _error;
             }
         }).then((_response: AxiosResponse) => {
-            return this.processFeaturesGet(_response);
+            return this.processFeaturesGET(_response);
         });
     }
 
-    protected processFeaturesGet(response: AxiosResponse): Promise<GetFeatureListResultDto> {
+    protected processFeaturesGET(response: AxiosResponse): Promise<GetFeatureListResultDto> {
         const status = response.status;
         let _headers: any = {};
         if (response.headers && typeof response.headers === "object") {
@@ -1372,7 +1372,7 @@ export class FeaturesServiceProxy {
      * @param body (optional) 
      * @return Success
      */
-    featuresPut(providerName: string | undefined, providerKey: string | undefined, body: UpdateFeaturesDto | undefined, cancelToken?: CancelToken | undefined): Promise<void> {
+    featuresPUT(providerName: string | undefined, providerKey: string | undefined, body: UpdateFeaturesDto | undefined, cancelToken?: CancelToken | undefined): Promise<void> {
         let url_ = this.baseUrl + "/api/feature-management/features?";
         if (providerName === null)
             throw new Error("The parameter 'providerName' cannot be null.");
@@ -1403,11 +1403,11 @@ export class FeaturesServiceProxy {
                 throw _error;
             }
         }).then((_response: AxiosResponse) => {
-            return this.processFeaturesPut(_response);
+            return this.processFeaturesPUT(_response);
         });
     }
 
-    protected processFeaturesPut(response: AxiosResponse): Promise<void> {
+    protected processFeaturesPUT(response: AxiosResponse): Promise<void> {
         const status = response.status;
         let _headers: any = {};
         if (response.headers && typeof response.headers === "object") {
@@ -1475,7 +1475,7 @@ export class FeaturesServiceProxy {
      * @param providerKey (optional) 
      * @return Success
      */
-    featuresDelete(providerName: string | undefined, providerKey: string | undefined, cancelToken?: CancelToken | undefined): Promise<void> {
+    featuresDELETE(providerName: string | undefined, providerKey: string | undefined, cancelToken?: CancelToken | undefined): Promise<void> {
         let url_ = this.baseUrl + "/api/feature-management/features?";
         if (providerName === null)
             throw new Error("The parameter 'providerName' cannot be null.");
@@ -1502,11 +1502,11 @@ export class FeaturesServiceProxy {
                 throw _error;
             }
         }).then((_response: AxiosResponse) => {
-            return this.processFeaturesDelete(_response);
+            return this.processFeaturesDELETE(_response);
         });
     }
 
-    protected processFeaturesDelete(response: AxiosResponse): Promise<void> {
+    protected processFeaturesDELETE(response: AxiosResponse): Promise<void> {
         const status = response.status;
         let _headers: any = {};
         if (response.headers && typeof response.headers === "object") {
@@ -1588,7 +1588,7 @@ export class PermissionsServiceProxy {
      * @param providerKey (optional) 
      * @return Success
      */
-    permissionsGet(providerName: string | undefined, providerKey: string | undefined, cancelToken?: CancelToken | undefined): Promise<GetPermissionListResultDto> {
+    permissionsGET(providerName: string | undefined, providerKey: string | undefined, cancelToken?: CancelToken | undefined): Promise<GetPermissionListResultDto> {
         let url_ = this.baseUrl + "/api/permission-management/permissions?";
         if (providerName === null)
             throw new Error("The parameter 'providerName' cannot be null.");
@@ -1616,11 +1616,11 @@ export class PermissionsServiceProxy {
                 throw _error;
             }
         }).then((_response: AxiosResponse) => {
-            return this.processPermissionsGet(_response);
+            return this.processPermissionsGET(_response);
         });
     }
 
-    protected processPermissionsGet(response: AxiosResponse): Promise<GetPermissionListResultDto> {
+    protected processPermissionsGET(response: AxiosResponse): Promise<GetPermissionListResultDto> {
         const status = response.status;
         let _headers: any = {};
         if (response.headers && typeof response.headers === "object") {
@@ -1692,7 +1692,7 @@ export class PermissionsServiceProxy {
      * @param body (optional) 
      * @return Success
      */
-    permissionsPut(providerName: string | undefined, providerKey: string | undefined, body: UpdatePermissionsDto | undefined, cancelToken?: CancelToken | undefined): Promise<void> {
+    permissionsPUT(providerName: string | undefined, providerKey: string | undefined, body: UpdatePermissionsDto | undefined, cancelToken?: CancelToken | undefined): Promise<void> {
         let url_ = this.baseUrl + "/api/permission-management/permissions?";
         if (providerName === null)
             throw new Error("The parameter 'providerName' cannot be null.");
@@ -1723,11 +1723,11 @@ export class PermissionsServiceProxy {
                 throw _error;
             }
         }).then((_response: AxiosResponse) => {
-            return this.processPermissionsPut(_response);
+            return this.processPermissionsPUT(_response);
         });
     }
 
-    protected processPermissionsPut(response: AxiosResponse): Promise<void> {
+    protected processPermissionsPUT(response: AxiosResponse): Promise<void> {
         const status = response.status;
         let _headers: any = {};
         if (response.headers && typeof response.headers === "object") {
@@ -1807,7 +1807,7 @@ export class ProfileServiceProxy {
     /**
      * @return Success
      */
-    myProfileGet( cancelToken?: CancelToken | undefined): Promise<ProfileDto> {
+    myProfileGET( cancelToken?: CancelToken | undefined): Promise<ProfileDto> {
         let url_ = this.baseUrl + "/api/account/my-profile";
         url_ = url_.replace(/[?&]$/, "");
 
@@ -1827,11 +1827,11 @@ export class ProfileServiceProxy {
                 throw _error;
             }
         }).then((_response: AxiosResponse) => {
-            return this.processMyProfileGet(_response);
+            return this.processMyProfileGET(_response);
         });
     }
 
-    protected processMyProfileGet(response: AxiosResponse): Promise<ProfileDto> {
+    protected processMyProfileGET(response: AxiosResponse): Promise<ProfileDto> {
         const status = response.status;
         let _headers: any = {};
         if (response.headers && typeof response.headers === "object") {
@@ -1901,7 +1901,7 @@ export class ProfileServiceProxy {
      * @param body (optional) 
      * @return Success
      */
-    myProfilePut(body: UpdateProfileDto | undefined, cancelToken?: CancelToken | undefined): Promise<ProfileDto> {
+    myProfilePUT(body: UpdateProfileDto | undefined, cancelToken?: CancelToken | undefined): Promise<ProfileDto> {
         let url_ = this.baseUrl + "/api/account/my-profile";
         url_ = url_.replace(/[?&]$/, "");
 
@@ -1925,11 +1925,11 @@ export class ProfileServiceProxy {
                 throw _error;
             }
         }).then((_response: AxiosResponse) => {
-            return this.processMyProfilePut(_response);
+            return this.processMyProfilePUT(_response);
         });
     }
 
-    protected processMyProfilePut(response: AxiosResponse): Promise<ProfileDto> {
+    protected processMyProfilePUT(response: AxiosResponse): Promise<ProfileDto> {
         const status = response.status;
         let _headers: any = {};
         if (response.headers && typeof response.headers === "object") {
@@ -2203,7 +2203,7 @@ export class RoleServiceProxy {
      * @param maxResultCount (optional) 
      * @return Success
      */
-    rolesGet(filter: string | undefined, sorting: string | undefined, skipCount: number | undefined, maxResultCount: number | undefined, cancelToken?: CancelToken | undefined): Promise<PagedResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null> {
+    rolesGET(filter: string | undefined, sorting: string | undefined, skipCount: number | undefined, maxResultCount: number | undefined, cancelToken?: CancelToken | undefined): Promise<PagedResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null> {
         let url_ = this.baseUrl + "/api/identity/roles?";
         if (filter === null)
             throw new Error("The parameter 'filter' cannot be null.");
@@ -2239,11 +2239,11 @@ export class RoleServiceProxy {
                 throw _error;
             }
         }).then((_response: AxiosResponse) => {
-            return this.processRolesGet(_response);
+            return this.processRolesGET(_response);
         });
     }
 
-    protected processRolesGet(response: AxiosResponse): Promise<PagedResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null> {
+    protected processRolesGET(response: AxiosResponse): Promise<PagedResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null> {
         const status = response.status;
         let _headers: any = {};
         if (response.headers && typeof response.headers === "object") {
@@ -2313,7 +2313,7 @@ export class RoleServiceProxy {
      * @param body (optional) 
      * @return Success
      */
-    rolesPost(body: IdentityRoleCreateDto | undefined, cancelToken?: CancelToken | undefined): Promise<IdentityRoleDto> {
+    rolesPOST(body: IdentityRoleCreateDto | undefined, cancelToken?: CancelToken | undefined): Promise<IdentityRoleDto> {
         let url_ = this.baseUrl + "/api/identity/roles";
         url_ = url_.replace(/[?&]$/, "");
 
@@ -2337,11 +2337,11 @@ export class RoleServiceProxy {
                 throw _error;
             }
         }).then((_response: AxiosResponse) => {
-            return this.processRolesPost(_response);
+            return this.processRolesPOST(_response);
         });
     }
 
-    protected processRolesPost(response: AxiosResponse): Promise<IdentityRoleDto> {
+    protected processRolesPOST(response: AxiosResponse): Promise<IdentityRoleDto> {
         const status = response.status;
         let _headers: any = {};
         if (response.headers && typeof response.headers === "object") {
@@ -2410,7 +2410,7 @@ export class RoleServiceProxy {
     /**
      * @return Success
      */
-    rolesGet(id: string, cancelToken?: CancelToken | undefined): Promise<IdentityRoleDto> {
+    rolesGET2(id: string, cancelToken?: CancelToken | undefined): Promise<IdentityRoleDto> {
         let url_ = this.baseUrl + "/api/identity/roles/{id}";
         if (id === undefined || id === null)
             throw new Error("The parameter 'id' must be defined.");
@@ -2433,11 +2433,11 @@ export class RoleServiceProxy {
                 throw _error;
             }
         }).then((_response: AxiosResponse) => {
-            return this.processRolesGet(_response);
+            return this.processRolesGET2(_response);
         });
     }
 
-    protected processRolesGet(response: AxiosResponse): Promise<IdentityRoleDto> {
+    protected processRolesGET2(response: AxiosResponse): Promise<IdentityRoleDto> {
         const status = response.status;
         let _headers: any = {};
         if (response.headers && typeof response.headers === "object") {
@@ -2507,7 +2507,7 @@ export class RoleServiceProxy {
      * @param body (optional) 
      * @return Success
      */
-    rolesPut(id: string, body: IdentityRoleUpdateDto | undefined, cancelToken?: CancelToken | undefined): Promise<IdentityRoleDto> {
+    rolesPUT(id: string, body: IdentityRoleUpdateDto | undefined, cancelToken?: CancelToken | undefined): Promise<IdentityRoleDto> {
         let url_ = this.baseUrl + "/api/identity/roles/{id}";
         if (id === undefined || id === null)
             throw new Error("The parameter 'id' must be defined.");
@@ -2534,11 +2534,11 @@ export class RoleServiceProxy {
                 throw _error;
             }
         }).then((_response: AxiosResponse) => {
-            return this.processRolesPut(_response);
+            return this.processRolesPUT(_response);
         });
     }
 
-    protected processRolesPut(response: AxiosResponse): Promise<IdentityRoleDto> {
+    protected processRolesPUT(response: AxiosResponse): Promise<IdentityRoleDto> {
         const status = response.status;
         let _headers: any = {};
         if (response.headers && typeof response.headers === "object") {
@@ -2607,7 +2607,7 @@ export class RoleServiceProxy {
     /**
      * @return Success
      */
-    rolesDelete(id: string, cancelToken?: CancelToken | undefined): Promise<void> {
+    rolesDELETE(id: string, cancelToken?: CancelToken | undefined): Promise<void> {
         let url_ = this.baseUrl + "/api/identity/roles/{id}";
         if (id === undefined || id === null)
             throw new Error("The parameter 'id' must be defined.");
@@ -2629,11 +2629,11 @@ export class RoleServiceProxy {
                 throw _error;
             }
         }).then((_response: AxiosResponse) => {
-            return this.processRolesDelete(_response);
+            return this.processRolesDELETE(_response);
         });
     }
 
-    protected processRolesDelete(response: AxiosResponse): Promise<void> {
+    protected processRolesDELETE(response: AxiosResponse): Promise<void> {
         const status = response.status;
         let _headers: any = {};
         if (response.headers && typeof response.headers === "object") {
@@ -2713,7 +2713,7 @@ export class TenantServiceProxy {
     /**
      * @return Success
      */
-    tenantsGet(id: string, cancelToken?: CancelToken | undefined): Promise<TenantDto> {
+    tenantsGET(id: string, cancelToken?: CancelToken | undefined): Promise<TenantDto> {
         let url_ = this.baseUrl + "/api/multi-tenancy/tenants/{id}";
         if (id === undefined || id === null)
             throw new Error("The parameter 'id' must be defined.");
@@ -2736,11 +2736,11 @@ export class TenantServiceProxy {
                 throw _error;
             }
         }).then((_response: AxiosResponse) => {
-            return this.processTenantsGet(_response);
+            return this.processTenantsGET(_response);
         });
     }
 
-    protected processTenantsGet(response: AxiosResponse): Promise<TenantDto> {
+    protected processTenantsGET(response: AxiosResponse): Promise<TenantDto> {
         const status = response.status;
         let _headers: any = {};
         if (response.headers && typeof response.headers === "object") {
@@ -2810,7 +2810,7 @@ export class TenantServiceProxy {
      * @param body (optional) 
      * @return Success
      */
-    tenantsPut(id: string, body: TenantUpdateDto | undefined, cancelToken?: CancelToken | undefined): Promise<TenantDto> {
+    tenantsPUT(id: string, body: TenantUpdateDto | undefined, cancelToken?: CancelToken | undefined): Promise<TenantDto> {
         let url_ = this.baseUrl + "/api/multi-tenancy/tenants/{id}";
         if (id === undefined || id === null)
             throw new Error("The parameter 'id' must be defined.");
@@ -2837,11 +2837,11 @@ export class TenantServiceProxy {
                 throw _error;
             }
         }).then((_response: AxiosResponse) => {
-            return this.processTenantsPut(_response);
+            return this.processTenantsPUT(_response);
         });
     }
 
-    protected processTenantsPut(response: AxiosResponse): Promise<TenantDto> {
+    protected processTenantsPUT(response: AxiosResponse): Promise<TenantDto> {
         const status = response.status;
         let _headers: any = {};
         if (response.headers && typeof response.headers === "object") {
@@ -2910,7 +2910,7 @@ export class TenantServiceProxy {
     /**
      * @return Success
      */
-    tenantsDelete(id: string, cancelToken?: CancelToken | undefined): Promise<void> {
+    tenantsDELETE(id: string, cancelToken?: CancelToken | undefined): Promise<void> {
         let url_ = this.baseUrl + "/api/multi-tenancy/tenants/{id}";
         if (id === undefined || id === null)
             throw new Error("The parameter 'id' must be defined.");
@@ -2932,11 +2932,11 @@ export class TenantServiceProxy {
                 throw _error;
             }
         }).then((_response: AxiosResponse) => {
-            return this.processTenantsDelete(_response);
+            return this.processTenantsDELETE(_response);
         });
     }
 
-    protected processTenantsDelete(response: AxiosResponse): Promise<void> {
+    protected processTenantsDELETE(response: AxiosResponse): Promise<void> {
         const status = response.status;
         let _headers: any = {};
         if (response.headers && typeof response.headers === "object") {
@@ -3006,7 +3006,7 @@ export class TenantServiceProxy {
      * @param maxResultCount (optional) 
      * @return Success
      */
-    tenantsGet(filter: string | undefined, sorting: string | undefined, skipCount: number | undefined, maxResultCount: number | undefined, cancelToken?: CancelToken | undefined): Promise<PagedResultDto_1OfOfTenantDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null> {
+    tenantsGET2(filter: string | undefined, sorting: string | undefined, skipCount: number | undefined, maxResultCount: number | undefined, cancelToken?: CancelToken | undefined): Promise<PagedResultDto_1OfOfTenantDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null> {
         let url_ = this.baseUrl + "/api/multi-tenancy/tenants?";
         if (filter === null)
             throw new Error("The parameter 'filter' cannot be null.");
@@ -3042,11 +3042,11 @@ export class TenantServiceProxy {
                 throw _error;
             }
         }).then((_response: AxiosResponse) => {
-            return this.processTenantsGet(_response);
+            return this.processTenantsGET2(_response);
         });
     }
 
-    protected processTenantsGet(response: AxiosResponse): Promise<PagedResultDto_1OfOfTenantDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null> {
+    protected processTenantsGET2(response: AxiosResponse): Promise<PagedResultDto_1OfOfTenantDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null> {
         const status = response.status;
         let _headers: any = {};
         if (response.headers && typeof response.headers === "object") {
@@ -3116,7 +3116,7 @@ export class TenantServiceProxy {
      * @param body (optional) 
      * @return Success
      */
-    tenantsPost(body: TenantCreateDto | undefined, cancelToken?: CancelToken | undefined): Promise<TenantDto> {
+    tenantsPOST(body: TenantCreateDto | undefined, cancelToken?: CancelToken | undefined): Promise<TenantDto> {
         let url_ = this.baseUrl + "/api/multi-tenancy/tenants";
         url_ = url_.replace(/[?&]$/, "");
 
@@ -3140,11 +3140,11 @@ export class TenantServiceProxy {
                 throw _error;
             }
         }).then((_response: AxiosResponse) => {
-            return this.processTenantsPost(_response);
+            return this.processTenantsPOST(_response);
         });
     }
 
-    protected processTenantsPost(response: AxiosResponse): Promise<TenantDto> {
+    protected processTenantsPOST(response: AxiosResponse): Promise<TenantDto> {
         const status = response.status;
         let _headers: any = {};
         if (response.headers && typeof response.headers === "object") {
@@ -3213,7 +3213,7 @@ export class TenantServiceProxy {
     /**
      * @return Success
      */
-    defaultConnectionStringGet(id: string, cancelToken?: CancelToken | undefined): Promise<string> {
+    defaultConnectionStringGET(id: string, cancelToken?: CancelToken | undefined): Promise<string> {
         let url_ = this.baseUrl + "/api/multi-tenancy/tenants/{id}/default-connection-string";
         if (id === undefined || id === null)
             throw new Error("The parameter 'id' must be defined.");
@@ -3236,11 +3236,11 @@ export class TenantServiceProxy {
                 throw _error;
             }
         }).then((_response: AxiosResponse) => {
-            return this.processDefaultConnectionStringGet(_response);
+            return this.processDefaultConnectionStringGET(_response);
         });
     }
 
-    protected processDefaultConnectionStringGet(response: AxiosResponse): Promise<string> {
+    protected processDefaultConnectionStringGET(response: AxiosResponse): Promise<string> {
         const status = response.status;
         let _headers: any = {};
         if (response.headers && typeof response.headers === "object") {
@@ -3311,7 +3311,7 @@ export class TenantServiceProxy {
      * @param defaultConnectionString (optional) 
      * @return Success
      */
-    defaultConnectionStringPut(id: string, defaultConnectionString: string | undefined, cancelToken?: CancelToken | undefined): Promise<void> {
+    defaultConnectionStringPUT(id: string, defaultConnectionString: string | undefined, cancelToken?: CancelToken | undefined): Promise<void> {
         let url_ = this.baseUrl + "/api/multi-tenancy/tenants/{id}/default-connection-string?";
         if (id === undefined || id === null)
             throw new Error("The parameter 'id' must be defined.");
@@ -3337,11 +3337,11 @@ export class TenantServiceProxy {
                 throw _error;
             }
         }).then((_response: AxiosResponse) => {
-            return this.processDefaultConnectionStringPut(_response);
+            return this.processDefaultConnectionStringPUT(_response);
         });
     }
 
-    protected processDefaultConnectionStringPut(response: AxiosResponse): Promise<void> {
+    protected processDefaultConnectionStringPUT(response: AxiosResponse): Promise<void> {
         const status = response.status;
         let _headers: any = {};
         if (response.headers && typeof response.headers === "object") {
@@ -3407,7 +3407,7 @@ export class TenantServiceProxy {
     /**
      * @return Success
      */
-    defaultConnectionStringDelete(id: string, cancelToken?: CancelToken | undefined): Promise<void> {
+    defaultConnectionStringDELETE(id: string, cancelToken?: CancelToken | undefined): Promise<void> {
         let url_ = this.baseUrl + "/api/multi-tenancy/tenants/{id}/default-connection-string";
         if (id === undefined || id === null)
             throw new Error("The parameter 'id' must be defined.");
@@ -3429,11 +3429,11 @@ export class TenantServiceProxy {
                 throw _error;
             }
         }).then((_response: AxiosResponse) => {
-            return this.processDefaultConnectionStringDelete(_response);
+            return this.processDefaultConnectionStringDELETE(_response);
         });
     }
 
-    protected processDefaultConnectionStringDelete(response: AxiosResponse): Promise<void> {
+    protected processDefaultConnectionStringDELETE(response: AxiosResponse): Promise<void> {
         const status = response.status;
         let _headers: any = {};
         if (response.headers && typeof response.headers === "object") {
@@ -3513,7 +3513,7 @@ export class UserServiceProxy {
     /**
      * @return Success
      */
-    usersGet(id: string, cancelToken?: CancelToken | undefined): Promise<IdentityUserDto> {
+    usersGET(id: string, cancelToken?: CancelToken | undefined): Promise<IdentityUserDto> {
         let url_ = this.baseUrl + "/api/identity/users/{id}";
         if (id === undefined || id === null)
             throw new Error("The parameter 'id' must be defined.");
@@ -3536,11 +3536,11 @@ export class UserServiceProxy {
                 throw _error;
             }
         }).then((_response: AxiosResponse) => {
-            return this.processUsersGet(_response);
+            return this.processUsersGET(_response);
         });
     }
 
-    protected processUsersGet(response: AxiosResponse): Promise<IdentityUserDto> {
+    protected processUsersGET(response: AxiosResponse): Promise<IdentityUserDto> {
         const status = response.status;
         let _headers: any = {};
         if (response.headers && typeof response.headers === "object") {
@@ -3610,7 +3610,7 @@ export class UserServiceProxy {
      * @param body (optional) 
      * @return Success
      */
-    usersPut(id: string, body: IdentityUserUpdateDto | undefined, cancelToken?: CancelToken | undefined): Promise<IdentityUserDto> {
+    usersPUT(id: string, body: IdentityUserUpdateDto | undefined, cancelToken?: CancelToken | undefined): Promise<IdentityUserDto> {
         let url_ = this.baseUrl + "/api/identity/users/{id}";
         if (id === undefined || id === null)
             throw new Error("The parameter 'id' must be defined.");
@@ -3637,11 +3637,11 @@ export class UserServiceProxy {
                 throw _error;
             }
         }).then((_response: AxiosResponse) => {
-            return this.processUsersPut(_response);
+            return this.processUsersPUT(_response);
         });
     }
 
-    protected processUsersPut(response: AxiosResponse): Promise<IdentityUserDto> {
+    protected processUsersPUT(response: AxiosResponse): Promise<IdentityUserDto> {
         const status = response.status;
         let _headers: any = {};
         if (response.headers && typeof response.headers === "object") {
@@ -3710,7 +3710,7 @@ export class UserServiceProxy {
     /**
      * @return Success
      */
-    usersDelete(id: string, cancelToken?: CancelToken | undefined): Promise<void> {
+    usersDELETE(id: string, cancelToken?: CancelToken | undefined): Promise<void> {
         let url_ = this.baseUrl + "/api/identity/users/{id}";
         if (id === undefined || id === null)
             throw new Error("The parameter 'id' must be defined.");
@@ -3732,11 +3732,11 @@ export class UserServiceProxy {
                 throw _error;
             }
         }).then((_response: AxiosResponse) => {
-            return this.processUsersDelete(_response);
+            return this.processUsersDELETE(_response);
         });
     }
 
-    protected processUsersDelete(response: AxiosResponse): Promise<void> {
+    protected processUsersDELETE(response: AxiosResponse): Promise<void> {
         const status = response.status;
         let _headers: any = {};
         if (response.headers && typeof response.headers === "object") {
@@ -3806,7 +3806,7 @@ export class UserServiceProxy {
      * @param maxResultCount (optional) 
      * @return Success
      */
-    usersGet(filter: string | undefined, sorting: string | undefined, skipCount: number | undefined, maxResultCount: number | undefined, cancelToken?: CancelToken | undefined): Promise<PagedResultDto_1OfOfIdentityUserDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null> {
+    usersGET2(filter: string | undefined, sorting: string | undefined, skipCount: number | undefined, maxResultCount: number | undefined, cancelToken?: CancelToken | undefined): Promise<PagedResultDto_1OfOfIdentityUserDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null> {
         let url_ = this.baseUrl + "/api/identity/users?";
         if (filter === null)
             throw new Error("The parameter 'filter' cannot be null.");
@@ -3842,11 +3842,11 @@ export class UserServiceProxy {
                 throw _error;
             }
         }).then((_response: AxiosResponse) => {
-            return this.processUsersGet(_response);
+            return this.processUsersGET2(_response);
         });
     }
 
-    protected processUsersGet(response: AxiosResponse): Promise<PagedResultDto_1OfOfIdentityUserDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null> {
+    protected processUsersGET2(response: AxiosResponse): Promise<PagedResultDto_1OfOfIdentityUserDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null> {
         const status = response.status;
         let _headers: any = {};
         if (response.headers && typeof response.headers === "object") {
@@ -3916,7 +3916,7 @@ export class UserServiceProxy {
      * @param body (optional) 
      * @return Success
      */
-    usersPost(body: IdentityUserCreateDto | undefined, cancelToken?: CancelToken | undefined): Promise<IdentityUserDto> {
+    usersPOST(body: IdentityUserCreateDto | undefined, cancelToken?: CancelToken | undefined): Promise<IdentityUserDto> {
         let url_ = this.baseUrl + "/api/identity/users";
         url_ = url_.replace(/[?&]$/, "");
 
@@ -3940,11 +3940,11 @@ export class UserServiceProxy {
                 throw _error;
             }
         }).then((_response: AxiosResponse) => {
-            return this.processUsersPost(_response);
+            return this.processUsersPOST(_response);
         });
     }
 
-    protected processUsersPost(response: AxiosResponse): Promise<IdentityUserDto> {
+    protected processUsersPOST(response: AxiosResponse): Promise<IdentityUserDto> {
         const status = response.status;
         let _headers: any = {};
         if (response.headers && typeof response.headers === "object") {
@@ -4013,7 +4013,7 @@ export class UserServiceProxy {
     /**
      * @return Success
      */
-    rolesGet(id: string, cancelToken?: CancelToken | undefined): Promise<ListResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null> {
+    rolesGET3(id: string, cancelToken?: CancelToken | undefined): Promise<ListResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null> {
         let url_ = this.baseUrl + "/api/identity/users/{id}/roles";
         if (id === undefined || id === null)
             throw new Error("The parameter 'id' must be defined.");
@@ -4036,11 +4036,11 @@ export class UserServiceProxy {
                 throw _error;
             }
         }).then((_response: AxiosResponse) => {
-            return this.processRolesGet(_response);
+            return this.processRolesGET3(_response);
         });
     }
 
-    protected processRolesGet(response: AxiosResponse): Promise<ListResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null> {
+    protected processRolesGET3(response: AxiosResponse): Promise<ListResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null> {
         const status = response.status;
         let _headers: any = {};
         if (response.headers && typeof response.headers === "object") {
@@ -4110,7 +4110,7 @@ export class UserServiceProxy {
      * @param body (optional) 
      * @return Success
      */
-    rolesPut(id: string, body: IdentityUserUpdateRolesDto | undefined, cancelToken?: CancelToken | undefined): Promise<void> {
+    rolesPUT2(id: string, body: IdentityUserUpdateRolesDto | undefined, cancelToken?: CancelToken | undefined): Promise<void> {
         let url_ = this.baseUrl + "/api/identity/users/{id}/roles";
         if (id === undefined || id === null)
             throw new Error("The parameter 'id' must be defined.");
@@ -4136,11 +4136,11 @@ export class UserServiceProxy {
                 throw _error;
             }
         }).then((_response: AxiosResponse) => {
-            return this.processRolesPut(_response);
+            return this.processRolesPUT2(_response);
         });
     }
 
-    protected processRolesPut(response: AxiosResponse): Promise<void> {
+    protected processRolesPUT2(response: AxiosResponse): Promise<void> {
         const status = response.status;
         let _headers: any = {};
         if (response.headers && typeof response.headers === "object") {
@@ -4601,7 +4601,7 @@ export class UserLookupServiceProxy {
     /**
      * @return Success
      */
-    byUsername(userName: string, cancelToken?: CancelToken | undefined): Promise<UserData> {
+    byUsername2(userName: string, cancelToken?: CancelToken | undefined): Promise<UserData> {
         let url_ = this.baseUrl + "/api/identity/users/lookup/by-username/{userName}";
         if (userName === undefined || userName === null)
             throw new Error("The parameter 'userName' must be defined.");
@@ -4624,11 +4624,11 @@ export class UserLookupServiceProxy {
                 throw _error;
             }
         }).then((_response: AxiosResponse) => {
-            return this.processByUsername(_response);
+            return this.processByUsername2(_response);
         });
     }
 
-    protected processByUsername(response: AxiosResponse): Promise<UserData> {
+    protected processByUsername2(response: AxiosResponse): Promise<UserData> {
         const status = response.status;
         let _headers: any = {};
         if (response.headers && typeof response.headers === "object") {
@@ -4908,7 +4908,7 @@ export class UserLookupServiceProxy {
 }
 
 export class ChangePasswordInput implements IChangePasswordInput {
-    currentPassword!: string | undefined;
+    currentPassword?: string | undefined;
     newPassword!: string;
 
     constructor(data?: IChangePasswordInput) {
@@ -4943,20 +4943,20 @@ export class ChangePasswordInput implements IChangePasswordInput {
 }
 
 export interface IChangePasswordInput {
-    currentPassword: string | undefined;
+    currentPassword?: string | undefined;
     newPassword: string;
 }
 
 export class ProfileDto implements IProfileDto {
-    readonly extraProperties!: { [key: string]: any; } | undefined;
-    userName!: string | undefined;
-    email!: string | undefined;
-    name!: string | undefined;
-    surname!: string | undefined;
-    phoneNumber!: string | undefined;
-    isExternal!: boolean;
-    hasPassword!: boolean;
-    concurrencyStamp!: string | undefined;
+    readonly extraProperties?: { [key: string]: any; } | undefined;
+    userName?: string | undefined;
+    email?: string | undefined;
+    name?: string | undefined;
+    surname?: string | undefined;
+    phoneNumber?: string | undefined;
+    isExternal?: boolean;
+    hasPassword?: boolean;
+    concurrencyStamp?: string | undefined;
 
     constructor(data?: IProfileDto) {
         if (data) {
@@ -5016,19 +5016,19 @@ export class ProfileDto implements IProfileDto {
 }
 
 export interface IProfileDto {
-    extraProperties: { [key: string]: any; } | undefined;
-    userName: string | undefined;
-    email: string | undefined;
-    name: string | undefined;
-    surname: string | undefined;
-    phoneNumber: string | undefined;
-    isExternal: boolean;
-    hasPassword: boolean;
-    concurrencyStamp: string | undefined;
+    extraProperties?: { [key: string]: any; } | undefined;
+    userName?: string | undefined;
+    email?: string | undefined;
+    name?: string | undefined;
+    surname?: string | undefined;
+    phoneNumber?: string | undefined;
+    isExternal?: boolean;
+    hasPassword?: boolean;
+    concurrencyStamp?: string | undefined;
 }
 
 export class RegisterDto implements IRegisterDto {
-    readonly extraProperties!: { [key: string]: any; } | undefined;
+    readonly extraProperties?: { [key: string]: any; } | undefined;
     userName!: string;
     emailAddress!: string;
     password!: string;
@@ -5084,7 +5084,7 @@ export class RegisterDto implements IRegisterDto {
 }
 
 export interface IRegisterDto {
-    extraProperties: { [key: string]: any; } | undefined;
+    extraProperties?: { [key: string]: any; } | undefined;
     userName: string;
     emailAddress: string;
     password: string;
@@ -5092,7 +5092,7 @@ export interface IRegisterDto {
 }
 
 export class ResetPasswordDto implements IResetPasswordDto {
-    userId!: string;
+    userId?: string;
     resetToken!: string;
     password!: string;
 
@@ -5130,7 +5130,7 @@ export class ResetPasswordDto implements IResetPasswordDto {
 }
 
 export interface IResetPasswordDto {
-    userId: string;
+    userId?: string;
     resetToken: string;
     password: string;
 }
@@ -5138,8 +5138,8 @@ export interface IResetPasswordDto {
 export class SendPasswordResetCodeDto implements ISendPasswordResetCodeDto {
     email!: string;
     appName!: string;
-    returnUrl!: string | undefined;
-    returnUrlHash!: string | undefined;
+    returnUrl?: string | undefined;
+    returnUrlHash?: string | undefined;
 
     constructor(data?: ISendPasswordResetCodeDto) {
         if (data) {
@@ -5179,18 +5179,18 @@ export class SendPasswordResetCodeDto implements ISendPasswordResetCodeDto {
 export interface ISendPasswordResetCodeDto {
     email: string;
     appName: string;
-    returnUrl: string | undefined;
-    returnUrlHash: string | undefined;
+    returnUrl?: string | undefined;
+    returnUrlHash?: string | undefined;
 }
 
 export class UpdateProfileDto implements IUpdateProfileDto {
-    readonly extraProperties!: { [key: string]: any; } | undefined;
-    userName!: string | undefined;
-    email!: string | undefined;
-    name!: string | undefined;
-    surname!: string | undefined;
-    phoneNumber!: string | undefined;
-    concurrencyStamp!: string | undefined;
+    readonly extraProperties?: { [key: string]: any; } | undefined;
+    userName?: string | undefined;
+    email?: string | undefined;
+    name?: string | undefined;
+    surname?: string | undefined;
+    phoneNumber?: string | undefined;
+    concurrencyStamp?: string | undefined;
 
     constructor(data?: IUpdateProfileDto) {
         if (data) {
@@ -5246,17 +5246,17 @@ export class UpdateProfileDto implements IUpdateProfileDto {
 }
 
 export interface IUpdateProfileDto {
-    extraProperties: { [key: string]: any; } | undefined;
-    userName: string | undefined;
-    email: string | undefined;
-    name: string | undefined;
-    surname: string | undefined;
-    phoneNumber: string | undefined;
-    concurrencyStamp: string | undefined;
+    extraProperties?: { [key: string]: any; } | undefined;
+    userName?: string | undefined;
+    email?: string | undefined;
+    name?: string | undefined;
+    surname?: string | undefined;
+    phoneNumber?: string | undefined;
+    concurrencyStamp?: string | undefined;
 }
 
 export class VerifyPasswordResetTokenInput implements IVerifyPasswordResetTokenInput {
-    userId!: string;
+    userId?: string;
     resetToken!: string;
 
     constructor(data?: IVerifyPasswordResetTokenInput) {
@@ -5291,12 +5291,12 @@ export class VerifyPasswordResetTokenInput implements IVerifyPasswordResetTokenI
 }
 
 export interface IVerifyPasswordResetTokenInput {
-    userId: string;
+    userId?: string;
     resetToken: string;
 }
 
 export class ListResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null implements IListResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null {
-    items!: IdentityRoleDto[] | undefined;
+    items?: IdentityRoleDto[] | undefined;
 
     constructor(data?: IListResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null) {
         if (data) {
@@ -5336,11 +5336,11 @@ export class ListResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neutr
 }
 
 export interface IListResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null {
-    items: IdentityRoleDto[] | undefined;
+    items?: IdentityRoleDto[] | undefined;
 }
 
 export class ListResultDto_1OfOfUserDataAndAbstractionsAnd_0AndCulture_neutralAndPublicKeyToken_null implements IListResultDto_1OfOfUserDataAndAbstractionsAnd_0AndCulture_neutralAndPublicKeyToken_null {
-    items!: UserData[] | undefined;
+    items?: UserData[] | undefined;
 
     constructor(data?: IListResultDto_1OfOfUserDataAndAbstractionsAnd_0AndCulture_neutralAndPublicKeyToken_null) {
         if (data) {
@@ -5380,12 +5380,12 @@ export class ListResultDto_1OfOfUserDataAndAbstractionsAnd_0AndCulture_neutralAn
 }
 
 export interface IListResultDto_1OfOfUserDataAndAbstractionsAnd_0AndCulture_neutralAndPublicKeyToken_null {
-    items: UserData[] | undefined;
+    items?: UserData[] | undefined;
 }
 
 export class PagedResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null implements IPagedResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null {
-    items!: IdentityRoleDto[] | undefined;
-    totalCount!: number;
+    items?: IdentityRoleDto[] | undefined;
+    totalCount?: number;
 
     constructor(data?: IPagedResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null) {
         if (data) {
@@ -5427,13 +5427,13 @@ export class PagedResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neut
 }
 
 export interface IPagedResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null {
-    items: IdentityRoleDto[] | undefined;
-    totalCount: number;
+    items?: IdentityRoleDto[] | undefined;
+    totalCount?: number;
 }
 
 export class PagedResultDto_1OfOfIdentityUserDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null implements IPagedResultDto_1OfOfIdentityUserDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null {
-    items!: IdentityUserDto[] | undefined;
-    totalCount!: number;
+    items?: IdentityUserDto[] | undefined;
+    totalCount?: number;
 
     constructor(data?: IPagedResultDto_1OfOfIdentityUserDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null) {
         if (data) {
@@ -5475,13 +5475,13 @@ export class PagedResultDto_1OfOfIdentityUserDtoAndContractsAnd_0AndCulture_neut
 }
 
 export interface IPagedResultDto_1OfOfIdentityUserDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null {
-    items: IdentityUserDto[] | undefined;
-    totalCount: number;
+    items?: IdentityUserDto[] | undefined;
+    totalCount?: number;
 }
 
 export class PagedResultDto_1OfOfTenantDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null implements IPagedResultDto_1OfOfTenantDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null {
-    items!: TenantDto[] | undefined;
-    totalCount!: number;
+    items?: TenantDto[] | undefined;
+    totalCount?: number;
 
     constructor(data?: IPagedResultDto_1OfOfTenantDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null) {
         if (data) {
@@ -5523,12 +5523,12 @@ export class PagedResultDto_1OfOfTenantDtoAndContractsAnd_0AndCulture_neutralAnd
 }
 
 export interface IPagedResultDto_1OfOfTenantDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null {
-    items: TenantDto[] | undefined;
-    totalCount: number;
+    items?: TenantDto[] | undefined;
+    totalCount?: number;
 }
 
 export class ApplicationAuthConfigurationDto implements IApplicationAuthConfigurationDto {
-    grantedPolicies!: { [key: string]: boolean; } | undefined;
+    grantedPolicies?: { [key: string]: boolean; } | undefined;
 
     constructor(data?: IApplicationAuthConfigurationDto) {
         if (data) {
@@ -5572,22 +5572,22 @@ export class ApplicationAuthConfigurationDto implements IApplicationAuthConfigur
 }
 
 export interface IApplicationAuthConfigurationDto {
-    grantedPolicies: { [key: string]: boolean; } | undefined;
+    grantedPolicies?: { [key: string]: boolean; } | undefined;
 }
 
 export class ApplicationConfigurationDto implements IApplicationConfigurationDto {
-    localization!: ApplicationLocalizationConfigurationDto;
-    auth!: ApplicationAuthConfigurationDto;
-    setting!: ApplicationSettingConfigurationDto;
-    currentUser!: CurrentUserDto;
-    features!: ApplicationFeatureConfigurationDto;
-    globalFeatures!: ApplicationGlobalFeatureConfigurationDto;
-    multiTenancy!: MultiTenancyInfoDto;
-    currentTenant!: CurrentTenantDto;
-    timing!: TimingDto;
-    clock!: ClockDto;
-    objectExtensions!: ObjectExtensionsDto;
-    extraProperties!: { [key: string]: any; } | undefined;
+    localization?: ApplicationLocalizationConfigurationDto;
+    auth?: ApplicationAuthConfigurationDto;
+    setting?: ApplicationSettingConfigurationDto;
+    currentUser?: CurrentUserDto;
+    features?: ApplicationFeatureConfigurationDto;
+    globalFeatures?: ApplicationGlobalFeatureConfigurationDto;
+    multiTenancy?: MultiTenancyInfoDto;
+    currentTenant?: CurrentTenantDto;
+    timing?: TimingDto;
+    clock?: ClockDto;
+    objectExtensions?: ObjectExtensionsDto;
+    extraProperties?: { [key: string]: any; } | undefined;
 
     constructor(data?: IApplicationConfigurationDto) {
         if (data) {
@@ -5653,22 +5653,22 @@ export class ApplicationConfigurationDto implements IApplicationConfigurationDto
 }
 
 export interface IApplicationConfigurationDto {
-    localization: ApplicationLocalizationConfigurationDto;
-    auth: ApplicationAuthConfigurationDto;
-    setting: ApplicationSettingConfigurationDto;
-    currentUser: CurrentUserDto;
-    features: ApplicationFeatureConfigurationDto;
-    globalFeatures: ApplicationGlobalFeatureConfigurationDto;
-    multiTenancy: MultiTenancyInfoDto;
-    currentTenant: CurrentTenantDto;
-    timing: TimingDto;
-    clock: ClockDto;
-    objectExtensions: ObjectExtensionsDto;
-    extraProperties: { [key: string]: any; } | undefined;
+    localization?: ApplicationLocalizationConfigurationDto;
+    auth?: ApplicationAuthConfigurationDto;
+    setting?: ApplicationSettingConfigurationDto;
+    currentUser?: CurrentUserDto;
+    features?: ApplicationFeatureConfigurationDto;
+    globalFeatures?: ApplicationGlobalFeatureConfigurationDto;
+    multiTenancy?: MultiTenancyInfoDto;
+    currentTenant?: CurrentTenantDto;
+    timing?: TimingDto;
+    clock?: ClockDto;
+    objectExtensions?: ObjectExtensionsDto;
+    extraProperties?: { [key: string]: any; } | undefined;
 }
 
 export class ApplicationFeatureConfigurationDto implements IApplicationFeatureConfigurationDto {
-    values!: { [key: string]: string; } | undefined;
+    values?: { [key: string]: string; } | undefined;
 
     constructor(data?: IApplicationFeatureConfigurationDto) {
         if (data) {
@@ -5712,11 +5712,11 @@ export class ApplicationFeatureConfigurationDto implements IApplicationFeatureCo
 }
 
 export interface IApplicationFeatureConfigurationDto {
-    values: { [key: string]: string; } | undefined;
+    values?: { [key: string]: string; } | undefined;
 }
 
 export class ApplicationGlobalFeatureConfigurationDto implements IApplicationGlobalFeatureConfigurationDto {
-    enabledFeatures!: string[] | undefined;
+    enabledFeatures?: string[] | undefined;
 
     constructor(data?: IApplicationGlobalFeatureConfigurationDto) {
         if (data) {
@@ -5756,17 +5756,17 @@ export class ApplicationGlobalFeatureConfigurationDto implements IApplicationGlo
 }
 
 export interface IApplicationGlobalFeatureConfigurationDto {
-    enabledFeatures: string[] | undefined;
+    enabledFeatures?: string[] | undefined;
 }
 
 export class ApplicationLocalizationConfigurationDto implements IApplicationLocalizationConfigurationDto {
-    values!: { [key: string]: { [key: string]: string; }; } | undefined;
-    resources!: { [key: string]: ApplicationLocalizationResourceDto; } | undefined;
-    languages!: LanguageInfo[] | undefined;
-    currentCulture!: CurrentCultureDto;
-    defaultResourceName!: string | undefined;
-    languagesMap!: { [key: string]: NameValue[]; } | undefined;
-    languageFilesMap!: { [key: string]: NameValue[]; } | undefined;
+    values?: { [key: string]: { [key: string]: string; }; } | undefined;
+    resources?: { [key: string]: ApplicationLocalizationResourceDto; } | undefined;
+    languages?: LanguageInfo[] | undefined;
+    currentCulture?: CurrentCultureDto;
+    defaultResourceName?: string | undefined;
+    languagesMap?: { [key: string]: NameValue[]; } | undefined;
+    languageFilesMap?: { [key: string]: NameValue[]; } | undefined;
 
     constructor(data?: IApplicationLocalizationConfigurationDto) {
         if (data) {
@@ -5866,17 +5866,17 @@ export class ApplicationLocalizationConfigurationDto implements IApplicationLoca
 }
 
 export interface IApplicationLocalizationConfigurationDto {
-    values: { [key: string]: { [key: string]: string; }; } | undefined;
-    resources: { [key: string]: ApplicationLocalizationResourceDto; } | undefined;
-    languages: LanguageInfo[] | undefined;
-    currentCulture: CurrentCultureDto;
-    defaultResourceName: string | undefined;
-    languagesMap: { [key: string]: NameValue[]; } | undefined;
-    languageFilesMap: { [key: string]: NameValue[]; } | undefined;
+    values?: { [key: string]: { [key: string]: string; }; } | undefined;
+    resources?: { [key: string]: ApplicationLocalizationResourceDto; } | undefined;
+    languages?: LanguageInfo[] | undefined;
+    currentCulture?: CurrentCultureDto;
+    defaultResourceName?: string | undefined;
+    languagesMap?: { [key: string]: NameValue[]; } | undefined;
+    languageFilesMap?: { [key: string]: NameValue[]; } | undefined;
 }
 
 export class ApplicationLocalizationDto implements IApplicationLocalizationDto {
-    resources!: { [key: string]: ApplicationLocalizationResourceDto; } | undefined;
+    resources?: { [key: string]: ApplicationLocalizationResourceDto; } | undefined;
 
     constructor(data?: IApplicationLocalizationDto) {
         if (data) {
@@ -5920,12 +5920,12 @@ export class ApplicationLocalizationDto implements IApplicationLocalizationDto {
 }
 
 export interface IApplicationLocalizationDto {
-    resources: { [key: string]: ApplicationLocalizationResourceDto; } | undefined;
+    resources?: { [key: string]: ApplicationLocalizationResourceDto; } | undefined;
 }
 
 export class ApplicationLocalizationResourceDto implements IApplicationLocalizationResourceDto {
-    texts!: { [key: string]: string; } | undefined;
-    baseResources!: string[] | undefined;
+    texts?: { [key: string]: string; } | undefined;
+    baseResources?: string[] | undefined;
 
     constructor(data?: IApplicationLocalizationResourceDto) {
         if (data) {
@@ -5979,12 +5979,12 @@ export class ApplicationLocalizationResourceDto implements IApplicationLocalizat
 }
 
 export interface IApplicationLocalizationResourceDto {
-    texts: { [key: string]: string; } | undefined;
-    baseResources: string[] | undefined;
+    texts?: { [key: string]: string; } | undefined;
+    baseResources?: string[] | undefined;
 }
 
 export class ApplicationSettingConfigurationDto implements IApplicationSettingConfigurationDto {
-    values!: { [key: string]: string; } | undefined;
+    values?: { [key: string]: string; } | undefined;
 
     constructor(data?: IApplicationSettingConfigurationDto) {
         if (data) {
@@ -6028,11 +6028,11 @@ export class ApplicationSettingConfigurationDto implements IApplicationSettingCo
 }
 
 export interface IApplicationSettingConfigurationDto {
-    values: { [key: string]: string; } | undefined;
+    values?: { [key: string]: string; } | undefined;
 }
 
 export class ClockDto implements IClockDto {
-    kind!: string | undefined;
+    kind?: string | undefined;
 
     constructor(data?: IClockDto) {
         if (data) {
@@ -6064,19 +6064,19 @@ export class ClockDto implements IClockDto {
 }
 
 export interface IClockDto {
-    kind: string | undefined;
+    kind?: string | undefined;
 }
 
 export class CurrentCultureDto implements ICurrentCultureDto {
-    displayName!: string | undefined;
-    englishName!: string | undefined;
-    threeLetterIsoLanguageName!: string | undefined;
-    twoLetterIsoLanguageName!: string | undefined;
-    isRightToLeft!: boolean;
-    cultureName!: string | undefined;
-    name!: string | undefined;
-    nativeName!: string | undefined;
-    dateTimeFormat!: DateTimeFormatDto;
+    displayName?: string | undefined;
+    englishName?: string | undefined;
+    threeLetterIsoLanguageName?: string | undefined;
+    twoLetterIsoLanguageName?: string | undefined;
+    isRightToLeft?: boolean;
+    cultureName?: string | undefined;
+    name?: string | undefined;
+    nativeName?: string | undefined;
+    dateTimeFormat?: DateTimeFormatDto;
 
     constructor(data?: ICurrentCultureDto) {
         if (data) {
@@ -6124,33 +6124,33 @@ export class CurrentCultureDto implements ICurrentCultureDto {
 }
 
 export interface ICurrentCultureDto {
-    displayName: string | undefined;
-    englishName: string | undefined;
-    threeLetterIsoLanguageName: string | undefined;
-    twoLetterIsoLanguageName: string | undefined;
-    isRightToLeft: boolean;
-    cultureName: string | undefined;
-    name: string | undefined;
-    nativeName: string | undefined;
-    dateTimeFormat: DateTimeFormatDto;
+    displayName?: string | undefined;
+    englishName?: string | undefined;
+    threeLetterIsoLanguageName?: string | undefined;
+    twoLetterIsoLanguageName?: string | undefined;
+    isRightToLeft?: boolean;
+    cultureName?: string | undefined;
+    name?: string | undefined;
+    nativeName?: string | undefined;
+    dateTimeFormat?: DateTimeFormatDto;
 }
 
 export class CurrentUserDto implements ICurrentUserDto {
-    isAuthenticated!: boolean;
-    id!: string | undefined;
-    tenantId!: string | undefined;
-    impersonatorUserId!: string | undefined;
-    impersonatorTenantId!: string | undefined;
-    impersonatorUserName!: string | undefined;
-    impersonatorTenantName!: string | undefined;
-    userName!: string | undefined;
-    name!: string | undefined;
-    surName!: string | undefined;
-    email!: string | undefined;
-    emailVerified!: boolean;
-    phoneNumber!: string | undefined;
-    phoneNumberVerified!: boolean;
-    roles!: string[] | undefined;
+    isAuthenticated?: boolean;
+    id?: string | undefined;
+    tenantId?: string | undefined;
+    impersonatorUserId?: string | undefined;
+    impersonatorTenantId?: string | undefined;
+    impersonatorUserName?: string | undefined;
+    impersonatorTenantName?: string | undefined;
+    userName?: string | undefined;
+    name?: string | undefined;
+    surName?: string | undefined;
+    email?: string | undefined;
+    emailVerified?: boolean;
+    phoneNumber?: string | undefined;
+    phoneNumberVerified?: boolean;
+    roles?: string[] | undefined;
 
     constructor(data?: ICurrentUserDto) {
         if (data) {
@@ -6218,31 +6218,31 @@ export class CurrentUserDto implements ICurrentUserDto {
 }
 
 export interface ICurrentUserDto {
-    isAuthenticated: boolean;
-    id: string | undefined;
-    tenantId: string | undefined;
-    impersonatorUserId: string | undefined;
-    impersonatorTenantId: string | undefined;
-    impersonatorUserName: string | undefined;
-    impersonatorTenantName: string | undefined;
-    userName: string | undefined;
-    name: string | undefined;
-    surName: string | undefined;
-    email: string | undefined;
-    emailVerified: boolean;
-    phoneNumber: string | undefined;
-    phoneNumberVerified: boolean;
-    roles: string[] | undefined;
+    isAuthenticated?: boolean;
+    id?: string | undefined;
+    tenantId?: string | undefined;
+    impersonatorUserId?: string | undefined;
+    impersonatorTenantId?: string | undefined;
+    impersonatorUserName?: string | undefined;
+    impersonatorTenantName?: string | undefined;
+    userName?: string | undefined;
+    name?: string | undefined;
+    surName?: string | undefined;
+    email?: string | undefined;
+    emailVerified?: boolean;
+    phoneNumber?: string | undefined;
+    phoneNumberVerified?: boolean;
+    roles?: string[] | undefined;
 }
 
 export class DateTimeFormatDto implements IDateTimeFormatDto {
-    calendarAlgorithmType!: string | undefined;
-    dateTimeFormatLong!: string | undefined;
-    shortDatePattern!: string | undefined;
-    fullDateTimePattern!: string | undefined;
-    dateSeparator!: string | undefined;
-    shortTimePattern!: string | undefined;
-    longTimePattern!: string | undefined;
+    calendarAlgorithmType?: string | undefined;
+    dateTimeFormatLong?: string | undefined;
+    shortDatePattern?: string | undefined;
+    fullDateTimePattern?: string | undefined;
+    dateSeparator?: string | undefined;
+    shortTimePattern?: string | undefined;
+    longTimePattern?: string | undefined;
 
     constructor(data?: IDateTimeFormatDto) {
         if (data) {
@@ -6286,17 +6286,17 @@ export class DateTimeFormatDto implements IDateTimeFormatDto {
 }
 
 export interface IDateTimeFormatDto {
-    calendarAlgorithmType: string | undefined;
-    dateTimeFormatLong: string | undefined;
-    shortDatePattern: string | undefined;
-    fullDateTimePattern: string | undefined;
-    dateSeparator: string | undefined;
-    shortTimePattern: string | undefined;
-    longTimePattern: string | undefined;
+    calendarAlgorithmType?: string | undefined;
+    dateTimeFormatLong?: string | undefined;
+    shortDatePattern?: string | undefined;
+    fullDateTimePattern?: string | undefined;
+    dateSeparator?: string | undefined;
+    shortTimePattern?: string | undefined;
+    longTimePattern?: string | undefined;
 }
 
 export class IanaTimeZone implements IIanaTimeZone {
-    timeZoneName!: string | undefined;
+    timeZoneName?: string | undefined;
 
     constructor(data?: IIanaTimeZone) {
         if (data) {
@@ -6328,12 +6328,12 @@ export class IanaTimeZone implements IIanaTimeZone {
 }
 
 export interface IIanaTimeZone {
-    timeZoneName: string | undefined;
+    timeZoneName?: string | undefined;
 }
 
 export class EntityExtensionDto implements IEntityExtensionDto {
-    properties!: { [key: string]: ExtensionPropertyDto; } | undefined;
-    configuration!: { [key: string]: any; } | undefined;
+    properties?: { [key: string]: ExtensionPropertyDto; } | undefined;
+    configuration?: { [key: string]: any; } | undefined;
 
     constructor(data?: IEntityExtensionDto) {
         if (data) {
@@ -6391,13 +6391,13 @@ export class EntityExtensionDto implements IEntityExtensionDto {
 }
 
 export interface IEntityExtensionDto {
-    properties: { [key: string]: ExtensionPropertyDto; } | undefined;
-    configuration: { [key: string]: any; } | undefined;
+    properties?: { [key: string]: ExtensionPropertyDto; } | undefined;
+    configuration?: { [key: string]: any; } | undefined;
 }
 
 export class ExtensionEnumDto implements IExtensionEnumDto {
-    fields!: ExtensionEnumFieldDto[] | undefined;
-    localizationResource!: string | undefined;
+    fields?: ExtensionEnumFieldDto[] | undefined;
+    localizationResource?: string | undefined;
 
     constructor(data?: IExtensionEnumDto) {
         if (data) {
@@ -6439,13 +6439,13 @@ export class ExtensionEnumDto implements IExtensionEnumDto {
 }
 
 export interface IExtensionEnumDto {
-    fields: ExtensionEnumFieldDto[] | undefined;
-    localizationResource: string | undefined;
+    fields?: ExtensionEnumFieldDto[] | undefined;
+    localizationResource?: string | undefined;
 }
 
 export class ExtensionEnumFieldDto implements IExtensionEnumFieldDto {
-    name!: string | undefined;
-    value!: any | undefined;
+    name?: string | undefined;
+    value?: any | undefined;
 
     constructor(data?: IExtensionEnumFieldDto) {
         if (data) {
@@ -6479,12 +6479,12 @@ export class ExtensionEnumFieldDto implements IExtensionEnumFieldDto {
 }
 
 export interface IExtensionEnumFieldDto {
-    name: string | undefined;
-    value: any | undefined;
+    name?: string | undefined;
+    value?: any | undefined;
 }
 
 export class ExtensionPropertyApiCreateDto implements IExtensionPropertyApiCreateDto {
-    isAvailable!: boolean;
+    isAvailable?: boolean;
 
     constructor(data?: IExtensionPropertyApiCreateDto) {
         if (data) {
@@ -6516,13 +6516,13 @@ export class ExtensionPropertyApiCreateDto implements IExtensionPropertyApiCreat
 }
 
 export interface IExtensionPropertyApiCreateDto {
-    isAvailable: boolean;
+    isAvailable?: boolean;
 }
 
 export class ExtensionPropertyApiDto implements IExtensionPropertyApiDto {
-    onGet!: ExtensionPropertyApiGetDto;
-    onCreate!: ExtensionPropertyApiCreateDto;
-    onUpdate!: ExtensionPropertyApiUpdateDto;
+    onGet?: ExtensionPropertyApiGetDto;
+    onCreate?: ExtensionPropertyApiCreateDto;
+    onUpdate?: ExtensionPropertyApiUpdateDto;
 
     constructor(data?: IExtensionPropertyApiDto) {
         if (data) {
@@ -6558,13 +6558,13 @@ export class ExtensionPropertyApiDto implements IExtensionPropertyApiDto {
 }
 
 export interface IExtensionPropertyApiDto {
-    onGet: ExtensionPropertyApiGetDto;
-    onCreate: ExtensionPropertyApiCreateDto;
-    onUpdate: ExtensionPropertyApiUpdateDto;
+    onGet?: ExtensionPropertyApiGetDto;
+    onCreate?: ExtensionPropertyApiCreateDto;
+    onUpdate?: ExtensionPropertyApiUpdateDto;
 }
 
 export class ExtensionPropertyApiGetDto implements IExtensionPropertyApiGetDto {
-    isAvailable!: boolean;
+    isAvailable?: boolean;
 
     constructor(data?: IExtensionPropertyApiGetDto) {
         if (data) {
@@ -6596,11 +6596,11 @@ export class ExtensionPropertyApiGetDto implements IExtensionPropertyApiGetDto {
 }
 
 export interface IExtensionPropertyApiGetDto {
-    isAvailable: boolean;
+    isAvailable?: boolean;
 }
 
 export class ExtensionPropertyApiUpdateDto implements IExtensionPropertyApiUpdateDto {
-    isAvailable!: boolean;
+    isAvailable?: boolean;
 
     constructor(data?: IExtensionPropertyApiUpdateDto) {
         if (data) {
@@ -6632,12 +6632,12 @@ export class ExtensionPropertyApiUpdateDto implements IExtensionPropertyApiUpdat
 }
 
 export interface IExtensionPropertyApiUpdateDto {
-    isAvailable: boolean;
+    isAvailable?: boolean;
 }
 
 export class ExtensionPropertyAttributeDto implements IExtensionPropertyAttributeDto {
-    typeSimple!: string | undefined;
-    config!: { [key: string]: any; } | undefined;
+    typeSimple?: string | undefined;
+    config?: { [key: string]: any; } | undefined;
 
     constructor(data?: IExtensionPropertyAttributeDto) {
         if (data) {
@@ -6683,19 +6683,19 @@ export class ExtensionPropertyAttributeDto implements IExtensionPropertyAttribut
 }
 
 export interface IExtensionPropertyAttributeDto {
-    typeSimple: string | undefined;
-    config: { [key: string]: any; } | undefined;
+    typeSimple?: string | undefined;
+    config?: { [key: string]: any; } | undefined;
 }
 
 export class ExtensionPropertyDto implements IExtensionPropertyDto {
-    type!: string | undefined;
-    typeSimple!: string | undefined;
-    displayName!: LocalizableStringDto;
-    api!: ExtensionPropertyApiDto;
-    ui!: ExtensionPropertyUiDto;
-    attributes!: ExtensionPropertyAttributeDto[] | undefined;
-    configuration!: { [key: string]: any; } | undefined;
-    defaultValue!: any | undefined;
+    type?: string | undefined;
+    typeSimple?: string | undefined;
+    displayName?: LocalizableStringDto;
+    api?: ExtensionPropertyApiDto;
+    ui?: ExtensionPropertyUiDto;
+    attributes?: ExtensionPropertyAttributeDto[] | undefined;
+    configuration?: { [key: string]: any; } | undefined;
+    defaultValue?: any | undefined;
 
     constructor(data?: IExtensionPropertyDto) {
         if (data) {
@@ -6761,21 +6761,21 @@ export class ExtensionPropertyDto implements IExtensionPropertyDto {
 }
 
 export interface IExtensionPropertyDto {
-    type: string | undefined;
-    typeSimple: string | undefined;
-    displayName: LocalizableStringDto;
-    api: ExtensionPropertyApiDto;
-    ui: ExtensionPropertyUiDto;
-    attributes: ExtensionPropertyAttributeDto[] | undefined;
-    configuration: { [key: string]: any; } | undefined;
-    defaultValue: any | undefined;
+    type?: string | undefined;
+    typeSimple?: string | undefined;
+    displayName?: LocalizableStringDto;
+    api?: ExtensionPropertyApiDto;
+    ui?: ExtensionPropertyUiDto;
+    attributes?: ExtensionPropertyAttributeDto[] | undefined;
+    configuration?: { [key: string]: any; } | undefined;
+    defaultValue?: any | undefined;
 }
 
 export class ExtensionPropertyUiDto implements IExtensionPropertyUiDto {
-    onTable!: ExtensionPropertyUiTableDto;
-    onCreateForm!: ExtensionPropertyUiFormDto;
-    onEditForm!: ExtensionPropertyUiFormDto;
-    lookup!: ExtensionPropertyUiLookupDto;
+    onTable?: ExtensionPropertyUiTableDto;
+    onCreateForm?: ExtensionPropertyUiFormDto;
+    onEditForm?: ExtensionPropertyUiFormDto;
+    lookup?: ExtensionPropertyUiLookupDto;
 
     constructor(data?: IExtensionPropertyUiDto) {
         if (data) {
@@ -6813,14 +6813,14 @@ export class ExtensionPropertyUiDto implements IExtensionPropertyUiDto {
 }
 
 export interface IExtensionPropertyUiDto {
-    onTable: ExtensionPropertyUiTableDto;
-    onCreateForm: ExtensionPropertyUiFormDto;
-    onEditForm: ExtensionPropertyUiFormDto;
-    lookup: ExtensionPropertyUiLookupDto;
+    onTable?: ExtensionPropertyUiTableDto;
+    onCreateForm?: ExtensionPropertyUiFormDto;
+    onEditForm?: ExtensionPropertyUiFormDto;
+    lookup?: ExtensionPropertyUiLookupDto;
 }
 
 export class ExtensionPropertyUiFormDto implements IExtensionPropertyUiFormDto {
-    isVisible!: boolean;
+    isVisible?: boolean;
 
     constructor(data?: IExtensionPropertyUiFormDto) {
         if (data) {
@@ -6852,15 +6852,15 @@ export class ExtensionPropertyUiFormDto implements IExtensionPropertyUiFormDto {
 }
 
 export interface IExtensionPropertyUiFormDto {
-    isVisible: boolean;
+    isVisible?: boolean;
 }
 
 export class ExtensionPropertyUiLookupDto implements IExtensionPropertyUiLookupDto {
-    url!: string | undefined;
-    resultListPropertyName!: string | undefined;
-    displayPropertyName!: string | undefined;
-    valuePropertyName!: string | undefined;
-    filterParamName!: string | undefined;
+    url?: string | undefined;
+    resultListPropertyName?: string | undefined;
+    displayPropertyName?: string | undefined;
+    valuePropertyName?: string | undefined;
+    filterParamName?: string | undefined;
 
     constructor(data?: IExtensionPropertyUiLookupDto) {
         if (data) {
@@ -6900,15 +6900,15 @@ export class ExtensionPropertyUiLookupDto implements IExtensionPropertyUiLookupD
 }
 
 export interface IExtensionPropertyUiLookupDto {
-    url: string | undefined;
-    resultListPropertyName: string | undefined;
-    displayPropertyName: string | undefined;
-    valuePropertyName: string | undefined;
-    filterParamName: string | undefined;
+    url?: string | undefined;
+    resultListPropertyName?: string | undefined;
+    displayPropertyName?: string | undefined;
+    valuePropertyName?: string | undefined;
+    filterParamName?: string | undefined;
 }
 
 export class ExtensionPropertyUiTableDto implements IExtensionPropertyUiTableDto {
-    isVisible!: boolean;
+    isVisible?: boolean;
 
     constructor(data?: IExtensionPropertyUiTableDto) {
         if (data) {
@@ -6940,12 +6940,12 @@ export class ExtensionPropertyUiTableDto implements IExtensionPropertyUiTableDto
 }
 
 export interface IExtensionPropertyUiTableDto {
-    isVisible: boolean;
+    isVisible?: boolean;
 }
 
 export class LocalizableStringDto implements ILocalizableStringDto {
-    name!: string | undefined;
-    resource!: string | undefined;
+    name?: string | undefined;
+    resource?: string | undefined;
 
     constructor(data?: ILocalizableStringDto) {
         if (data) {
@@ -6979,13 +6979,13 @@ export class LocalizableStringDto implements ILocalizableStringDto {
 }
 
 export interface ILocalizableStringDto {
-    name: string | undefined;
-    resource: string | undefined;
+    name?: string | undefined;
+    resource?: string | undefined;
 }
 
 export class ModuleExtensionDto implements IModuleExtensionDto {
-    entities!: { [key: string]: EntityExtensionDto; } | undefined;
-    configuration!: { [key: string]: any; } | undefined;
+    entities?: { [key: string]: EntityExtensionDto; } | undefined;
+    configuration?: { [key: string]: any; } | undefined;
 
     constructor(data?: IModuleExtensionDto) {
         if (data) {
@@ -7043,13 +7043,13 @@ export class ModuleExtensionDto implements IModuleExtensionDto {
 }
 
 export interface IModuleExtensionDto {
-    entities: { [key: string]: EntityExtensionDto; } | undefined;
-    configuration: { [key: string]: any; } | undefined;
+    entities?: { [key: string]: EntityExtensionDto; } | undefined;
+    configuration?: { [key: string]: any; } | undefined;
 }
 
 export class ObjectExtensionsDto implements IObjectExtensionsDto {
-    modules!: { [key: string]: ModuleExtensionDto; } | undefined;
-    enums!: { [key: string]: ExtensionEnumDto; } | undefined;
+    modules?: { [key: string]: ModuleExtensionDto; } | undefined;
+    enums?: { [key: string]: ExtensionEnumDto; } | undefined;
 
     constructor(data?: IObjectExtensionsDto) {
         if (data) {
@@ -7107,13 +7107,13 @@ export class ObjectExtensionsDto implements IObjectExtensionsDto {
 }
 
 export interface IObjectExtensionsDto {
-    modules: { [key: string]: ModuleExtensionDto; } | undefined;
-    enums: { [key: string]: ExtensionEnumDto; } | undefined;
+    modules?: { [key: string]: ModuleExtensionDto; } | undefined;
+    enums?: { [key: string]: ExtensionEnumDto; } | undefined;
 }
 
 export class TimeZone implements ITimeZone {
-    iana!: IanaTimeZone;
-    windows!: WindowsTimeZone;
+    iana?: IanaTimeZone;
+    windows?: WindowsTimeZone;
 
     constructor(data?: ITimeZone) {
         if (data) {
@@ -7147,12 +7147,12 @@ export class TimeZone implements ITimeZone {
 }
 
 export interface ITimeZone {
-    iana: IanaTimeZone;
-    windows: WindowsTimeZone;
+    iana?: IanaTimeZone;
+    windows?: WindowsTimeZone;
 }
 
 export class TimingDto implements ITimingDto {
-    timeZone!: TimeZone;
+    timeZone?: TimeZone;
 
     constructor(data?: ITimingDto) {
         if (data) {
@@ -7184,11 +7184,11 @@ export class TimingDto implements ITimingDto {
 }
 
 export interface ITimingDto {
-    timeZone: TimeZone;
+    timeZone?: TimeZone;
 }
 
 export class WindowsTimeZone implements IWindowsTimeZone {
-    timeZoneId!: string | undefined;
+    timeZoneId?: string | undefined;
 
     constructor(data?: IWindowsTimeZone) {
         if (data) {
@@ -7220,13 +7220,13 @@ export class WindowsTimeZone implements IWindowsTimeZone {
 }
 
 export interface IWindowsTimeZone {
-    timeZoneId: string | undefined;
+    timeZoneId?: string | undefined;
 }
 
 export class CurrentTenantDto implements ICurrentTenantDto {
-    id!: string | undefined;
-    name!: string | undefined;
-    isAvailable!: boolean;
+    id?: string | undefined;
+    name?: string | undefined;
+    isAvailable?: boolean;
 
     constructor(data?: ICurrentTenantDto) {
         if (data) {
@@ -7262,16 +7262,16 @@ export class CurrentTenantDto implements ICurrentTenantDto {
 }
 
 export interface ICurrentTenantDto {
-    id: string | undefined;
-    name: string | undefined;
-    isAvailable: boolean;
+    id?: string | undefined;
+    name?: string | undefined;
+    isAvailable?: boolean;
 }
 
 export class FindTenantResultDto implements IFindTenantResultDto {
-    success!: boolean;
-    tenantId!: string | undefined;
-    name!: string | undefined;
-    isActive!: boolean;
+    success?: boolean;
+    tenantId?: string | undefined;
+    name?: string | undefined;
+    isActive?: boolean;
 
     constructor(data?: IFindTenantResultDto) {
         if (data) {
@@ -7309,14 +7309,14 @@ export class FindTenantResultDto implements IFindTenantResultDto {
 }
 
 export interface IFindTenantResultDto {
-    success: boolean;
-    tenantId: string | undefined;
-    name: string | undefined;
-    isActive: boolean;
+    success?: boolean;
+    tenantId?: string | undefined;
+    name?: string | undefined;
+    isActive?: boolean;
 }
 
 export class MultiTenancyInfoDto implements IMultiTenancyInfoDto {
-    isEnabled!: boolean;
+    isEnabled?: boolean;
 
     constructor(data?: IMultiTenancyInfoDto) {
         if (data) {
@@ -7348,18 +7348,18 @@ export class MultiTenancyInfoDto implements IMultiTenancyInfoDto {
 }
 
 export interface IMultiTenancyInfoDto {
-    isEnabled: boolean;
+    isEnabled?: boolean;
 }
 
 export class FeatureDto implements IFeatureDto {
-    name!: string | undefined;
-    displayName!: string | undefined;
-    value!: string | undefined;
-    provider!: FeatureProviderDto;
-    description!: string | undefined;
-    valueType!: IStringValueType;
-    depth!: number;
-    parentName!: string | undefined;
+    name?: string | undefined;
+    displayName?: string | undefined;
+    value?: string | undefined;
+    provider?: FeatureProviderDto;
+    description?: string | undefined;
+    valueType?: IStringValueType;
+    depth?: number;
+    parentName?: string | undefined;
 
     constructor(data?: IFeatureDto) {
         if (data) {
@@ -7405,20 +7405,20 @@ export class FeatureDto implements IFeatureDto {
 }
 
 export interface IFeatureDto {
-    name: string | undefined;
-    displayName: string | undefined;
-    value: string | undefined;
-    provider: FeatureProviderDto;
-    description: string | undefined;
-    valueType: IStringValueType;
-    depth: number;
-    parentName: string | undefined;
+    name?: string | undefined;
+    displayName?: string | undefined;
+    value?: string | undefined;
+    provider?: FeatureProviderDto;
+    description?: string | undefined;
+    valueType?: IStringValueType;
+    depth?: number;
+    parentName?: string | undefined;
 }
 
 export class FeatureGroupDto implements IFeatureGroupDto {
-    name!: string | undefined;
-    displayName!: string | undefined;
-    features!: FeatureDto[] | undefined;
+    name?: string | undefined;
+    displayName?: string | undefined;
+    features?: FeatureDto[] | undefined;
 
     constructor(data?: IFeatureGroupDto) {
         if (data) {
@@ -7462,14 +7462,14 @@ export class FeatureGroupDto implements IFeatureGroupDto {
 }
 
 export interface IFeatureGroupDto {
-    name: string | undefined;
-    displayName: string | undefined;
-    features: FeatureDto[] | undefined;
+    name?: string | undefined;
+    displayName?: string | undefined;
+    features?: FeatureDto[] | undefined;
 }
 
 export class FeatureProviderDto implements IFeatureProviderDto {
-    name!: string | undefined;
-    key!: string | undefined;
+    name?: string | undefined;
+    key?: string | undefined;
 
     constructor(data?: IFeatureProviderDto) {
         if (data) {
@@ -7503,12 +7503,12 @@ export class FeatureProviderDto implements IFeatureProviderDto {
 }
 
 export interface IFeatureProviderDto {
-    name: string | undefined;
-    key: string | undefined;
+    name?: string | undefined;
+    key?: string | undefined;
 }
 
 export class GetFeatureListResultDto implements IGetFeatureListResultDto {
-    groups!: FeatureGroupDto[] | undefined;
+    groups?: FeatureGroupDto[] | undefined;
 
     constructor(data?: IGetFeatureListResultDto) {
         if (data) {
@@ -7548,12 +7548,12 @@ export class GetFeatureListResultDto implements IGetFeatureListResultDto {
 }
 
 export interface IGetFeatureListResultDto {
-    groups: FeatureGroupDto[] | undefined;
+    groups?: FeatureGroupDto[] | undefined;
 }
 
 export class UpdateFeatureDto implements IUpdateFeatureDto {
-    name!: string | undefined;
-    value!: string | undefined;
+    name?: string | undefined;
+    value?: string | undefined;
 
     constructor(data?: IUpdateFeatureDto) {
         if (data) {
@@ -7587,12 +7587,12 @@ export class UpdateFeatureDto implements IUpdateFeatureDto {
 }
 
 export interface IUpdateFeatureDto {
-    name: string | undefined;
-    value: string | undefined;
+    name?: string | undefined;
+    value?: string | undefined;
 }
 
 export class UpdateFeaturesDto implements IUpdateFeaturesDto {
-    features!: UpdateFeatureDto[] | undefined;
+    features?: UpdateFeatureDto[] | undefined;
 
     constructor(data?: IUpdateFeaturesDto) {
         if (data) {
@@ -7632,20 +7632,20 @@ export class UpdateFeaturesDto implements IUpdateFeaturesDto {
 }
 
 export interface IUpdateFeaturesDto {
-    features: UpdateFeatureDto[] | undefined;
+    features?: UpdateFeatureDto[] | undefined;
 }
 
 export class ActionApiDescriptionModel implements IActionApiDescriptionModel {
-    uniqueName!: string | undefined;
-    name!: string | undefined;
-    httpMethod!: string | undefined;
-    url!: string | undefined;
-    supportedVersions!: string[] | undefined;
-    parametersOnMethod!: MethodParameterApiDescriptionModel[] | undefined;
-    parameters!: ParameterApiDescriptionModel[] | undefined;
-    returnValue!: ReturnValueApiDescriptionModel;
-    allowAnonymous!: boolean | undefined;
-    implementFrom!: string | undefined;
+    uniqueName?: string | undefined;
+    name?: string | undefined;
+    httpMethod?: string | undefined;
+    url?: string | undefined;
+    supportedVersions?: string[] | undefined;
+    parametersOnMethod?: MethodParameterApiDescriptionModel[] | undefined;
+    parameters?: ParameterApiDescriptionModel[] | undefined;
+    returnValue?: ReturnValueApiDescriptionModel;
+    allowAnonymous?: boolean | undefined;
+    implementFrom?: string | undefined;
 
     constructor(data?: IActionApiDescriptionModel) {
         if (data) {
@@ -7719,21 +7719,21 @@ export class ActionApiDescriptionModel implements IActionApiDescriptionModel {
 }
 
 export interface IActionApiDescriptionModel {
-    uniqueName: string | undefined;
-    name: string | undefined;
-    httpMethod: string | undefined;
-    url: string | undefined;
-    supportedVersions: string[] | undefined;
-    parametersOnMethod: MethodParameterApiDescriptionModel[] | undefined;
-    parameters: ParameterApiDescriptionModel[] | undefined;
-    returnValue: ReturnValueApiDescriptionModel;
-    allowAnonymous: boolean | undefined;
-    implementFrom: string | undefined;
+    uniqueName?: string | undefined;
+    name?: string | undefined;
+    httpMethod?: string | undefined;
+    url?: string | undefined;
+    supportedVersions?: string[] | undefined;
+    parametersOnMethod?: MethodParameterApiDescriptionModel[] | undefined;
+    parameters?: ParameterApiDescriptionModel[] | undefined;
+    returnValue?: ReturnValueApiDescriptionModel;
+    allowAnonymous?: boolean | undefined;
+    implementFrom?: string | undefined;
 }
 
 export class ApplicationApiDescriptionModel implements IApplicationApiDescriptionModel {
-    modules!: { [key: string]: ModuleApiDescriptionModel; } | undefined;
-    types!: { [key: string]: TypeApiDescriptionModel; } | undefined;
+    modules?: { [key: string]: ModuleApiDescriptionModel; } | undefined;
+    types?: { [key: string]: TypeApiDescriptionModel; } | undefined;
 
     constructor(data?: IApplicationApiDescriptionModel) {
         if (data) {
@@ -7791,19 +7791,19 @@ export class ApplicationApiDescriptionModel implements IApplicationApiDescriptio
 }
 
 export interface IApplicationApiDescriptionModel {
-    modules: { [key: string]: ModuleApiDescriptionModel; } | undefined;
-    types: { [key: string]: TypeApiDescriptionModel; } | undefined;
+    modules?: { [key: string]: ModuleApiDescriptionModel; } | undefined;
+    types?: { [key: string]: TypeApiDescriptionModel; } | undefined;
 }
 
 export class ControllerApiDescriptionModel implements IControllerApiDescriptionModel {
-    controllerName!: string | undefined;
-    controllerGroupName!: string | undefined;
-    isRemoteService!: boolean;
-    isIntegrationService!: boolean;
-    apiVersion!: string | undefined;
-    type!: string | undefined;
-    interfaces!: ControllerInterfaceApiDescriptionModel[] | undefined;
-    actions!: { [key: string]: ActionApiDescriptionModel; } | undefined;
+    controllerName?: string | undefined;
+    controllerGroupName?: string | undefined;
+    isRemoteService?: boolean;
+    isIntegrationService?: boolean;
+    apiVersion?: string | undefined;
+    type?: string | undefined;
+    interfaces?: ControllerInterfaceApiDescriptionModel[] | undefined;
+    actions?: { [key: string]: ActionApiDescriptionModel; } | undefined;
 
     constructor(data?: IControllerApiDescriptionModel) {
         if (data) {
@@ -7869,20 +7869,20 @@ export class ControllerApiDescriptionModel implements IControllerApiDescriptionM
 }
 
 export interface IControllerApiDescriptionModel {
-    controllerName: string | undefined;
-    controllerGroupName: string | undefined;
-    isRemoteService: boolean;
-    isIntegrationService: boolean;
-    apiVersion: string | undefined;
-    type: string | undefined;
-    interfaces: ControllerInterfaceApiDescriptionModel[] | undefined;
-    actions: { [key: string]: ActionApiDescriptionModel; } | undefined;
+    controllerName?: string | undefined;
+    controllerGroupName?: string | undefined;
+    isRemoteService?: boolean;
+    isIntegrationService?: boolean;
+    apiVersion?: string | undefined;
+    type?: string | undefined;
+    interfaces?: ControllerInterfaceApiDescriptionModel[] | undefined;
+    actions?: { [key: string]: ActionApiDescriptionModel; } | undefined;
 }
 
 export class ControllerInterfaceApiDescriptionModel implements IControllerInterfaceApiDescriptionModel {
-    type!: string | undefined;
-    name!: string | undefined;
-    methods!: InterfaceMethodApiDescriptionModel[] | undefined;
+    type?: string | undefined;
+    name?: string | undefined;
+    methods?: InterfaceMethodApiDescriptionModel[] | undefined;
 
     constructor(data?: IControllerInterfaceApiDescriptionModel) {
         if (data) {
@@ -7926,15 +7926,15 @@ export class ControllerInterfaceApiDescriptionModel implements IControllerInterf
 }
 
 export interface IControllerInterfaceApiDescriptionModel {
-    type: string | undefined;
-    name: string | undefined;
-    methods: InterfaceMethodApiDescriptionModel[] | undefined;
+    type?: string | undefined;
+    name?: string | undefined;
+    methods?: InterfaceMethodApiDescriptionModel[] | undefined;
 }
 
 export class InterfaceMethodApiDescriptionModel implements IInterfaceMethodApiDescriptionModel {
-    name!: string | undefined;
-    parametersOnMethod!: MethodParameterApiDescriptionModel[] | undefined;
-    returnValue!: ReturnValueApiDescriptionModel;
+    name?: string | undefined;
+    parametersOnMethod?: MethodParameterApiDescriptionModel[] | undefined;
+    returnValue?: ReturnValueApiDescriptionModel;
 
     constructor(data?: IInterfaceMethodApiDescriptionModel) {
         if (data) {
@@ -7978,18 +7978,18 @@ export class InterfaceMethodApiDescriptionModel implements IInterfaceMethodApiDe
 }
 
 export interface IInterfaceMethodApiDescriptionModel {
-    name: string | undefined;
-    parametersOnMethod: MethodParameterApiDescriptionModel[] | undefined;
-    returnValue: ReturnValueApiDescriptionModel;
+    name?: string | undefined;
+    parametersOnMethod?: MethodParameterApiDescriptionModel[] | undefined;
+    returnValue?: ReturnValueApiDescriptionModel;
 }
 
 export class MethodParameterApiDescriptionModel implements IMethodParameterApiDescriptionModel {
-    name!: string | undefined;
-    typeAsString!: string | undefined;
-    type!: string | undefined;
-    typeSimple!: string | undefined;
-    isOptional!: boolean;
-    defaultValue!: any | undefined;
+    name?: string | undefined;
+    typeAsString?: string | undefined;
+    type?: string | undefined;
+    typeSimple?: string | undefined;
+    isOptional?: boolean;
+    defaultValue?: any | undefined;
 
     constructor(data?: IMethodParameterApiDescriptionModel) {
         if (data) {
@@ -8031,18 +8031,18 @@ export class MethodParameterApiDescriptionModel implements IMethodParameterApiDe
 }
 
 export interface IMethodParameterApiDescriptionModel {
-    name: string | undefined;
-    typeAsString: string | undefined;
-    type: string | undefined;
-    typeSimple: string | undefined;
-    isOptional: boolean;
-    defaultValue: any | undefined;
+    name?: string | undefined;
+    typeAsString?: string | undefined;
+    type?: string | undefined;
+    typeSimple?: string | undefined;
+    isOptional?: boolean;
+    defaultValue?: any | undefined;
 }
 
 export class ModuleApiDescriptionModel implements IModuleApiDescriptionModel {
-    rootPath!: string | undefined;
-    remoteServiceName!: string | undefined;
-    controllers!: { [key: string]: ControllerApiDescriptionModel; } | undefined;
+    rootPath?: string | undefined;
+    remoteServiceName?: string | undefined;
+    controllers?: { [key: string]: ControllerApiDescriptionModel; } | undefined;
 
     constructor(data?: IModuleApiDescriptionModel) {
         if (data) {
@@ -8090,22 +8090,22 @@ export class ModuleApiDescriptionModel implements IModuleApiDescriptionModel {
 }
 
 export interface IModuleApiDescriptionModel {
-    rootPath: string | undefined;
-    remoteServiceName: string | undefined;
-    controllers: { [key: string]: ControllerApiDescriptionModel; } | undefined;
+    rootPath?: string | undefined;
+    remoteServiceName?: string | undefined;
+    controllers?: { [key: string]: ControllerApiDescriptionModel; } | undefined;
 }
 
 export class ParameterApiDescriptionModel implements IParameterApiDescriptionModel {
-    nameOnMethod!: string | undefined;
-    name!: string | undefined;
-    jsonName!: string | undefined;
-    type!: string | undefined;
-    typeSimple!: string | undefined;
-    isOptional!: boolean;
-    defaultValue!: any | undefined;
-    constraintTypes!: string[] | undefined;
-    bindingSourceId!: string | undefined;
-    descriptorName!: string | undefined;
+    nameOnMethod?: string | undefined;
+    name?: string | undefined;
+    jsonName?: string | undefined;
+    type?: string | undefined;
+    typeSimple?: string | undefined;
+    isOptional?: boolean;
+    defaultValue?: any | undefined;
+    constraintTypes?: string[] | undefined;
+    bindingSourceId?: string | undefined;
+    descriptorName?: string | undefined;
 
     constructor(data?: IParameterApiDescriptionModel) {
         if (data) {
@@ -8163,29 +8163,29 @@ export class ParameterApiDescriptionModel implements IParameterApiDescriptionMod
 }
 
 export interface IParameterApiDescriptionModel {
-    nameOnMethod: string | undefined;
-    name: string | undefined;
-    jsonName: string | undefined;
-    type: string | undefined;
-    typeSimple: string | undefined;
-    isOptional: boolean;
-    defaultValue: any | undefined;
-    constraintTypes: string[] | undefined;
-    bindingSourceId: string | undefined;
-    descriptorName: string | undefined;
+    nameOnMethod?: string | undefined;
+    name?: string | undefined;
+    jsonName?: string | undefined;
+    type?: string | undefined;
+    typeSimple?: string | undefined;
+    isOptional?: boolean;
+    defaultValue?: any | undefined;
+    constraintTypes?: string[] | undefined;
+    bindingSourceId?: string | undefined;
+    descriptorName?: string | undefined;
 }
 
 export class PropertyApiDescriptionModel implements IPropertyApiDescriptionModel {
-    name!: string | undefined;
-    jsonName!: string | undefined;
-    type!: string | undefined;
-    typeSimple!: string | undefined;
-    isRequired!: boolean;
-    minLength!: number | undefined;
-    maxLength!: number | undefined;
-    minimum!: string | undefined;
-    maximum!: string | undefined;
-    regex!: string | undefined;
+    name?: string | undefined;
+    jsonName?: string | undefined;
+    type?: string | undefined;
+    typeSimple?: string | undefined;
+    isRequired?: boolean;
+    minLength?: number | undefined;
+    maxLength?: number | undefined;
+    minimum?: string | undefined;
+    maximum?: string | undefined;
+    regex?: string | undefined;
 
     constructor(data?: IPropertyApiDescriptionModel) {
         if (data) {
@@ -8235,21 +8235,21 @@ export class PropertyApiDescriptionModel implements IPropertyApiDescriptionModel
 }
 
 export interface IPropertyApiDescriptionModel {
-    name: string | undefined;
-    jsonName: string | undefined;
-    type: string | undefined;
-    typeSimple: string | undefined;
-    isRequired: boolean;
-    minLength: number | undefined;
-    maxLength: number | undefined;
-    minimum: string | undefined;
-    maximum: string | undefined;
-    regex: string | undefined;
+    name?: string | undefined;
+    jsonName?: string | undefined;
+    type?: string | undefined;
+    typeSimple?: string | undefined;
+    isRequired?: boolean;
+    minLength?: number | undefined;
+    maxLength?: number | undefined;
+    minimum?: string | undefined;
+    maximum?: string | undefined;
+    regex?: string | undefined;
 }
 
 export class ReturnValueApiDescriptionModel implements IReturnValueApiDescriptionModel {
-    type!: string | undefined;
-    typeSimple!: string | undefined;
+    type?: string | undefined;
+    typeSimple?: string | undefined;
 
     constructor(data?: IReturnValueApiDescriptionModel) {
         if (data) {
@@ -8283,17 +8283,17 @@ export class ReturnValueApiDescriptionModel implements IReturnValueApiDescriptio
 }
 
 export interface IReturnValueApiDescriptionModel {
-    type: string | undefined;
-    typeSimple: string | undefined;
+    type?: string | undefined;
+    typeSimple?: string | undefined;
 }
 
 export class TypeApiDescriptionModel implements ITypeApiDescriptionModel {
-    baseType!: string | undefined;
-    isEnum!: boolean;
-    enumNames!: string[] | undefined;
-    enumValues!: any[] | undefined;
-    genericArguments!: string[] | undefined;
-    properties!: PropertyApiDescriptionModel[] | undefined;
+    baseType?: string | undefined;
+    isEnum?: boolean;
+    enumNames?: string[] | undefined;
+    enumValues?: any[] | undefined;
+    genericArguments?: string[] | undefined;
+    properties?: PropertyApiDescriptionModel[] | undefined;
 
     constructor(data?: ITypeApiDescriptionModel) {
         if (data) {
@@ -8367,20 +8367,20 @@ export class TypeApiDescriptionModel implements ITypeApiDescriptionModel {
 }
 
 export interface ITypeApiDescriptionModel {
-    baseType: string | undefined;
-    isEnum: boolean;
-    enumNames: string[] | undefined;
-    enumValues: any[] | undefined;
-    genericArguments: string[] | undefined;
-    properties: PropertyApiDescriptionModel[] | undefined;
+    baseType?: string | undefined;
+    isEnum?: boolean;
+    enumNames?: string[] | undefined;
+    enumValues?: any[] | undefined;
+    genericArguments?: string[] | undefined;
+    properties?: PropertyApiDescriptionModel[] | undefined;
 }
 
 export class RemoteServiceErrorInfo implements IRemoteServiceErrorInfo {
-    code!: string | undefined;
-    message!: string | undefined;
-    details!: string | undefined;
-    data!: { [key: string]: any; } | undefined;
-    validationErrors!: RemoteServiceValidationErrorInfo[] | undefined;
+    code?: string | undefined;
+    message?: string | undefined;
+    details?: string | undefined;
+    data?: { [key: string]: any; } | undefined;
+    validationErrors?: RemoteServiceValidationErrorInfo[] | undefined;
 
     constructor(data?: IRemoteServiceErrorInfo) {
         if (data) {
@@ -8440,15 +8440,15 @@ export class RemoteServiceErrorInfo implements IRemoteServiceErrorInfo {
 }
 
 export interface IRemoteServiceErrorInfo {
-    code: string | undefined;
-    message: string | undefined;
-    details: string | undefined;
-    data: { [key: string]: any; } | undefined;
-    validationErrors: RemoteServiceValidationErrorInfo[] | undefined;
+    code?: string | undefined;
+    message?: string | undefined;
+    details?: string | undefined;
+    data?: { [key: string]: any; } | undefined;
+    validationErrors?: RemoteServiceValidationErrorInfo[] | undefined;
 }
 
 export class RemoteServiceErrorResponse implements IRemoteServiceErrorResponse {
-    error!: RemoteServiceErrorInfo;
+    error?: RemoteServiceErrorInfo;
 
     constructor(data?: IRemoteServiceErrorResponse) {
         if (data) {
@@ -8480,12 +8480,12 @@ export class RemoteServiceErrorResponse implements IRemoteServiceErrorResponse {
 }
 
 export interface IRemoteServiceErrorResponse {
-    error: RemoteServiceErrorInfo;
+    error?: RemoteServiceErrorInfo;
 }
 
 export class RemoteServiceValidationErrorInfo implements IRemoteServiceValidationErrorInfo {
-    message!: string | undefined;
-    members!: string[] | undefined;
+    message?: string | undefined;
+    members?: string[] | undefined;
 
     constructor(data?: IRemoteServiceValidationErrorInfo) {
         if (data) {
@@ -8527,15 +8527,15 @@ export class RemoteServiceValidationErrorInfo implements IRemoteServiceValidatio
 }
 
 export interface IRemoteServiceValidationErrorInfo {
-    message: string | undefined;
-    members: string[] | undefined;
+    message?: string | undefined;
+    members?: string[] | undefined;
 }
 
 export class IdentityRoleCreateDto implements IIdentityRoleCreateDto {
-    readonly extraProperties!: { [key: string]: any; } | undefined;
+    readonly extraProperties?: { [key: string]: any; } | undefined;
     name!: string;
-    isDefault!: boolean;
-    isPublic!: boolean;
+    isDefault?: boolean;
+    isPublic?: boolean;
 
     constructor(data?: IIdentityRoleCreateDto) {
         if (data) {
@@ -8585,20 +8585,20 @@ export class IdentityRoleCreateDto implements IIdentityRoleCreateDto {
 }
 
 export interface IIdentityRoleCreateDto {
-    extraProperties: { [key: string]: any; } | undefined;
+    extraProperties?: { [key: string]: any; } | undefined;
     name: string;
-    isDefault: boolean;
-    isPublic: boolean;
+    isDefault?: boolean;
+    isPublic?: boolean;
 }
 
 export class IdentityRoleDto implements IIdentityRoleDto {
-    readonly extraProperties!: { [key: string]: any; } | undefined;
-    id!: string;
-    name!: string | undefined;
-    isDefault!: boolean;
-    isStatic!: boolean;
-    isPublic!: boolean;
-    concurrencyStamp!: string | undefined;
+    readonly extraProperties?: { [key: string]: any; } | undefined;
+    id?: string;
+    name?: string | undefined;
+    isDefault?: boolean;
+    isStatic?: boolean;
+    isPublic?: boolean;
+    concurrencyStamp?: string | undefined;
 
     constructor(data?: IIdentityRoleDto) {
         if (data) {
@@ -8654,21 +8654,21 @@ export class IdentityRoleDto implements IIdentityRoleDto {
 }
 
 export interface IIdentityRoleDto {
-    extraProperties: { [key: string]: any; } | undefined;
-    id: string;
-    name: string | undefined;
-    isDefault: boolean;
-    isStatic: boolean;
-    isPublic: boolean;
-    concurrencyStamp: string | undefined;
+    extraProperties?: { [key: string]: any; } | undefined;
+    id?: string;
+    name?: string | undefined;
+    isDefault?: boolean;
+    isStatic?: boolean;
+    isPublic?: boolean;
+    concurrencyStamp?: string | undefined;
 }
 
 export class IdentityRoleUpdateDto implements IIdentityRoleUpdateDto {
-    readonly extraProperties!: { [key: string]: any; } | undefined;
+    readonly extraProperties?: { [key: string]: any; } | undefined;
     name!: string;
-    isDefault!: boolean;
-    isPublic!: boolean;
-    concurrencyStamp!: string | undefined;
+    isDefault?: boolean;
+    isPublic?: boolean;
+    concurrencyStamp?: string | undefined;
 
     constructor(data?: IIdentityRoleUpdateDto) {
         if (data) {
@@ -8720,23 +8720,23 @@ export class IdentityRoleUpdateDto implements IIdentityRoleUpdateDto {
 }
 
 export interface IIdentityRoleUpdateDto {
-    extraProperties: { [key: string]: any; } | undefined;
+    extraProperties?: { [key: string]: any; } | undefined;
     name: string;
-    isDefault: boolean;
-    isPublic: boolean;
-    concurrencyStamp: string | undefined;
+    isDefault?: boolean;
+    isPublic?: boolean;
+    concurrencyStamp?: string | undefined;
 }
 
 export class IdentityUserCreateDto implements IIdentityUserCreateDto {
-    readonly extraProperties!: { [key: string]: any; } | undefined;
+    readonly extraProperties?: { [key: string]: any; } | undefined;
     userName!: string;
-    name!: string | undefined;
-    surname!: string | undefined;
+    name?: string | undefined;
+    surname?: string | undefined;
     email!: string;
-    phoneNumber!: string | undefined;
-    isActive!: boolean;
-    lockoutEnabled!: boolean;
-    roleNames!: string[] | undefined;
+    phoneNumber?: string | undefined;
+    isActive?: boolean;
+    lockoutEnabled?: boolean;
+    roleNames?: string[] | undefined;
     password!: string;
 
     constructor(data?: IIdentityUserCreateDto) {
@@ -8807,41 +8807,41 @@ export class IdentityUserCreateDto implements IIdentityUserCreateDto {
 }
 
 export interface IIdentityUserCreateDto {
-    extraProperties: { [key: string]: any; } | undefined;
+    extraProperties?: { [key: string]: any; } | undefined;
     userName: string;
-    name: string | undefined;
-    surname: string | undefined;
+    name?: string | undefined;
+    surname?: string | undefined;
     email: string;
-    phoneNumber: string | undefined;
-    isActive: boolean;
-    lockoutEnabled: boolean;
-    roleNames: string[] | undefined;
+    phoneNumber?: string | undefined;
+    isActive?: boolean;
+    lockoutEnabled?: boolean;
+    roleNames?: string[] | undefined;
     password: string;
 }
 
 export class IdentityUserDto implements IIdentityUserDto {
-    readonly extraProperties!: { [key: string]: any; } | undefined;
-    id!: string;
-    creationTime!: Date;
-    creatorId!: string | undefined;
-    lastModificationTime!: Date | undefined;
-    lastModifierId!: string | undefined;
-    isDeleted!: boolean;
-    deleterId!: string | undefined;
-    deletionTime!: Date | undefined;
-    tenantId!: string | undefined;
-    userName!: string | undefined;
-    name!: string | undefined;
-    surname!: string | undefined;
-    email!: string | undefined;
-    emailConfirmed!: boolean;
-    phoneNumber!: string | undefined;
-    phoneNumberConfirmed!: boolean;
-    isActive!: boolean;
-    lockoutEnabled!: boolean;
-    lockoutEnd!: Date | undefined;
-    concurrencyStamp!: string | undefined;
-    entityVersion!: number;
+    readonly extraProperties?: { [key: string]: any; } | undefined;
+    id?: string;
+    creationTime?: Date;
+    creatorId?: string | undefined;
+    lastModificationTime?: Date | undefined;
+    lastModifierId?: string | undefined;
+    isDeleted?: boolean;
+    deleterId?: string | undefined;
+    deletionTime?: Date | undefined;
+    tenantId?: string | undefined;
+    userName?: string | undefined;
+    name?: string | undefined;
+    surname?: string | undefined;
+    email?: string | undefined;
+    emailConfirmed?: boolean;
+    phoneNumber?: string | undefined;
+    phoneNumberConfirmed?: boolean;
+    isActive?: boolean;
+    lockoutEnabled?: boolean;
+    lockoutEnd?: Date | undefined;
+    concurrencyStamp?: string | undefined;
+    entityVersion?: number;
 
     constructor(data?: IIdentityUserDto) {
         if (data) {
@@ -8927,42 +8927,42 @@ export class IdentityUserDto implements IIdentityUserDto {
 }
 
 export interface IIdentityUserDto {
-    extraProperties: { [key: string]: any; } | undefined;
-    id: string;
-    creationTime: Date;
-    creatorId: string | undefined;
-    lastModificationTime: Date | undefined;
-    lastModifierId: string | undefined;
-    isDeleted: boolean;
-    deleterId: string | undefined;
-    deletionTime: Date | undefined;
-    tenantId: string | undefined;
-    userName: string | undefined;
-    name: string | undefined;
-    surname: string | undefined;
-    email: string | undefined;
-    emailConfirmed: boolean;
-    phoneNumber: string | undefined;
-    phoneNumberConfirmed: boolean;
-    isActive: boolean;
-    lockoutEnabled: boolean;
-    lockoutEnd: Date | undefined;
-    concurrencyStamp: string | undefined;
-    entityVersion: number;
+    extraProperties?: { [key: string]: any; } | undefined;
+    id?: string;
+    creationTime?: Date;
+    creatorId?: string | undefined;
+    lastModificationTime?: Date | undefined;
+    lastModifierId?: string | undefined;
+    isDeleted?: boolean;
+    deleterId?: string | undefined;
+    deletionTime?: Date | undefined;
+    tenantId?: string | undefined;
+    userName?: string | undefined;
+    name?: string | undefined;
+    surname?: string | undefined;
+    email?: string | undefined;
+    emailConfirmed?: boolean;
+    phoneNumber?: string | undefined;
+    phoneNumberConfirmed?: boolean;
+    isActive?: boolean;
+    lockoutEnabled?: boolean;
+    lockoutEnd?: Date | undefined;
+    concurrencyStamp?: string | undefined;
+    entityVersion?: number;
 }
 
 export class IdentityUserUpdateDto implements IIdentityUserUpdateDto {
-    readonly extraProperties!: { [key: string]: any; } | undefined;
+    readonly extraProperties?: { [key: string]: any; } | undefined;
     userName!: string;
-    name!: string | undefined;
-    surname!: string | undefined;
+    name?: string | undefined;
+    surname?: string | undefined;
     email!: string;
-    phoneNumber!: string | undefined;
-    isActive!: boolean;
-    lockoutEnabled!: boolean;
-    roleNames!: string[] | undefined;
-    password!: string | undefined;
-    concurrencyStamp!: string | undefined;
+    phoneNumber?: string | undefined;
+    isActive?: boolean;
+    lockoutEnabled?: boolean;
+    roleNames?: string[] | undefined;
+    password?: string | undefined;
+    concurrencyStamp?: string | undefined;
 
     constructor(data?: IIdentityUserUpdateDto) {
         if (data) {
@@ -9034,17 +9034,17 @@ export class IdentityUserUpdateDto implements IIdentityUserUpdateDto {
 }
 
 export interface IIdentityUserUpdateDto {
-    extraProperties: { [key: string]: any; } | undefined;
+    extraProperties?: { [key: string]: any; } | undefined;
     userName: string;
-    name: string | undefined;
-    surname: string | undefined;
+    name?: string | undefined;
+    surname?: string | undefined;
     email: string;
-    phoneNumber: string | undefined;
-    isActive: boolean;
-    lockoutEnabled: boolean;
-    roleNames: string[] | undefined;
-    password: string | undefined;
-    concurrencyStamp: string | undefined;
+    phoneNumber?: string | undefined;
+    isActive?: boolean;
+    lockoutEnabled?: boolean;
+    roleNames?: string[] | undefined;
+    password?: string | undefined;
+    concurrencyStamp?: string | undefined;
 }
 
 export class IdentityUserUpdateRolesDto implements IIdentityUserUpdateRolesDto {
@@ -9095,11 +9095,11 @@ export interface IIdentityUserUpdateRolesDto {
 }
 
 export class LanguageInfo implements ILanguageInfo {
-    cultureName!: string | undefined;
-    uiCultureName!: string | undefined;
-    displayName!: string | undefined;
-    readonly twoLetterISOLanguageName!: string | undefined;
-    flagIcon!: string | undefined;
+    cultureName?: string | undefined;
+    uiCultureName?: string | undefined;
+    displayName?: string | undefined;
+    readonly twoLetterISOLanguageName?: string | undefined;
+    flagIcon?: string | undefined;
 
     constructor(data?: ILanguageInfo) {
         if (data) {
@@ -9139,16 +9139,16 @@ export class LanguageInfo implements ILanguageInfo {
 }
 
 export interface ILanguageInfo {
-    cultureName: string | undefined;
-    uiCultureName: string | undefined;
-    displayName: string | undefined;
-    twoLetterISOLanguageName: string | undefined;
-    flagIcon: string | undefined;
+    cultureName?: string | undefined;
+    uiCultureName?: string | undefined;
+    displayName?: string | undefined;
+    twoLetterISOLanguageName?: string | undefined;
+    flagIcon?: string | undefined;
 }
 
 export class NameValue implements INameValue {
-    name!: string | undefined;
-    value!: string | undefined;
+    name?: string | undefined;
+    value?: string | undefined;
 
     constructor(data?: INameValue) {
         if (data) {
@@ -9182,13 +9182,13 @@ export class NameValue implements INameValue {
 }
 
 export interface INameValue {
-    name: string | undefined;
-    value: string | undefined;
+    name?: string | undefined;
+    value?: string | undefined;
 }
 
 export class GetPermissionListResultDto implements IGetPermissionListResultDto {
-    entityDisplayName!: string | undefined;
-    groups!: PermissionGroupDto[] | undefined;
+    entityDisplayName?: string | undefined;
+    groups?: PermissionGroupDto[] | undefined;
 
     constructor(data?: IGetPermissionListResultDto) {
         if (data) {
@@ -9230,17 +9230,17 @@ export class GetPermissionListResultDto implements IGetPermissionListResultDto {
 }
 
 export interface IGetPermissionListResultDto {
-    entityDisplayName: string | undefined;
-    groups: PermissionGroupDto[] | undefined;
+    entityDisplayName?: string | undefined;
+    groups?: PermissionGroupDto[] | undefined;
 }
 
 export class PermissionGrantInfoDto implements IPermissionGrantInfoDto {
-    name!: string | undefined;
-    displayName!: string | undefined;
-    parentName!: string | undefined;
-    isGranted!: boolean;
-    allowedProviders!: string[] | undefined;
-    grantedProviders!: ProviderInfoDto[] | undefined;
+    name?: string | undefined;
+    displayName?: string | undefined;
+    parentName?: string | undefined;
+    isGranted?: boolean;
+    allowedProviders?: string[] | undefined;
+    grantedProviders?: ProviderInfoDto[] | undefined;
 
     constructor(data?: IPermissionGrantInfoDto) {
         if (data) {
@@ -9298,20 +9298,20 @@ export class PermissionGrantInfoDto implements IPermissionGrantInfoDto {
 }
 
 export interface IPermissionGrantInfoDto {
-    name: string | undefined;
-    displayName: string | undefined;
-    parentName: string | undefined;
-    isGranted: boolean;
-    allowedProviders: string[] | undefined;
-    grantedProviders: ProviderInfoDto[] | undefined;
+    name?: string | undefined;
+    displayName?: string | undefined;
+    parentName?: string | undefined;
+    isGranted?: boolean;
+    allowedProviders?: string[] | undefined;
+    grantedProviders?: ProviderInfoDto[] | undefined;
 }
 
 export class PermissionGroupDto implements IPermissionGroupDto {
-    name!: string | undefined;
-    displayName!: string | undefined;
-    displayNameKey!: string | undefined;
-    displayNameResource!: string | undefined;
-    permissions!: PermissionGrantInfoDto[] | undefined;
+    name?: string | undefined;
+    displayName?: string | undefined;
+    displayNameKey?: string | undefined;
+    displayNameResource?: string | undefined;
+    permissions?: PermissionGrantInfoDto[] | undefined;
 
     constructor(data?: IPermissionGroupDto) {
         if (data) {
@@ -9359,16 +9359,16 @@ export class PermissionGroupDto implements IPermissionGroupDto {
 }
 
 export interface IPermissionGroupDto {
-    name: string | undefined;
-    displayName: string | undefined;
-    displayNameKey: string | undefined;
-    displayNameResource: string | undefined;
-    permissions: PermissionGrantInfoDto[] | undefined;
+    name?: string | undefined;
+    displayName?: string | undefined;
+    displayNameKey?: string | undefined;
+    displayNameResource?: string | undefined;
+    permissions?: PermissionGrantInfoDto[] | undefined;
 }
 
 export class ProviderInfoDto implements IProviderInfoDto {
-    providerName!: string | undefined;
-    providerKey!: string | undefined;
+    providerName?: string | undefined;
+    providerKey?: string | undefined;
 
     constructor(data?: IProviderInfoDto) {
         if (data) {
@@ -9402,13 +9402,13 @@ export class ProviderInfoDto implements IProviderInfoDto {
 }
 
 export interface IProviderInfoDto {
-    providerName: string | undefined;
-    providerKey: string | undefined;
+    providerName?: string | undefined;
+    providerKey?: string | undefined;
 }
 
 export class UpdatePermissionDto implements IUpdatePermissionDto {
-    name!: string | undefined;
-    isGranted!: boolean;
+    name?: string | undefined;
+    isGranted?: boolean;
 
     constructor(data?: IUpdatePermissionDto) {
         if (data) {
@@ -9442,12 +9442,12 @@ export class UpdatePermissionDto implements IUpdatePermissionDto {
 }
 
 export interface IUpdatePermissionDto {
-    name: string | undefined;
-    isGranted: boolean;
+    name?: string | undefined;
+    isGranted?: boolean;
 }
 
 export class UpdatePermissionsDto implements IUpdatePermissionsDto {
-    permissions!: UpdatePermissionDto[] | undefined;
+    permissions?: UpdatePermissionDto[] | undefined;
 
     constructor(data?: IUpdatePermissionsDto) {
         if (data) {
@@ -9487,19 +9487,19 @@ export class UpdatePermissionsDto implements IUpdatePermissionsDto {
 }
 
 export interface IUpdatePermissionsDto {
-    permissions: UpdatePermissionDto[] | undefined;
+    permissions?: UpdatePermissionDto[] | undefined;
 }
 
 export class EmailSettingsDto implements IEmailSettingsDto {
-    smtpHost!: string | undefined;
-    smtpPort!: number;
-    smtpUserName!: string | undefined;
-    smtpPassword!: string | undefined;
-    smtpDomain!: string | undefined;
-    smtpEnableSsl!: boolean;
-    smtpUseDefaultCredentials!: boolean;
-    defaultFromAddress!: string | undefined;
-    defaultFromDisplayName!: string | undefined;
+    smtpHost?: string | undefined;
+    smtpPort?: number;
+    smtpUserName?: string | undefined;
+    smtpPassword?: string | undefined;
+    smtpDomain?: string | undefined;
+    smtpEnableSsl?: boolean;
+    smtpUseDefaultCredentials?: boolean;
+    defaultFromAddress?: string | undefined;
+    defaultFromDisplayName?: string | undefined;
 
     constructor(data?: IEmailSettingsDto) {
         if (data) {
@@ -9547,22 +9547,22 @@ export class EmailSettingsDto implements IEmailSettingsDto {
 }
 
 export interface IEmailSettingsDto {
-    smtpHost: string | undefined;
-    smtpPort: number;
-    smtpUserName: string | undefined;
-    smtpPassword: string | undefined;
-    smtpDomain: string | undefined;
-    smtpEnableSsl: boolean;
-    smtpUseDefaultCredentials: boolean;
-    defaultFromAddress: string | undefined;
-    defaultFromDisplayName: string | undefined;
+    smtpHost?: string | undefined;
+    smtpPort?: number;
+    smtpUserName?: string | undefined;
+    smtpPassword?: string | undefined;
+    smtpDomain?: string | undefined;
+    smtpEnableSsl?: boolean;
+    smtpUseDefaultCredentials?: boolean;
+    defaultFromAddress?: string | undefined;
+    defaultFromDisplayName?: string | undefined;
 }
 
 export class SendTestEmailInput implements ISendTestEmailInput {
     senderEmailAddress!: string;
     targetEmailAddress!: string;
     subject!: string;
-    body!: string | undefined;
+    body?: string | undefined;
 
     constructor(data?: ISendTestEmailInput) {
         if (data) {
@@ -9603,17 +9603,17 @@ export interface ISendTestEmailInput {
     senderEmailAddress: string;
     targetEmailAddress: string;
     subject: string;
-    body: string | undefined;
+    body?: string | undefined;
 }
 
 export class UpdateEmailSettingsDto implements IUpdateEmailSettingsDto {
-    smtpHost!: string | undefined;
-    smtpPort!: number;
-    smtpUserName!: string | undefined;
-    smtpPassword!: string | undefined;
-    smtpDomain!: string | undefined;
-    smtpEnableSsl!: boolean;
-    smtpUseDefaultCredentials!: boolean;
+    smtpHost?: string | undefined;
+    smtpPort?: number;
+    smtpUserName?: string | undefined;
+    smtpPassword?: string | undefined;
+    smtpDomain?: string | undefined;
+    smtpEnableSsl?: boolean;
+    smtpUseDefaultCredentials?: boolean;
     defaultFromAddress!: string;
     defaultFromDisplayName!: string;
 
@@ -9663,19 +9663,19 @@ export class UpdateEmailSettingsDto implements IUpdateEmailSettingsDto {
 }
 
 export interface IUpdateEmailSettingsDto {
-    smtpHost: string | undefined;
-    smtpPort: number;
-    smtpUserName: string | undefined;
-    smtpPassword: string | undefined;
-    smtpDomain: string | undefined;
-    smtpEnableSsl: boolean;
-    smtpUseDefaultCredentials: boolean;
+    smtpHost?: string | undefined;
+    smtpPort?: number;
+    smtpUserName?: string | undefined;
+    smtpPassword?: string | undefined;
+    smtpDomain?: string | undefined;
+    smtpEnableSsl?: boolean;
+    smtpUseDefaultCredentials?: boolean;
     defaultFromAddress: string;
     defaultFromDisplayName: string;
 }
 
 export class TenantCreateDto implements ITenantCreateDto {
-    readonly extraProperties!: { [key: string]: any; } | undefined;
+    readonly extraProperties?: { [key: string]: any; } | undefined;
     name!: string;
     adminEmailAddress!: string;
     adminPassword!: string;
@@ -9728,17 +9728,17 @@ export class TenantCreateDto implements ITenantCreateDto {
 }
 
 export interface ITenantCreateDto {
-    extraProperties: { [key: string]: any; } | undefined;
+    extraProperties?: { [key: string]: any; } | undefined;
     name: string;
     adminEmailAddress: string;
     adminPassword: string;
 }
 
 export class TenantDto implements ITenantDto {
-    readonly extraProperties!: { [key: string]: any; } | undefined;
-    id!: string;
-    name!: string | undefined;
-    concurrencyStamp!: string | undefined;
+    readonly extraProperties?: { [key: string]: any; } | undefined;
+    id?: string;
+    name?: string | undefined;
+    concurrencyStamp?: string | undefined;
 
     constructor(data?: ITenantDto) {
         if (data) {
@@ -9788,16 +9788,16 @@ export class TenantDto implements ITenantDto {
 }
 
 export interface ITenantDto {
-    extraProperties: { [key: string]: any; } | undefined;
-    id: string;
-    name: string | undefined;
-    concurrencyStamp: string | undefined;
+    extraProperties?: { [key: string]: any; } | undefined;
+    id?: string;
+    name?: string | undefined;
+    concurrencyStamp?: string | undefined;
 }
 
 export class TenantUpdateDto implements ITenantUpdateDto {
-    readonly extraProperties!: { [key: string]: any; } | undefined;
+    readonly extraProperties?: { [key: string]: any; } | undefined;
     name!: string;
-    concurrencyStamp!: string | undefined;
+    concurrencyStamp?: string | undefined;
 
     constructor(data?: ITenantUpdateDto) {
         if (data) {
@@ -9845,23 +9845,23 @@ export class TenantUpdateDto implements ITenantUpdateDto {
 }
 
 export interface ITenantUpdateDto {
-    extraProperties: { [key: string]: any; } | undefined;
+    extraProperties?: { [key: string]: any; } | undefined;
     name: string;
-    concurrencyStamp: string | undefined;
+    concurrencyStamp?: string | undefined;
 }
 
 export class UserData implements IUserData {
-    id!: string;
-    tenantId!: string | undefined;
-    userName!: string | undefined;
-    name!: string | undefined;
-    surname!: string | undefined;
-    isActive!: boolean;
-    email!: string | undefined;
-    emailConfirmed!: boolean;
-    phoneNumber!: string | undefined;
-    phoneNumberConfirmed!: boolean;
-    readonly extraProperties!: { [key: string]: any; } | undefined;
+    id?: string;
+    tenantId?: string | undefined;
+    userName?: string | undefined;
+    name?: string | undefined;
+    surname?: string | undefined;
+    isActive?: boolean;
+    email?: string | undefined;
+    emailConfirmed?: boolean;
+    phoneNumber?: string | undefined;
+    phoneNumberConfirmed?: boolean;
+    readonly extraProperties?: { [key: string]: any; } | undefined;
 
     constructor(data?: IUserData) {
         if (data) {
@@ -9925,23 +9925,23 @@ export class UserData implements IUserData {
 }
 
 export interface IUserData {
-    id: string;
-    tenantId: string | undefined;
-    userName: string | undefined;
-    name: string | undefined;
-    surname: string | undefined;
-    isActive: boolean;
-    email: string | undefined;
-    emailConfirmed: boolean;
-    phoneNumber: string | undefined;
-    phoneNumberConfirmed: boolean;
-    extraProperties: { [key: string]: any; } | undefined;
+    id?: string;
+    tenantId?: string | undefined;
+    userName?: string | undefined;
+    name?: string | undefined;
+    surname?: string | undefined;
+    isActive?: boolean;
+    email?: string | undefined;
+    emailConfirmed?: boolean;
+    phoneNumber?: string | undefined;
+    phoneNumberConfirmed?: boolean;
+    extraProperties?: { [key: string]: any; } | undefined;
 }
 
 export class IStringValueType implements IIStringValueType {
-    readonly name!: string | undefined;
-    readonly properties!: { [key: string]: any; } | undefined;
-    validator!: IValueValidator;
+    readonly name?: string | undefined;
+    readonly properties?: { [key: string]: any; } | undefined;
+    validator?: IValueValidator;
 
     constructor(data?: IIStringValueType) {
         if (data) {
@@ -9989,14 +9989,14 @@ export class IStringValueType implements IIStringValueType {
 }
 
 export interface IIStringValueType {
-    name: string | undefined;
-    properties: { [key: string]: any; } | undefined;
-    validator: IValueValidator;
+    name?: string | undefined;
+    properties?: { [key: string]: any; } | undefined;
+    validator?: IValueValidator;
 }
 
 export class IValueValidator implements IIValueValidator {
-    readonly name!: string | undefined;
-    readonly properties!: { [key: string]: any; } | undefined;
+    readonly name?: string | undefined;
+    readonly properties?: { [key: string]: any; } | undefined;
 
     constructor(data?: IIValueValidator) {
         if (data) {
@@ -10042,8 +10042,8 @@ export class IValueValidator implements IIValueValidator {
 }
 
 export interface IIValueValidator {
-    name: string | undefined;
-    properties: { [key: string]: any; } | undefined;
+    name?: string | undefined;
+    properties?: { [key: string]: any; } | undefined;
 }
 
 export class ApiException extends Error {
