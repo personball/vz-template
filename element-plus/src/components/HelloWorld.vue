@@ -9,6 +9,8 @@ const input = ref("element-plus");
 
 const curDate = ref("");
 
+console.log('say hi');
+
 const toast = () => {
   ElMessage.success("Hello");
 };

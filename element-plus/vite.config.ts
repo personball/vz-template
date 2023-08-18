@@ -42,6 +42,7 @@ export default defineConfig({
           importStyle: 'sass',
         }),
       ],
+      // dirs:['src/components','src/views'],// only global components
       dts: 'src/components.d.ts',
     }),
 

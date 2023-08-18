@@ -19,7 +19,7 @@ declare module 'vue' {
     ElMenuItemGroup: typeof import('element-plus/es')['ElMenuItemGroup']
     ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
     ElTag: typeof import('element-plus/es')['ElTag']
+    Error: typeof import('./views/error/Error.vue')['default']
     HelloWorld: typeof import('./components/HelloWorld.vue')['default']
-    Logos: typeof import('./components/Logos.vue')['default']
   }
 }
