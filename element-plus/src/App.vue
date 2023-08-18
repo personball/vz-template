@@ -2,9 +2,9 @@
   <el-config-provider namespace="ep">
     <BaseHeader />
     <div class="flex main-container">
-      <BaseSide />
+      <BaseSide v-if="initialized" />
       <div w="full" py="4">
-        <HelloWorld :msg="`Hello clock.kind: ${conf?.clock?.kind}`" />
+        <HelloWorld :msg="`multiTenancy.Enabled: ${multiTenancy?.isEnabled}`" />
       </div>
     </div>
   </el-config-provider>
@@ -15,7 +15,7 @@ import { storeToRefs } from "pinia";
 import { useAppStore } from "./stores/app";
 
 const appStore = useAppStore();
-const { conf } = storeToRefs(appStore);
+const { initialized, multiTenancy } = storeToRefs(appStore);
 
 console.log('say app');
 
