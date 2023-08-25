@@ -1,7 +1,5 @@
 import { createApp } from "vue";
-import { createRouter, createWebHistory } from 'vue-router/auto' // if not found, should do `npm run dev` first
 import App from "./App.vue";
-import { createPinia } from "pinia";
 
 // import "~/styles/element/index.scss";
 
@@ -17,30 +15,16 @@ import "uno.css";
 // If you want to use ElMessage, import it.
 import "element-plus/theme-chalk/src/message.scss";
 
-// axios
-import axios from "axios";
-axios.defaults.baseURL = 'https://localhost:44333';
-
-import { useAppStore } from "./stores/app";
-
 const app = createApp(App);
 // app.use(ElementPlus);
 
-// app.directive('acl',{
-
-// })
-
-const pinia = createPinia();
-app.use(pinia);// should before useStore
+// install all modules under `modules/`
+Object.values(import.meta.glob<{ install: any }>('./modules/*.ts', { eager: true })).forEach(i => i.install?.(app))
 
 // blocking or loading ?
 console.log('say main');
+import { useAppStore } from "./stores/app";
 const appStore = useAppStore();
 await appStore.init();
-
-createRouter({
-    history: createWebHistory()
-})
-
 
 app.mount("#app");

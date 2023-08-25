@@ -6,8 +6,8 @@
 - auto import components: unplugin-vue-components  
 - auto import api: unplugin-auto-import  
 - auto register router, file-based router: https://github.com/posva/unplugin-vue-router   ~vite-plugin-pages~  
-- // TODO: @vueuse/core  
-- // TODO: auto register modules: https://github.com/antfu/vitesse/tree/main/src/modules  
+- @vueuse/core  
+- auto register modules: https://github.com/antfu/vitesse/tree/main/src/modules  dependsOn vite-ssg
 - // TODO: integrate abp;  
 - // TODO: integrate formkit;  
 

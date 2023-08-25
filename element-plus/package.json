@@ -11,6 +11,7 @@
     "nswag": "node_modules/.bin/nswag run"
   },
   "dependencies": {
+    "@vueuse/core": "^10.3.0",
     "axios": "^1.4.0",
     "element-plus": "^2.3.6",
     "pinia": "^2.1.6",
