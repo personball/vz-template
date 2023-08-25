@@ -1,4 +1,5 @@
 import { createApp } from "vue";
+import { createRouter, createWebHistory } from 'vue-router/auto' // if not found, should do `npm run dev` first
 import App from "./App.vue";
 import { createPinia } from "pinia";
 
@@ -25,6 +26,10 @@ import { useAppStore } from "./stores/app";
 const app = createApp(App);
 // app.use(ElementPlus);
 
+// app.directive('acl',{
+
+// })
+
 const pinia = createPinia();
 app.use(pinia);// should before useStore
 
@@ -32,5 +37,10 @@ app.use(pinia);// should before useStore
 console.log('say main');
 const appStore = useAppStore();
 await appStore.init();
+
+createRouter({
+    history: createWebHistory()
+})
+
 
 app.mount("#app");

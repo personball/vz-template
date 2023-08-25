@@ -1,3 +1,16 @@
+# Features
+
+- axios
+- pinia
+- vue-router
+- auto import components: unplugin-vue-components  
+- auto import api: unplugin-auto-import  
+- auto register router, file-based router: https://github.com/posva/unplugin-vue-router   ~vite-plugin-pages~  
+- // TODO: @vueuse/core  
+- // TODO: auto register modules: https://github.com/antfu/vitesse/tree/main/src/modules  
+- // TODO: integrate abp;  
+- // TODO: integrate formkit;  
+
 # element-plus-vite-starter
 
 > A starter kit for Element Plus with Vite
