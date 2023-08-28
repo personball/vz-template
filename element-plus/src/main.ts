@@ -18,11 +18,12 @@ import "element-plus/theme-chalk/src/message.scss";
 const app = createApp(App);
 // app.use(ElementPlus);
 
+console.log('say main');
+
 // install all modules under `modules/`
 Object.values(import.meta.glob<{ install: any }>('./modules/*.ts', { eager: true })).forEach(i => i.install?.(app))
 
 // blocking or loading ?
-console.log('say main');
 import { useAppStore } from "./stores/app";
 const appStore = useAppStore();
 await appStore.init();

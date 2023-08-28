@@ -8,6 +8,7 @@ export const useSettingStore = defineStore('setting', {
     actions: {
         init(value: ApplicationSettingConfigurationDto) {
             this.setting = value;
+            console.log('got me: setting');
         }
     }
 })

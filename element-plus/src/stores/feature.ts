@@ -8,6 +8,7 @@ export const useFeatureStore = defineStore('feature', {
     actions: {
         init(value: ApplicationFeatureConfigurationDto) {
             this.feature = value;
+            console.log('got me: feature');
         }
     }
 })

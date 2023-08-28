@@ -5,4 +5,6 @@ import { createPinia } from 'pinia'
 export const install: any = (app: any) => {
     const pinia = createPinia()
     app.use(pinia)
+
+    console.log('pinia loaded!');
 }

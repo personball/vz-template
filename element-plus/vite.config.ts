@@ -34,10 +34,10 @@ export default defineConfig({
   },
   plugins: [
     VueRouter({
-      routesFolder:'src/routes',
-      extensions:['.vue'],
-      exclude:['**/__*'],
-      dts:'src/typed-router.d.ts',
+      routesFolder: 'src/routes',
+      extensions: ['.vue'],
+      exclude: ['**/__*'],
+      dts: 'src/typed-router.d.ts',
       importMode: 'async'
     }),
     vue(),
@@ -53,6 +53,10 @@ export default defineConfig({
       ],
       // dirs:['src/components','src/views'],// only global components
       dts: 'src/components.d.ts',
+      types: [{
+        from: 'vue-router',
+        names: ['RouterLink', 'RouterView']
+      }]
     }),
 
     // https://github.com/antfu/unocss

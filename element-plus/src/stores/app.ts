@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import { ApplicationConfigurationDto, AbpApplicationConfigurationServiceProxy, CurrentUserDto, MultiTenancyInfoDto, ClockDto, CurrentTenantDto, TimingDto } from '~/api/ServiceProxies';
+import { AbpApplicationConfigurationServiceProxy, CurrentUserDto, MultiTenancyInfoDto, ClockDto, CurrentTenantDto, TimingDto } from '~/api/ServiceProxies';
 import { useAuthStore } from "./auth";
 import { useLocalizationStore } from "./localization";
 import { useSettingStore } from "./setting";
@@ -54,7 +54,8 @@ export const useAppStore = defineStore('app', {
             res.clock && (this.clock = res.clock);
             res.timing && (this.timing = res.timing);
 
-            new Promise(f => setTimeout(() => this.initialized = true, 3000));
+            this.initialized = true;
+            // new Promise(f => setTimeout(() => this.initialized = true, 3000));
         }
     }
 })
