@@ -9,7 +9,9 @@
 - @vueuse/core  
 - auto register modules: https://github.com/antfu/vitesse/tree/main/src/modules  ~dependsOn vite-ssg~
 - // TODO: integrate abp;  
+- nswag auto generate api proxies;
 - // TODO: integrate formkit;  
+- vitest
 
 # element-plus-vite-starter
 
