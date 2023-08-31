@@ -160,6 +160,7 @@ export default defineConfig({
   ],
   // https://cn.vitest.dev/config/
   test: {
-
+    globals: true,
+    environment: 'happy-dom'
   }
 })

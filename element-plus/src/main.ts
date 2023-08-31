@@ -21,7 +21,10 @@ const app = createApp(App);
 console.log('say main');
 
 // install all modules under `modules/`
-Object.values(import.meta.glob<{ install: any }>('./modules/*.ts', { eager: true })).forEach(i => i.install?.(app))
+Object.values(import.meta.glob<{ install: any }>('./modules/*.ts', { eager: true })).forEach(i => i.install(app))
+
+// install all directives under `directives/`
+Object.values(import.meta.glob<{ setup: any }>(['./directives/*.ts', '!./directives/*.spec.ts'], { eager: true })).forEach(i => i.setup(app))
 
 // blocking or loading ?
 import { useAppStore } from "./stores/app";

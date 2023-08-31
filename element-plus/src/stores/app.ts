@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import { AbpApplicationConfigurationServiceProxy, CurrentUserDto, MultiTenancyInfoDto, ClockDto, CurrentTenantDto, TimingDto } from '~/api/ServiceProxies';
+import { AbpApplicationConfigurationServiceProxy, CurrentUserDto, MultiTenancyInfoDto, ClockDto, CurrentTenantDto, TimingDto, ApplicationAuthConfigurationDto } from '~/api/ServiceProxies';
 import { useAuthStore } from "./auth";
 import { useLocalizationStore } from "./localization";
 import { useSettingStore } from "./setting";

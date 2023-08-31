@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, test } from 'vitest'
-import { isGranted } from './acl'
+import { isGranted, isGrantedAnyOf } from './acl'
 import { createPinia, setActivePinia } from 'pinia'
 import { useAuthStore } from '~/stores/auth'
 import { ApplicationAuthConfigurationDto } from '~/api/ServiceProxies'
@@ -32,6 +32,36 @@ describe('with authStore', () => {
         expect(isGranted('p3')).toBe(false)
     })
 })
+
+test(`isGrantedAnyOf empty policies to true`, () => {
+    expect(isGrantedAnyOf()).toBe(true)
+})
+
+describe('isGrantedAnyOf with authStore', () => {
+    beforeEach(() => {
+        setActivePinia(createPinia())
+
+        const authStore = useAuthStore()
+        authStore.init(ApplicationAuthConfigurationDto.fromJS({ grantedPolicies: { "p1": true, "p3": false } }))
+    })
+
+    test.each([
+        ['p1', true],
+        ['p2', false],
+        ['p3', false],
+    ])('isGrantedAnyOf(%s) -> %s', (p, expected) => {
+        expect(isGrantedAnyOf(p)).toBe(expected)
+    })
+
+    test.each([
+        ['p1', 'p2', true],
+        ['p1', 'p3', true],
+        ['p2', 'p3', false]
+    ])('isGrantedAnyOf(%s,%s) -> %s', (a, b, expected) => {
+        expect(isGrantedAnyOf(a, b)).toBe(expected)
+    })
+})
+
 
 // pinia testing: https://pinia.vuejs.org/cookbook/testing.html
 // mock pinia: https://github.com/vuejs/pinia/discussions/2092
