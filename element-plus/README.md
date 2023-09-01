@@ -1,19 +1,27 @@
 # Features
 
-- axios
-- pinia
-- vue-router
-- auto import components: unplugin-vue-components  
-- auto import api: unplugin-auto-import  
-- auto register router, file-based router: https://github.com/posva/unplugin-vue-router   ~vite-plugin-pages~  
-- @vueuse/core  
-- auto register modules: https://github.com/antfu/vitesse/tree/main/src/modules  ~dependsOn vite-ssg~
-- auto register directives
-- // TODO: integrate abp;  
-- nswag auto generate api proxies;
-- // TODO: integrate formkit;  
-- vitest
+- [x] axios
+- [x] pinia
+- [x] vue-router
+- [x] @vueuse/core  
+- [x] vitest
+- [x] auto import api: unplugin-auto-import  
+- [x] auto import components: unplugin-vue-components  
+- [x] auto register router, file-based router: https://github.com/posva/unplugin-vue-router   ~vite-plugin-pages~  
+- [x] vite-plugin-vue-layouts with routes fix
+- [x] auto register modules: https://github.com/antfu/vitesse/tree/main/src/modules  ~dependsOn vite-ssg~
+- [x] auto register directives  
+- [ ] integrate abp;  
+    - [ ] currentUser & currentTenant
+    - [x] acl: permissions
+    - [ ] features:
+    - [ ] globalFeatures:
+    - [ ] localization;
+    - [ ] settings;  
+- nswag auto generate api proxies;  
+- [ ] integrate formkit;  
 
+---
 # element-plus-vite-starter
 
 > A starter kit for Element Plus with Vite
