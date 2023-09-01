@@ -45,13 +45,15 @@ export const install: any = (app: App<Element>) => {
     })
 
     router.beforeEach(async (to, from) => {
-
         const appStore = useAppStore()
         // 401 login 
-
         // 403 acl permission
-
         console.log(`route beforeEach:`, to)
+
+        if (to.meta?.allowAnonymous) {
+            return true
+        }
+
         if (
             // 检查用户是否已登录
             !appStore.currentUser?.isAuthenticated &&
@@ -72,8 +74,6 @@ export const install: any = (app: App<Element>) => {
     app.use(router)
 
     console.log(router.getRoutes())
-
-    router.push('/home')
 
     console.log('vue-router/auto loaded!');
 }
