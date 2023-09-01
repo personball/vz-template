@@ -18,6 +18,7 @@ export const useAppStore = defineStore('app', {
     actions: {
         async init() {
             let client = new AbpApplicationConfigurationServiceProxy();
+            this.initialized = false;
             const res = await client.applicationConfiguration(false);
             console.log(res);
 

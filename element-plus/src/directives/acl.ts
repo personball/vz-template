@@ -38,6 +38,8 @@ export const setup: any = (app: App<Element>) => {
 [x]2. 组件指令;
 [x]3. v-if 函数调用判断;
 
+// TODO: For navigator(Menu,top,float widget)  本身的 acl + route acl
+
 acl 参数 string[]
 acl 修饰符：
     - all of，全部（默认） 

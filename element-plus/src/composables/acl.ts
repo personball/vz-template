@@ -1,5 +1,5 @@
 import { useAuthStore } from "~/stores/auth"
-
+// pinia getter 带入参的时候（return function）没有明显优势，无需考虑将这些方法整合进 pinia store 定义中
 export function isGranted(...policies: string[]): boolean {
 
     if (policies.length === 0) {

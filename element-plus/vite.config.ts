@@ -125,9 +125,9 @@ export default defineConfig({
       // Auto import for module exports under directories
       // by default it only scan one level of modules under the directory
       dirs: [
-        './hooks',
+        // './hooks',
         // './composables' // only root modules
-        './composables/**', // all nested modules
+        'src/composables/**', // all nested modules
         // ...
       ],
 
