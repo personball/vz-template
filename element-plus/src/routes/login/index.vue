@@ -47,9 +47,12 @@
   </div>
 </template> -->
 <template>
+  <div>
   login page
+  </div>
 </template>
 <route lang="yaml">
 meta:
-  
+  layout: login
+  requireAuth: false
 </route>

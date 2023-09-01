@@ -8,6 +8,7 @@ import VueRouter from 'unplugin-vue-router/vite'
 import { VueRouterAutoImports } from 'unplugin-vue-router'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import Layouts from 'vite-plugin-vue-layouts';
 
 import Unocss from 'unocss/vite'
 import {
@@ -156,7 +157,8 @@ export default defineConfig({
         filepath: './.eslintrc-auto-import.json', // Default `./.eslintrc-auto-import.json`
         globalsPropValue: true, // Default `true`, (true | false | 'readonly' | 'readable' | 'writable' | 'writeable')
       },
-    })
+    }),
+    Layouts()
   ],
   // https://cn.vitest.dev/config/
   test: {
