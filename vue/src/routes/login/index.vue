@@ -20,13 +20,31 @@
 </template>
 
 <script lang="ts" setup>
-const loading = false
-const model = { phoneNumber: '', password: '' }
-const rules = {}
+import { FormRules } from 'element-plus'
+
+const loading = ref(false)
+
+const model = reactive({
+  phoneNumber: '',
+  password: ''
+})
+
+const rules: FormRules = {
+  phoneNumber: {
+    required: true,
+    message: '请输入账号',
+    trigger: 'blur'
+  },
+  password: {
+    required: true,
+    message: '请输入账号',
+    trigger: 'blur'
+  }
+}
 const btnText = 'login'
 
 function submit() {
-
+  alert(JSON.stringify(model))
 }
 
 </script>

@@ -6,6 +6,7 @@
 
 <style>
 .loginPage{
+  background-color: black;
   background: url(~/assets/bg.jpg) center no-repeat;
   background-size: cover;
 }
