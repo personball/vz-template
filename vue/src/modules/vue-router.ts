@@ -45,6 +45,9 @@ export const install: any = (app: App<Element>) => {
     })
 
     router.beforeEach(async (to, from) => {
+        // TODO: 临时短路
+        return true;
+        
         const appStore = useAppStore()
         // 401 login 
         // 403 acl permission

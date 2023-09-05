@@ -19,7 +19,8 @@
     "element-plus": "^2.3.6",
     "pinia": "^2.1.6",
     "vue": "^3.3.4",
-    "vue-router": "^4.2.4"
+    "vue-router": "^4.2.4",
+    "vue3-oidc": "^0.1.11"
   },
   "devDependencies": {
     "@iconify-json/ep": "^1.1.10",

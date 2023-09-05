@@ -93,7 +93,8 @@ export default defineConfig({
         'vue',
         VueRouterAutoImports,
         {
-          'vue-router/auto': ['useLink']
+          'vue-router/auto': ['useLink'],
+          'vue3-oidc': ['useOidcStore']
         }
         // custom
         // {

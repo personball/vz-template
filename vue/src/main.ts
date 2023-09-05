@@ -1,5 +1,9 @@
 import { createApp } from "vue";
 import App from "./App.vue";
+import "./oidc";
+
+// TODO: oidc 登录成功前避免渲染页面；// 可以交给 app.init 去触发认证？ 或改为组件，集成到 router？
+// TODO: oidc 支持访问任何页面，登录后能重定向回来；
 
 // import "~/styles/element/index.scss";
 

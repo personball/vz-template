@@ -8,6 +8,7 @@ export const install: any = (app: App<Element>) => {
     // Add a request interceptor
     axios.interceptors.request.use(function (config) {
         // Do something before request is sent
+        // TODO: use oidc instead
         const { getToken } = useTokenService()
         const token = getToken()
 
