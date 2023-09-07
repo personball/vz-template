@@ -11,7 +11,8 @@
 - [x] vite-plugin-vue-layouts with routes fix
 - [x] auto register modules: https://github.com/antfu/vitesse/tree/main/src/modules  ~dependsOn vite-ssg~
 - [x] auto register directives  
-- [ ] integrate abp;  
+- [ ] integrate abp;
+    - [x] vue3-oidc with abp AuthServer
     - [ ] currentUser & currentTenant
     - [x] acl: permissions
     - [ ] features:

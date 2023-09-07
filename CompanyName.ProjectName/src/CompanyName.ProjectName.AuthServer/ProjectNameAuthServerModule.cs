@@ -91,6 +91,7 @@ public class ProjectNameAuthServerModule : AbpModule
             //     builder.SetVerificationEndpointUris(new Uri(configuration["AuthServer:Authority"] + "/connect/verify"));
 
             //     // https://documentation.openiddict.com/configuration/encryption-and-signing-credentials.html
+            //     // https://learn.microsoft.com/zh-cn/dotnet/core/additional-tools/self-signed-certificates-guide#with-openssl
             //     var certificate = new X509Certificate2(
             //         Path.Combine(AppContext.BaseDirectory, configuration["OpenIddict:CAFilePath"]));
             //     builder.AddSigningCertificate(certificate);
