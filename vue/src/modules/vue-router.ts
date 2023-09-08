@@ -45,10 +45,6 @@ export const install: any = (app: App<Element>) => {
     })
 
     router.beforeEach(async (to, from) => {
-        // TODO: 临时短路
-        return true;
-        
-        const appStore = useAppStore()
         // 401 login 
         // 403 acl permission
         console.log(`route beforeEach:`, to)
@@ -57,20 +53,22 @@ export const install: any = (app: App<Element>) => {
             return true
         }
 
+        const appStore = useAppStore()
+
         if (
             // 检查用户是否已登录
-            !appStore.currentUser?.isAuthenticated &&
-            // ❗️ 避免无限重定向
-            to.name !== '/login/'
+            !appStore.currentUser?.isAuthenticated 
         ) {
             // 将用户重定向到登录页面
-            return {
-                name: '/login/',
-                query: {
-                    redirect: to.fullPath
-                },
-                replace: true
-            }
+            const { autoAuthenticate } = useAuth()
+            await autoAuthenticate(to.fullPath);
+            // return {
+            //     name: '/login/',
+            //     query: {
+            //         redirect: to.fullPath
+            //     },
+            //     replace: true
+            // }
         }
     })
 

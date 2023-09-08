@@ -2,7 +2,7 @@
   <div>
     home
   </div>
-  <HelloWorld :msg="`multiTenancy.Enabled: ${multiTenancy?.isEnabled}`" />
+  <!-- <HelloWorld :msg="`multiTenancy.Enabled: ${multiTenancy?.isEnabled}`" /> -->
 </template>
 
 <script lang="ts" setup>
