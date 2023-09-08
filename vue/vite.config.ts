@@ -94,7 +94,7 @@ export default defineConfig({
         VueRouterAutoImports,
         {
           'vue-router/auto': ['useLink'],
-          'vue3-oidc': ['useOidcStore']
+          'vue3-oidc': ['useOidcStore', 'useAuth']
         }
         // custom
         // {

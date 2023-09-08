@@ -5,6 +5,7 @@ import { useLocalizationStore } from "./localization";
 import { useSettingStore } from "./setting";
 import { useFeatureStore } from "./feature";
 import { useGlobalFeatureStore } from "./globalFeature";
+import axios from "axios";
 
 export const useAppStore = defineStore('app', {
     state: () => ({
@@ -17,7 +18,7 @@ export const useAppStore = defineStore('app', {
     }),
     actions: {
         async init() {
-            let client = new AbpApplicationConfigurationServiceProxy();
+            let client = new AbpApplicationConfigurationServiceProxy(undefined, axios);
             this.initialized = false;
             const res = await client.applicationConfiguration(false);
             console.log(res);
