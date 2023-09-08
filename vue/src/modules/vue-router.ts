@@ -55,10 +55,7 @@ export const install: any = (app: App<Element>) => {
 
         const appStore = useAppStore()
 
-        if (
-            // 检查用户是否已登录
-            !appStore.currentUser?.isAuthenticated 
-        ) {
+        if (!appStore.currentUser?.isAuthenticated) {
             // 将用户重定向到登录页面
             const { autoAuthenticate } = useAuth()
             await autoAuthenticate(to.fullPath);
