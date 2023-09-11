@@ -34,11 +34,11 @@ export const setup: any = (app: App<Element>) => {
     app.directive('acl', vzAcl)
 }
 /*
-1. 路由守卫;
+[x]1. 路由守卫;
 [x]2. 组件指令;
 [x]3. v-if 函数调用判断;
 
-// TODO: For navigator(Menu,top,float widget)  本身的 acl + route acl
+// For navigator(Menu,top,float widget)  本身的 acl + route acl
 
 acl 参数 string[]
 acl 修饰符：

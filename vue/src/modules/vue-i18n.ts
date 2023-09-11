@@ -7,7 +7,7 @@ import zhCN from '~/locales/zh_CN.json';
 // Type-define 'en' as the master schema for the resource
 type MessageSchema = typeof en
 
-// 先加载本项目的静态资源, app init 时再补充后端返回的资源
+// 这里仅加载本项目的静态资源, appStore.init() 会加载 abp 服务端本地化资源并在 layout 中经 `useAbpLocalizationAdapter()` 合并。
 const i18n = createI18n<[MessageSchema], 'en' | 'zh-CN'>({
     legacy: false, // you must set `false`, to use Composition API
     locale: 'zh-CN', // set locale
