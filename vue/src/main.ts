@@ -1,6 +1,6 @@
 import { createApp } from "vue";
 import App from "./App.vue";
-import "./oidc"; 
+import "./oidc";
 
 // import "~/styles/element/index.scss";
 
@@ -29,7 +29,7 @@ Object.values(import.meta.glob<{ setup: any }>(['./directives/*.ts', '!./directi
 
 // 未登录状态下的应用配置获取
 import { useAppStore } from "./stores/app";
-const appStore = useAppStore();
+const appStore = useAppStore(); // use store after pinia ready
 await appStore.init(); // 每次重定向都会加载
 
 app.mount("#app");

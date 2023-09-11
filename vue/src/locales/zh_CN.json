@@ -1,0 +1,8 @@
+{
+    "message": {
+        "hello": "你好，世界"
+    },
+    "Account::Key":{
+        "hi":"abc"
+    }
+}

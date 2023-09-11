@@ -13,11 +13,11 @@
 - [x] auto register directives  
 - [ ] integrate abp;
     - [x] vue3-oidc with abp AuthServer
-    - [ ] currentUser & currentTenant
+    - [x] currentUser & currentTenant
     - [x] acl: permissions
     - [ ] features:
     - [ ] globalFeatures:
-    - [ ] localization;
+    - [x] abp localization (with key format as `Resource::Key`) integrate into vue-i18n-next(vue-i18n@9);
     - [ ] settings;  
 - nswag auto generate api proxies;  
 - [ ] integrate formkit;  

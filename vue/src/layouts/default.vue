@@ -6,19 +6,18 @@
             <router-view></router-view>
         </div>
     </div>
-    
 </template>
 
 <script lang="ts" setup>
-import { storeToRefs } from "pinia";
-import { useAppStore } from "../stores/app";
+useAbpLocalizationAdapter();
 
 const appStore = useAppStore();
 const { initialized } = storeToRefs(appStore);
+
 </script>
 
 <style>
 .main-container {
-  height: calc(100vh - var(--ep-menu-item-height) - 3px);
+    height: calc(100vh - var(--ep-menu-item-height) - 3px);
 }
 </style>

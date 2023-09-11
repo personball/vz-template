@@ -93,8 +93,10 @@ export default defineConfig({
         'vue',
         VueRouterAutoImports,
         {
+          'pinia': ['storeToRefs'],
           'vue-router/auto': ['useLink'],
-          'vue3-oidc': ['useOidcStore', 'useAuth']
+          'vue3-oidc': ['useOidcStore', 'useAuth'],
+          'vue-i18n': ['useI18n']
         }
         // custom
         // {
@@ -130,7 +132,7 @@ export default defineConfig({
         // './hooks',
         // './composables' // only root modules
         'src/composables/**', // all nested modules
-        // ...
+        'src/stores'
       ],
 
       // Filepath to generate corresponding .d.ts file.

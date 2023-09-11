@@ -8,7 +8,8 @@ export const useLocalizationStore = defineStore('localization', {
     actions: {
         init(value: ApplicationLocalizationConfigurationDto) {
             this.localization = value;
-            console.log(`got me: localization`);
+            console.log(`got me: localization`, value);
+            // will merge to vue-i18n locales through layout component
         }
     }
 })
