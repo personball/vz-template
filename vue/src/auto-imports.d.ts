@@ -6,6 +6,8 @@
 export {}
 declare global {
   const EffectScope: typeof import('vue')['EffectScope']
+  const LangMapAbp: typeof import('./composables/abp-locale-i18n')['LangMapAbp']
+  const LangMapI18N: typeof import('./composables/abp-locale-i18n')['LangMapI18N']
   const computed: typeof import('vue')['computed']
   const createApp: typeof import('vue')['createApp']
   const customRef: typeof import('vue')['customRef']
@@ -67,9 +69,11 @@ declare global {
   const useAuthStore: typeof import('./stores/auth')['useAuthStore']
   const useCssModule: typeof import('vue')['useCssModule']
   const useCssVars: typeof import('vue')['useCssVars']
+  const useEventBus: typeof import('./composables/eventBus')['useEventBus']
   const useFeatureStore: typeof import('./stores/feature')['useFeatureStore']
   const useGlobalFeatureStore: typeof import('./stores/globalFeature')['useGlobalFeatureStore']
   const useI18n: typeof import('vue-i18n')['useI18n']
+  const useLanguageStore: typeof import('./stores/language')['useLanguageStore']
   const useLink: typeof import('vue-router/auto')['useLink']
   const useLocalizationStore: typeof import('./stores/localization')['useLocalizationStore']
   const useOidcStore: typeof import('vue3-oidc')['useOidcStore']

@@ -54,7 +54,8 @@ See `src/styles/element/index.scss`.
     - [x] features `useFeatureStore()`:
     - [x] abp localization (with key format as `Resource::Key`) integrate into vue-i18n-next(vue-i18n@9);
     - [x] settings `useSettingStore()`;  
-- nswag auto generate api proxies;  
+- [x] nswag auto generate api proxies;  
+- [x] [mitt](https://github.com/developit/mitt)
 - [ ] integrate [formkit](https://formkit.com);  
 
 # Folder Structure

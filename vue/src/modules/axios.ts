@@ -2,13 +2,17 @@ import axios from "axios";
 import { App } from "vue";
 
 export const install: any = (app: App<Element>) => {
+
     axios.defaults.baseURL = import.meta.env.VITE_API_BASE;
     axios.defaults.headers.post["Content-Type"] = 'application/json'
 
     // Add a request interceptor
     axios.interceptors.request.use(function (config) {
-        // Do something before request is sent
-
+        
+        // set language header
+        const langStore = useLanguageStore()
+        config.headers['Accept-Language'] = langStore.curLang
+        
         // const { getToken } = useTokenService()
         // const token = getToken()
 

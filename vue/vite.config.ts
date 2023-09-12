@@ -96,7 +96,7 @@ export default defineConfig({
           'pinia': ['storeToRefs'],
           'vue-router/auto': ['useLink'],
           'vue3-oidc': ['useOidcStore', 'useAuth'],
-          'vue-i18n': ['useI18n']
+          'vue-i18n': ['useI18n'],
         }
         // custom
         // {
