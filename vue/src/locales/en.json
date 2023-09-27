@@ -1,5 +1,16 @@
 {
     "message": {
         "hello": "hello world"
+    },
+    "menu": {
+        "dashboard": "Dashboard",
+        "sys": "System",
+        "users": "Users",
+        "roles": "Roles",
+        "settings": "Settings",
+        "logs": "Audit Log"
+    },
+    "Account::Key": {
+        "hi": "abc"
     }
 }

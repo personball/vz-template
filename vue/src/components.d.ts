@@ -24,6 +24,8 @@ declare module 'vue' {
     ElTag: typeof import('element-plus/es')['ElTag']
     HelloWorld: typeof import('./components/HelloWorld.vue')['default']
     LanguageSwitch: typeof import('./components/layouts/LanguageSwitch.vue')['default']
+    Menu: typeof import('./components/layouts/Menu.vue')['default']
+    MenuItem: typeof import('./components/layouts/MenuItem.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

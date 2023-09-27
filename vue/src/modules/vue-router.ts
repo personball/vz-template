@@ -47,7 +47,7 @@ export const install: any = (app: App<Element>) => {
     router.beforeEach(async (to, from) => {
         // 401 login 
         // 403 acl permission
-        console.log(`route beforeEach:`, to)
+        // console.log(`route beforeEach:`, to)
 
         if (to.meta?.allowAnonymous) {
             return true

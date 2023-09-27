@@ -1,6 +1,7 @@
 <template>
   <el-config-provider namespace="ep" :locale="locale">
     <router-view v-slot="{ Component, route }">
+      <!-- <component :is="Component" :key="route" /> -->
       <transition name="slide">
         <component :is="Component" :key="route" />
       </transition>

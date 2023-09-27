@@ -2,7 +2,15 @@
     "message": {
         "hello": "你好，世界"
     },
-    "Account::Key":{
-        "hi":"abc"
+    "menu": {
+        "dashboard": "仪表盘",
+        "sys": "系统管理",
+        "users": "用户管理",
+        "roles": "角色管理",
+        "settings":"配置管理",
+        "logs":"审计日志"
+    },
+    "Account::Key": {
+        "hi": "abc"
     }
 }

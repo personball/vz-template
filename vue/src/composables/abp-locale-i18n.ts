@@ -15,7 +15,7 @@ export const LangMapI18N: { [key: string]: string; } = {
 function reMerge(messages: any, mergeLocaleMessage: any) {
     // merge abp localization into vue-i18n
 
-    console.log('layout:messages1', JSON.stringify(messages.value))
+    // console.log('layout:messages1', JSON.stringify(messages.value))
 
     const localizationStore = useLocalizationStore();
     if (localizationStore.localization !== null && localizationStore.localization!.currentCulture != null) {

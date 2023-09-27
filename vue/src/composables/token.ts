@@ -6,6 +6,9 @@ interface IToken {
     expiredIn: number
 }
 
+/**
+ * @deprecated use oidc `useOidcStore()` instead.
+ */
 export function useTokenService() {
     const tokenKey = '__vz_token'
     const local = useLocalStorage(tokenKey, { token: '', expiredIn: 0 } as IToken);
@@ -52,4 +55,4 @@ export function useTokenService() {
     return { setToken, getToken }
 }
 
-// TODO: https://github.com/sssx-li/vue-vite-template/blob/master/src/hooks/useLocalCache.ts 
+// https://github.com/sssx-li/vue-vite-template/blob/master/src/hooks/useLocalCache.ts 

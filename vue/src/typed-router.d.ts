@@ -42,6 +42,12 @@ declare module 'vue-router/auto/routes' {
     '/': RouteRecordInfo<'/', '/', Record<never, never>, Record<never, never>>,
     '/error/error': RouteRecordInfo<'/error/error', '/error/error', Record<never, never>, Record<never, never>>,
     '/login/': RouteRecordInfo<'/login/', '/login', Record<never, never>, Record<never, never>>,
+    '/oidc-callback': RouteRecordInfo<'/oidc-callback', '/oidc-callback', Record<never, never>, Record<never, never>>,
+    '/sys/logs/': RouteRecordInfo<'/sys/logs/', '/sys/logs', Record<never, never>, Record<never, never>>,
+    '/sys/oauth/': RouteRecordInfo<'/sys/oauth/', '/sys/oauth', Record<never, never>, Record<never, never>>,
+    '/sys/roles/': RouteRecordInfo<'/sys/roles/', '/sys/roles', Record<never, never>, Record<never, never>>,
+    '/sys/settings/': RouteRecordInfo<'/sys/settings/', '/sys/settings', Record<never, never>, Record<never, never>>,
+    '/sys/users/': RouteRecordInfo<'/sys/users/', '/sys/users', Record<never, never>, Record<never, never>>,
   }
 }
 

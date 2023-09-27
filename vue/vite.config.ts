@@ -8,8 +8,8 @@ import VueRouter from 'unplugin-vue-router/vite'
 import { VueRouterAutoImports } from 'unplugin-vue-router'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
-import Layouts from 'vite-plugin-vue-layouts';
-
+import Layouts from 'vite-plugin-vue-layouts'
+import Icons from 'unplugin-icons/vite'
 import Unocss from 'unocss/vite'
 import {
   presetAttributify,
@@ -161,7 +161,10 @@ export default defineConfig({
         globalsPropValue: true, // Default `true`, (true | false | 'readonly' | 'readable' | 'writable' | 'writeable')
       },
     }),
-    Layouts()
+    Layouts(),
+    Icons({
+      autoInstall: true
+    })
   ],
   // https://cn.vitest.dev/config/
   test: {
