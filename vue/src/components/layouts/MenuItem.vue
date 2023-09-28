@@ -1,7 +1,7 @@
 <template>
     <el-menu-item v-if="!menu.children" :index="menu.url">
         <el-icon v-if="menu.icon" size="16">
-            <component :is="menu.icon"  class="icon" />
+            <component :is="menu.icon" class="icon" />
         </el-icon>
         <span>{{ menu.title }}</span>
     </el-menu-item>
@@ -12,7 +12,7 @@
             </el-icon>
             <span>{{ menu.title }}</span>
         </template>
-        <MenuItem v-for="item in menu.children" :menu="item">
+        <MenuItem v-for="(item, index) in menu.children" :menu="item" :key="index">
         </MenuItem>
     </el-sub-menu>
 </template>

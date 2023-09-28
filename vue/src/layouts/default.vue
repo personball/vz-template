@@ -1,10 +1,7 @@
 <template>
     <BaseHeader />
     <div class="flex main-container">
-        <KeepAlive>
-            <BaseSide />
-        </KeepAlive>
-        
+        <BaseSide />
         <div w="full" py="4">
             <router-view></router-view>
         </div>
@@ -44,9 +41,6 @@ onMounted(() => {
 onUnmounted(() => {
     emitter.off('LanguageSwitch-Changed')
 })
-
-// TODO: vite-plugin-vue-layouts layout通过路由再次加载，可能导致 menu 点击后刷新
-
 </script>
 
 <style>

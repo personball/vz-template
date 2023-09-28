@@ -1,6 +1,6 @@
 <template>
     <el-menu class="el-menu-vertical-demo" :mode="mode" :default-active="activePath" :router="true" :collapse="isCollapse">
-        <MenuItem v-for="menu in menus" :key="menu.url" :menu="menu" />
+        <MenuItem v-for="(menu, index) in menus" :key="index" :menu="menu" />
     </el-menu>
 </template>
 
@@ -40,6 +40,10 @@ const menus = ref(
             title: t('menu.logs'),
             url: '/sys/logs',
         }]
+    }, {
+        icon: markRaw(IconDashboard),
+        title: t('menu.dashboard'),
+        url: '/sys/logs'
     }])
 
 const route = useRoute()
