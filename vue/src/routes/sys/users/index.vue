@@ -1,11 +1,15 @@
 <template>
-    <div class="bg-white min-h-full">
-        <div class="pt-5 pl-3 bg-white">
+    <el-container>
+        <el-header>
             <FormKit type="form"  >
                 <FormKitSchema :schema="searchSchema" />
             </FormKit>
-        </div>
-    </div>
+        </el-header>
+        <el-main>
+
+            
+        </el-main>
+    </el-container>
 </template>
 
 <script lang="ts" setup>
