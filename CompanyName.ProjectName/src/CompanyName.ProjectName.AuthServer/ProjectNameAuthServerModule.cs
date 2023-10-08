@@ -61,7 +61,7 @@ public class ProjectNameAuthServerModule : AbpModule
             var configuration = context.Services.GetConfiguration();
             var hostingEnvironment = context.Services.GetHostingEnvironment();
 
-            var issuer = new Uri(configuration["AuthServer:Authority"]);
+            var issuer = new Uri(configuration["AuthServer:Authority"]!);
 
             b
             // .AddServer(builder =>
@@ -177,14 +177,14 @@ public class ProjectNameAuthServerModule : AbpModule
         var dataProtectionBuilder = context.Services.AddDataProtection().SetApplicationName("ProjectName");
         if (!hostingEnvironment.IsDevelopment())
         {
-            var redis = ConnectionMultiplexer.Connect(configuration["Redis:Configuration"]);
+            var redis = ConnectionMultiplexer.Connect(configuration["Redis:Configuration"]!);
             dataProtectionBuilder.PersistKeysToStackExchangeRedis(redis, "ProjectName-Protection-Keys");
         }
 
         context.Services.AddSingleton<IDistributedLockProvider>(sp =>
         {
             var connection = ConnectionMultiplexer
-                .Connect(configuration["Redis:Configuration"]);
+                .Connect(configuration["Redis:Configuration"]!);
             return new RedisDistributedSynchronizationProvider(connection.GetDatabase());
         });
 

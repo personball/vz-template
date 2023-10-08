@@ -1,10 +1,18 @@
 <template>
-    <BaseHeader />
-    <div class="flex main-container">
-        <BaseSide />
-        <div w="full" py="4">
-            <router-view></router-view>
-        </div>
+    <div class="common-layout">
+        <el-container>
+            <el-aside width="200px">
+                <BaseSide />
+            </el-aside>
+            <el-container>
+                <el-header>
+                    <BaseHeader />
+                </el-header>
+                <el-main>
+                    <router-view></router-view>
+                </el-main>
+            </el-container>
+        </el-container>
     </div>
 </template>
 

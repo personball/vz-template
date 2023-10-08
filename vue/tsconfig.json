@@ -23,7 +23,7 @@
       "vite-plugin-vue-layouts/client",
       "unplugin-icons/types/vue"
     ],
-    "skipLibCheck": true
+    "skipLibCheck": false
   },
   "vueCompilerOptions": {
     "target": 3

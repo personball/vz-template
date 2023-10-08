@@ -2,12 +2,14 @@ This is a typescript+vue3+vite project template for abp (as backend).
 
 ## Usage
 
-Base on [element-plus-vite-starter]()
+Base on [element-plus-vite-starter](https://github.com/element-plus/element-plus-vite-starter)
 
 ### Project Setup
 
 ```bash
-npm i
+# npm i 
+# 因 formkit/theme 依赖的 unocss 版本冲突，改为 yarn 
+yarn
 ```
 
 ### Compiles and hot-reloads for development
@@ -42,26 +44,26 @@ See `src/styles/element/index.scss`.
 - [x] auto register modules: https://github.com/antfu/vitesse/tree/main/src/modules  
 - [x] auto register directives  
 - [x] [element-plus](https://github.com/element-plus)  
-- [x] integrate [abp](https://abp.io);
-    - [x] [vue3-oidc](https://github.com/zhazhazhu/vue3-oidc) with abp AuthServer
-    - [x] currentUser & currentTenant
-    - [x] acl permissions:
-        - directive `v-acl="'p1'"`
-        - directive `v-acl="['p1','p2']"`
-        - directive `v-acl.any="['p1','p2']"`
-        - composable `isGranted(...policies: string[])`
-        - composable `isGrantedAnyOf(...policies: string[])`
-    - [x] features `useFeatureStore()`:
-    - [x] abp localization (with key format as `Resource::Key`) integrate into vue-i18n-next(vue-i18n@9);
-    - [x] settings `useSettingStore()`;  
+- [x] integrate [abp](https://abp.io);  
+  - [x] [vue3-oidc](https://github.com/zhazhazhu/vue3-oidc) with abp AuthServer  
+  - [x] currentUser & currentTenant
+  - [x] acl permissions:
+    - directive `v-acl="'p1'"`
+    - directive `v-acl="['p1','p2']"`
+    - directive `v-acl.any="['p1','p2']"`
+    - composable `isGranted(...policies: string[])`
+    - composable `isGrantedAnyOf(...policies: string[])`
+  - [x] features `useFeatureStore()`:
+  - [x] abp localization (with key format as `Resource::Key`) integrate into vue-i18n-next(vue-i18n@9);
+  - [x] settings `useSettingStore()`;  
 - [x] nswag auto generate api proxies;  
-- [x] [mitt](https://github.com/developit/mitt); 
-- [ ] integrate [formkit](https://formkit.com);  
-- [ ] [unplugin-icons](https://github.com/unplugin/unplugin-icons)
+- [x] [mitt](https://github.com/developit/mitt);
+- [x] integrate [formkit](https://formkit.com) with [formkit-element](https://github.com/mathsgod/formkit-element)/ alternative [form-create](https://github.com/xaboy/form-create);  
+- [x] [unplugin-icons](https://github.com/unplugin/unplugin-icons)
 
 # Folder Structure
 
-```
+``` bash
 src/
 ├── api/        # nswag 生成 api 代理到该目录
 ├── components/ # 全局组件（自动注册）
@@ -80,7 +82,8 @@ src/
 ```
 
 In English:
-```
+
+``` bash
 src/
 ├── api/        # nswag generate target
 ├── components/ # global components (will auto import)

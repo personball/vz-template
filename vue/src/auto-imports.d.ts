@@ -6,6 +6,8 @@
 export {}
 declare global {
   const EffectScope: typeof import('vue')['EffectScope']
+  const FormKit: typeof import('@formkit/vue')['FormKit']
+  const FormKitSchema: typeof import('@formkit/vue')['FormKitSchema']
   const LangMapAbp: typeof import('./composables/abp-locale-i18n')['LangMapAbp']
   const LangMapI18N: typeof import('./composables/abp-locale-i18n')['LangMapI18N']
   const computed: typeof import('vue')['computed']
@@ -29,6 +31,7 @@ declare global {
   const isReadonly: typeof import('vue')['isReadonly']
   const isRef: typeof import('vue')['isRef']
   const markRaw: typeof import('vue')['markRaw']
+  const menuAclResolve: typeof import('./composables/acl')['menuAclResolve']
   const nextTick: typeof import('vue')['nextTick']
   const onActivated: typeof import('vue')['onActivated']
   const onBeforeMount: typeof import('vue')['onBeforeMount']
@@ -90,5 +93,5 @@ declare global {
 // for type re-export
 declare global {
   // @ts-ignore
-  export type { Component, ComponentPublicInstance, ComputedRef, InjectionKey, PropType, Ref, VNode, WritableComputedRef } from 'vue'
+  export type { Component, ComponentPublicInstance, ComputedRef, ExtractDefaultPropTypes, ExtractPropTypes, ExtractPublicPropTypes, InjectionKey, PropType, Ref, VNode, WritableComputedRef } from 'vue'
 }

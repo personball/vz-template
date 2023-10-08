@@ -35,20 +35,25 @@ export const setup: any = (app: App<Element>) => {
 }
 /*
 
+ ## [x] acl-permission
+
 1. [x] 路由守卫;
 2. [x] 组件指令;
+  -                      <p v-acl="'p1'" ></p>
+  - v-acl 参数 string[]   <p v-acl="['p1','p2']" ></p>
+  - v-acl 修饰符：
+     - all of，全部（默认）  
+     - any of，任一        <p v-acl.any="['p1','p2']" ></p>
+
 3. [x] v-if 函数调用判断;
-
-- [ ] Menu acl
-
+4. [x] Menu acl config
+  - {acl:'p1'} 
+  - {acl:{anyOf:['p1','p2']}}
+  - {acl:['p1','p2']}  or {acl:{allOf:['p1','p2']}}
 // For navigator(Menu,top,float widget)  本身的 acl + route acl
 
-acl 参数 string[]
-acl 修饰符：
-    - all of，全部（默认） 
-    - any of，任一
 
-- [x] acl-permission
+
 - [ ] acl-feature
 
 */

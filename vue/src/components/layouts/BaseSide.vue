@@ -1,5 +1,7 @@
 <template>
-  <Menu :collapse="isCollapse"></Menu>
+  <el-scrollbar>
+    <Menu :collapse="isCollapse"></Menu>
+  </el-scrollbar>
 </template>
 
 <script lang="ts" setup>
