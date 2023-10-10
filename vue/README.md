@@ -4,6 +4,10 @@ This is a typescript+vue3+vite project template for abp (as backend).
 
 Base on [element-plus-vite-starter](https://github.com/element-plus/element-plus-vite-starter)
 
+- [ ] replace element-plus with antdv
+- [ ] add formily
+
+
 ### Project Setup
 
 ```bash
