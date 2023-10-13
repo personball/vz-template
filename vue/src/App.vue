@@ -1,5 +1,5 @@
 <template>
-  <el-config-provider namespace="ep" :locale="locale">
+  <el-config-provider namespace="ep" size="default" :locale="locale" :message="{ max: 1 }">
     <router-view>
     </router-view>
   </el-config-provider>

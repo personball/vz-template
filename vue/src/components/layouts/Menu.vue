@@ -1,7 +1,14 @@
 <template>
-    <el-menu class="el-menu-vertical-demo" :mode="mode" :default-active="activePath" :router="true" :collapse="isCollapse">
-        <MenuItem v-for="(menu, index) in menus" :key="index" :menu="menu" />
-    </el-menu>
+    <div class="h-[100%] overflow-hidden flex-col bg-[var(--left-menu-bg-color)] w-[var(--left-menu-max-width)]">
+        <ElScrollbar>
+            <el-menu backgroundColor="var(--left-menu-bg-color)" textColor="var(--left-menu-text-color)"
+                activeTextColor="var(--left-menu-text-active-color)" :mode="mode" :default-active="activePath"
+                :router="true" :collapse="isCollapse">
+                <MenuItem v-for="(menu, index) in menus" :key="index" :menu="menu">
+                </MenuItem>
+            </el-menu>
+        </ElScrollbar>
+    </div>
 </template>
 
 <script lang="ts" setup>

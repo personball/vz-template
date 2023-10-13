@@ -4,8 +4,6 @@ This is a typescript+vue3+vite project template for abp (as backend).
 
 Base on [element-plus-vite-starter](https://github.com/element-plus/element-plus-vite-starter)
 
-- [ ] add [formilyjs/element-plus](https://github.com/formilyjs/element-plus)
-
 alternative ui:
 
 - [ ] [antdv](https://antdv.com)，[antdv-pro](https://docs.antdv-pro.com)
@@ -14,6 +12,7 @@ alternative ui:
 alternative form fw:
 
 - [ ] [formily](https://formilyjs.org)，[表单设计器](https://formilyjs.org/zh-CN/guide/form-builder)
+- [ ] add [formilyjs/element-plus](https://github.com/formilyjs/element-plus)
 
 TODO:
 
@@ -21,6 +20,11 @@ TODO:
 - [ ] 分离前后端代码库，保留 element-plus，单独拎一个前端项目切换到 antdv
 - [ ] 尝试 formily/form-builder (这是个 react 项目)
 - [ ] 为 formily 适配 naiveui, formily/naiveui ?
+
+jsx/tsx use [vuejs/babel-plugin-jsx](https://github.com/vuejs/babel-plugin-jsx) through [vitejs/plugin-vue-jsx](https://github.com/vitejs/vite-plugin-vue/tree/main/packages/plugin-vue-jsx)
+
+
+keep eye on [shoelace](https://shoelace.style)
 
 ### Project Setup
 
