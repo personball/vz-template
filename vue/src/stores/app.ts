@@ -14,8 +14,14 @@ export const useAppStore = defineStore('app', {
         multiTenancy: undefined as MultiTenancyInfoDto | undefined,
         currentTenant: undefined as CurrentTenantDto | undefined,
         timing: undefined as TimingDto | undefined,
-        clock: undefined as ClockDto | undefined
+        clock: undefined as ClockDto | undefined,
+        collapse: false
     }),
+    getters: {
+        getCollapse(): boolean {
+            return this.collapse
+        },
+    },
     actions: {
         async init() {
             let client = new AbpApplicationConfigurationServiceProxy(undefined, axios);
@@ -58,6 +64,9 @@ export const useAppStore = defineStore('app', {
 
             this.initialized = true;
             // new Promise(f => setTimeout(() => this.initialized = true, 3000));
-        }
+        },
+        setCollapse(collapse: boolean) {
+            this.collapse = collapse
+        },
     }
 })
