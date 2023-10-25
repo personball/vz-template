@@ -7,8 +7,16 @@
         "sys": "系统管理",
         "users": "用户管理",
         "roles": "角色管理",
-        "settings":"配置管理",
-        "logs":"审计日志"
+        "settings": "配置管理",
+        "logs": "审计日志"
+    },
+    "common": {
+        "editProfile": "个人资料",
+        "changePwd": "修改密码",
+        "pwdOld": "原密码",
+        "pwdNew": "新密码",
+        "pwdConfirm": "确认新密码",
+        "logout": "退出登录"
     },
     "Account::Key": {
         "hi": "abc"

@@ -10,6 +10,11 @@
         "settings": "Settings",
         "logs": "Audit Log"
     },
+    "common": {
+        "editProfile": "Profile",
+        "changePwd":"Change Password",
+        "logout": "Sign Out"
+    },
     "Account::Key": {
         "hi": "abc"
     }

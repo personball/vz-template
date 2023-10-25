@@ -19,6 +19,8 @@ import {
   transformerVariantGroup,
 } from 'unocss'
 
+import vitePluginImp from 'vite-plugin-imp'
+
 const pathSrc = path.resolve(__dirname, 'src')
 
 // https://vitejs.dev/config/
@@ -84,8 +86,16 @@ export default defineConfig({
           'vue-router/auto': ['useLink'],
           'vue3-oidc': ['useOidcStore', 'useAuth'],
           'vue-i18n': ['useI18n'],
-          '@formkit/vue':['FormKitSchema','FormKit']
-        }
+          '@formkit/vue': ['FormKitSchema', 'FormKit'],
+          // '@formily/core': ['createForm'],
+          // '@formily/vue': ['FormProvider', 'createSchemaField'],
+          // '@formily/element-plus': ['FormItem', 'Input', 'Submit']
+        },
+        // {
+        //   from: '@formily/json-schema',
+        //   imports: ['Schema'],
+        //   type: true
+        // }
         // custom
         // {
         //   '@vueuse/core': [
@@ -152,7 +162,18 @@ export default defineConfig({
     Layouts(),
     Icons({
       autoInstall: true
-    })
+    }),
+    vitePluginImp({
+      libList: [
+        {
+          libName: '@formily/element-plus',
+          libDirectory: 'esm',
+          style(name) {
+            return `@formily/element-plus/esm/${name}/style.js`
+          },
+        },
+      ],
+    }),
   ],
   // https://cn.vitest.dev/config/
   test: {

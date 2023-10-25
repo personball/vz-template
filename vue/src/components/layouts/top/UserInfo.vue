@@ -1,5 +1,5 @@
 <template>
-    <ElDropdown trigger="click">
+    <ElDropdown trigger="click" v-bind="$attrs">
         <div class="flex items-center px-10px pt-1">
             <el-icon>
                 <IconUser></IconUser>
@@ -11,28 +11,43 @@
         <template #dropdown>
             <ElDropdownMenu>
                 <ElDropdownItem>
-                    <!-- 个人资料-->
-                    <span>个人资料</span>
-                    <!-- <div @click="toDocument">{{ t('common.document') }}</div> -->
+                    <div @click="showEditProfile">{{ t('common.editProfile') }}</div>
                 </ElDropdownItem>
                 <ElDropdownItem>
-                    <!-- 修改密码-->
-                    <span>修改密码</span>
-                    <!-- <div @click="lockScreen">{{ t('lock.lockScreen') }}</div> -->
+                    <div @click="showChangePwd">{{ t('common.changePwd') }}</div>
                 </ElDropdownItem>
                 <ElDropdownItem divided>
-                    <!-- 退出登录-->
-                    <span>退出登录</span>
-                    <!-- <div @click="loginOut">{{ t('common.loginOut') }}</div> -->
+                    <div @click="loginOut">{{ t('common.logout') }}</div>
                 </ElDropdownItem>
             </ElDropdownMenu>
         </template>
     </ElDropdown>
+
+    <ChangePwd v-if="showChangePwdDialog" v-model="showChangePwdDialog"></ChangePwd>
+    <EditProfile v-if="showEditProfileDialog" v-model="showEditProfileDialog"></EditProfile>
 </template>
 
 <script lang="ts" setup>
 import IconUser from '~icons/ep/user'
 
 const appStore = useAppStore()
+
+const { t } = useI18n()
+
+const showEditProfileDialog = ref(false)
+const showEditProfile = () => {
+    showEditProfileDialog.value = true
+}
+
+const showChangePwdDialog = ref(false)
+const showChangePwd = () => {
+    showChangePwdDialog.value = true
+}
+
+const { state: { value: { userManager } }, actions: { value: { removeUser } } } = useOidcStore()
+const loginOut = async () => {
+    removeUser()
+    await userManager?.signoutRedirect()
+}
 
 </script>
