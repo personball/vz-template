@@ -25,6 +25,9 @@
 import { createForm } from '@formily/core'
 import { createSchemaField, FormProvider } from '@formily/vue'
 import { FormItem, Password, Submit } from '@formily/element-plus'
+import { ChangePasswordInput, ProfileServiceProxy } from '~/api/ServiceProxies'
+import axios from 'axios'
+import { ElMessage } from 'element-plus/es'
 
 const { t } = useI18n()
 
@@ -63,7 +66,7 @@ const schema = {
                 labelWidth: 100
             }
         },
-        pwdConfirm: {
+        pwdConfirm: { // TODO:
             type: 'string',
             required: true,
             title: t('common.pwdConfirm'),
@@ -84,18 +87,17 @@ const { SchemaField } = createSchemaField({
     },
 })
 
-const onSubmit = (value: any) => {
-    console.log(value)
+const onSubmit = async (value: any) => {
+
+    // TODO: loading overlay
+    // const client = new ProfileServiceProxy(undefined, axios);
+    // const res = await client.changePassword(new ChangePasswordInput({
+    //     currentPassword: value.pwdOld,
+    //     newPassword: value.pwdNew
+    // }))
+
+    ElMessage.success(t('common.modifySuccess'))
+    show.value = false;
 }
 
 </script>
-
-<style>
-
-/* 
-TODO: 样式前缀最好自定义一下，text-align:left
-formily-element-plus-form-item-error-help 
-formily-element-plus-form-item-help 
-formily-element-plus-form-item-help-enter 
-formily-element-plus-form-item-help-enter-active */
-</style>

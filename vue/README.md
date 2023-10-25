@@ -11,12 +11,12 @@ alternative ui:
 
 alternative form fw:
 
-- [ ] [formily](https://formilyjs.org)，[表单设计器](https://formilyjs.org/zh-CN/guide/form-builder)
-- [ ] add [formilyjs/element-plus](https://github.com/formilyjs/element-plus)
+- [x] [formily](https://formilyjs.org)，[表单设计器](https://formilyjs.org/zh-CN/guide/form-builder)
+- [x] add [formilyjs/element-plus](https://github.com/formilyjs/element-plus)
 
 TODO:
 
-- [ ] 尝试 formilyjs/element-plus
+- [x] 尝试 formilyjs/element-plus
 - [ ] 分离前后端代码库，保留 element-plus，单独拎一个前端项目切换到 antdv
 - [ ] 尝试 formily/form-builder (这是个 react 项目)
 - [ ] 为 formily 适配 naiveui, formily/naiveui ?
