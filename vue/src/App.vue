@@ -1,5 +1,5 @@
 <template>
-  <el-config-provider namespace="ep" size="default" :locale="locale" :message="{ max: 1 }">
+  <el-config-provider namespace="el" size="default" :locale="locale" :message="{ max: 1 }">
     <router-view>
     </router-view>
   </el-config-provider>
@@ -20,6 +20,6 @@ console.log('say app');
 <style>
 #app {
   text-align: center;
-  color: var(--ep-text-color-primary);
+  color: var(--el-text-color-primary);
 }
 </style>

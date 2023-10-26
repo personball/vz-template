@@ -31,7 +31,7 @@ export default defineConfig({
         background-color: var(--top-header-hover-color);
       }
       .dark ${selector}:hover {
-        background-color: var(--ep-bg-color-overlay);
+        background-color: var(--el-bg-color-overlay);
       }
       `
       }
@@ -48,7 +48,7 @@ export default defineConfig({
         left: 0;
         width: 1px;
         height: 100%;
-        background-color: var(--ep-border-color);
+        background-color: var(--el-border-color);
         z-index: 3;
       }
       `
@@ -66,7 +66,7 @@ export default defineConfig({
         right: 0;
         width: 1px;
         height: 100%;
-        background-color: var(--ep-border-color);
+        background-color: var(--el-border-color);
         z-index: 3;
       }
       `
@@ -84,7 +84,7 @@ export default defineConfig({
         left: 0;
         width: 100%;
         height: 1px;
-        background-color: var(--ep-border-color);
+        background-color: var(--el-border-color);
         z-index: 3;
       }
       `
@@ -102,7 +102,7 @@ export default defineConfig({
         left: 0;
         width: 100%;
         height: 1px;
-        background-color: var(--ep-border-color);
+        background-color: var(--el-border-color);
         z-index: 3;
       }
       `

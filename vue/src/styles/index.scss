@@ -14,13 +14,13 @@
 
   --left-menu-bg-light-color: #0f2438;
 
-  --left-menu-bg-active-color: var(--ep-color-primary);
+  --left-menu-bg-active-color: var(--el-color-primary);
 
   --left-menu-text-color: #bfcbd9;
 
   --left-menu-text-active-color: #fff;
 
-  --left-menu-collapse-bg-active-color: var(--ep-color-primary);
+  --left-menu-collapse-bg-active-color: var(--el-color-primary);
   /* left menu end */
 
   /* logo start */
@@ -69,17 +69,17 @@ body {
 }
 
 a {
-  color: var(--ep-color-primary);
+  color: var(--el-color-primary);
 }
 
 code {
   border-radius: 2px;
   padding: 2px 4px;
-  background-color: var(--ep-color-primary-light-9);
-  color: var(--ep-color-primary);
+  background-color: var(--el-color-primary-light-9);
+  color: var(--el-color-primary);
 }
 
-.ep-overlay-dialog {
+.el-overlay-dialog {
   display: flex;
   justify-content: center;
   align-items: center;

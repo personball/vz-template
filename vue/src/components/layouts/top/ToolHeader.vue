@@ -1,6 +1,6 @@
 <template>
     <div id="v-tool-header"
-        class="v-tool-header h-[var(--top-tool-height)] relative px-[var(--top-tool-p-x)] flex items-center justify-between dark:bg-[var(--ep-bg-color)] bg-[var(--top-header-bg-color)]"
+        class="v-tool-header h-[var(--top-tool-height)] relative px-[var(--top-tool-p-x)] flex items-center justify-between dark:bg-[var(--el-bg-color)] bg-[var(--top-header-bg-color)]"
         style="transition: left var(--transition-time-02);">
         <div class="h-full flex items-center">
             <Collapse class="v-collapse custom-hover px-10px pt-1" color="var(--top-header-text-color)"></Collapse>

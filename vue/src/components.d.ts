@@ -50,4 +50,7 @@ declare module 'vue' {
     ToolHeader: typeof import('./components/layouts/top/ToolHeader.vue')['default']
     UserInfo: typeof import('./components/layouts/top/UserInfo.vue')['default']
   }
+  export interface ComponentCustomProperties {
+    vLoading: typeof import('element-plus/es')['ElLoadingDirective']
+  }
 }

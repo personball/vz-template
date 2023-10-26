@@ -3,6 +3,7 @@ import { createRouter, createWebHashHistory } from 'vue-router/auto' // if not f
 import { setupLayouts } from 'virtual:generated-layouts'
 import { useAppStore } from '~/stores/app';
 import { RouteRecordRaw } from 'vue-router';
+import { ElLoading } from 'element-plus/es'
 
 function recursiveLayouts(route: RouteRecordRaw): RouteRecordRaw {
     if (route.children) {
@@ -54,18 +55,17 @@ export const install: any = (app: App<Element>) => {
         }
 
         const appStore = useAppStore()
-
+        console.log('to.fullPath:',to)
         if (!appStore.currentUser?.isAuthenticated) {
             // 将用户重定向到登录页面
             const { autoAuthenticate } = useAuth()
-            await autoAuthenticate('/#'+to.fullPath);
-            // return {
-            //     name: '/login/',
-            //     query: {
-            //         redirect: to.fullPath
-            //     },
-            //     replace: true
-            // }
+            const loading = ElLoading.service({
+                lock: true,
+                text: '认证中...',
+                background: 'rgba(128, 128, 128, 0.5)'
+            });
+            await autoAuthenticate('/#' + to.fullPath);
+            loading.close();
         }
     })
 
