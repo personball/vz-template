@@ -22,7 +22,7 @@
 </template>
 
 <script lang="ts" setup>
-import { createForm } from '@formily/core'
+import { createForm, registerValidateRules } from '@formily/core'
 import { createSchemaField, FormProvider } from '@formily/vue'
 import { FormItem, Password, Submit } from '@formily/element-plus'
 import { ChangePasswordInput, ProfileServiceProxy } from '~/api/ServiceProxies'
@@ -40,6 +40,16 @@ const show = computed({
     get: () => props.modelValue,
     set: (val) => {
         emit('update:modelValue', val)
+    }
+})
+
+const form = createForm()
+
+registerValidateRules({
+    confirmNewPwd(value: any): any {
+        if (value !== form.values.pwdNew) {
+            return '两次输入不一致！'
+        }
     }
 })
 
@@ -66,7 +76,7 @@ const schema = {
                 labelWidth: 100
             }
         },
-        pwdConfirm: { // TODO:
+        pwdConfirm: {
             type: 'string',
             required: true,
             title: t('common.pwdConfirm'),
@@ -74,12 +84,14 @@ const schema = {
             'x-decorator': 'FormItem',
             'x-decorator-props': {
                 labelWidth: 100
+            },
+            'x-validator': {
+                confirmNewPwd: true
             }
         },
     },
 }
 
-const form = createForm()
 const { SchemaField } = createSchemaField({
     components: {
         FormItem,

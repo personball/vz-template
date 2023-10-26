@@ -6,7 +6,7 @@
             </el-icon>
             <!-- <img src="~~/assets/imgs/avatar.jpg" alt="" class="w-[calc(var(--logo-height)-25px)] rounded-[50%]" /> -->
             <span class="<lg:hidden text-14px pl-[5px] text-[var(--top-header-text-color)]">
-                {{ appStore.currentUser?.name }}</span>
+                {{ appStore.currentUser?.name }} {{ oidcState.user?.expired ? '*' : '' }}</span>
         </div>
         <template #dropdown>
             <ElDropdownMenu>
@@ -29,6 +29,10 @@
 
 <script lang="ts" setup>
 import IconUser from '~icons/ep/user'
+
+const { state: oidcState } = useOidcStore()
+
+console.log('oidcState.value.user?.expires_at:', new Date(oidcState.value.user?.expires_at ?? 0 * 1000))
 
 const appStore = useAppStore()
 
