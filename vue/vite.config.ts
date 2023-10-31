@@ -11,13 +11,6 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import Layouts from 'vite-plugin-vue-layouts'
 import Icons from 'unplugin-icons/vite'
 import Unocss from 'unocss/vite'
-import {
-  presetAttributify,
-  presetIcons,
-  presetUno,
-  transformerDirectives,
-  transformerVariantGroup,
-} from 'unocss'
 
 import vitePluginImp from 'vite-plugin-imp'
 
@@ -90,6 +83,9 @@ export default defineConfig({
           // '@formily/core': ['createForm'],
           // '@formily/vue': ['FormProvider', 'createSchemaField'],
           // '@formily/element-plus': ['FormItem', 'Input', 'Submit']
+          'axios': [
+            ['default', 'axios'], // import { default as axios } from 'axios',
+          ],
         },
         // {
         //   from: '@formily/json-schema',

@@ -12,7 +12,8 @@
     },
     "common": {
         "editProfile": "Profile",
-        "changePwd":"Change Password",
+        "changePwd": "Change Password",
+        "modifySuccess": "Modify Success",
         "logout": "Sign Out"
     },
     "Account::Key": {

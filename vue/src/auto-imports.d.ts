@@ -10,6 +10,7 @@ declare global {
   const FormKitSchema: typeof import('@formkit/vue')['FormKitSchema']
   const LangMapAbp: typeof import('./composables/abp-locale-i18n')['LangMapAbp']
   const LangMapI18N: typeof import('./composables/abp-locale-i18n')['LangMapI18N']
+  const axios: typeof import('axios')['default']
   const computed: typeof import('vue')['computed']
   const createApp: typeof import('vue')['createApp']
   const customRef: typeof import('vue')['customRef']

@@ -16,6 +16,7 @@
         "pwdOld": "原密码",
         "pwdNew": "新密码",
         "pwdConfirm": "确认新密码",
+        "modifySuccess": "修改成功",
         "logout": "退出登录"
     },
     "Account::Key": {

@@ -24,9 +24,9 @@
 <script lang="ts" setup>
 import { createForm, registerValidateRules } from '@formily/core'
 import { createSchemaField, FormProvider } from '@formily/vue'
+import { ISchema } from '@formily/json-schema'
 import { FormItem, Password, Submit } from '@formily/element-plus'
 import { ChangePasswordInput, ProfileServiceProxy } from '~/api/ServiceProxies'
-import axios from 'axios'
 import { ElMessage } from 'element-plus/es'
 
 const { t } = useI18n()
@@ -43,20 +43,29 @@ const show = computed({
     }
 })
 
-const form = createForm()
+const form = createForm({
 
-registerValidateRules({
-    confirmNewPwd(value: any): any {
-        if (value !== form.values.pwdNew) {
-            return '两次输入不一致！'
-        }
-    }
 })
 
-const schema = {
+// registerValidateRules({
+//     confirmNewPwd(value: any): any {
+//         console.log(value)
+//         return value !== form.values.newPassword ? '两次输入不一致！' : ''
+//     }
+// })
+
+// const reaction: SchemaReaction = (field, scope) => {
+//     const f = (scope.$form as Form)
+//     f.setFieldState('target', {})
+//     f.setFieldState('target', state => {
+// state.component
+//     })
+// }
+
+const schema: ISchema = {
     type: 'object',
     properties: {
-        pwdOld: {
+        currentPassword: {
             type: 'string',
             required: true,
             title: t('common.pwdOld'),
@@ -66,7 +75,7 @@ const schema = {
                 labelWidth: 100
             }
         },
-        pwdNew: {
+        newPassword: {
             type: 'string',
             required: true,
             title: t('common.pwdNew'),
@@ -86,6 +95,12 @@ const schema = {
                 labelWidth: 100
             },
             'x-validator': {
+                validator: `{{(value,rule)=>{
+                    if(!value)return ''
+                    return value!==$form.values.newPassword?rule.message:''
+                }
+            }}`,
+                message: '两次输入不一致！',
                 confirmNewPwd: true
             }
         },
@@ -100,14 +115,11 @@ const { SchemaField } = createSchemaField({
 })
 
 const onSubmit = async (value: any) => {
-
-    // TODO: loading overlay
-    // const client = new ProfileServiceProxy(undefined, axios);
-    // const res = await client.changePassword(new ChangePasswordInput({
-    //     currentPassword: value.pwdOld,
-    //     newPassword: value.pwdNew
-    // }))
-
+    const client = new ProfileServiceProxy(undefined, axios);
+    await client.changePassword(new ChangePasswordInput({
+        currentPassword: value.currentPassword,
+        newPassword: value.newPassword
+    }))
     ElMessage.success(t('common.modifySuccess'))
     show.value = false;
 }
