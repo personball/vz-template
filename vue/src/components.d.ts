@@ -49,6 +49,7 @@ declare module 'vue' {
     RouterView: typeof import('vue-router')['RouterView']
     ToolHeader: typeof import('./components/layouts/top/ToolHeader.vue')['default']
     UserInfo: typeof import('./components/layouts/top/UserInfo.vue')['default']
+    UserLookup: typeof import('./components/lookup/UserLookup.vue')['default']
   }
   export interface ComponentCustomProperties {
     vLoading: typeof import('element-plus/es')['ElLoadingDirective']

@@ -72,7 +72,7 @@ const schema: ISchema = {
             'x-component': 'Password',
             'x-decorator': 'FormItem',
             'x-decorator-props': {
-                labelWidth: 100
+                labelWidth: 150
             }
         },
         newPassword: {
@@ -82,7 +82,7 @@ const schema: ISchema = {
             'x-component': 'Password',
             'x-decorator': 'FormItem',
             'x-decorator-props': {
-                labelWidth: 100
+                labelWidth: 150
             }
         },
         pwdConfirm: {
@@ -92,7 +92,7 @@ const schema: ISchema = {
             'x-component': 'Password',
             'x-decorator': 'FormItem',
             'x-decorator-props': {
-                labelWidth: 100
+                labelWidth: 150
             },
             'x-validator': {
                 validator: `{{(value,rule)=>{

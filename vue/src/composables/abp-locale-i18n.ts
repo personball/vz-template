@@ -10,8 +10,6 @@ export const LangMapI18N: { [key: string]: string; } = {
     'en': 'en'
 }
 
-
-
 function reMerge(messages: any, mergeLocaleMessage: any) {
     // merge abp localization into vue-i18n
 

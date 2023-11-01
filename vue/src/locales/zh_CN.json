@@ -25,7 +25,8 @@
         "pwdConfirm": "确认新密码",
         "modify": "修改",
         "modifySuccess": "修改成功",
-        "logout": "退出登录"
+        "logout": "退出登录",
+        "query": "查询"
     },
     "Account::Key": {
         "hi": "abc"
