@@ -10,12 +10,20 @@
         "settings": "配置管理",
         "logs": "审计日志"
     },
+    "profile": {
+        "surname": "姓氏",
+        "name": "名",
+        "userName": "用户名",
+        "email": "Email",
+        "phoneNumber": "手机号"
+    },
     "common": {
         "editProfile": "个人资料",
         "changePwd": "修改密码",
         "pwdOld": "原密码",
         "pwdNew": "新密码",
         "pwdConfirm": "确认新密码",
+        "modify": "修改",
         "modifySuccess": "修改成功",
         "logout": "退出登录"
     },

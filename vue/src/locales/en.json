@@ -10,7 +10,18 @@
         "settings": "Settings",
         "logs": "Audit Log"
     },
+    "profile": {
+        "surname": "Surname",
+        "name": "Name",
+        "userName": "User Name",
+        "email": "Email",
+        "phoneNumber": "Phone"
+    },
     "common": {
+        "pwdOld": "Origin Password",
+        "pwdNew": "New Password",
+        "pwdConfirm": "Confirm",
+        "modify": "Modify",
         "editProfile": "Profile",
         "changePwd": "Change Password",
         "modifySuccess": "Modify Success",
