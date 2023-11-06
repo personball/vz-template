@@ -84,11 +84,11 @@ const searchFormSchema: ISchema = {
 }
 
 const listColumns = ref([
-    { label: t('sys.users.fullName'), formatter: (row: any) => row.surname + ' ' + row.name },
-    { label: t('sys.users.surname'), prop: 'surname', width: '100px' },
-    { label: t('sys.users.name'), prop: 'name' },
-    { label: t('sys.users.userName'), prop: 'userName' },
-    { label: t('sys.users.email'), prop: 'email' }
+    { label: 'sys.users.fullName', formatter: (row: any) => row.surname + ' ' + row.name },
+    { label: 'sys.users.surname', prop: 'surname', width: '100px' },
+    { label: 'sys.users.name', prop: 'name' },
+    { label: 'sys.users.userName', prop: 'userName' },
+    { label: 'sys.users.email', prop: 'email' }
 ])
 
 const client = new UserServiceProxy(undefined, axios)

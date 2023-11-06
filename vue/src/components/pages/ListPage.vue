@@ -18,7 +18,7 @@
         <!--list items-->
         <div v-loading="loading">
             <el-table :data="list" table-layout="fixed" stripe height="400px">
-                <el-table-column v-for="item in listColumns" v-bind="item" />
+                <el-table-column v-for="item in listColumns" v-bind="item" :label="t(item.label)" />
                 <el-table-column v-if="$slots.columnActions">
                     <template #header>
                         {{ t('common.columnActions') }}
@@ -64,7 +64,7 @@ const { listColumns } = toRefs(props)
 //         column['label'] = column['label']()
 //     }
 // });
-watch(()=>props.listColumns,(val)=>console.log('w listColumns',val))
+// watch(()=>props.listColumns,(val)=>console.log('w listColumns',val))
 
 
 const emit = defineEmits<{
