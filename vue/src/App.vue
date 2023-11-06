@@ -18,8 +18,7 @@ console.log('say app');
 </script>
 
 <style>
-#app {
-  text-align: center;
+/* #app {
   color: var(--el-text-color-primary);
-}
+} */
 </style>

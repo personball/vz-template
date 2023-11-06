@@ -26,7 +26,23 @@
         "modify": "修改",
         "modifySuccess": "修改成功",
         "logout": "退出登录",
-        "query": "查询"
+        "query": "查询",
+        "reset": "重置",
+        "create": "新建",
+        "edit": "编辑",
+        "delete": "删除",
+        "columnActions": "操作",
+        "confirm-delete": "确定删除？"
+    },
+    "sys": {
+        "users": {
+            "fullName": "全名",
+            "surname": "姓氏",
+            "name": "名",
+            "userName": "用户名",
+            "email": "Email zh",
+            "phoneNumber": "手机号"
+        }
     },
     "Account::Key": {
         "hi": "abc"

@@ -1,0 +1,1 @@
+export type QueryListHander<T> = (queryForm: any, skipCount: number, maxResultCount: number, updateList: (items: T[] | undefined, totalCount: number | undefined) => void) => void;

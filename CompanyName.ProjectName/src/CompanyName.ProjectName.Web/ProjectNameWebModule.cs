@@ -47,6 +47,7 @@ using Volo.Abp.VirtualFileSystem;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Volo.Abp.Reflection;
 
 namespace CompanyName.ProjectName.Web;
 
@@ -224,7 +225,7 @@ public class ProjectNameWebModule : AbpModule
             {
                 options.SwaggerDoc("v1", new OpenApiInfo { Title = "ProjectName API", Version = "v1" });
                 options.DocInclusionPredicate((docName, description) => true);
-                options.CustomSchemaIds(type => type.FullName);
+                options.CustomSchemaIds(type => TypeHelper.GetFullNameHandlingNullableAndGenerics(type));
             }
         );
     }

@@ -8,8 +8,7 @@
 /* eslint-disable */
 // ReSharper disable InconsistentNaming
 
-import axios, { AxiosError } from 'axios';
-import type { AxiosInstance, AxiosRequestConfig, AxiosResponse, CancelToken } from 'axios';
+import axios, { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse, CancelToken } from 'axios';
 
 export class AbpApiDefinitionServiceProxy {
     private instance: AxiosInstance;
@@ -2107,7 +2106,7 @@ export class RoleServiceProxy {
     /**
      * @return Success
      */
-    all( cancelToken?: CancelToken | undefined): Promise<ListResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null> {
+    all( cancelToken?: CancelToken | undefined): Promise<ListResultDtoOfIdentityRoleDto> {
         let url_ = this.baseUrl + "/api/identity/roles/all";
         url_ = url_.replace(/[?&]$/, "");
 
@@ -2131,7 +2130,7 @@ export class RoleServiceProxy {
         });
     }
 
-    protected processAll(response: AxiosResponse): Promise<ListResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null> {
+    protected processAll(response: AxiosResponse): Promise<ListResultDtoOfIdentityRoleDto> {
         const status = response.status;
         let _headers: any = {};
         if (response.headers && typeof response.headers === "object") {
@@ -2145,8 +2144,8 @@ export class RoleServiceProxy {
             const _responseText = response.data;
             let result200: any = null;
             let resultData200  = _responseText;
-            result200 = ListResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null.fromJS(resultData200);
-            return Promise.resolve<ListResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null>(result200);
+            result200 = ListResultDtoOfIdentityRoleDto.fromJS(resultData200);
+            return Promise.resolve<ListResultDtoOfIdentityRoleDto>(result200);
 
         } else if (status === 403) {
             const _responseText = response.data;
@@ -2194,7 +2193,7 @@ export class RoleServiceProxy {
             const _responseText = response.data;
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
         }
-        return Promise.resolve<ListResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null>(null as any);
+        return Promise.resolve<ListResultDtoOfIdentityRoleDto>(null as any);
     }
 
     /**
@@ -2204,7 +2203,7 @@ export class RoleServiceProxy {
      * @param maxResultCount (optional) 
      * @return Success
      */
-    rolesGET(filter?: string | undefined, sorting?: string | undefined, skipCount?: number | undefined, maxResultCount?: number | undefined, cancelToken?: CancelToken | undefined): Promise<PagedResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null> {
+    rolesGET(filter?: string | undefined, sorting?: string | undefined, skipCount?: number | undefined, maxResultCount?: number | undefined, cancelToken?: CancelToken | undefined): Promise<PagedResultDtoOfIdentityRoleDto> {
         let url_ = this.baseUrl + "/api/identity/roles?";
         if (filter === null)
             throw new Error("The parameter 'filter' cannot be null.");
@@ -2244,7 +2243,7 @@ export class RoleServiceProxy {
         });
     }
 
-    protected processRolesGET(response: AxiosResponse): Promise<PagedResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null> {
+    protected processRolesGET(response: AxiosResponse): Promise<PagedResultDtoOfIdentityRoleDto> {
         const status = response.status;
         let _headers: any = {};
         if (response.headers && typeof response.headers === "object") {
@@ -2258,8 +2257,8 @@ export class RoleServiceProxy {
             const _responseText = response.data;
             let result200: any = null;
             let resultData200  = _responseText;
-            result200 = PagedResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null.fromJS(resultData200);
-            return Promise.resolve<PagedResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null>(result200);
+            result200 = PagedResultDtoOfIdentityRoleDto.fromJS(resultData200);
+            return Promise.resolve<PagedResultDtoOfIdentityRoleDto>(result200);
 
         } else if (status === 403) {
             const _responseText = response.data;
@@ -2307,7 +2306,7 @@ export class RoleServiceProxy {
             const _responseText = response.data;
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
         }
-        return Promise.resolve<PagedResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null>(null as any);
+        return Promise.resolve<PagedResultDtoOfIdentityRoleDto>(null as any);
     }
 
     /**
@@ -3007,7 +3006,7 @@ export class TenantServiceProxy {
      * @param maxResultCount (optional) 
      * @return Success
      */
-    tenantsGET2(filter?: string | undefined, sorting?: string | undefined, skipCount?: number | undefined, maxResultCount?: number | undefined, cancelToken?: CancelToken | undefined): Promise<PagedResultDto_1OfOfTenantDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null> {
+    tenantsGET2(filter?: string | undefined, sorting?: string | undefined, skipCount?: number | undefined, maxResultCount?: number | undefined, cancelToken?: CancelToken | undefined): Promise<PagedResultDtoOfTenantDto> {
         let url_ = this.baseUrl + "/api/multi-tenancy/tenants?";
         if (filter === null)
             throw new Error("The parameter 'filter' cannot be null.");
@@ -3047,7 +3046,7 @@ export class TenantServiceProxy {
         });
     }
 
-    protected processTenantsGET2(response: AxiosResponse): Promise<PagedResultDto_1OfOfTenantDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null> {
+    protected processTenantsGET2(response: AxiosResponse): Promise<PagedResultDtoOfTenantDto> {
         const status = response.status;
         let _headers: any = {};
         if (response.headers && typeof response.headers === "object") {
@@ -3061,8 +3060,8 @@ export class TenantServiceProxy {
             const _responseText = response.data;
             let result200: any = null;
             let resultData200  = _responseText;
-            result200 = PagedResultDto_1OfOfTenantDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null.fromJS(resultData200);
-            return Promise.resolve<PagedResultDto_1OfOfTenantDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null>(result200);
+            result200 = PagedResultDtoOfTenantDto.fromJS(resultData200);
+            return Promise.resolve<PagedResultDtoOfTenantDto>(result200);
 
         } else if (status === 403) {
             const _responseText = response.data;
@@ -3110,7 +3109,7 @@ export class TenantServiceProxy {
             const _responseText = response.data;
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
         }
-        return Promise.resolve<PagedResultDto_1OfOfTenantDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null>(null as any);
+        return Promise.resolve<PagedResultDtoOfTenantDto>(null as any);
     }
 
     /**
@@ -3807,7 +3806,7 @@ export class UserServiceProxy {
      * @param maxResultCount (optional) 
      * @return Success
      */
-    usersGET2(filter?: string | undefined, sorting?: string | undefined, skipCount?: number | undefined, maxResultCount?: number | undefined, cancelToken?: CancelToken | undefined): Promise<PagedResultDto_1OfOfIdentityUserDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null> {
+    usersGET2(filter?: string | undefined, sorting?: string | undefined, skipCount?: number | undefined, maxResultCount?: number | undefined, cancelToken?: CancelToken | undefined): Promise<PagedResultDtoOfIdentityUserDto> {
         let url_ = this.baseUrl + "/api/identity/users?";
         if (filter === null)
             throw new Error("The parameter 'filter' cannot be null.");
@@ -3847,7 +3846,7 @@ export class UserServiceProxy {
         });
     }
 
-    protected processUsersGET2(response: AxiosResponse): Promise<PagedResultDto_1OfOfIdentityUserDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null> {
+    protected processUsersGET2(response: AxiosResponse): Promise<PagedResultDtoOfIdentityUserDto> {
         const status = response.status;
         let _headers: any = {};
         if (response.headers && typeof response.headers === "object") {
@@ -3861,8 +3860,8 @@ export class UserServiceProxy {
             const _responseText = response.data;
             let result200: any = null;
             let resultData200  = _responseText;
-            result200 = PagedResultDto_1OfOfIdentityUserDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null.fromJS(resultData200);
-            return Promise.resolve<PagedResultDto_1OfOfIdentityUserDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null>(result200);
+            result200 = PagedResultDtoOfIdentityUserDto.fromJS(resultData200);
+            return Promise.resolve<PagedResultDtoOfIdentityUserDto>(result200);
 
         } else if (status === 403) {
             const _responseText = response.data;
@@ -3910,7 +3909,7 @@ export class UserServiceProxy {
             const _responseText = response.data;
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
         }
-        return Promise.resolve<PagedResultDto_1OfOfIdentityUserDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null>(null as any);
+        return Promise.resolve<PagedResultDtoOfIdentityUserDto>(null as any);
     }
 
     /**
@@ -4014,7 +4013,7 @@ export class UserServiceProxy {
     /**
      * @return Success
      */
-    rolesGET3(id: string, cancelToken?: CancelToken | undefined): Promise<ListResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null> {
+    rolesGET3(id: string, cancelToken?: CancelToken | undefined): Promise<ListResultDtoOfIdentityRoleDto> {
         let url_ = this.baseUrl + "/api/identity/users/{id}/roles";
         if (id === undefined || id === null)
             throw new Error("The parameter 'id' must be defined.");
@@ -4041,7 +4040,7 @@ export class UserServiceProxy {
         });
     }
 
-    protected processRolesGET3(response: AxiosResponse): Promise<ListResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null> {
+    protected processRolesGET3(response: AxiosResponse): Promise<ListResultDtoOfIdentityRoleDto> {
         const status = response.status;
         let _headers: any = {};
         if (response.headers && typeof response.headers === "object") {
@@ -4055,8 +4054,8 @@ export class UserServiceProxy {
             const _responseText = response.data;
             let result200: any = null;
             let resultData200  = _responseText;
-            result200 = ListResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null.fromJS(resultData200);
-            return Promise.resolve<ListResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null>(result200);
+            result200 = ListResultDtoOfIdentityRoleDto.fromJS(resultData200);
+            return Promise.resolve<ListResultDtoOfIdentityRoleDto>(result200);
 
         } else if (status === 403) {
             const _responseText = response.data;
@@ -4104,7 +4103,7 @@ export class UserServiceProxy {
             const _responseText = response.data;
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
         }
-        return Promise.resolve<ListResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null>(null as any);
+        return Promise.resolve<ListResultDtoOfIdentityRoleDto>(null as any);
     }
 
     /**
@@ -4207,7 +4206,7 @@ export class UserServiceProxy {
     /**
      * @return Success
      */
-    assignableRoles( cancelToken?: CancelToken | undefined): Promise<ListResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null> {
+    assignableRoles( cancelToken?: CancelToken | undefined): Promise<ListResultDtoOfIdentityRoleDto> {
         let url_ = this.baseUrl + "/api/identity/users/assignable-roles";
         url_ = url_.replace(/[?&]$/, "");
 
@@ -4231,7 +4230,7 @@ export class UserServiceProxy {
         });
     }
 
-    protected processAssignableRoles(response: AxiosResponse): Promise<ListResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null> {
+    protected processAssignableRoles(response: AxiosResponse): Promise<ListResultDtoOfIdentityRoleDto> {
         const status = response.status;
         let _headers: any = {};
         if (response.headers && typeof response.headers === "object") {
@@ -4245,8 +4244,8 @@ export class UserServiceProxy {
             const _responseText = response.data;
             let result200: any = null;
             let resultData200  = _responseText;
-            result200 = ListResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null.fromJS(resultData200);
-            return Promise.resolve<ListResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null>(result200);
+            result200 = ListResultDtoOfIdentityRoleDto.fromJS(resultData200);
+            return Promise.resolve<ListResultDtoOfIdentityRoleDto>(result200);
 
         } else if (status === 403) {
             const _responseText = response.data;
@@ -4294,7 +4293,7 @@ export class UserServiceProxy {
             const _responseText = response.data;
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
         }
-        return Promise.resolve<ListResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null>(null as any);
+        return Promise.resolve<ListResultDtoOfIdentityRoleDto>(null as any);
     }
 
     /**
@@ -4702,7 +4701,7 @@ export class UserLookupServiceProxy {
      * @param maxResultCount (optional) 
      * @return Success
      */
-    search(filter?: string | undefined, sorting?: string | undefined, skipCount?: number | undefined, maxResultCount?: number | undefined, cancelToken?: CancelToken | undefined): Promise<ListResultDto_1OfOfUserDataAndAbstractionsAnd_0AndCulture_neutralAndPublicKeyToken_null> {
+    search(filter?: string | undefined, sorting?: string | undefined, skipCount?: number | undefined, maxResultCount?: number | undefined, cancelToken?: CancelToken | undefined): Promise<ListResultDtoOfUserData> {
         let url_ = this.baseUrl + "/api/identity/users/lookup/search?";
         if (filter === null)
             throw new Error("The parameter 'filter' cannot be null.");
@@ -4742,7 +4741,7 @@ export class UserLookupServiceProxy {
         });
     }
 
-    protected processSearch(response: AxiosResponse): Promise<ListResultDto_1OfOfUserDataAndAbstractionsAnd_0AndCulture_neutralAndPublicKeyToken_null> {
+    protected processSearch(response: AxiosResponse): Promise<ListResultDtoOfUserData> {
         const status = response.status;
         let _headers: any = {};
         if (response.headers && typeof response.headers === "object") {
@@ -4756,8 +4755,8 @@ export class UserLookupServiceProxy {
             const _responseText = response.data;
             let result200: any = null;
             let resultData200  = _responseText;
-            result200 = ListResultDto_1OfOfUserDataAndAbstractionsAnd_0AndCulture_neutralAndPublicKeyToken_null.fromJS(resultData200);
-            return Promise.resolve<ListResultDto_1OfOfUserDataAndAbstractionsAnd_0AndCulture_neutralAndPublicKeyToken_null>(result200);
+            result200 = ListResultDtoOfUserData.fromJS(resultData200);
+            return Promise.resolve<ListResultDtoOfUserData>(result200);
 
         } else if (status === 403) {
             const _responseText = response.data;
@@ -4805,7 +4804,7 @@ export class UserLookupServiceProxy {
             const _responseText = response.data;
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
         }
-        return Promise.resolve<ListResultDto_1OfOfUserDataAndAbstractionsAnd_0AndCulture_neutralAndPublicKeyToken_null>(null as any);
+        return Promise.resolve<ListResultDtoOfUserData>(null as any);
     }
 
     /**
@@ -4909,7 +4908,7 @@ export class UserLookupServiceProxy {
 }
 
 export class ChangePasswordInput implements IChangePasswordInput {
-    currentPassword?: string | null;
+    currentPassword?: string | undefined;
     newPassword!: string;
 
     constructor(data?: IChangePasswordInput) {
@@ -4923,8 +4922,8 @@ export class ChangePasswordInput implements IChangePasswordInput {
 
     init(_data?: any) {
         if (_data) {
-            this.currentPassword = _data["currentPassword"] !== undefined ? _data["currentPassword"] : <any>null;
-            this.newPassword = _data["newPassword"] !== undefined ? _data["newPassword"] : <any>null;
+            this.currentPassword = _data["currentPassword"];
+            this.newPassword = _data["newPassword"];
         }
     }
 
@@ -4937,27 +4936,27 @@ export class ChangePasswordInput implements IChangePasswordInput {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["currentPassword"] = this.currentPassword !== undefined ? this.currentPassword : <any>null;
-        data["newPassword"] = this.newPassword !== undefined ? this.newPassword : <any>null;
+        data["currentPassword"] = this.currentPassword;
+        data["newPassword"] = this.newPassword;
         return data;
     }
 }
 
 export interface IChangePasswordInput {
-    currentPassword?: string | null;
+    currentPassword?: string | undefined;
     newPassword: string;
 }
 
 export class ProfileDto implements IProfileDto {
-    readonly extraProperties?: { [key: string]: any; } | null;
-    userName?: string | null;
-    email?: string | null;
-    name?: string | null;
-    surname?: string | null;
-    phoneNumber?: string | null;
+    readonly extraProperties?: { [key: string]: any; } | undefined;
+    userName?: string | undefined;
+    email?: string | undefined;
+    name?: string | undefined;
+    surname?: string | undefined;
+    phoneNumber?: string | undefined;
     isExternal?: boolean;
     hasPassword?: boolean;
-    concurrencyStamp?: string | null;
+    concurrencyStamp?: string | undefined;
 
     constructor(data?: IProfileDto) {
         if (data) {
@@ -4974,20 +4973,17 @@ export class ProfileDto implements IProfileDto {
                 (<any>this).extraProperties = {} as any;
                 for (let key in _data["extraProperties"]) {
                     if (_data["extraProperties"].hasOwnProperty(key))
-                        (<any>(<any>this).extraProperties)![key] = _data["extraProperties"][key] !== undefined ? _data["extraProperties"][key] : <any>null;
+                        (<any>(<any>this).extraProperties)![key] = _data["extraProperties"][key];
                 }
             }
-            else {
-                (<any>this).extraProperties = <any>null;
-            }
-            this.userName = _data["userName"] !== undefined ? _data["userName"] : <any>null;
-            this.email = _data["email"] !== undefined ? _data["email"] : <any>null;
-            this.name = _data["name"] !== undefined ? _data["name"] : <any>null;
-            this.surname = _data["surname"] !== undefined ? _data["surname"] : <any>null;
-            this.phoneNumber = _data["phoneNumber"] !== undefined ? _data["phoneNumber"] : <any>null;
-            this.isExternal = _data["isExternal"] !== undefined ? _data["isExternal"] : <any>null;
-            this.hasPassword = _data["hasPassword"] !== undefined ? _data["hasPassword"] : <any>null;
-            this.concurrencyStamp = _data["concurrencyStamp"] !== undefined ? _data["concurrencyStamp"] : <any>null;
+            this.userName = _data["userName"];
+            this.email = _data["email"];
+            this.name = _data["name"];
+            this.surname = _data["surname"];
+            this.phoneNumber = _data["phoneNumber"];
+            this.isExternal = _data["isExternal"];
+            this.hasPassword = _data["hasPassword"];
+            this.concurrencyStamp = _data["concurrencyStamp"];
         }
     }
 
@@ -5004,35 +5000,35 @@ export class ProfileDto implements IProfileDto {
             data["extraProperties"] = {};
             for (let key in this.extraProperties) {
                 if (this.extraProperties.hasOwnProperty(key))
-                    (<any>data["extraProperties"])[key] = this.extraProperties[key] !== undefined ? this.extraProperties[key] : <any>null;
+                    (<any>data["extraProperties"])[key] = (<any>this.extraProperties)[key];
             }
         }
-        data["userName"] = this.userName !== undefined ? this.userName : <any>null;
-        data["email"] = this.email !== undefined ? this.email : <any>null;
-        data["name"] = this.name !== undefined ? this.name : <any>null;
-        data["surname"] = this.surname !== undefined ? this.surname : <any>null;
-        data["phoneNumber"] = this.phoneNumber !== undefined ? this.phoneNumber : <any>null;
-        data["isExternal"] = this.isExternal !== undefined ? this.isExternal : <any>null;
-        data["hasPassword"] = this.hasPassword !== undefined ? this.hasPassword : <any>null;
-        data["concurrencyStamp"] = this.concurrencyStamp !== undefined ? this.concurrencyStamp : <any>null;
+        data["userName"] = this.userName;
+        data["email"] = this.email;
+        data["name"] = this.name;
+        data["surname"] = this.surname;
+        data["phoneNumber"] = this.phoneNumber;
+        data["isExternal"] = this.isExternal;
+        data["hasPassword"] = this.hasPassword;
+        data["concurrencyStamp"] = this.concurrencyStamp;
         return data;
     }
 }
 
 export interface IProfileDto {
-    extraProperties?: { [key: string]: any; } | null;
-    userName?: string | null;
-    email?: string | null;
-    name?: string | null;
-    surname?: string | null;
-    phoneNumber?: string | null;
+    extraProperties?: { [key: string]: any; } | undefined;
+    userName?: string | undefined;
+    email?: string | undefined;
+    name?: string | undefined;
+    surname?: string | undefined;
+    phoneNumber?: string | undefined;
     isExternal?: boolean;
     hasPassword?: boolean;
-    concurrencyStamp?: string | null;
+    concurrencyStamp?: string | undefined;
 }
 
 export class RegisterDto implements IRegisterDto {
-    readonly extraProperties?: { [key: string]: any; } | null;
+    readonly extraProperties?: { [key: string]: any; } | undefined;
     userName!: string;
     emailAddress!: string;
     password!: string;
@@ -5053,16 +5049,13 @@ export class RegisterDto implements IRegisterDto {
                 (<any>this).extraProperties = {} as any;
                 for (let key in _data["extraProperties"]) {
                     if (_data["extraProperties"].hasOwnProperty(key))
-                        (<any>(<any>this).extraProperties)![key] = _data["extraProperties"][key] !== undefined ? _data["extraProperties"][key] : <any>null;
+                        (<any>(<any>this).extraProperties)![key] = _data["extraProperties"][key];
                 }
             }
-            else {
-                (<any>this).extraProperties = <any>null;
-            }
-            this.userName = _data["userName"] !== undefined ? _data["userName"] : <any>null;
-            this.emailAddress = _data["emailAddress"] !== undefined ? _data["emailAddress"] : <any>null;
-            this.password = _data["password"] !== undefined ? _data["password"] : <any>null;
-            this.appName = _data["appName"] !== undefined ? _data["appName"] : <any>null;
+            this.userName = _data["userName"];
+            this.emailAddress = _data["emailAddress"];
+            this.password = _data["password"];
+            this.appName = _data["appName"];
         }
     }
 
@@ -5079,19 +5072,19 @@ export class RegisterDto implements IRegisterDto {
             data["extraProperties"] = {};
             for (let key in this.extraProperties) {
                 if (this.extraProperties.hasOwnProperty(key))
-                    (<any>data["extraProperties"])[key] = this.extraProperties[key] !== undefined ? this.extraProperties[key] : <any>null;
+                    (<any>data["extraProperties"])[key] = (<any>this.extraProperties)[key];
             }
         }
-        data["userName"] = this.userName !== undefined ? this.userName : <any>null;
-        data["emailAddress"] = this.emailAddress !== undefined ? this.emailAddress : <any>null;
-        data["password"] = this.password !== undefined ? this.password : <any>null;
-        data["appName"] = this.appName !== undefined ? this.appName : <any>null;
+        data["userName"] = this.userName;
+        data["emailAddress"] = this.emailAddress;
+        data["password"] = this.password;
+        data["appName"] = this.appName;
         return data;
     }
 }
 
 export interface IRegisterDto {
-    extraProperties?: { [key: string]: any; } | null;
+    extraProperties?: { [key: string]: any; } | undefined;
     userName: string;
     emailAddress: string;
     password: string;
@@ -5114,9 +5107,9 @@ export class ResetPasswordDto implements IResetPasswordDto {
 
     init(_data?: any) {
         if (_data) {
-            this.userId = _data["userId"] !== undefined ? _data["userId"] : <any>null;
-            this.resetToken = _data["resetToken"] !== undefined ? _data["resetToken"] : <any>null;
-            this.password = _data["password"] !== undefined ? _data["password"] : <any>null;
+            this.userId = _data["userId"];
+            this.resetToken = _data["resetToken"];
+            this.password = _data["password"];
         }
     }
 
@@ -5129,9 +5122,9 @@ export class ResetPasswordDto implements IResetPasswordDto {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["userId"] = this.userId !== undefined ? this.userId : <any>null;
-        data["resetToken"] = this.resetToken !== undefined ? this.resetToken : <any>null;
-        data["password"] = this.password !== undefined ? this.password : <any>null;
+        data["userId"] = this.userId;
+        data["resetToken"] = this.resetToken;
+        data["password"] = this.password;
         return data;
     }
 }
@@ -5145,8 +5138,8 @@ export interface IResetPasswordDto {
 export class SendPasswordResetCodeDto implements ISendPasswordResetCodeDto {
     email!: string;
     appName!: string;
-    returnUrl?: string | null;
-    returnUrlHash?: string | null;
+    returnUrl?: string | undefined;
+    returnUrlHash?: string | undefined;
 
     constructor(data?: ISendPasswordResetCodeDto) {
         if (data) {
@@ -5159,10 +5152,10 @@ export class SendPasswordResetCodeDto implements ISendPasswordResetCodeDto {
 
     init(_data?: any) {
         if (_data) {
-            this.email = _data["email"] !== undefined ? _data["email"] : <any>null;
-            this.appName = _data["appName"] !== undefined ? _data["appName"] : <any>null;
-            this.returnUrl = _data["returnUrl"] !== undefined ? _data["returnUrl"] : <any>null;
-            this.returnUrlHash = _data["returnUrlHash"] !== undefined ? _data["returnUrlHash"] : <any>null;
+            this.email = _data["email"];
+            this.appName = _data["appName"];
+            this.returnUrl = _data["returnUrl"];
+            this.returnUrlHash = _data["returnUrlHash"];
         }
     }
 
@@ -5175,10 +5168,10 @@ export class SendPasswordResetCodeDto implements ISendPasswordResetCodeDto {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["email"] = this.email !== undefined ? this.email : <any>null;
-        data["appName"] = this.appName !== undefined ? this.appName : <any>null;
-        data["returnUrl"] = this.returnUrl !== undefined ? this.returnUrl : <any>null;
-        data["returnUrlHash"] = this.returnUrlHash !== undefined ? this.returnUrlHash : <any>null;
+        data["email"] = this.email;
+        data["appName"] = this.appName;
+        data["returnUrl"] = this.returnUrl;
+        data["returnUrlHash"] = this.returnUrlHash;
         return data;
     }
 }
@@ -5186,18 +5179,18 @@ export class SendPasswordResetCodeDto implements ISendPasswordResetCodeDto {
 export interface ISendPasswordResetCodeDto {
     email: string;
     appName: string;
-    returnUrl?: string | null;
-    returnUrlHash?: string | null;
+    returnUrl?: string | undefined;
+    returnUrlHash?: string | undefined;
 }
 
 export class UpdateProfileDto implements IUpdateProfileDto {
-    readonly extraProperties?: { [key: string]: any; } | null;
-    userName?: string | null;
-    email?: string | null;
-    name?: string | null;
-    surname?: string | null;
-    phoneNumber?: string | null;
-    concurrencyStamp?: string | null;
+    readonly extraProperties?: { [key: string]: any; } | undefined;
+    userName?: string | undefined;
+    email?: string | undefined;
+    name?: string | undefined;
+    surname?: string | undefined;
+    phoneNumber?: string | undefined;
+    concurrencyStamp?: string | undefined;
 
     constructor(data?: IUpdateProfileDto) {
         if (data) {
@@ -5214,18 +5207,15 @@ export class UpdateProfileDto implements IUpdateProfileDto {
                 (<any>this).extraProperties = {} as any;
                 for (let key in _data["extraProperties"]) {
                     if (_data["extraProperties"].hasOwnProperty(key))
-                        (<any>(<any>this).extraProperties)![key] = _data["extraProperties"][key] !== undefined ? _data["extraProperties"][key] : <any>null;
+                        (<any>(<any>this).extraProperties)![key] = _data["extraProperties"][key];
                 }
             }
-            else {
-                (<any>this).extraProperties = <any>null;
-            }
-            this.userName = _data["userName"] !== undefined ? _data["userName"] : <any>null;
-            this.email = _data["email"] !== undefined ? _data["email"] : <any>null;
-            this.name = _data["name"] !== undefined ? _data["name"] : <any>null;
-            this.surname = _data["surname"] !== undefined ? _data["surname"] : <any>null;
-            this.phoneNumber = _data["phoneNumber"] !== undefined ? _data["phoneNumber"] : <any>null;
-            this.concurrencyStamp = _data["concurrencyStamp"] !== undefined ? _data["concurrencyStamp"] : <any>null;
+            this.userName = _data["userName"];
+            this.email = _data["email"];
+            this.name = _data["name"];
+            this.surname = _data["surname"];
+            this.phoneNumber = _data["phoneNumber"];
+            this.concurrencyStamp = _data["concurrencyStamp"];
         }
     }
 
@@ -5242,27 +5232,27 @@ export class UpdateProfileDto implements IUpdateProfileDto {
             data["extraProperties"] = {};
             for (let key in this.extraProperties) {
                 if (this.extraProperties.hasOwnProperty(key))
-                    (<any>data["extraProperties"])[key] = this.extraProperties[key] !== undefined ? this.extraProperties[key] : <any>null;
+                    (<any>data["extraProperties"])[key] = (<any>this.extraProperties)[key];
             }
         }
-        data["userName"] = this.userName !== undefined ? this.userName : <any>null;
-        data["email"] = this.email !== undefined ? this.email : <any>null;
-        data["name"] = this.name !== undefined ? this.name : <any>null;
-        data["surname"] = this.surname !== undefined ? this.surname : <any>null;
-        data["phoneNumber"] = this.phoneNumber !== undefined ? this.phoneNumber : <any>null;
-        data["concurrencyStamp"] = this.concurrencyStamp !== undefined ? this.concurrencyStamp : <any>null;
+        data["userName"] = this.userName;
+        data["email"] = this.email;
+        data["name"] = this.name;
+        data["surname"] = this.surname;
+        data["phoneNumber"] = this.phoneNumber;
+        data["concurrencyStamp"] = this.concurrencyStamp;
         return data;
     }
 }
 
 export interface IUpdateProfileDto {
-    extraProperties?: { [key: string]: any; } | null;
-    userName?: string | null;
-    email?: string | null;
-    name?: string | null;
-    surname?: string | null;
-    phoneNumber?: string | null;
-    concurrencyStamp?: string | null;
+    extraProperties?: { [key: string]: any; } | undefined;
+    userName?: string | undefined;
+    email?: string | undefined;
+    name?: string | undefined;
+    surname?: string | undefined;
+    phoneNumber?: string | undefined;
+    concurrencyStamp?: string | undefined;
 }
 
 export class VerifyPasswordResetTokenInput implements IVerifyPasswordResetTokenInput {
@@ -5280,8 +5270,8 @@ export class VerifyPasswordResetTokenInput implements IVerifyPasswordResetTokenI
 
     init(_data?: any) {
         if (_data) {
-            this.userId = _data["userId"] !== undefined ? _data["userId"] : <any>null;
-            this.resetToken = _data["resetToken"] !== undefined ? _data["resetToken"] : <any>null;
+            this.userId = _data["userId"];
+            this.resetToken = _data["resetToken"];
         }
     }
 
@@ -5294,8 +5284,8 @@ export class VerifyPasswordResetTokenInput implements IVerifyPasswordResetTokenI
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["userId"] = this.userId !== undefined ? this.userId : <any>null;
-        data["resetToken"] = this.resetToken !== undefined ? this.resetToken : <any>null;
+        data["userId"] = this.userId;
+        data["resetToken"] = this.resetToken;
         return data;
     }
 }
@@ -5305,10 +5295,10 @@ export interface IVerifyPasswordResetTokenInput {
     resetToken: string;
 }
 
-export class ListResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null implements IListResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null {
-    items?: IdentityRoleDto[] | null;
+export class ListResultDtoOfIdentityRoleDto implements IListResultDtoOfIdentityRoleDto {
+    items?: IdentityRoleDto[] | undefined;
 
-    constructor(data?: IListResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null) {
+    constructor(data?: IListResultDtoOfIdentityRoleDto) {
         if (data) {
             for (var property in data) {
                 if (data.hasOwnProperty(property))
@@ -5324,15 +5314,12 @@ export class ListResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neutr
                 for (let item of _data["items"])
                     this.items!.push(IdentityRoleDto.fromJS(item));
             }
-            else {
-                this.items = <any>null;
-            }
         }
     }
 
-    static fromJS(data: any): ListResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null {
+    static fromJS(data: any): ListResultDtoOfIdentityRoleDto {
         data = typeof data === 'object' ? data : {};
-        let result = new ListResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null();
+        let result = new ListResultDtoOfIdentityRoleDto();
         result.init(data);
         return result;
     }
@@ -5348,14 +5335,14 @@ export class ListResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neutr
     }
 }
 
-export interface IListResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null {
-    items?: IdentityRoleDto[] | null;
+export interface IListResultDtoOfIdentityRoleDto {
+    items?: IdentityRoleDto[] | undefined;
 }
 
-export class ListResultDto_1OfOfUserDataAndAbstractionsAnd_0AndCulture_neutralAndPublicKeyToken_null implements IListResultDto_1OfOfUserDataAndAbstractionsAnd_0AndCulture_neutralAndPublicKeyToken_null {
-    items?: UserData[] | null;
+export class ListResultDtoOfUserData implements IListResultDtoOfUserData {
+    items?: UserData[] | undefined;
 
-    constructor(data?: IListResultDto_1OfOfUserDataAndAbstractionsAnd_0AndCulture_neutralAndPublicKeyToken_null) {
+    constructor(data?: IListResultDtoOfUserData) {
         if (data) {
             for (var property in data) {
                 if (data.hasOwnProperty(property))
@@ -5371,15 +5358,12 @@ export class ListResultDto_1OfOfUserDataAndAbstractionsAnd_0AndCulture_neutralAn
                 for (let item of _data["items"])
                     this.items!.push(UserData.fromJS(item));
             }
-            else {
-                this.items = <any>null;
-            }
         }
     }
 
-    static fromJS(data: any): ListResultDto_1OfOfUserDataAndAbstractionsAnd_0AndCulture_neutralAndPublicKeyToken_null {
+    static fromJS(data: any): ListResultDtoOfUserData {
         data = typeof data === 'object' ? data : {};
-        let result = new ListResultDto_1OfOfUserDataAndAbstractionsAnd_0AndCulture_neutralAndPublicKeyToken_null();
+        let result = new ListResultDtoOfUserData();
         result.init(data);
         return result;
     }
@@ -5395,15 +5379,15 @@ export class ListResultDto_1OfOfUserDataAndAbstractionsAnd_0AndCulture_neutralAn
     }
 }
 
-export interface IListResultDto_1OfOfUserDataAndAbstractionsAnd_0AndCulture_neutralAndPublicKeyToken_null {
-    items?: UserData[] | null;
+export interface IListResultDtoOfUserData {
+    items?: UserData[] | undefined;
 }
 
-export class PagedResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null implements IPagedResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null {
-    items?: IdentityRoleDto[] | null;
+export class PagedResultDtoOfIdentityRoleDto implements IPagedResultDtoOfIdentityRoleDto {
+    items?: IdentityRoleDto[] | undefined;
     totalCount?: number;
 
-    constructor(data?: IPagedResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null) {
+    constructor(data?: IPagedResultDtoOfIdentityRoleDto) {
         if (data) {
             for (var property in data) {
                 if (data.hasOwnProperty(property))
@@ -5419,16 +5403,13 @@ export class PagedResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neut
                 for (let item of _data["items"])
                     this.items!.push(IdentityRoleDto.fromJS(item));
             }
-            else {
-                this.items = <any>null;
-            }
-            this.totalCount = _data["totalCount"] !== undefined ? _data["totalCount"] : <any>null;
+            this.totalCount = _data["totalCount"];
         }
     }
 
-    static fromJS(data: any): PagedResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null {
+    static fromJS(data: any): PagedResultDtoOfIdentityRoleDto {
         data = typeof data === 'object' ? data : {};
-        let result = new PagedResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null();
+        let result = new PagedResultDtoOfIdentityRoleDto();
         result.init(data);
         return result;
     }
@@ -5440,21 +5421,21 @@ export class PagedResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neut
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        data["totalCount"] = this.totalCount !== undefined ? this.totalCount : <any>null;
+        data["totalCount"] = this.totalCount;
         return data;
     }
 }
 
-export interface IPagedResultDto_1OfOfIdentityRoleDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null {
-    items?: IdentityRoleDto[] | null;
+export interface IPagedResultDtoOfIdentityRoleDto {
+    items?: IdentityRoleDto[] | undefined;
     totalCount?: number;
 }
 
-export class PagedResultDto_1OfOfIdentityUserDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null implements IPagedResultDto_1OfOfIdentityUserDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null {
-    items?: IdentityUserDto[] | null;
+export class PagedResultDtoOfIdentityUserDto implements IPagedResultDtoOfIdentityUserDto {
+    items?: IdentityUserDto[] | undefined;
     totalCount?: number;
 
-    constructor(data?: IPagedResultDto_1OfOfIdentityUserDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null) {
+    constructor(data?: IPagedResultDtoOfIdentityUserDto) {
         if (data) {
             for (var property in data) {
                 if (data.hasOwnProperty(property))
@@ -5470,16 +5451,13 @@ export class PagedResultDto_1OfOfIdentityUserDtoAndContractsAnd_0AndCulture_neut
                 for (let item of _data["items"])
                     this.items!.push(IdentityUserDto.fromJS(item));
             }
-            else {
-                this.items = <any>null;
-            }
-            this.totalCount = _data["totalCount"] !== undefined ? _data["totalCount"] : <any>null;
+            this.totalCount = _data["totalCount"];
         }
     }
 
-    static fromJS(data: any): PagedResultDto_1OfOfIdentityUserDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null {
+    static fromJS(data: any): PagedResultDtoOfIdentityUserDto {
         data = typeof data === 'object' ? data : {};
-        let result = new PagedResultDto_1OfOfIdentityUserDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null();
+        let result = new PagedResultDtoOfIdentityUserDto();
         result.init(data);
         return result;
     }
@@ -5491,21 +5469,21 @@ export class PagedResultDto_1OfOfIdentityUserDtoAndContractsAnd_0AndCulture_neut
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        data["totalCount"] = this.totalCount !== undefined ? this.totalCount : <any>null;
+        data["totalCount"] = this.totalCount;
         return data;
     }
 }
 
-export interface IPagedResultDto_1OfOfIdentityUserDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null {
-    items?: IdentityUserDto[] | null;
+export interface IPagedResultDtoOfIdentityUserDto {
+    items?: IdentityUserDto[] | undefined;
     totalCount?: number;
 }
 
-export class PagedResultDto_1OfOfTenantDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null implements IPagedResultDto_1OfOfTenantDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null {
-    items?: TenantDto[] | null;
+export class PagedResultDtoOfTenantDto implements IPagedResultDtoOfTenantDto {
+    items?: TenantDto[] | undefined;
     totalCount?: number;
 
-    constructor(data?: IPagedResultDto_1OfOfTenantDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null) {
+    constructor(data?: IPagedResultDtoOfTenantDto) {
         if (data) {
             for (var property in data) {
                 if (data.hasOwnProperty(property))
@@ -5521,16 +5499,13 @@ export class PagedResultDto_1OfOfTenantDtoAndContractsAnd_0AndCulture_neutralAnd
                 for (let item of _data["items"])
                     this.items!.push(TenantDto.fromJS(item));
             }
-            else {
-                this.items = <any>null;
-            }
-            this.totalCount = _data["totalCount"] !== undefined ? _data["totalCount"] : <any>null;
+            this.totalCount = _data["totalCount"];
         }
     }
 
-    static fromJS(data: any): PagedResultDto_1OfOfTenantDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null {
+    static fromJS(data: any): PagedResultDtoOfTenantDto {
         data = typeof data === 'object' ? data : {};
-        let result = new PagedResultDto_1OfOfTenantDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null();
+        let result = new PagedResultDtoOfTenantDto();
         result.init(data);
         return result;
     }
@@ -5542,18 +5517,18 @@ export class PagedResultDto_1OfOfTenantDtoAndContractsAnd_0AndCulture_neutralAnd
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        data["totalCount"] = this.totalCount !== undefined ? this.totalCount : <any>null;
+        data["totalCount"] = this.totalCount;
         return data;
     }
 }
 
-export interface IPagedResultDto_1OfOfTenantDtoAndContractsAnd_0AndCulture_neutralAndPublicKeyToken_null {
-    items?: TenantDto[] | null;
+export interface IPagedResultDtoOfTenantDto {
+    items?: TenantDto[] | undefined;
     totalCount?: number;
 }
 
 export class ApplicationAuthConfigurationDto implements IApplicationAuthConfigurationDto {
-    grantedPolicies?: { [key: string]: boolean; } | null;
+    grantedPolicies?: { [key: string]: boolean; } | undefined;
 
     constructor(data?: IApplicationAuthConfigurationDto) {
         if (data) {
@@ -5570,11 +5545,8 @@ export class ApplicationAuthConfigurationDto implements IApplicationAuthConfigur
                 this.grantedPolicies = {} as any;
                 for (let key in _data["grantedPolicies"]) {
                     if (_data["grantedPolicies"].hasOwnProperty(key))
-                        (<any>this.grantedPolicies)![key] = _data["grantedPolicies"][key] !== undefined ? _data["grantedPolicies"][key] : <any>null;
+                        (<any>this.grantedPolicies)![key] = _data["grantedPolicies"][key];
                 }
-            }
-            else {
-                this.grantedPolicies = <any>null;
             }
         }
     }
@@ -5592,7 +5564,7 @@ export class ApplicationAuthConfigurationDto implements IApplicationAuthConfigur
             data["grantedPolicies"] = {};
             for (let key in this.grantedPolicies) {
                 if (this.grantedPolicies.hasOwnProperty(key))
-                    (<any>data["grantedPolicies"])[key] = this.grantedPolicies[key] !== undefined ? this.grantedPolicies[key] : <any>null;
+                    (<any>data["grantedPolicies"])[key] = (<any>this.grantedPolicies)[key];
             }
         }
         return data;
@@ -5600,7 +5572,7 @@ export class ApplicationAuthConfigurationDto implements IApplicationAuthConfigur
 }
 
 export interface IApplicationAuthConfigurationDto {
-    grantedPolicies?: { [key: string]: boolean; } | null;
+    grantedPolicies?: { [key: string]: boolean; } | undefined;
 }
 
 export class ApplicationConfigurationDto implements IApplicationConfigurationDto {
@@ -5615,7 +5587,7 @@ export class ApplicationConfigurationDto implements IApplicationConfigurationDto
     timing?: TimingDto;
     clock?: ClockDto;
     objectExtensions?: ObjectExtensionsDto;
-    extraProperties?: { [key: string]: any; } | null;
+    extraProperties?: { [key: string]: any; } | undefined;
 
     constructor(data?: IApplicationConfigurationDto) {
         if (data) {
@@ -5628,26 +5600,23 @@ export class ApplicationConfigurationDto implements IApplicationConfigurationDto
 
     init(_data?: any) {
         if (_data) {
-            this.localization = _data["localization"] ? ApplicationLocalizationConfigurationDto.fromJS(_data["localization"]) : <any>null;
-            this.auth = _data["auth"] ? ApplicationAuthConfigurationDto.fromJS(_data["auth"]) : <any>null;
-            this.setting = _data["setting"] ? ApplicationSettingConfigurationDto.fromJS(_data["setting"]) : <any>null;
-            this.currentUser = _data["currentUser"] ? CurrentUserDto.fromJS(_data["currentUser"]) : <any>null;
-            this.features = _data["features"] ? ApplicationFeatureConfigurationDto.fromJS(_data["features"]) : <any>null;
-            this.globalFeatures = _data["globalFeatures"] ? ApplicationGlobalFeatureConfigurationDto.fromJS(_data["globalFeatures"]) : <any>null;
-            this.multiTenancy = _data["multiTenancy"] ? MultiTenancyInfoDto.fromJS(_data["multiTenancy"]) : <any>null;
-            this.currentTenant = _data["currentTenant"] ? CurrentTenantDto.fromJS(_data["currentTenant"]) : <any>null;
-            this.timing = _data["timing"] ? TimingDto.fromJS(_data["timing"]) : <any>null;
-            this.clock = _data["clock"] ? ClockDto.fromJS(_data["clock"]) : <any>null;
-            this.objectExtensions = _data["objectExtensions"] ? ObjectExtensionsDto.fromJS(_data["objectExtensions"]) : <any>null;
+            this.localization = _data["localization"] ? ApplicationLocalizationConfigurationDto.fromJS(_data["localization"]) : <any>undefined;
+            this.auth = _data["auth"] ? ApplicationAuthConfigurationDto.fromJS(_data["auth"]) : <any>undefined;
+            this.setting = _data["setting"] ? ApplicationSettingConfigurationDto.fromJS(_data["setting"]) : <any>undefined;
+            this.currentUser = _data["currentUser"] ? CurrentUserDto.fromJS(_data["currentUser"]) : <any>undefined;
+            this.features = _data["features"] ? ApplicationFeatureConfigurationDto.fromJS(_data["features"]) : <any>undefined;
+            this.globalFeatures = _data["globalFeatures"] ? ApplicationGlobalFeatureConfigurationDto.fromJS(_data["globalFeatures"]) : <any>undefined;
+            this.multiTenancy = _data["multiTenancy"] ? MultiTenancyInfoDto.fromJS(_data["multiTenancy"]) : <any>undefined;
+            this.currentTenant = _data["currentTenant"] ? CurrentTenantDto.fromJS(_data["currentTenant"]) : <any>undefined;
+            this.timing = _data["timing"] ? TimingDto.fromJS(_data["timing"]) : <any>undefined;
+            this.clock = _data["clock"] ? ClockDto.fromJS(_data["clock"]) : <any>undefined;
+            this.objectExtensions = _data["objectExtensions"] ? ObjectExtensionsDto.fromJS(_data["objectExtensions"]) : <any>undefined;
             if (_data["extraProperties"]) {
                 this.extraProperties = {} as any;
                 for (let key in _data["extraProperties"]) {
                     if (_data["extraProperties"].hasOwnProperty(key))
-                        (<any>this.extraProperties)![key] = _data["extraProperties"][key] !== undefined ? _data["extraProperties"][key] : <any>null;
+                        (<any>this.extraProperties)![key] = _data["extraProperties"][key];
                 }
-            }
-            else {
-                this.extraProperties = <any>null;
             }
         }
     }
@@ -5661,22 +5630,22 @@ export class ApplicationConfigurationDto implements IApplicationConfigurationDto
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["localization"] = this.localization ? this.localization.toJSON() : <any>null;
-        data["auth"] = this.auth ? this.auth.toJSON() : <any>null;
-        data["setting"] = this.setting ? this.setting.toJSON() : <any>null;
-        data["currentUser"] = this.currentUser ? this.currentUser.toJSON() : <any>null;
-        data["features"] = this.features ? this.features.toJSON() : <any>null;
-        data["globalFeatures"] = this.globalFeatures ? this.globalFeatures.toJSON() : <any>null;
-        data["multiTenancy"] = this.multiTenancy ? this.multiTenancy.toJSON() : <any>null;
-        data["currentTenant"] = this.currentTenant ? this.currentTenant.toJSON() : <any>null;
-        data["timing"] = this.timing ? this.timing.toJSON() : <any>null;
-        data["clock"] = this.clock ? this.clock.toJSON() : <any>null;
-        data["objectExtensions"] = this.objectExtensions ? this.objectExtensions.toJSON() : <any>null;
+        data["localization"] = this.localization ? this.localization.toJSON() : <any>undefined;
+        data["auth"] = this.auth ? this.auth.toJSON() : <any>undefined;
+        data["setting"] = this.setting ? this.setting.toJSON() : <any>undefined;
+        data["currentUser"] = this.currentUser ? this.currentUser.toJSON() : <any>undefined;
+        data["features"] = this.features ? this.features.toJSON() : <any>undefined;
+        data["globalFeatures"] = this.globalFeatures ? this.globalFeatures.toJSON() : <any>undefined;
+        data["multiTenancy"] = this.multiTenancy ? this.multiTenancy.toJSON() : <any>undefined;
+        data["currentTenant"] = this.currentTenant ? this.currentTenant.toJSON() : <any>undefined;
+        data["timing"] = this.timing ? this.timing.toJSON() : <any>undefined;
+        data["clock"] = this.clock ? this.clock.toJSON() : <any>undefined;
+        data["objectExtensions"] = this.objectExtensions ? this.objectExtensions.toJSON() : <any>undefined;
         if (this.extraProperties) {
             data["extraProperties"] = {};
             for (let key in this.extraProperties) {
                 if (this.extraProperties.hasOwnProperty(key))
-                    (<any>data["extraProperties"])[key] = this.extraProperties[key] !== undefined ? this.extraProperties[key] : <any>null;
+                    (<any>data["extraProperties"])[key] = (<any>this.extraProperties)[key];
             }
         }
         return data;
@@ -5695,11 +5664,11 @@ export interface IApplicationConfigurationDto {
     timing?: TimingDto;
     clock?: ClockDto;
     objectExtensions?: ObjectExtensionsDto;
-    extraProperties?: { [key: string]: any; } | null;
+    extraProperties?: { [key: string]: any; } | undefined;
 }
 
 export class ApplicationFeatureConfigurationDto implements IApplicationFeatureConfigurationDto {
-    values?: { [key: string]: string; } | null;
+    values?: { [key: string]: string; } | undefined;
 
     constructor(data?: IApplicationFeatureConfigurationDto) {
         if (data) {
@@ -5716,11 +5685,8 @@ export class ApplicationFeatureConfigurationDto implements IApplicationFeatureCo
                 this.values = {} as any;
                 for (let key in _data["values"]) {
                     if (_data["values"].hasOwnProperty(key))
-                        (<any>this.values)![key] = _data["values"][key] !== undefined ? _data["values"][key] : <any>null;
+                        (<any>this.values)![key] = _data["values"][key];
                 }
-            }
-            else {
-                this.values = <any>null;
             }
         }
     }
@@ -5738,7 +5704,7 @@ export class ApplicationFeatureConfigurationDto implements IApplicationFeatureCo
             data["values"] = {};
             for (let key in this.values) {
                 if (this.values.hasOwnProperty(key))
-                    (<any>data["values"])[key] = this.values[key] !== undefined ? this.values[key] : <any>null;
+                    (<any>data["values"])[key] = (<any>this.values)[key];
             }
         }
         return data;
@@ -5746,11 +5712,11 @@ export class ApplicationFeatureConfigurationDto implements IApplicationFeatureCo
 }
 
 export interface IApplicationFeatureConfigurationDto {
-    values?: { [key: string]: string; } | null;
+    values?: { [key: string]: string; } | undefined;
 }
 
 export class ApplicationGlobalFeatureConfigurationDto implements IApplicationGlobalFeatureConfigurationDto {
-    enabledFeatures?: string[] | null;
+    enabledFeatures?: string[] | undefined;
 
     constructor(data?: IApplicationGlobalFeatureConfigurationDto) {
         if (data) {
@@ -5767,9 +5733,6 @@ export class ApplicationGlobalFeatureConfigurationDto implements IApplicationGlo
                 this.enabledFeatures = [] as any;
                 for (let item of _data["enabledFeatures"])
                     this.enabledFeatures!.push(item);
-            }
-            else {
-                this.enabledFeatures = <any>null;
             }
         }
     }
@@ -5793,17 +5756,17 @@ export class ApplicationGlobalFeatureConfigurationDto implements IApplicationGlo
 }
 
 export interface IApplicationGlobalFeatureConfigurationDto {
-    enabledFeatures?: string[] | null;
+    enabledFeatures?: string[] | undefined;
 }
 
 export class ApplicationLocalizationConfigurationDto implements IApplicationLocalizationConfigurationDto {
-    values?: { [key: string]: { [key: string]: string; }; } | null;
-    resources?: { [key: string]: ApplicationLocalizationResourceDto; } | null;
-    languages?: LanguageInfo[] | null;
+    values?: { [key: string]: { [key: string]: string; }; } | undefined;
+    resources?: { [key: string]: ApplicationLocalizationResourceDto; } | undefined;
+    languages?: LanguageInfo[] | undefined;
     currentCulture?: CurrentCultureDto;
-    defaultResourceName?: string | null;
-    languagesMap?: { [key: string]: NameValue[]; } | null;
-    languageFilesMap?: { [key: string]: NameValue[]; } | null;
+    defaultResourceName?: string | undefined;
+    languagesMap?: { [key: string]: NameValue[]; } | undefined;
+    languageFilesMap?: { [key: string]: NameValue[]; } | undefined;
 
     constructor(data?: IApplicationLocalizationConfigurationDto) {
         if (data) {
@@ -5820,11 +5783,8 @@ export class ApplicationLocalizationConfigurationDto implements IApplicationLoca
                 this.values = {} as any;
                 for (let key in _data["values"]) {
                     if (_data["values"].hasOwnProperty(key))
-                        (<any>this.values)![key] = _data["values"][key] !== undefined ? _data["values"][key] : <any>null;
+                        (<any>this.values)![key] = _data["values"][key];
                 }
-            }
-            else {
-                this.values = <any>null;
             }
             if (_data["resources"]) {
                 this.resources = {} as any;
@@ -5833,38 +5793,26 @@ export class ApplicationLocalizationConfigurationDto implements IApplicationLoca
                         (<any>this.resources)![key] = _data["resources"][key] ? ApplicationLocalizationResourceDto.fromJS(_data["resources"][key]) : new ApplicationLocalizationResourceDto();
                 }
             }
-            else {
-                this.resources = <any>null;
-            }
             if (Array.isArray(_data["languages"])) {
                 this.languages = [] as any;
                 for (let item of _data["languages"])
                     this.languages!.push(LanguageInfo.fromJS(item));
             }
-            else {
-                this.languages = <any>null;
-            }
-            this.currentCulture = _data["currentCulture"] ? CurrentCultureDto.fromJS(_data["currentCulture"]) : <any>null;
-            this.defaultResourceName = _data["defaultResourceName"] !== undefined ? _data["defaultResourceName"] : <any>null;
+            this.currentCulture = _data["currentCulture"] ? CurrentCultureDto.fromJS(_data["currentCulture"]) : <any>undefined;
+            this.defaultResourceName = _data["defaultResourceName"];
             if (_data["languagesMap"]) {
                 this.languagesMap = {} as any;
                 for (let key in _data["languagesMap"]) {
                     if (_data["languagesMap"].hasOwnProperty(key))
-                        (<any>this.languagesMap)![key] = _data["languagesMap"][key] ? _data["languagesMap"][key].map((i: any) => NameValue.fromJS(i)) : <any>null;
+                        (<any>this.languagesMap)![key] = _data["languagesMap"][key] ? _data["languagesMap"][key].map((i: any) => NameValue.fromJS(i)) : <any>undefined;
                 }
-            }
-            else {
-                this.languagesMap = <any>null;
             }
             if (_data["languageFilesMap"]) {
                 this.languageFilesMap = {} as any;
                 for (let key in _data["languageFilesMap"]) {
                     if (_data["languageFilesMap"].hasOwnProperty(key))
-                        (<any>this.languageFilesMap)![key] = _data["languageFilesMap"][key] ? _data["languageFilesMap"][key].map((i: any) => NameValue.fromJS(i)) : <any>null;
+                        (<any>this.languageFilesMap)![key] = _data["languageFilesMap"][key] ? _data["languageFilesMap"][key].map((i: any) => NameValue.fromJS(i)) : <any>undefined;
                 }
-            }
-            else {
-                this.languageFilesMap = <any>null;
             }
         }
     }
@@ -5882,14 +5830,14 @@ export class ApplicationLocalizationConfigurationDto implements IApplicationLoca
             data["values"] = {};
             for (let key in this.values) {
                 if (this.values.hasOwnProperty(key))
-                    (<any>data["values"])[key] = this.values[key] !== undefined ? this.values[key] : <any>null;
+                    (<any>data["values"])[key] = (<any>this.values)[key];
             }
         }
         if (this.resources) {
             data["resources"] = {};
             for (let key in this.resources) {
                 if (this.resources.hasOwnProperty(key))
-                    (<any>data["resources"])[key] = this.resources[key] ? this.resources[key].toJSON() : <any>null;
+                    (<any>data["resources"])[key] = this.resources[key] ? this.resources[key].toJSON() : <any>undefined;
             }
         }
         if (Array.isArray(this.languages)) {
@@ -5897,20 +5845,20 @@ export class ApplicationLocalizationConfigurationDto implements IApplicationLoca
             for (let item of this.languages)
                 data["languages"].push(item.toJSON());
         }
-        data["currentCulture"] = this.currentCulture ? this.currentCulture.toJSON() : <any>null;
-        data["defaultResourceName"] = this.defaultResourceName !== undefined ? this.defaultResourceName : <any>null;
+        data["currentCulture"] = this.currentCulture ? this.currentCulture.toJSON() : <any>undefined;
+        data["defaultResourceName"] = this.defaultResourceName;
         if (this.languagesMap) {
             data["languagesMap"] = {};
             for (let key in this.languagesMap) {
                 if (this.languagesMap.hasOwnProperty(key))
-                    (<any>data["languagesMap"])[key] = this.languagesMap[key] !== undefined ? this.languagesMap[key] : <any>null;
+                    (<any>data["languagesMap"])[key] = (<any>this.languagesMap)[key];
             }
         }
         if (this.languageFilesMap) {
             data["languageFilesMap"] = {};
             for (let key in this.languageFilesMap) {
                 if (this.languageFilesMap.hasOwnProperty(key))
-                    (<any>data["languageFilesMap"])[key] = this.languageFilesMap[key] !== undefined ? this.languageFilesMap[key] : <any>null;
+                    (<any>data["languageFilesMap"])[key] = (<any>this.languageFilesMap)[key];
             }
         }
         return data;
@@ -5918,17 +5866,17 @@ export class ApplicationLocalizationConfigurationDto implements IApplicationLoca
 }
 
 export interface IApplicationLocalizationConfigurationDto {
-    values?: { [key: string]: { [key: string]: string; }; } | null;
-    resources?: { [key: string]: ApplicationLocalizationResourceDto; } | null;
-    languages?: LanguageInfo[] | null;
+    values?: { [key: string]: { [key: string]: string; }; } | undefined;
+    resources?: { [key: string]: ApplicationLocalizationResourceDto; } | undefined;
+    languages?: LanguageInfo[] | undefined;
     currentCulture?: CurrentCultureDto;
-    defaultResourceName?: string | null;
-    languagesMap?: { [key: string]: NameValue[]; } | null;
-    languageFilesMap?: { [key: string]: NameValue[]; } | null;
+    defaultResourceName?: string | undefined;
+    languagesMap?: { [key: string]: NameValue[]; } | undefined;
+    languageFilesMap?: { [key: string]: NameValue[]; } | undefined;
 }
 
 export class ApplicationLocalizationDto implements IApplicationLocalizationDto {
-    resources?: { [key: string]: ApplicationLocalizationResourceDto; } | null;
+    resources?: { [key: string]: ApplicationLocalizationResourceDto; } | undefined;
 
     constructor(data?: IApplicationLocalizationDto) {
         if (data) {
@@ -5948,9 +5896,6 @@ export class ApplicationLocalizationDto implements IApplicationLocalizationDto {
                         (<any>this.resources)![key] = _data["resources"][key] ? ApplicationLocalizationResourceDto.fromJS(_data["resources"][key]) : new ApplicationLocalizationResourceDto();
                 }
             }
-            else {
-                this.resources = <any>null;
-            }
         }
     }
 
@@ -5967,7 +5912,7 @@ export class ApplicationLocalizationDto implements IApplicationLocalizationDto {
             data["resources"] = {};
             for (let key in this.resources) {
                 if (this.resources.hasOwnProperty(key))
-                    (<any>data["resources"])[key] = this.resources[key] ? this.resources[key].toJSON() : <any>null;
+                    (<any>data["resources"])[key] = this.resources[key] ? this.resources[key].toJSON() : <any>undefined;
             }
         }
         return data;
@@ -5975,12 +5920,12 @@ export class ApplicationLocalizationDto implements IApplicationLocalizationDto {
 }
 
 export interface IApplicationLocalizationDto {
-    resources?: { [key: string]: ApplicationLocalizationResourceDto; } | null;
+    resources?: { [key: string]: ApplicationLocalizationResourceDto; } | undefined;
 }
 
 export class ApplicationLocalizationResourceDto implements IApplicationLocalizationResourceDto {
-    texts?: { [key: string]: string; } | null;
-    baseResources?: string[] | null;
+    texts?: { [key: string]: string; } | undefined;
+    baseResources?: string[] | undefined;
 
     constructor(data?: IApplicationLocalizationResourceDto) {
         if (data) {
@@ -5997,19 +5942,13 @@ export class ApplicationLocalizationResourceDto implements IApplicationLocalizat
                 this.texts = {} as any;
                 for (let key in _data["texts"]) {
                     if (_data["texts"].hasOwnProperty(key))
-                        (<any>this.texts)![key] = _data["texts"][key] !== undefined ? _data["texts"][key] : <any>null;
+                        (<any>this.texts)![key] = _data["texts"][key];
                 }
-            }
-            else {
-                this.texts = <any>null;
             }
             if (Array.isArray(_data["baseResources"])) {
                 this.baseResources = [] as any;
                 for (let item of _data["baseResources"])
                     this.baseResources!.push(item);
-            }
-            else {
-                this.baseResources = <any>null;
             }
         }
     }
@@ -6027,7 +5966,7 @@ export class ApplicationLocalizationResourceDto implements IApplicationLocalizat
             data["texts"] = {};
             for (let key in this.texts) {
                 if (this.texts.hasOwnProperty(key))
-                    (<any>data["texts"])[key] = this.texts[key] !== undefined ? this.texts[key] : <any>null;
+                    (<any>data["texts"])[key] = (<any>this.texts)[key];
             }
         }
         if (Array.isArray(this.baseResources)) {
@@ -6040,12 +5979,12 @@ export class ApplicationLocalizationResourceDto implements IApplicationLocalizat
 }
 
 export interface IApplicationLocalizationResourceDto {
-    texts?: { [key: string]: string; } | null;
-    baseResources?: string[] | null;
+    texts?: { [key: string]: string; } | undefined;
+    baseResources?: string[] | undefined;
 }
 
 export class ApplicationSettingConfigurationDto implements IApplicationSettingConfigurationDto {
-    values?: { [key: string]: string; } | null;
+    values?: { [key: string]: string; } | undefined;
 
     constructor(data?: IApplicationSettingConfigurationDto) {
         if (data) {
@@ -6062,11 +6001,8 @@ export class ApplicationSettingConfigurationDto implements IApplicationSettingCo
                 this.values = {} as any;
                 for (let key in _data["values"]) {
                     if (_data["values"].hasOwnProperty(key))
-                        (<any>this.values)![key] = _data["values"][key] !== undefined ? _data["values"][key] : <any>null;
+                        (<any>this.values)![key] = _data["values"][key];
                 }
-            }
-            else {
-                this.values = <any>null;
             }
         }
     }
@@ -6084,7 +6020,7 @@ export class ApplicationSettingConfigurationDto implements IApplicationSettingCo
             data["values"] = {};
             for (let key in this.values) {
                 if (this.values.hasOwnProperty(key))
-                    (<any>data["values"])[key] = this.values[key] !== undefined ? this.values[key] : <any>null;
+                    (<any>data["values"])[key] = (<any>this.values)[key];
             }
         }
         return data;
@@ -6092,11 +6028,11 @@ export class ApplicationSettingConfigurationDto implements IApplicationSettingCo
 }
 
 export interface IApplicationSettingConfigurationDto {
-    values?: { [key: string]: string; } | null;
+    values?: { [key: string]: string; } | undefined;
 }
 
 export class ClockDto implements IClockDto {
-    kind?: string | null;
+    kind?: string | undefined;
 
     constructor(data?: IClockDto) {
         if (data) {
@@ -6109,7 +6045,7 @@ export class ClockDto implements IClockDto {
 
     init(_data?: any) {
         if (_data) {
-            this.kind = _data["kind"] !== undefined ? _data["kind"] : <any>null;
+            this.kind = _data["kind"];
         }
     }
 
@@ -6122,24 +6058,24 @@ export class ClockDto implements IClockDto {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["kind"] = this.kind !== undefined ? this.kind : <any>null;
+        data["kind"] = this.kind;
         return data;
     }
 }
 
 export interface IClockDto {
-    kind?: string | null;
+    kind?: string | undefined;
 }
 
 export class CurrentCultureDto implements ICurrentCultureDto {
-    displayName?: string | null;
-    englishName?: string | null;
-    threeLetterIsoLanguageName?: string | null;
-    twoLetterIsoLanguageName?: string | null;
+    displayName?: string | undefined;
+    englishName?: string | undefined;
+    threeLetterIsoLanguageName?: string | undefined;
+    twoLetterIsoLanguageName?: string | undefined;
     isRightToLeft?: boolean;
-    cultureName?: string | null;
-    name?: string | null;
-    nativeName?: string | null;
+    cultureName?: string | undefined;
+    name?: string | undefined;
+    nativeName?: string | undefined;
     dateTimeFormat?: DateTimeFormatDto;
 
     constructor(data?: ICurrentCultureDto) {
@@ -6153,15 +6089,15 @@ export class CurrentCultureDto implements ICurrentCultureDto {
 
     init(_data?: any) {
         if (_data) {
-            this.displayName = _data["displayName"] !== undefined ? _data["displayName"] : <any>null;
-            this.englishName = _data["englishName"] !== undefined ? _data["englishName"] : <any>null;
-            this.threeLetterIsoLanguageName = _data["threeLetterIsoLanguageName"] !== undefined ? _data["threeLetterIsoLanguageName"] : <any>null;
-            this.twoLetterIsoLanguageName = _data["twoLetterIsoLanguageName"] !== undefined ? _data["twoLetterIsoLanguageName"] : <any>null;
-            this.isRightToLeft = _data["isRightToLeft"] !== undefined ? _data["isRightToLeft"] : <any>null;
-            this.cultureName = _data["cultureName"] !== undefined ? _data["cultureName"] : <any>null;
-            this.name = _data["name"] !== undefined ? _data["name"] : <any>null;
-            this.nativeName = _data["nativeName"] !== undefined ? _data["nativeName"] : <any>null;
-            this.dateTimeFormat = _data["dateTimeFormat"] ? DateTimeFormatDto.fromJS(_data["dateTimeFormat"]) : <any>null;
+            this.displayName = _data["displayName"];
+            this.englishName = _data["englishName"];
+            this.threeLetterIsoLanguageName = _data["threeLetterIsoLanguageName"];
+            this.twoLetterIsoLanguageName = _data["twoLetterIsoLanguageName"];
+            this.isRightToLeft = _data["isRightToLeft"];
+            this.cultureName = _data["cultureName"];
+            this.name = _data["name"];
+            this.nativeName = _data["nativeName"];
+            this.dateTimeFormat = _data["dateTimeFormat"] ? DateTimeFormatDto.fromJS(_data["dateTimeFormat"]) : <any>undefined;
         }
     }
 
@@ -6174,47 +6110,47 @@ export class CurrentCultureDto implements ICurrentCultureDto {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["displayName"] = this.displayName !== undefined ? this.displayName : <any>null;
-        data["englishName"] = this.englishName !== undefined ? this.englishName : <any>null;
-        data["threeLetterIsoLanguageName"] = this.threeLetterIsoLanguageName !== undefined ? this.threeLetterIsoLanguageName : <any>null;
-        data["twoLetterIsoLanguageName"] = this.twoLetterIsoLanguageName !== undefined ? this.twoLetterIsoLanguageName : <any>null;
-        data["isRightToLeft"] = this.isRightToLeft !== undefined ? this.isRightToLeft : <any>null;
-        data["cultureName"] = this.cultureName !== undefined ? this.cultureName : <any>null;
-        data["name"] = this.name !== undefined ? this.name : <any>null;
-        data["nativeName"] = this.nativeName !== undefined ? this.nativeName : <any>null;
-        data["dateTimeFormat"] = this.dateTimeFormat ? this.dateTimeFormat.toJSON() : <any>null;
+        data["displayName"] = this.displayName;
+        data["englishName"] = this.englishName;
+        data["threeLetterIsoLanguageName"] = this.threeLetterIsoLanguageName;
+        data["twoLetterIsoLanguageName"] = this.twoLetterIsoLanguageName;
+        data["isRightToLeft"] = this.isRightToLeft;
+        data["cultureName"] = this.cultureName;
+        data["name"] = this.name;
+        data["nativeName"] = this.nativeName;
+        data["dateTimeFormat"] = this.dateTimeFormat ? this.dateTimeFormat.toJSON() : <any>undefined;
         return data;
     }
 }
 
 export interface ICurrentCultureDto {
-    displayName?: string | null;
-    englishName?: string | null;
-    threeLetterIsoLanguageName?: string | null;
-    twoLetterIsoLanguageName?: string | null;
+    displayName?: string | undefined;
+    englishName?: string | undefined;
+    threeLetterIsoLanguageName?: string | undefined;
+    twoLetterIsoLanguageName?: string | undefined;
     isRightToLeft?: boolean;
-    cultureName?: string | null;
-    name?: string | null;
-    nativeName?: string | null;
+    cultureName?: string | undefined;
+    name?: string | undefined;
+    nativeName?: string | undefined;
     dateTimeFormat?: DateTimeFormatDto;
 }
 
 export class CurrentUserDto implements ICurrentUserDto {
     isAuthenticated?: boolean;
-    id?: string | null;
-    tenantId?: string | null;
-    impersonatorUserId?: string | null;
-    impersonatorTenantId?: string | null;
-    impersonatorUserName?: string | null;
-    impersonatorTenantName?: string | null;
-    userName?: string | null;
-    name?: string | null;
-    surName?: string | null;
-    email?: string | null;
+    id?: string | undefined;
+    tenantId?: string | undefined;
+    impersonatorUserId?: string | undefined;
+    impersonatorTenantId?: string | undefined;
+    impersonatorUserName?: string | undefined;
+    impersonatorTenantName?: string | undefined;
+    userName?: string | undefined;
+    name?: string | undefined;
+    surName?: string | undefined;
+    email?: string | undefined;
     emailVerified?: boolean;
-    phoneNumber?: string | null;
+    phoneNumber?: string | undefined;
     phoneNumberVerified?: boolean;
-    roles?: string[] | null;
+    roles?: string[] | undefined;
 
     constructor(data?: ICurrentUserDto) {
         if (data) {
@@ -6227,27 +6163,24 @@ export class CurrentUserDto implements ICurrentUserDto {
 
     init(_data?: any) {
         if (_data) {
-            this.isAuthenticated = _data["isAuthenticated"] !== undefined ? _data["isAuthenticated"] : <any>null;
-            this.id = _data["id"] !== undefined ? _data["id"] : <any>null;
-            this.tenantId = _data["tenantId"] !== undefined ? _data["tenantId"] : <any>null;
-            this.impersonatorUserId = _data["impersonatorUserId"] !== undefined ? _data["impersonatorUserId"] : <any>null;
-            this.impersonatorTenantId = _data["impersonatorTenantId"] !== undefined ? _data["impersonatorTenantId"] : <any>null;
-            this.impersonatorUserName = _data["impersonatorUserName"] !== undefined ? _data["impersonatorUserName"] : <any>null;
-            this.impersonatorTenantName = _data["impersonatorTenantName"] !== undefined ? _data["impersonatorTenantName"] : <any>null;
-            this.userName = _data["userName"] !== undefined ? _data["userName"] : <any>null;
-            this.name = _data["name"] !== undefined ? _data["name"] : <any>null;
-            this.surName = _data["surName"] !== undefined ? _data["surName"] : <any>null;
-            this.email = _data["email"] !== undefined ? _data["email"] : <any>null;
-            this.emailVerified = _data["emailVerified"] !== undefined ? _data["emailVerified"] : <any>null;
-            this.phoneNumber = _data["phoneNumber"] !== undefined ? _data["phoneNumber"] : <any>null;
-            this.phoneNumberVerified = _data["phoneNumberVerified"] !== undefined ? _data["phoneNumberVerified"] : <any>null;
+            this.isAuthenticated = _data["isAuthenticated"];
+            this.id = _data["id"];
+            this.tenantId = _data["tenantId"];
+            this.impersonatorUserId = _data["impersonatorUserId"];
+            this.impersonatorTenantId = _data["impersonatorTenantId"];
+            this.impersonatorUserName = _data["impersonatorUserName"];
+            this.impersonatorTenantName = _data["impersonatorTenantName"];
+            this.userName = _data["userName"];
+            this.name = _data["name"];
+            this.surName = _data["surName"];
+            this.email = _data["email"];
+            this.emailVerified = _data["emailVerified"];
+            this.phoneNumber = _data["phoneNumber"];
+            this.phoneNumberVerified = _data["phoneNumberVerified"];
             if (Array.isArray(_data["roles"])) {
                 this.roles = [] as any;
                 for (let item of _data["roles"])
                     this.roles!.push(item);
-            }
-            else {
-                this.roles = <any>null;
             }
         }
     }
@@ -6261,20 +6194,20 @@ export class CurrentUserDto implements ICurrentUserDto {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["isAuthenticated"] = this.isAuthenticated !== undefined ? this.isAuthenticated : <any>null;
-        data["id"] = this.id !== undefined ? this.id : <any>null;
-        data["tenantId"] = this.tenantId !== undefined ? this.tenantId : <any>null;
-        data["impersonatorUserId"] = this.impersonatorUserId !== undefined ? this.impersonatorUserId : <any>null;
-        data["impersonatorTenantId"] = this.impersonatorTenantId !== undefined ? this.impersonatorTenantId : <any>null;
-        data["impersonatorUserName"] = this.impersonatorUserName !== undefined ? this.impersonatorUserName : <any>null;
-        data["impersonatorTenantName"] = this.impersonatorTenantName !== undefined ? this.impersonatorTenantName : <any>null;
-        data["userName"] = this.userName !== undefined ? this.userName : <any>null;
-        data["name"] = this.name !== undefined ? this.name : <any>null;
-        data["surName"] = this.surName !== undefined ? this.surName : <any>null;
-        data["email"] = this.email !== undefined ? this.email : <any>null;
-        data["emailVerified"] = this.emailVerified !== undefined ? this.emailVerified : <any>null;
-        data["phoneNumber"] = this.phoneNumber !== undefined ? this.phoneNumber : <any>null;
-        data["phoneNumberVerified"] = this.phoneNumberVerified !== undefined ? this.phoneNumberVerified : <any>null;
+        data["isAuthenticated"] = this.isAuthenticated;
+        data["id"] = this.id;
+        data["tenantId"] = this.tenantId;
+        data["impersonatorUserId"] = this.impersonatorUserId;
+        data["impersonatorTenantId"] = this.impersonatorTenantId;
+        data["impersonatorUserName"] = this.impersonatorUserName;
+        data["impersonatorTenantName"] = this.impersonatorTenantName;
+        data["userName"] = this.userName;
+        data["name"] = this.name;
+        data["surName"] = this.surName;
+        data["email"] = this.email;
+        data["emailVerified"] = this.emailVerified;
+        data["phoneNumber"] = this.phoneNumber;
+        data["phoneNumberVerified"] = this.phoneNumberVerified;
         if (Array.isArray(this.roles)) {
             data["roles"] = [];
             for (let item of this.roles)
@@ -6286,30 +6219,30 @@ export class CurrentUserDto implements ICurrentUserDto {
 
 export interface ICurrentUserDto {
     isAuthenticated?: boolean;
-    id?: string | null;
-    tenantId?: string | null;
-    impersonatorUserId?: string | null;
-    impersonatorTenantId?: string | null;
-    impersonatorUserName?: string | null;
-    impersonatorTenantName?: string | null;
-    userName?: string | null;
-    name?: string | null;
-    surName?: string | null;
-    email?: string | null;
+    id?: string | undefined;
+    tenantId?: string | undefined;
+    impersonatorUserId?: string | undefined;
+    impersonatorTenantId?: string | undefined;
+    impersonatorUserName?: string | undefined;
+    impersonatorTenantName?: string | undefined;
+    userName?: string | undefined;
+    name?: string | undefined;
+    surName?: string | undefined;
+    email?: string | undefined;
     emailVerified?: boolean;
-    phoneNumber?: string | null;
+    phoneNumber?: string | undefined;
     phoneNumberVerified?: boolean;
-    roles?: string[] | null;
+    roles?: string[] | undefined;
 }
 
 export class DateTimeFormatDto implements IDateTimeFormatDto {
-    calendarAlgorithmType?: string | null;
-    dateTimeFormatLong?: string | null;
-    shortDatePattern?: string | null;
-    fullDateTimePattern?: string | null;
-    dateSeparator?: string | null;
-    shortTimePattern?: string | null;
-    longTimePattern?: string | null;
+    calendarAlgorithmType?: string | undefined;
+    dateTimeFormatLong?: string | undefined;
+    shortDatePattern?: string | undefined;
+    fullDateTimePattern?: string | undefined;
+    dateSeparator?: string | undefined;
+    shortTimePattern?: string | undefined;
+    longTimePattern?: string | undefined;
 
     constructor(data?: IDateTimeFormatDto) {
         if (data) {
@@ -6322,13 +6255,13 @@ export class DateTimeFormatDto implements IDateTimeFormatDto {
 
     init(_data?: any) {
         if (_data) {
-            this.calendarAlgorithmType = _data["calendarAlgorithmType"] !== undefined ? _data["calendarAlgorithmType"] : <any>null;
-            this.dateTimeFormatLong = _data["dateTimeFormatLong"] !== undefined ? _data["dateTimeFormatLong"] : <any>null;
-            this.shortDatePattern = _data["shortDatePattern"] !== undefined ? _data["shortDatePattern"] : <any>null;
-            this.fullDateTimePattern = _data["fullDateTimePattern"] !== undefined ? _data["fullDateTimePattern"] : <any>null;
-            this.dateSeparator = _data["dateSeparator"] !== undefined ? _data["dateSeparator"] : <any>null;
-            this.shortTimePattern = _data["shortTimePattern"] !== undefined ? _data["shortTimePattern"] : <any>null;
-            this.longTimePattern = _data["longTimePattern"] !== undefined ? _data["longTimePattern"] : <any>null;
+            this.calendarAlgorithmType = _data["calendarAlgorithmType"];
+            this.dateTimeFormatLong = _data["dateTimeFormatLong"];
+            this.shortDatePattern = _data["shortDatePattern"];
+            this.fullDateTimePattern = _data["fullDateTimePattern"];
+            this.dateSeparator = _data["dateSeparator"];
+            this.shortTimePattern = _data["shortTimePattern"];
+            this.longTimePattern = _data["longTimePattern"];
         }
     }
 
@@ -6341,29 +6274,29 @@ export class DateTimeFormatDto implements IDateTimeFormatDto {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["calendarAlgorithmType"] = this.calendarAlgorithmType !== undefined ? this.calendarAlgorithmType : <any>null;
-        data["dateTimeFormatLong"] = this.dateTimeFormatLong !== undefined ? this.dateTimeFormatLong : <any>null;
-        data["shortDatePattern"] = this.shortDatePattern !== undefined ? this.shortDatePattern : <any>null;
-        data["fullDateTimePattern"] = this.fullDateTimePattern !== undefined ? this.fullDateTimePattern : <any>null;
-        data["dateSeparator"] = this.dateSeparator !== undefined ? this.dateSeparator : <any>null;
-        data["shortTimePattern"] = this.shortTimePattern !== undefined ? this.shortTimePattern : <any>null;
-        data["longTimePattern"] = this.longTimePattern !== undefined ? this.longTimePattern : <any>null;
+        data["calendarAlgorithmType"] = this.calendarAlgorithmType;
+        data["dateTimeFormatLong"] = this.dateTimeFormatLong;
+        data["shortDatePattern"] = this.shortDatePattern;
+        data["fullDateTimePattern"] = this.fullDateTimePattern;
+        data["dateSeparator"] = this.dateSeparator;
+        data["shortTimePattern"] = this.shortTimePattern;
+        data["longTimePattern"] = this.longTimePattern;
         return data;
     }
 }
 
 export interface IDateTimeFormatDto {
-    calendarAlgorithmType?: string | null;
-    dateTimeFormatLong?: string | null;
-    shortDatePattern?: string | null;
-    fullDateTimePattern?: string | null;
-    dateSeparator?: string | null;
-    shortTimePattern?: string | null;
-    longTimePattern?: string | null;
+    calendarAlgorithmType?: string | undefined;
+    dateTimeFormatLong?: string | undefined;
+    shortDatePattern?: string | undefined;
+    fullDateTimePattern?: string | undefined;
+    dateSeparator?: string | undefined;
+    shortTimePattern?: string | undefined;
+    longTimePattern?: string | undefined;
 }
 
 export class IanaTimeZone implements IIanaTimeZone {
-    timeZoneName?: string | null;
+    timeZoneName?: string | undefined;
 
     constructor(data?: IIanaTimeZone) {
         if (data) {
@@ -6376,7 +6309,7 @@ export class IanaTimeZone implements IIanaTimeZone {
 
     init(_data?: any) {
         if (_data) {
-            this.timeZoneName = _data["timeZoneName"] !== undefined ? _data["timeZoneName"] : <any>null;
+            this.timeZoneName = _data["timeZoneName"];
         }
     }
 
@@ -6389,18 +6322,18 @@ export class IanaTimeZone implements IIanaTimeZone {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["timeZoneName"] = this.timeZoneName !== undefined ? this.timeZoneName : <any>null;
+        data["timeZoneName"] = this.timeZoneName;
         return data;
     }
 }
 
 export interface IIanaTimeZone {
-    timeZoneName?: string | null;
+    timeZoneName?: string | undefined;
 }
 
 export class EntityExtensionDto implements IEntityExtensionDto {
-    properties?: { [key: string]: ExtensionPropertyDto; } | null;
-    configuration?: { [key: string]: any; } | null;
+    properties?: { [key: string]: ExtensionPropertyDto; } | undefined;
+    configuration?: { [key: string]: any; } | undefined;
 
     constructor(data?: IEntityExtensionDto) {
         if (data) {
@@ -6420,18 +6353,12 @@ export class EntityExtensionDto implements IEntityExtensionDto {
                         (<any>this.properties)![key] = _data["properties"][key] ? ExtensionPropertyDto.fromJS(_data["properties"][key]) : new ExtensionPropertyDto();
                 }
             }
-            else {
-                this.properties = <any>null;
-            }
             if (_data["configuration"]) {
                 this.configuration = {} as any;
                 for (let key in _data["configuration"]) {
                     if (_data["configuration"].hasOwnProperty(key))
-                        (<any>this.configuration)![key] = _data["configuration"][key] !== undefined ? _data["configuration"][key] : <any>null;
+                        (<any>this.configuration)![key] = _data["configuration"][key];
                 }
-            }
-            else {
-                this.configuration = <any>null;
             }
         }
     }
@@ -6449,14 +6376,14 @@ export class EntityExtensionDto implements IEntityExtensionDto {
             data["properties"] = {};
             for (let key in this.properties) {
                 if (this.properties.hasOwnProperty(key))
-                    (<any>data["properties"])[key] = this.properties[key] ? this.properties[key].toJSON() : <any>null;
+                    (<any>data["properties"])[key] = this.properties[key] ? this.properties[key].toJSON() : <any>undefined;
             }
         }
         if (this.configuration) {
             data["configuration"] = {};
             for (let key in this.configuration) {
                 if (this.configuration.hasOwnProperty(key))
-                    (<any>data["configuration"])[key] = this.configuration[key] !== undefined ? this.configuration[key] : <any>null;
+                    (<any>data["configuration"])[key] = (<any>this.configuration)[key];
             }
         }
         return data;
@@ -6464,13 +6391,13 @@ export class EntityExtensionDto implements IEntityExtensionDto {
 }
 
 export interface IEntityExtensionDto {
-    properties?: { [key: string]: ExtensionPropertyDto; } | null;
-    configuration?: { [key: string]: any; } | null;
+    properties?: { [key: string]: ExtensionPropertyDto; } | undefined;
+    configuration?: { [key: string]: any; } | undefined;
 }
 
 export class ExtensionEnumDto implements IExtensionEnumDto {
-    fields?: ExtensionEnumFieldDto[] | null;
-    localizationResource?: string | null;
+    fields?: ExtensionEnumFieldDto[] | undefined;
+    localizationResource?: string | undefined;
 
     constructor(data?: IExtensionEnumDto) {
         if (data) {
@@ -6488,10 +6415,7 @@ export class ExtensionEnumDto implements IExtensionEnumDto {
                 for (let item of _data["fields"])
                     this.fields!.push(ExtensionEnumFieldDto.fromJS(item));
             }
-            else {
-                this.fields = <any>null;
-            }
-            this.localizationResource = _data["localizationResource"] !== undefined ? _data["localizationResource"] : <any>null;
+            this.localizationResource = _data["localizationResource"];
         }
     }
 
@@ -6509,19 +6433,19 @@ export class ExtensionEnumDto implements IExtensionEnumDto {
             for (let item of this.fields)
                 data["fields"].push(item.toJSON());
         }
-        data["localizationResource"] = this.localizationResource !== undefined ? this.localizationResource : <any>null;
+        data["localizationResource"] = this.localizationResource;
         return data;
     }
 }
 
 export interface IExtensionEnumDto {
-    fields?: ExtensionEnumFieldDto[] | null;
-    localizationResource?: string | null;
+    fields?: ExtensionEnumFieldDto[] | undefined;
+    localizationResource?: string | undefined;
 }
 
 export class ExtensionEnumFieldDto implements IExtensionEnumFieldDto {
-    name?: string | null;
-    value?: any | null;
+    name?: string | undefined;
+    value?: any | undefined;
 
     constructor(data?: IExtensionEnumFieldDto) {
         if (data) {
@@ -6534,8 +6458,8 @@ export class ExtensionEnumFieldDto implements IExtensionEnumFieldDto {
 
     init(_data?: any) {
         if (_data) {
-            this.name = _data["name"] !== undefined ? _data["name"] : <any>null;
-            this.value = _data["value"] !== undefined ? _data["value"] : <any>null;
+            this.name = _data["name"];
+            this.value = _data["value"];
         }
     }
 
@@ -6548,15 +6472,15 @@ export class ExtensionEnumFieldDto implements IExtensionEnumFieldDto {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["name"] = this.name !== undefined ? this.name : <any>null;
-        data["value"] = this.value !== undefined ? this.value : <any>null;
+        data["name"] = this.name;
+        data["value"] = this.value;
         return data;
     }
 }
 
 export interface IExtensionEnumFieldDto {
-    name?: string | null;
-    value?: any | null;
+    name?: string | undefined;
+    value?: any | undefined;
 }
 
 export class ExtensionPropertyApiCreateDto implements IExtensionPropertyApiCreateDto {
@@ -6573,7 +6497,7 @@ export class ExtensionPropertyApiCreateDto implements IExtensionPropertyApiCreat
 
     init(_data?: any) {
         if (_data) {
-            this.isAvailable = _data["isAvailable"] !== undefined ? _data["isAvailable"] : <any>null;
+            this.isAvailable = _data["isAvailable"];
         }
     }
 
@@ -6586,7 +6510,7 @@ export class ExtensionPropertyApiCreateDto implements IExtensionPropertyApiCreat
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["isAvailable"] = this.isAvailable !== undefined ? this.isAvailable : <any>null;
+        data["isAvailable"] = this.isAvailable;
         return data;
     }
 }
@@ -6611,9 +6535,9 @@ export class ExtensionPropertyApiDto implements IExtensionPropertyApiDto {
 
     init(_data?: any) {
         if (_data) {
-            this.onGet = _data["onGet"] ? ExtensionPropertyApiGetDto.fromJS(_data["onGet"]) : <any>null;
-            this.onCreate = _data["onCreate"] ? ExtensionPropertyApiCreateDto.fromJS(_data["onCreate"]) : <any>null;
-            this.onUpdate = _data["onUpdate"] ? ExtensionPropertyApiUpdateDto.fromJS(_data["onUpdate"]) : <any>null;
+            this.onGet = _data["onGet"] ? ExtensionPropertyApiGetDto.fromJS(_data["onGet"]) : <any>undefined;
+            this.onCreate = _data["onCreate"] ? ExtensionPropertyApiCreateDto.fromJS(_data["onCreate"]) : <any>undefined;
+            this.onUpdate = _data["onUpdate"] ? ExtensionPropertyApiUpdateDto.fromJS(_data["onUpdate"]) : <any>undefined;
         }
     }
 
@@ -6626,9 +6550,9 @@ export class ExtensionPropertyApiDto implements IExtensionPropertyApiDto {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["onGet"] = this.onGet ? this.onGet.toJSON() : <any>null;
-        data["onCreate"] = this.onCreate ? this.onCreate.toJSON() : <any>null;
-        data["onUpdate"] = this.onUpdate ? this.onUpdate.toJSON() : <any>null;
+        data["onGet"] = this.onGet ? this.onGet.toJSON() : <any>undefined;
+        data["onCreate"] = this.onCreate ? this.onCreate.toJSON() : <any>undefined;
+        data["onUpdate"] = this.onUpdate ? this.onUpdate.toJSON() : <any>undefined;
         return data;
     }
 }
@@ -6653,7 +6577,7 @@ export class ExtensionPropertyApiGetDto implements IExtensionPropertyApiGetDto {
 
     init(_data?: any) {
         if (_data) {
-            this.isAvailable = _data["isAvailable"] !== undefined ? _data["isAvailable"] : <any>null;
+            this.isAvailable = _data["isAvailable"];
         }
     }
 
@@ -6666,7 +6590,7 @@ export class ExtensionPropertyApiGetDto implements IExtensionPropertyApiGetDto {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["isAvailable"] = this.isAvailable !== undefined ? this.isAvailable : <any>null;
+        data["isAvailable"] = this.isAvailable;
         return data;
     }
 }
@@ -6689,7 +6613,7 @@ export class ExtensionPropertyApiUpdateDto implements IExtensionPropertyApiUpdat
 
     init(_data?: any) {
         if (_data) {
-            this.isAvailable = _data["isAvailable"] !== undefined ? _data["isAvailable"] : <any>null;
+            this.isAvailable = _data["isAvailable"];
         }
     }
 
@@ -6702,7 +6626,7 @@ export class ExtensionPropertyApiUpdateDto implements IExtensionPropertyApiUpdat
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["isAvailable"] = this.isAvailable !== undefined ? this.isAvailable : <any>null;
+        data["isAvailable"] = this.isAvailable;
         return data;
     }
 }
@@ -6712,8 +6636,8 @@ export interface IExtensionPropertyApiUpdateDto {
 }
 
 export class ExtensionPropertyAttributeDto implements IExtensionPropertyAttributeDto {
-    typeSimple?: string | null;
-    config?: { [key: string]: any; } | null;
+    typeSimple?: string | undefined;
+    config?: { [key: string]: any; } | undefined;
 
     constructor(data?: IExtensionPropertyAttributeDto) {
         if (data) {
@@ -6726,16 +6650,13 @@ export class ExtensionPropertyAttributeDto implements IExtensionPropertyAttribut
 
     init(_data?: any) {
         if (_data) {
-            this.typeSimple = _data["typeSimple"] !== undefined ? _data["typeSimple"] : <any>null;
+            this.typeSimple = _data["typeSimple"];
             if (_data["config"]) {
                 this.config = {} as any;
                 for (let key in _data["config"]) {
                     if (_data["config"].hasOwnProperty(key))
-                        (<any>this.config)![key] = _data["config"][key] !== undefined ? _data["config"][key] : <any>null;
+                        (<any>this.config)![key] = _data["config"][key];
                 }
-            }
-            else {
-                this.config = <any>null;
             }
         }
     }
@@ -6749,12 +6670,12 @@ export class ExtensionPropertyAttributeDto implements IExtensionPropertyAttribut
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["typeSimple"] = this.typeSimple !== undefined ? this.typeSimple : <any>null;
+        data["typeSimple"] = this.typeSimple;
         if (this.config) {
             data["config"] = {};
             for (let key in this.config) {
                 if (this.config.hasOwnProperty(key))
-                    (<any>data["config"])[key] = this.config[key] !== undefined ? this.config[key] : <any>null;
+                    (<any>data["config"])[key] = (<any>this.config)[key];
             }
         }
         return data;
@@ -6762,19 +6683,19 @@ export class ExtensionPropertyAttributeDto implements IExtensionPropertyAttribut
 }
 
 export interface IExtensionPropertyAttributeDto {
-    typeSimple?: string | null;
-    config?: { [key: string]: any; } | null;
+    typeSimple?: string | undefined;
+    config?: { [key: string]: any; } | undefined;
 }
 
 export class ExtensionPropertyDto implements IExtensionPropertyDto {
-    type?: string | null;
-    typeSimple?: string | null;
+    type?: string | undefined;
+    typeSimple?: string | undefined;
     displayName?: LocalizableStringDto;
     api?: ExtensionPropertyApiDto;
     ui?: ExtensionPropertyUiDto;
-    attributes?: ExtensionPropertyAttributeDto[] | null;
-    configuration?: { [key: string]: any; } | null;
-    defaultValue?: any | null;
+    attributes?: ExtensionPropertyAttributeDto[] | undefined;
+    configuration?: { [key: string]: any; } | undefined;
+    defaultValue?: any | undefined;
 
     constructor(data?: IExtensionPropertyDto) {
         if (data) {
@@ -6787,30 +6708,24 @@ export class ExtensionPropertyDto implements IExtensionPropertyDto {
 
     init(_data?: any) {
         if (_data) {
-            this.type = _data["type"] !== undefined ? _data["type"] : <any>null;
-            this.typeSimple = _data["typeSimple"] !== undefined ? _data["typeSimple"] : <any>null;
-            this.displayName = _data["displayName"] ? LocalizableStringDto.fromJS(_data["displayName"]) : <any>null;
-            this.api = _data["api"] ? ExtensionPropertyApiDto.fromJS(_data["api"]) : <any>null;
-            this.ui = _data["ui"] ? ExtensionPropertyUiDto.fromJS(_data["ui"]) : <any>null;
+            this.type = _data["type"];
+            this.typeSimple = _data["typeSimple"];
+            this.displayName = _data["displayName"] ? LocalizableStringDto.fromJS(_data["displayName"]) : <any>undefined;
+            this.api = _data["api"] ? ExtensionPropertyApiDto.fromJS(_data["api"]) : <any>undefined;
+            this.ui = _data["ui"] ? ExtensionPropertyUiDto.fromJS(_data["ui"]) : <any>undefined;
             if (Array.isArray(_data["attributes"])) {
                 this.attributes = [] as any;
                 for (let item of _data["attributes"])
                     this.attributes!.push(ExtensionPropertyAttributeDto.fromJS(item));
             }
-            else {
-                this.attributes = <any>null;
-            }
             if (_data["configuration"]) {
                 this.configuration = {} as any;
                 for (let key in _data["configuration"]) {
                     if (_data["configuration"].hasOwnProperty(key))
-                        (<any>this.configuration)![key] = _data["configuration"][key] !== undefined ? _data["configuration"][key] : <any>null;
+                        (<any>this.configuration)![key] = _data["configuration"][key];
                 }
             }
-            else {
-                this.configuration = <any>null;
-            }
-            this.defaultValue = _data["defaultValue"] !== undefined ? _data["defaultValue"] : <any>null;
+            this.defaultValue = _data["defaultValue"];
         }
     }
 
@@ -6823,11 +6738,11 @@ export class ExtensionPropertyDto implements IExtensionPropertyDto {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["type"] = this.type !== undefined ? this.type : <any>null;
-        data["typeSimple"] = this.typeSimple !== undefined ? this.typeSimple : <any>null;
-        data["displayName"] = this.displayName ? this.displayName.toJSON() : <any>null;
-        data["api"] = this.api ? this.api.toJSON() : <any>null;
-        data["ui"] = this.ui ? this.ui.toJSON() : <any>null;
+        data["type"] = this.type;
+        data["typeSimple"] = this.typeSimple;
+        data["displayName"] = this.displayName ? this.displayName.toJSON() : <any>undefined;
+        data["api"] = this.api ? this.api.toJSON() : <any>undefined;
+        data["ui"] = this.ui ? this.ui.toJSON() : <any>undefined;
         if (Array.isArray(this.attributes)) {
             data["attributes"] = [];
             for (let item of this.attributes)
@@ -6837,23 +6752,23 @@ export class ExtensionPropertyDto implements IExtensionPropertyDto {
             data["configuration"] = {};
             for (let key in this.configuration) {
                 if (this.configuration.hasOwnProperty(key))
-                    (<any>data["configuration"])[key] = this.configuration[key] !== undefined ? this.configuration[key] : <any>null;
+                    (<any>data["configuration"])[key] = (<any>this.configuration)[key];
             }
         }
-        data["defaultValue"] = this.defaultValue !== undefined ? this.defaultValue : <any>null;
+        data["defaultValue"] = this.defaultValue;
         return data;
     }
 }
 
 export interface IExtensionPropertyDto {
-    type?: string | null;
-    typeSimple?: string | null;
+    type?: string | undefined;
+    typeSimple?: string | undefined;
     displayName?: LocalizableStringDto;
     api?: ExtensionPropertyApiDto;
     ui?: ExtensionPropertyUiDto;
-    attributes?: ExtensionPropertyAttributeDto[] | null;
-    configuration?: { [key: string]: any; } | null;
-    defaultValue?: any | null;
+    attributes?: ExtensionPropertyAttributeDto[] | undefined;
+    configuration?: { [key: string]: any; } | undefined;
+    defaultValue?: any | undefined;
 }
 
 export class ExtensionPropertyUiDto implements IExtensionPropertyUiDto {
@@ -6873,10 +6788,10 @@ export class ExtensionPropertyUiDto implements IExtensionPropertyUiDto {
 
     init(_data?: any) {
         if (_data) {
-            this.onTable = _data["onTable"] ? ExtensionPropertyUiTableDto.fromJS(_data["onTable"]) : <any>null;
-            this.onCreateForm = _data["onCreateForm"] ? ExtensionPropertyUiFormDto.fromJS(_data["onCreateForm"]) : <any>null;
-            this.onEditForm = _data["onEditForm"] ? ExtensionPropertyUiFormDto.fromJS(_data["onEditForm"]) : <any>null;
-            this.lookup = _data["lookup"] ? ExtensionPropertyUiLookupDto.fromJS(_data["lookup"]) : <any>null;
+            this.onTable = _data["onTable"] ? ExtensionPropertyUiTableDto.fromJS(_data["onTable"]) : <any>undefined;
+            this.onCreateForm = _data["onCreateForm"] ? ExtensionPropertyUiFormDto.fromJS(_data["onCreateForm"]) : <any>undefined;
+            this.onEditForm = _data["onEditForm"] ? ExtensionPropertyUiFormDto.fromJS(_data["onEditForm"]) : <any>undefined;
+            this.lookup = _data["lookup"] ? ExtensionPropertyUiLookupDto.fromJS(_data["lookup"]) : <any>undefined;
         }
     }
 
@@ -6889,10 +6804,10 @@ export class ExtensionPropertyUiDto implements IExtensionPropertyUiDto {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["onTable"] = this.onTable ? this.onTable.toJSON() : <any>null;
-        data["onCreateForm"] = this.onCreateForm ? this.onCreateForm.toJSON() : <any>null;
-        data["onEditForm"] = this.onEditForm ? this.onEditForm.toJSON() : <any>null;
-        data["lookup"] = this.lookup ? this.lookup.toJSON() : <any>null;
+        data["onTable"] = this.onTable ? this.onTable.toJSON() : <any>undefined;
+        data["onCreateForm"] = this.onCreateForm ? this.onCreateForm.toJSON() : <any>undefined;
+        data["onEditForm"] = this.onEditForm ? this.onEditForm.toJSON() : <any>undefined;
+        data["lookup"] = this.lookup ? this.lookup.toJSON() : <any>undefined;
         return data;
     }
 }
@@ -6918,7 +6833,7 @@ export class ExtensionPropertyUiFormDto implements IExtensionPropertyUiFormDto {
 
     init(_data?: any) {
         if (_data) {
-            this.isVisible = _data["isVisible"] !== undefined ? _data["isVisible"] : <any>null;
+            this.isVisible = _data["isVisible"];
         }
     }
 
@@ -6931,7 +6846,7 @@ export class ExtensionPropertyUiFormDto implements IExtensionPropertyUiFormDto {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["isVisible"] = this.isVisible !== undefined ? this.isVisible : <any>null;
+        data["isVisible"] = this.isVisible;
         return data;
     }
 }
@@ -6941,11 +6856,11 @@ export interface IExtensionPropertyUiFormDto {
 }
 
 export class ExtensionPropertyUiLookupDto implements IExtensionPropertyUiLookupDto {
-    url?: string | null;
-    resultListPropertyName?: string | null;
-    displayPropertyName?: string | null;
-    valuePropertyName?: string | null;
-    filterParamName?: string | null;
+    url?: string | undefined;
+    resultListPropertyName?: string | undefined;
+    displayPropertyName?: string | undefined;
+    valuePropertyName?: string | undefined;
+    filterParamName?: string | undefined;
 
     constructor(data?: IExtensionPropertyUiLookupDto) {
         if (data) {
@@ -6958,11 +6873,11 @@ export class ExtensionPropertyUiLookupDto implements IExtensionPropertyUiLookupD
 
     init(_data?: any) {
         if (_data) {
-            this.url = _data["url"] !== undefined ? _data["url"] : <any>null;
-            this.resultListPropertyName = _data["resultListPropertyName"] !== undefined ? _data["resultListPropertyName"] : <any>null;
-            this.displayPropertyName = _data["displayPropertyName"] !== undefined ? _data["displayPropertyName"] : <any>null;
-            this.valuePropertyName = _data["valuePropertyName"] !== undefined ? _data["valuePropertyName"] : <any>null;
-            this.filterParamName = _data["filterParamName"] !== undefined ? _data["filterParamName"] : <any>null;
+            this.url = _data["url"];
+            this.resultListPropertyName = _data["resultListPropertyName"];
+            this.displayPropertyName = _data["displayPropertyName"];
+            this.valuePropertyName = _data["valuePropertyName"];
+            this.filterParamName = _data["filterParamName"];
         }
     }
 
@@ -6975,21 +6890,21 @@ export class ExtensionPropertyUiLookupDto implements IExtensionPropertyUiLookupD
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["url"] = this.url !== undefined ? this.url : <any>null;
-        data["resultListPropertyName"] = this.resultListPropertyName !== undefined ? this.resultListPropertyName : <any>null;
-        data["displayPropertyName"] = this.displayPropertyName !== undefined ? this.displayPropertyName : <any>null;
-        data["valuePropertyName"] = this.valuePropertyName !== undefined ? this.valuePropertyName : <any>null;
-        data["filterParamName"] = this.filterParamName !== undefined ? this.filterParamName : <any>null;
+        data["url"] = this.url;
+        data["resultListPropertyName"] = this.resultListPropertyName;
+        data["displayPropertyName"] = this.displayPropertyName;
+        data["valuePropertyName"] = this.valuePropertyName;
+        data["filterParamName"] = this.filterParamName;
         return data;
     }
 }
 
 export interface IExtensionPropertyUiLookupDto {
-    url?: string | null;
-    resultListPropertyName?: string | null;
-    displayPropertyName?: string | null;
-    valuePropertyName?: string | null;
-    filterParamName?: string | null;
+    url?: string | undefined;
+    resultListPropertyName?: string | undefined;
+    displayPropertyName?: string | undefined;
+    valuePropertyName?: string | undefined;
+    filterParamName?: string | undefined;
 }
 
 export class ExtensionPropertyUiTableDto implements IExtensionPropertyUiTableDto {
@@ -7006,7 +6921,7 @@ export class ExtensionPropertyUiTableDto implements IExtensionPropertyUiTableDto
 
     init(_data?: any) {
         if (_data) {
-            this.isVisible = _data["isVisible"] !== undefined ? _data["isVisible"] : <any>null;
+            this.isVisible = _data["isVisible"];
         }
     }
 
@@ -7019,7 +6934,7 @@ export class ExtensionPropertyUiTableDto implements IExtensionPropertyUiTableDto
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["isVisible"] = this.isVisible !== undefined ? this.isVisible : <any>null;
+        data["isVisible"] = this.isVisible;
         return data;
     }
 }
@@ -7029,8 +6944,8 @@ export interface IExtensionPropertyUiTableDto {
 }
 
 export class LocalizableStringDto implements ILocalizableStringDto {
-    name?: string | null;
-    resource?: string | null;
+    name?: string | undefined;
+    resource?: string | undefined;
 
     constructor(data?: ILocalizableStringDto) {
         if (data) {
@@ -7043,8 +6958,8 @@ export class LocalizableStringDto implements ILocalizableStringDto {
 
     init(_data?: any) {
         if (_data) {
-            this.name = _data["name"] !== undefined ? _data["name"] : <any>null;
-            this.resource = _data["resource"] !== undefined ? _data["resource"] : <any>null;
+            this.name = _data["name"];
+            this.resource = _data["resource"];
         }
     }
 
@@ -7057,20 +6972,20 @@ export class LocalizableStringDto implements ILocalizableStringDto {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["name"] = this.name !== undefined ? this.name : <any>null;
-        data["resource"] = this.resource !== undefined ? this.resource : <any>null;
+        data["name"] = this.name;
+        data["resource"] = this.resource;
         return data;
     }
 }
 
 export interface ILocalizableStringDto {
-    name?: string | null;
-    resource?: string | null;
+    name?: string | undefined;
+    resource?: string | undefined;
 }
 
 export class ModuleExtensionDto implements IModuleExtensionDto {
-    entities?: { [key: string]: EntityExtensionDto; } | null;
-    configuration?: { [key: string]: any; } | null;
+    entities?: { [key: string]: EntityExtensionDto; } | undefined;
+    configuration?: { [key: string]: any; } | undefined;
 
     constructor(data?: IModuleExtensionDto) {
         if (data) {
@@ -7090,18 +7005,12 @@ export class ModuleExtensionDto implements IModuleExtensionDto {
                         (<any>this.entities)![key] = _data["entities"][key] ? EntityExtensionDto.fromJS(_data["entities"][key]) : new EntityExtensionDto();
                 }
             }
-            else {
-                this.entities = <any>null;
-            }
             if (_data["configuration"]) {
                 this.configuration = {} as any;
                 for (let key in _data["configuration"]) {
                     if (_data["configuration"].hasOwnProperty(key))
-                        (<any>this.configuration)![key] = _data["configuration"][key] !== undefined ? _data["configuration"][key] : <any>null;
+                        (<any>this.configuration)![key] = _data["configuration"][key];
                 }
-            }
-            else {
-                this.configuration = <any>null;
             }
         }
     }
@@ -7119,14 +7028,14 @@ export class ModuleExtensionDto implements IModuleExtensionDto {
             data["entities"] = {};
             for (let key in this.entities) {
                 if (this.entities.hasOwnProperty(key))
-                    (<any>data["entities"])[key] = this.entities[key] ? this.entities[key].toJSON() : <any>null;
+                    (<any>data["entities"])[key] = this.entities[key] ? this.entities[key].toJSON() : <any>undefined;
             }
         }
         if (this.configuration) {
             data["configuration"] = {};
             for (let key in this.configuration) {
                 if (this.configuration.hasOwnProperty(key))
-                    (<any>data["configuration"])[key] = this.configuration[key] !== undefined ? this.configuration[key] : <any>null;
+                    (<any>data["configuration"])[key] = (<any>this.configuration)[key];
             }
         }
         return data;
@@ -7134,13 +7043,13 @@ export class ModuleExtensionDto implements IModuleExtensionDto {
 }
 
 export interface IModuleExtensionDto {
-    entities?: { [key: string]: EntityExtensionDto; } | null;
-    configuration?: { [key: string]: any; } | null;
+    entities?: { [key: string]: EntityExtensionDto; } | undefined;
+    configuration?: { [key: string]: any; } | undefined;
 }
 
 export class ObjectExtensionsDto implements IObjectExtensionsDto {
-    modules?: { [key: string]: ModuleExtensionDto; } | null;
-    enums?: { [key: string]: ExtensionEnumDto; } | null;
+    modules?: { [key: string]: ModuleExtensionDto; } | undefined;
+    enums?: { [key: string]: ExtensionEnumDto; } | undefined;
 
     constructor(data?: IObjectExtensionsDto) {
         if (data) {
@@ -7160,18 +7069,12 @@ export class ObjectExtensionsDto implements IObjectExtensionsDto {
                         (<any>this.modules)![key] = _data["modules"][key] ? ModuleExtensionDto.fromJS(_data["modules"][key]) : new ModuleExtensionDto();
                 }
             }
-            else {
-                this.modules = <any>null;
-            }
             if (_data["enums"]) {
                 this.enums = {} as any;
                 for (let key in _data["enums"]) {
                     if (_data["enums"].hasOwnProperty(key))
                         (<any>this.enums)![key] = _data["enums"][key] ? ExtensionEnumDto.fromJS(_data["enums"][key]) : new ExtensionEnumDto();
                 }
-            }
-            else {
-                this.enums = <any>null;
             }
         }
     }
@@ -7189,14 +7092,14 @@ export class ObjectExtensionsDto implements IObjectExtensionsDto {
             data["modules"] = {};
             for (let key in this.modules) {
                 if (this.modules.hasOwnProperty(key))
-                    (<any>data["modules"])[key] = this.modules[key] ? this.modules[key].toJSON() : <any>null;
+                    (<any>data["modules"])[key] = this.modules[key] ? this.modules[key].toJSON() : <any>undefined;
             }
         }
         if (this.enums) {
             data["enums"] = {};
             for (let key in this.enums) {
                 if (this.enums.hasOwnProperty(key))
-                    (<any>data["enums"])[key] = this.enums[key] ? this.enums[key].toJSON() : <any>null;
+                    (<any>data["enums"])[key] = this.enums[key] ? this.enums[key].toJSON() : <any>undefined;
             }
         }
         return data;
@@ -7204,8 +7107,8 @@ export class ObjectExtensionsDto implements IObjectExtensionsDto {
 }
 
 export interface IObjectExtensionsDto {
-    modules?: { [key: string]: ModuleExtensionDto; } | null;
-    enums?: { [key: string]: ExtensionEnumDto; } | null;
+    modules?: { [key: string]: ModuleExtensionDto; } | undefined;
+    enums?: { [key: string]: ExtensionEnumDto; } | undefined;
 }
 
 export class TimeZone implements ITimeZone {
@@ -7223,8 +7126,8 @@ export class TimeZone implements ITimeZone {
 
     init(_data?: any) {
         if (_data) {
-            this.iana = _data["iana"] ? IanaTimeZone.fromJS(_data["iana"]) : <any>null;
-            this.windows = _data["windows"] ? WindowsTimeZone.fromJS(_data["windows"]) : <any>null;
+            this.iana = _data["iana"] ? IanaTimeZone.fromJS(_data["iana"]) : <any>undefined;
+            this.windows = _data["windows"] ? WindowsTimeZone.fromJS(_data["windows"]) : <any>undefined;
         }
     }
 
@@ -7237,8 +7140,8 @@ export class TimeZone implements ITimeZone {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["iana"] = this.iana ? this.iana.toJSON() : <any>null;
-        data["windows"] = this.windows ? this.windows.toJSON() : <any>null;
+        data["iana"] = this.iana ? this.iana.toJSON() : <any>undefined;
+        data["windows"] = this.windows ? this.windows.toJSON() : <any>undefined;
         return data;
     }
 }
@@ -7262,7 +7165,7 @@ export class TimingDto implements ITimingDto {
 
     init(_data?: any) {
         if (_data) {
-            this.timeZone = _data["timeZone"] ? TimeZone.fromJS(_data["timeZone"]) : <any>null;
+            this.timeZone = _data["timeZone"] ? TimeZone.fromJS(_data["timeZone"]) : <any>undefined;
         }
     }
 
@@ -7275,7 +7178,7 @@ export class TimingDto implements ITimingDto {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["timeZone"] = this.timeZone ? this.timeZone.toJSON() : <any>null;
+        data["timeZone"] = this.timeZone ? this.timeZone.toJSON() : <any>undefined;
         return data;
     }
 }
@@ -7285,7 +7188,7 @@ export interface ITimingDto {
 }
 
 export class WindowsTimeZone implements IWindowsTimeZone {
-    timeZoneId?: string | null;
+    timeZoneId?: string | undefined;
 
     constructor(data?: IWindowsTimeZone) {
         if (data) {
@@ -7298,7 +7201,7 @@ export class WindowsTimeZone implements IWindowsTimeZone {
 
     init(_data?: any) {
         if (_data) {
-            this.timeZoneId = _data["timeZoneId"] !== undefined ? _data["timeZoneId"] : <any>null;
+            this.timeZoneId = _data["timeZoneId"];
         }
     }
 
@@ -7311,18 +7214,18 @@ export class WindowsTimeZone implements IWindowsTimeZone {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["timeZoneId"] = this.timeZoneId !== undefined ? this.timeZoneId : <any>null;
+        data["timeZoneId"] = this.timeZoneId;
         return data;
     }
 }
 
 export interface IWindowsTimeZone {
-    timeZoneId?: string | null;
+    timeZoneId?: string | undefined;
 }
 
 export class CurrentTenantDto implements ICurrentTenantDto {
-    id?: string | null;
-    name?: string | null;
+    id?: string | undefined;
+    name?: string | undefined;
     isAvailable?: boolean;
 
     constructor(data?: ICurrentTenantDto) {
@@ -7336,9 +7239,9 @@ export class CurrentTenantDto implements ICurrentTenantDto {
 
     init(_data?: any) {
         if (_data) {
-            this.id = _data["id"] !== undefined ? _data["id"] : <any>null;
-            this.name = _data["name"] !== undefined ? _data["name"] : <any>null;
-            this.isAvailable = _data["isAvailable"] !== undefined ? _data["isAvailable"] : <any>null;
+            this.id = _data["id"];
+            this.name = _data["name"];
+            this.isAvailable = _data["isAvailable"];
         }
     }
 
@@ -7351,23 +7254,23 @@ export class CurrentTenantDto implements ICurrentTenantDto {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["id"] = this.id !== undefined ? this.id : <any>null;
-        data["name"] = this.name !== undefined ? this.name : <any>null;
-        data["isAvailable"] = this.isAvailable !== undefined ? this.isAvailable : <any>null;
+        data["id"] = this.id;
+        data["name"] = this.name;
+        data["isAvailable"] = this.isAvailable;
         return data;
     }
 }
 
 export interface ICurrentTenantDto {
-    id?: string | null;
-    name?: string | null;
+    id?: string | undefined;
+    name?: string | undefined;
     isAvailable?: boolean;
 }
 
 export class FindTenantResultDto implements IFindTenantResultDto {
     success?: boolean;
-    tenantId?: string | null;
-    name?: string | null;
+    tenantId?: string | undefined;
+    name?: string | undefined;
     isActive?: boolean;
 
     constructor(data?: IFindTenantResultDto) {
@@ -7381,10 +7284,10 @@ export class FindTenantResultDto implements IFindTenantResultDto {
 
     init(_data?: any) {
         if (_data) {
-            this.success = _data["success"] !== undefined ? _data["success"] : <any>null;
-            this.tenantId = _data["tenantId"] !== undefined ? _data["tenantId"] : <any>null;
-            this.name = _data["name"] !== undefined ? _data["name"] : <any>null;
-            this.isActive = _data["isActive"] !== undefined ? _data["isActive"] : <any>null;
+            this.success = _data["success"];
+            this.tenantId = _data["tenantId"];
+            this.name = _data["name"];
+            this.isActive = _data["isActive"];
         }
     }
 
@@ -7397,18 +7300,18 @@ export class FindTenantResultDto implements IFindTenantResultDto {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["success"] = this.success !== undefined ? this.success : <any>null;
-        data["tenantId"] = this.tenantId !== undefined ? this.tenantId : <any>null;
-        data["name"] = this.name !== undefined ? this.name : <any>null;
-        data["isActive"] = this.isActive !== undefined ? this.isActive : <any>null;
+        data["success"] = this.success;
+        data["tenantId"] = this.tenantId;
+        data["name"] = this.name;
+        data["isActive"] = this.isActive;
         return data;
     }
 }
 
 export interface IFindTenantResultDto {
     success?: boolean;
-    tenantId?: string | null;
-    name?: string | null;
+    tenantId?: string | undefined;
+    name?: string | undefined;
     isActive?: boolean;
 }
 
@@ -7426,7 +7329,7 @@ export class MultiTenancyInfoDto implements IMultiTenancyInfoDto {
 
     init(_data?: any) {
         if (_data) {
-            this.isEnabled = _data["isEnabled"] !== undefined ? _data["isEnabled"] : <any>null;
+            this.isEnabled = _data["isEnabled"];
         }
     }
 
@@ -7439,7 +7342,7 @@ export class MultiTenancyInfoDto implements IMultiTenancyInfoDto {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["isEnabled"] = this.isEnabled !== undefined ? this.isEnabled : <any>null;
+        data["isEnabled"] = this.isEnabled;
         return data;
     }
 }
@@ -7449,14 +7352,14 @@ export interface IMultiTenancyInfoDto {
 }
 
 export class FeatureDto implements IFeatureDto {
-    name?: string | null;
-    displayName?: string | null;
-    value?: string | null;
+    name?: string | undefined;
+    displayName?: string | undefined;
+    value?: string | undefined;
     provider?: FeatureProviderDto;
-    description?: string | null;
+    description?: string | undefined;
     valueType?: IStringValueType;
     depth?: number;
-    parentName?: string | null;
+    parentName?: string | undefined;
 
     constructor(data?: IFeatureDto) {
         if (data) {
@@ -7469,14 +7372,14 @@ export class FeatureDto implements IFeatureDto {
 
     init(_data?: any) {
         if (_data) {
-            this.name = _data["name"] !== undefined ? _data["name"] : <any>null;
-            this.displayName = _data["displayName"] !== undefined ? _data["displayName"] : <any>null;
-            this.value = _data["value"] !== undefined ? _data["value"] : <any>null;
-            this.provider = _data["provider"] ? FeatureProviderDto.fromJS(_data["provider"]) : <any>null;
-            this.description = _data["description"] !== undefined ? _data["description"] : <any>null;
-            this.valueType = _data["valueType"] ? IStringValueType.fromJS(_data["valueType"]) : <any>null;
-            this.depth = _data["depth"] !== undefined ? _data["depth"] : <any>null;
-            this.parentName = _data["parentName"] !== undefined ? _data["parentName"] : <any>null;
+            this.name = _data["name"];
+            this.displayName = _data["displayName"];
+            this.value = _data["value"];
+            this.provider = _data["provider"] ? FeatureProviderDto.fromJS(_data["provider"]) : <any>undefined;
+            this.description = _data["description"];
+            this.valueType = _data["valueType"] ? IStringValueType.fromJS(_data["valueType"]) : <any>undefined;
+            this.depth = _data["depth"];
+            this.parentName = _data["parentName"];
         }
     }
 
@@ -7489,33 +7392,33 @@ export class FeatureDto implements IFeatureDto {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["name"] = this.name !== undefined ? this.name : <any>null;
-        data["displayName"] = this.displayName !== undefined ? this.displayName : <any>null;
-        data["value"] = this.value !== undefined ? this.value : <any>null;
-        data["provider"] = this.provider ? this.provider.toJSON() : <any>null;
-        data["description"] = this.description !== undefined ? this.description : <any>null;
-        data["valueType"] = this.valueType ? this.valueType.toJSON() : <any>null;
-        data["depth"] = this.depth !== undefined ? this.depth : <any>null;
-        data["parentName"] = this.parentName !== undefined ? this.parentName : <any>null;
+        data["name"] = this.name;
+        data["displayName"] = this.displayName;
+        data["value"] = this.value;
+        data["provider"] = this.provider ? this.provider.toJSON() : <any>undefined;
+        data["description"] = this.description;
+        data["valueType"] = this.valueType ? this.valueType.toJSON() : <any>undefined;
+        data["depth"] = this.depth;
+        data["parentName"] = this.parentName;
         return data;
     }
 }
 
 export interface IFeatureDto {
-    name?: string | null;
-    displayName?: string | null;
-    value?: string | null;
+    name?: string | undefined;
+    displayName?: string | undefined;
+    value?: string | undefined;
     provider?: FeatureProviderDto;
-    description?: string | null;
+    description?: string | undefined;
     valueType?: IStringValueType;
     depth?: number;
-    parentName?: string | null;
+    parentName?: string | undefined;
 }
 
 export class FeatureGroupDto implements IFeatureGroupDto {
-    name?: string | null;
-    displayName?: string | null;
-    features?: FeatureDto[] | null;
+    name?: string | undefined;
+    displayName?: string | undefined;
+    features?: FeatureDto[] | undefined;
 
     constructor(data?: IFeatureGroupDto) {
         if (data) {
@@ -7528,15 +7431,12 @@ export class FeatureGroupDto implements IFeatureGroupDto {
 
     init(_data?: any) {
         if (_data) {
-            this.name = _data["name"] !== undefined ? _data["name"] : <any>null;
-            this.displayName = _data["displayName"] !== undefined ? _data["displayName"] : <any>null;
+            this.name = _data["name"];
+            this.displayName = _data["displayName"];
             if (Array.isArray(_data["features"])) {
                 this.features = [] as any;
                 for (let item of _data["features"])
                     this.features!.push(FeatureDto.fromJS(item));
-            }
-            else {
-                this.features = <any>null;
             }
         }
     }
@@ -7550,8 +7450,8 @@ export class FeatureGroupDto implements IFeatureGroupDto {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["name"] = this.name !== undefined ? this.name : <any>null;
-        data["displayName"] = this.displayName !== undefined ? this.displayName : <any>null;
+        data["name"] = this.name;
+        data["displayName"] = this.displayName;
         if (Array.isArray(this.features)) {
             data["features"] = [];
             for (let item of this.features)
@@ -7562,14 +7462,14 @@ export class FeatureGroupDto implements IFeatureGroupDto {
 }
 
 export interface IFeatureGroupDto {
-    name?: string | null;
-    displayName?: string | null;
-    features?: FeatureDto[] | null;
+    name?: string | undefined;
+    displayName?: string | undefined;
+    features?: FeatureDto[] | undefined;
 }
 
 export class FeatureProviderDto implements IFeatureProviderDto {
-    name?: string | null;
-    key?: string | null;
+    name?: string | undefined;
+    key?: string | undefined;
 
     constructor(data?: IFeatureProviderDto) {
         if (data) {
@@ -7582,8 +7482,8 @@ export class FeatureProviderDto implements IFeatureProviderDto {
 
     init(_data?: any) {
         if (_data) {
-            this.name = _data["name"] !== undefined ? _data["name"] : <any>null;
-            this.key = _data["key"] !== undefined ? _data["key"] : <any>null;
+            this.name = _data["name"];
+            this.key = _data["key"];
         }
     }
 
@@ -7596,19 +7496,19 @@ export class FeatureProviderDto implements IFeatureProviderDto {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["name"] = this.name !== undefined ? this.name : <any>null;
-        data["key"] = this.key !== undefined ? this.key : <any>null;
+        data["name"] = this.name;
+        data["key"] = this.key;
         return data;
     }
 }
 
 export interface IFeatureProviderDto {
-    name?: string | null;
-    key?: string | null;
+    name?: string | undefined;
+    key?: string | undefined;
 }
 
 export class GetFeatureListResultDto implements IGetFeatureListResultDto {
-    groups?: FeatureGroupDto[] | null;
+    groups?: FeatureGroupDto[] | undefined;
 
     constructor(data?: IGetFeatureListResultDto) {
         if (data) {
@@ -7625,9 +7525,6 @@ export class GetFeatureListResultDto implements IGetFeatureListResultDto {
                 this.groups = [] as any;
                 for (let item of _data["groups"])
                     this.groups!.push(FeatureGroupDto.fromJS(item));
-            }
-            else {
-                this.groups = <any>null;
             }
         }
     }
@@ -7651,12 +7548,12 @@ export class GetFeatureListResultDto implements IGetFeatureListResultDto {
 }
 
 export interface IGetFeatureListResultDto {
-    groups?: FeatureGroupDto[] | null;
+    groups?: FeatureGroupDto[] | undefined;
 }
 
 export class UpdateFeatureDto implements IUpdateFeatureDto {
-    name?: string | null;
-    value?: string | null;
+    name?: string | undefined;
+    value?: string | undefined;
 
     constructor(data?: IUpdateFeatureDto) {
         if (data) {
@@ -7669,8 +7566,8 @@ export class UpdateFeatureDto implements IUpdateFeatureDto {
 
     init(_data?: any) {
         if (_data) {
-            this.name = _data["name"] !== undefined ? _data["name"] : <any>null;
-            this.value = _data["value"] !== undefined ? _data["value"] : <any>null;
+            this.name = _data["name"];
+            this.value = _data["value"];
         }
     }
 
@@ -7683,19 +7580,19 @@ export class UpdateFeatureDto implements IUpdateFeatureDto {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["name"] = this.name !== undefined ? this.name : <any>null;
-        data["value"] = this.value !== undefined ? this.value : <any>null;
+        data["name"] = this.name;
+        data["value"] = this.value;
         return data;
     }
 }
 
 export interface IUpdateFeatureDto {
-    name?: string | null;
-    value?: string | null;
+    name?: string | undefined;
+    value?: string | undefined;
 }
 
 export class UpdateFeaturesDto implements IUpdateFeaturesDto {
-    features?: UpdateFeatureDto[] | null;
+    features?: UpdateFeatureDto[] | undefined;
 
     constructor(data?: IUpdateFeaturesDto) {
         if (data) {
@@ -7712,9 +7609,6 @@ export class UpdateFeaturesDto implements IUpdateFeaturesDto {
                 this.features = [] as any;
                 for (let item of _data["features"])
                     this.features!.push(UpdateFeatureDto.fromJS(item));
-            }
-            else {
-                this.features = <any>null;
             }
         }
     }
@@ -7738,20 +7632,20 @@ export class UpdateFeaturesDto implements IUpdateFeaturesDto {
 }
 
 export interface IUpdateFeaturesDto {
-    features?: UpdateFeatureDto[] | null;
+    features?: UpdateFeatureDto[] | undefined;
 }
 
 export class ActionApiDescriptionModel implements IActionApiDescriptionModel {
-    uniqueName?: string | null;
-    name?: string | null;
-    httpMethod?: string | null;
-    url?: string | null;
-    supportedVersions?: string[] | null;
-    parametersOnMethod?: MethodParameterApiDescriptionModel[] | null;
-    parameters?: ParameterApiDescriptionModel[] | null;
+    uniqueName?: string | undefined;
+    name?: string | undefined;
+    httpMethod?: string | undefined;
+    url?: string | undefined;
+    supportedVersions?: string[] | undefined;
+    parametersOnMethod?: MethodParameterApiDescriptionModel[] | undefined;
+    parameters?: ParameterApiDescriptionModel[] | undefined;
     returnValue?: ReturnValueApiDescriptionModel;
-    allowAnonymous?: boolean | null;
-    implementFrom?: string | null;
+    allowAnonymous?: boolean | undefined;
+    implementFrom?: string | undefined;
 
     constructor(data?: IActionApiDescriptionModel) {
         if (data) {
@@ -7764,37 +7658,28 @@ export class ActionApiDescriptionModel implements IActionApiDescriptionModel {
 
     init(_data?: any) {
         if (_data) {
-            this.uniqueName = _data["uniqueName"] !== undefined ? _data["uniqueName"] : <any>null;
-            this.name = _data["name"] !== undefined ? _data["name"] : <any>null;
-            this.httpMethod = _data["httpMethod"] !== undefined ? _data["httpMethod"] : <any>null;
-            this.url = _data["url"] !== undefined ? _data["url"] : <any>null;
+            this.uniqueName = _data["uniqueName"];
+            this.name = _data["name"];
+            this.httpMethod = _data["httpMethod"];
+            this.url = _data["url"];
             if (Array.isArray(_data["supportedVersions"])) {
                 this.supportedVersions = [] as any;
                 for (let item of _data["supportedVersions"])
                     this.supportedVersions!.push(item);
-            }
-            else {
-                this.supportedVersions = <any>null;
             }
             if (Array.isArray(_data["parametersOnMethod"])) {
                 this.parametersOnMethod = [] as any;
                 for (let item of _data["parametersOnMethod"])
                     this.parametersOnMethod!.push(MethodParameterApiDescriptionModel.fromJS(item));
             }
-            else {
-                this.parametersOnMethod = <any>null;
-            }
             if (Array.isArray(_data["parameters"])) {
                 this.parameters = [] as any;
                 for (let item of _data["parameters"])
                     this.parameters!.push(ParameterApiDescriptionModel.fromJS(item));
             }
-            else {
-                this.parameters = <any>null;
-            }
-            this.returnValue = _data["returnValue"] ? ReturnValueApiDescriptionModel.fromJS(_data["returnValue"]) : <any>null;
-            this.allowAnonymous = _data["allowAnonymous"] !== undefined ? _data["allowAnonymous"] : <any>null;
-            this.implementFrom = _data["implementFrom"] !== undefined ? _data["implementFrom"] : <any>null;
+            this.returnValue = _data["returnValue"] ? ReturnValueApiDescriptionModel.fromJS(_data["returnValue"]) : <any>undefined;
+            this.allowAnonymous = _data["allowAnonymous"];
+            this.implementFrom = _data["implementFrom"];
         }
     }
 
@@ -7807,10 +7692,10 @@ export class ActionApiDescriptionModel implements IActionApiDescriptionModel {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["uniqueName"] = this.uniqueName !== undefined ? this.uniqueName : <any>null;
-        data["name"] = this.name !== undefined ? this.name : <any>null;
-        data["httpMethod"] = this.httpMethod !== undefined ? this.httpMethod : <any>null;
-        data["url"] = this.url !== undefined ? this.url : <any>null;
+        data["uniqueName"] = this.uniqueName;
+        data["name"] = this.name;
+        data["httpMethod"] = this.httpMethod;
+        data["url"] = this.url;
         if (Array.isArray(this.supportedVersions)) {
             data["supportedVersions"] = [];
             for (let item of this.supportedVersions)
@@ -7826,29 +7711,29 @@ export class ActionApiDescriptionModel implements IActionApiDescriptionModel {
             for (let item of this.parameters)
                 data["parameters"].push(item.toJSON());
         }
-        data["returnValue"] = this.returnValue ? this.returnValue.toJSON() : <any>null;
-        data["allowAnonymous"] = this.allowAnonymous !== undefined ? this.allowAnonymous : <any>null;
-        data["implementFrom"] = this.implementFrom !== undefined ? this.implementFrom : <any>null;
+        data["returnValue"] = this.returnValue ? this.returnValue.toJSON() : <any>undefined;
+        data["allowAnonymous"] = this.allowAnonymous;
+        data["implementFrom"] = this.implementFrom;
         return data;
     }
 }
 
 export interface IActionApiDescriptionModel {
-    uniqueName?: string | null;
-    name?: string | null;
-    httpMethod?: string | null;
-    url?: string | null;
-    supportedVersions?: string[] | null;
-    parametersOnMethod?: MethodParameterApiDescriptionModel[] | null;
-    parameters?: ParameterApiDescriptionModel[] | null;
+    uniqueName?: string | undefined;
+    name?: string | undefined;
+    httpMethod?: string | undefined;
+    url?: string | undefined;
+    supportedVersions?: string[] | undefined;
+    parametersOnMethod?: MethodParameterApiDescriptionModel[] | undefined;
+    parameters?: ParameterApiDescriptionModel[] | undefined;
     returnValue?: ReturnValueApiDescriptionModel;
-    allowAnonymous?: boolean | null;
-    implementFrom?: string | null;
+    allowAnonymous?: boolean | undefined;
+    implementFrom?: string | undefined;
 }
 
 export class ApplicationApiDescriptionModel implements IApplicationApiDescriptionModel {
-    modules?: { [key: string]: ModuleApiDescriptionModel; } | null;
-    types?: { [key: string]: TypeApiDescriptionModel; } | null;
+    modules?: { [key: string]: ModuleApiDescriptionModel; } | undefined;
+    types?: { [key: string]: TypeApiDescriptionModel; } | undefined;
 
     constructor(data?: IApplicationApiDescriptionModel) {
         if (data) {
@@ -7868,18 +7753,12 @@ export class ApplicationApiDescriptionModel implements IApplicationApiDescriptio
                         (<any>this.modules)![key] = _data["modules"][key] ? ModuleApiDescriptionModel.fromJS(_data["modules"][key]) : new ModuleApiDescriptionModel();
                 }
             }
-            else {
-                this.modules = <any>null;
-            }
             if (_data["types"]) {
                 this.types = {} as any;
                 for (let key in _data["types"]) {
                     if (_data["types"].hasOwnProperty(key))
                         (<any>this.types)![key] = _data["types"][key] ? TypeApiDescriptionModel.fromJS(_data["types"][key]) : new TypeApiDescriptionModel();
                 }
-            }
-            else {
-                this.types = <any>null;
             }
         }
     }
@@ -7897,14 +7776,14 @@ export class ApplicationApiDescriptionModel implements IApplicationApiDescriptio
             data["modules"] = {};
             for (let key in this.modules) {
                 if (this.modules.hasOwnProperty(key))
-                    (<any>data["modules"])[key] = this.modules[key] ? this.modules[key].toJSON() : <any>null;
+                    (<any>data["modules"])[key] = this.modules[key] ? this.modules[key].toJSON() : <any>undefined;
             }
         }
         if (this.types) {
             data["types"] = {};
             for (let key in this.types) {
                 if (this.types.hasOwnProperty(key))
-                    (<any>data["types"])[key] = this.types[key] ? this.types[key].toJSON() : <any>null;
+                    (<any>data["types"])[key] = this.types[key] ? this.types[key].toJSON() : <any>undefined;
             }
         }
         return data;
@@ -7912,19 +7791,19 @@ export class ApplicationApiDescriptionModel implements IApplicationApiDescriptio
 }
 
 export interface IApplicationApiDescriptionModel {
-    modules?: { [key: string]: ModuleApiDescriptionModel; } | null;
-    types?: { [key: string]: TypeApiDescriptionModel; } | null;
+    modules?: { [key: string]: ModuleApiDescriptionModel; } | undefined;
+    types?: { [key: string]: TypeApiDescriptionModel; } | undefined;
 }
 
 export class ControllerApiDescriptionModel implements IControllerApiDescriptionModel {
-    controllerName?: string | null;
-    controllerGroupName?: string | null;
+    controllerName?: string | undefined;
+    controllerGroupName?: string | undefined;
     isRemoteService?: boolean;
     isIntegrationService?: boolean;
-    apiVersion?: string | null;
-    type?: string | null;
-    interfaces?: ControllerInterfaceApiDescriptionModel[] | null;
-    actions?: { [key: string]: ActionApiDescriptionModel; } | null;
+    apiVersion?: string | undefined;
+    type?: string | undefined;
+    interfaces?: ControllerInterfaceApiDescriptionModel[] | undefined;
+    actions?: { [key: string]: ActionApiDescriptionModel; } | undefined;
 
     constructor(data?: IControllerApiDescriptionModel) {
         if (data) {
@@ -7937,19 +7816,16 @@ export class ControllerApiDescriptionModel implements IControllerApiDescriptionM
 
     init(_data?: any) {
         if (_data) {
-            this.controllerName = _data["controllerName"] !== undefined ? _data["controllerName"] : <any>null;
-            this.controllerGroupName = _data["controllerGroupName"] !== undefined ? _data["controllerGroupName"] : <any>null;
-            this.isRemoteService = _data["isRemoteService"] !== undefined ? _data["isRemoteService"] : <any>null;
-            this.isIntegrationService = _data["isIntegrationService"] !== undefined ? _data["isIntegrationService"] : <any>null;
-            this.apiVersion = _data["apiVersion"] !== undefined ? _data["apiVersion"] : <any>null;
-            this.type = _data["type"] !== undefined ? _data["type"] : <any>null;
+            this.controllerName = _data["controllerName"];
+            this.controllerGroupName = _data["controllerGroupName"];
+            this.isRemoteService = _data["isRemoteService"];
+            this.isIntegrationService = _data["isIntegrationService"];
+            this.apiVersion = _data["apiVersion"];
+            this.type = _data["type"];
             if (Array.isArray(_data["interfaces"])) {
                 this.interfaces = [] as any;
                 for (let item of _data["interfaces"])
                     this.interfaces!.push(ControllerInterfaceApiDescriptionModel.fromJS(item));
-            }
-            else {
-                this.interfaces = <any>null;
             }
             if (_data["actions"]) {
                 this.actions = {} as any;
@@ -7957,9 +7833,6 @@ export class ControllerApiDescriptionModel implements IControllerApiDescriptionM
                     if (_data["actions"].hasOwnProperty(key))
                         (<any>this.actions)![key] = _data["actions"][key] ? ActionApiDescriptionModel.fromJS(_data["actions"][key]) : new ActionApiDescriptionModel();
                 }
-            }
-            else {
-                this.actions = <any>null;
             }
         }
     }
@@ -7973,12 +7846,12 @@ export class ControllerApiDescriptionModel implements IControllerApiDescriptionM
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["controllerName"] = this.controllerName !== undefined ? this.controllerName : <any>null;
-        data["controllerGroupName"] = this.controllerGroupName !== undefined ? this.controllerGroupName : <any>null;
-        data["isRemoteService"] = this.isRemoteService !== undefined ? this.isRemoteService : <any>null;
-        data["isIntegrationService"] = this.isIntegrationService !== undefined ? this.isIntegrationService : <any>null;
-        data["apiVersion"] = this.apiVersion !== undefined ? this.apiVersion : <any>null;
-        data["type"] = this.type !== undefined ? this.type : <any>null;
+        data["controllerName"] = this.controllerName;
+        data["controllerGroupName"] = this.controllerGroupName;
+        data["isRemoteService"] = this.isRemoteService;
+        data["isIntegrationService"] = this.isIntegrationService;
+        data["apiVersion"] = this.apiVersion;
+        data["type"] = this.type;
         if (Array.isArray(this.interfaces)) {
             data["interfaces"] = [];
             for (let item of this.interfaces)
@@ -7988,7 +7861,7 @@ export class ControllerApiDescriptionModel implements IControllerApiDescriptionM
             data["actions"] = {};
             for (let key in this.actions) {
                 if (this.actions.hasOwnProperty(key))
-                    (<any>data["actions"])[key] = this.actions[key] ? this.actions[key].toJSON() : <any>null;
+                    (<any>data["actions"])[key] = this.actions[key] ? this.actions[key].toJSON() : <any>undefined;
             }
         }
         return data;
@@ -7996,20 +7869,20 @@ export class ControllerApiDescriptionModel implements IControllerApiDescriptionM
 }
 
 export interface IControllerApiDescriptionModel {
-    controllerName?: string | null;
-    controllerGroupName?: string | null;
+    controllerName?: string | undefined;
+    controllerGroupName?: string | undefined;
     isRemoteService?: boolean;
     isIntegrationService?: boolean;
-    apiVersion?: string | null;
-    type?: string | null;
-    interfaces?: ControllerInterfaceApiDescriptionModel[] | null;
-    actions?: { [key: string]: ActionApiDescriptionModel; } | null;
+    apiVersion?: string | undefined;
+    type?: string | undefined;
+    interfaces?: ControllerInterfaceApiDescriptionModel[] | undefined;
+    actions?: { [key: string]: ActionApiDescriptionModel; } | undefined;
 }
 
 export class ControllerInterfaceApiDescriptionModel implements IControllerInterfaceApiDescriptionModel {
-    type?: string | null;
-    name?: string | null;
-    methods?: InterfaceMethodApiDescriptionModel[] | null;
+    type?: string | undefined;
+    name?: string | undefined;
+    methods?: InterfaceMethodApiDescriptionModel[] | undefined;
 
     constructor(data?: IControllerInterfaceApiDescriptionModel) {
         if (data) {
@@ -8022,15 +7895,12 @@ export class ControllerInterfaceApiDescriptionModel implements IControllerInterf
 
     init(_data?: any) {
         if (_data) {
-            this.type = _data["type"] !== undefined ? _data["type"] : <any>null;
-            this.name = _data["name"] !== undefined ? _data["name"] : <any>null;
+            this.type = _data["type"];
+            this.name = _data["name"];
             if (Array.isArray(_data["methods"])) {
                 this.methods = [] as any;
                 for (let item of _data["methods"])
                     this.methods!.push(InterfaceMethodApiDescriptionModel.fromJS(item));
-            }
-            else {
-                this.methods = <any>null;
             }
         }
     }
@@ -8044,8 +7914,8 @@ export class ControllerInterfaceApiDescriptionModel implements IControllerInterf
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["type"] = this.type !== undefined ? this.type : <any>null;
-        data["name"] = this.name !== undefined ? this.name : <any>null;
+        data["type"] = this.type;
+        data["name"] = this.name;
         if (Array.isArray(this.methods)) {
             data["methods"] = [];
             for (let item of this.methods)
@@ -8056,14 +7926,14 @@ export class ControllerInterfaceApiDescriptionModel implements IControllerInterf
 }
 
 export interface IControllerInterfaceApiDescriptionModel {
-    type?: string | null;
-    name?: string | null;
-    methods?: InterfaceMethodApiDescriptionModel[] | null;
+    type?: string | undefined;
+    name?: string | undefined;
+    methods?: InterfaceMethodApiDescriptionModel[] | undefined;
 }
 
 export class InterfaceMethodApiDescriptionModel implements IInterfaceMethodApiDescriptionModel {
-    name?: string | null;
-    parametersOnMethod?: MethodParameterApiDescriptionModel[] | null;
+    name?: string | undefined;
+    parametersOnMethod?: MethodParameterApiDescriptionModel[] | undefined;
     returnValue?: ReturnValueApiDescriptionModel;
 
     constructor(data?: IInterfaceMethodApiDescriptionModel) {
@@ -8077,16 +7947,13 @@ export class InterfaceMethodApiDescriptionModel implements IInterfaceMethodApiDe
 
     init(_data?: any) {
         if (_data) {
-            this.name = _data["name"] !== undefined ? _data["name"] : <any>null;
+            this.name = _data["name"];
             if (Array.isArray(_data["parametersOnMethod"])) {
                 this.parametersOnMethod = [] as any;
                 for (let item of _data["parametersOnMethod"])
                     this.parametersOnMethod!.push(MethodParameterApiDescriptionModel.fromJS(item));
             }
-            else {
-                this.parametersOnMethod = <any>null;
-            }
-            this.returnValue = _data["returnValue"] ? ReturnValueApiDescriptionModel.fromJS(_data["returnValue"]) : <any>null;
+            this.returnValue = _data["returnValue"] ? ReturnValueApiDescriptionModel.fromJS(_data["returnValue"]) : <any>undefined;
         }
     }
 
@@ -8099,30 +7966,30 @@ export class InterfaceMethodApiDescriptionModel implements IInterfaceMethodApiDe
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["name"] = this.name !== undefined ? this.name : <any>null;
+        data["name"] = this.name;
         if (Array.isArray(this.parametersOnMethod)) {
             data["parametersOnMethod"] = [];
             for (let item of this.parametersOnMethod)
                 data["parametersOnMethod"].push(item.toJSON());
         }
-        data["returnValue"] = this.returnValue ? this.returnValue.toJSON() : <any>null;
+        data["returnValue"] = this.returnValue ? this.returnValue.toJSON() : <any>undefined;
         return data;
     }
 }
 
 export interface IInterfaceMethodApiDescriptionModel {
-    name?: string | null;
-    parametersOnMethod?: MethodParameterApiDescriptionModel[] | null;
+    name?: string | undefined;
+    parametersOnMethod?: MethodParameterApiDescriptionModel[] | undefined;
     returnValue?: ReturnValueApiDescriptionModel;
 }
 
 export class MethodParameterApiDescriptionModel implements IMethodParameterApiDescriptionModel {
-    name?: string | null;
-    typeAsString?: string | null;
-    type?: string | null;
-    typeSimple?: string | null;
+    name?: string | undefined;
+    typeAsString?: string | undefined;
+    type?: string | undefined;
+    typeSimple?: string | undefined;
     isOptional?: boolean;
-    defaultValue?: any | null;
+    defaultValue?: any | undefined;
 
     constructor(data?: IMethodParameterApiDescriptionModel) {
         if (data) {
@@ -8135,12 +8002,12 @@ export class MethodParameterApiDescriptionModel implements IMethodParameterApiDe
 
     init(_data?: any) {
         if (_data) {
-            this.name = _data["name"] !== undefined ? _data["name"] : <any>null;
-            this.typeAsString = _data["typeAsString"] !== undefined ? _data["typeAsString"] : <any>null;
-            this.type = _data["type"] !== undefined ? _data["type"] : <any>null;
-            this.typeSimple = _data["typeSimple"] !== undefined ? _data["typeSimple"] : <any>null;
-            this.isOptional = _data["isOptional"] !== undefined ? _data["isOptional"] : <any>null;
-            this.defaultValue = _data["defaultValue"] !== undefined ? _data["defaultValue"] : <any>null;
+            this.name = _data["name"];
+            this.typeAsString = _data["typeAsString"];
+            this.type = _data["type"];
+            this.typeSimple = _data["typeSimple"];
+            this.isOptional = _data["isOptional"];
+            this.defaultValue = _data["defaultValue"];
         }
     }
 
@@ -8153,29 +8020,29 @@ export class MethodParameterApiDescriptionModel implements IMethodParameterApiDe
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["name"] = this.name !== undefined ? this.name : <any>null;
-        data["typeAsString"] = this.typeAsString !== undefined ? this.typeAsString : <any>null;
-        data["type"] = this.type !== undefined ? this.type : <any>null;
-        data["typeSimple"] = this.typeSimple !== undefined ? this.typeSimple : <any>null;
-        data["isOptional"] = this.isOptional !== undefined ? this.isOptional : <any>null;
-        data["defaultValue"] = this.defaultValue !== undefined ? this.defaultValue : <any>null;
+        data["name"] = this.name;
+        data["typeAsString"] = this.typeAsString;
+        data["type"] = this.type;
+        data["typeSimple"] = this.typeSimple;
+        data["isOptional"] = this.isOptional;
+        data["defaultValue"] = this.defaultValue;
         return data;
     }
 }
 
 export interface IMethodParameterApiDescriptionModel {
-    name?: string | null;
-    typeAsString?: string | null;
-    type?: string | null;
-    typeSimple?: string | null;
+    name?: string | undefined;
+    typeAsString?: string | undefined;
+    type?: string | undefined;
+    typeSimple?: string | undefined;
     isOptional?: boolean;
-    defaultValue?: any | null;
+    defaultValue?: any | undefined;
 }
 
 export class ModuleApiDescriptionModel implements IModuleApiDescriptionModel {
-    rootPath?: string | null;
-    remoteServiceName?: string | null;
-    controllers?: { [key: string]: ControllerApiDescriptionModel; } | null;
+    rootPath?: string | undefined;
+    remoteServiceName?: string | undefined;
+    controllers?: { [key: string]: ControllerApiDescriptionModel; } | undefined;
 
     constructor(data?: IModuleApiDescriptionModel) {
         if (data) {
@@ -8188,17 +8055,14 @@ export class ModuleApiDescriptionModel implements IModuleApiDescriptionModel {
 
     init(_data?: any) {
         if (_data) {
-            this.rootPath = _data["rootPath"] !== undefined ? _data["rootPath"] : <any>null;
-            this.remoteServiceName = _data["remoteServiceName"] !== undefined ? _data["remoteServiceName"] : <any>null;
+            this.rootPath = _data["rootPath"];
+            this.remoteServiceName = _data["remoteServiceName"];
             if (_data["controllers"]) {
                 this.controllers = {} as any;
                 for (let key in _data["controllers"]) {
                     if (_data["controllers"].hasOwnProperty(key))
                         (<any>this.controllers)![key] = _data["controllers"][key] ? ControllerApiDescriptionModel.fromJS(_data["controllers"][key]) : new ControllerApiDescriptionModel();
                 }
-            }
-            else {
-                this.controllers = <any>null;
             }
         }
     }
@@ -8212,13 +8076,13 @@ export class ModuleApiDescriptionModel implements IModuleApiDescriptionModel {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["rootPath"] = this.rootPath !== undefined ? this.rootPath : <any>null;
-        data["remoteServiceName"] = this.remoteServiceName !== undefined ? this.remoteServiceName : <any>null;
+        data["rootPath"] = this.rootPath;
+        data["remoteServiceName"] = this.remoteServiceName;
         if (this.controllers) {
             data["controllers"] = {};
             for (let key in this.controllers) {
                 if (this.controllers.hasOwnProperty(key))
-                    (<any>data["controllers"])[key] = this.controllers[key] ? this.controllers[key].toJSON() : <any>null;
+                    (<any>data["controllers"])[key] = this.controllers[key] ? this.controllers[key].toJSON() : <any>undefined;
             }
         }
         return data;
@@ -8226,22 +8090,22 @@ export class ModuleApiDescriptionModel implements IModuleApiDescriptionModel {
 }
 
 export interface IModuleApiDescriptionModel {
-    rootPath?: string | null;
-    remoteServiceName?: string | null;
-    controllers?: { [key: string]: ControllerApiDescriptionModel; } | null;
+    rootPath?: string | undefined;
+    remoteServiceName?: string | undefined;
+    controllers?: { [key: string]: ControllerApiDescriptionModel; } | undefined;
 }
 
 export class ParameterApiDescriptionModel implements IParameterApiDescriptionModel {
-    nameOnMethod?: string | null;
-    name?: string | null;
-    jsonName?: string | null;
-    type?: string | null;
-    typeSimple?: string | null;
+    nameOnMethod?: string | undefined;
+    name?: string | undefined;
+    jsonName?: string | undefined;
+    type?: string | undefined;
+    typeSimple?: string | undefined;
     isOptional?: boolean;
-    defaultValue?: any | null;
-    constraintTypes?: string[] | null;
-    bindingSourceId?: string | null;
-    descriptorName?: string | null;
+    defaultValue?: any | undefined;
+    constraintTypes?: string[] | undefined;
+    bindingSourceId?: string | undefined;
+    descriptorName?: string | undefined;
 
     constructor(data?: IParameterApiDescriptionModel) {
         if (data) {
@@ -8254,23 +8118,20 @@ export class ParameterApiDescriptionModel implements IParameterApiDescriptionMod
 
     init(_data?: any) {
         if (_data) {
-            this.nameOnMethod = _data["nameOnMethod"] !== undefined ? _data["nameOnMethod"] : <any>null;
-            this.name = _data["name"] !== undefined ? _data["name"] : <any>null;
-            this.jsonName = _data["jsonName"] !== undefined ? _data["jsonName"] : <any>null;
-            this.type = _data["type"] !== undefined ? _data["type"] : <any>null;
-            this.typeSimple = _data["typeSimple"] !== undefined ? _data["typeSimple"] : <any>null;
-            this.isOptional = _data["isOptional"] !== undefined ? _data["isOptional"] : <any>null;
-            this.defaultValue = _data["defaultValue"] !== undefined ? _data["defaultValue"] : <any>null;
+            this.nameOnMethod = _data["nameOnMethod"];
+            this.name = _data["name"];
+            this.jsonName = _data["jsonName"];
+            this.type = _data["type"];
+            this.typeSimple = _data["typeSimple"];
+            this.isOptional = _data["isOptional"];
+            this.defaultValue = _data["defaultValue"];
             if (Array.isArray(_data["constraintTypes"])) {
                 this.constraintTypes = [] as any;
                 for (let item of _data["constraintTypes"])
                     this.constraintTypes!.push(item);
             }
-            else {
-                this.constraintTypes = <any>null;
-            }
-            this.bindingSourceId = _data["bindingSourceId"] !== undefined ? _data["bindingSourceId"] : <any>null;
-            this.descriptorName = _data["descriptorName"] !== undefined ? _data["descriptorName"] : <any>null;
+            this.bindingSourceId = _data["bindingSourceId"];
+            this.descriptorName = _data["descriptorName"];
         }
     }
 
@@ -8283,48 +8144,48 @@ export class ParameterApiDescriptionModel implements IParameterApiDescriptionMod
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["nameOnMethod"] = this.nameOnMethod !== undefined ? this.nameOnMethod : <any>null;
-        data["name"] = this.name !== undefined ? this.name : <any>null;
-        data["jsonName"] = this.jsonName !== undefined ? this.jsonName : <any>null;
-        data["type"] = this.type !== undefined ? this.type : <any>null;
-        data["typeSimple"] = this.typeSimple !== undefined ? this.typeSimple : <any>null;
-        data["isOptional"] = this.isOptional !== undefined ? this.isOptional : <any>null;
-        data["defaultValue"] = this.defaultValue !== undefined ? this.defaultValue : <any>null;
+        data["nameOnMethod"] = this.nameOnMethod;
+        data["name"] = this.name;
+        data["jsonName"] = this.jsonName;
+        data["type"] = this.type;
+        data["typeSimple"] = this.typeSimple;
+        data["isOptional"] = this.isOptional;
+        data["defaultValue"] = this.defaultValue;
         if (Array.isArray(this.constraintTypes)) {
             data["constraintTypes"] = [];
             for (let item of this.constraintTypes)
                 data["constraintTypes"].push(item);
         }
-        data["bindingSourceId"] = this.bindingSourceId !== undefined ? this.bindingSourceId : <any>null;
-        data["descriptorName"] = this.descriptorName !== undefined ? this.descriptorName : <any>null;
+        data["bindingSourceId"] = this.bindingSourceId;
+        data["descriptorName"] = this.descriptorName;
         return data;
     }
 }
 
 export interface IParameterApiDescriptionModel {
-    nameOnMethod?: string | null;
-    name?: string | null;
-    jsonName?: string | null;
-    type?: string | null;
-    typeSimple?: string | null;
+    nameOnMethod?: string | undefined;
+    name?: string | undefined;
+    jsonName?: string | undefined;
+    type?: string | undefined;
+    typeSimple?: string | undefined;
     isOptional?: boolean;
-    defaultValue?: any | null;
-    constraintTypes?: string[] | null;
-    bindingSourceId?: string | null;
-    descriptorName?: string | null;
+    defaultValue?: any | undefined;
+    constraintTypes?: string[] | undefined;
+    bindingSourceId?: string | undefined;
+    descriptorName?: string | undefined;
 }
 
 export class PropertyApiDescriptionModel implements IPropertyApiDescriptionModel {
-    name?: string | null;
-    jsonName?: string | null;
-    type?: string | null;
-    typeSimple?: string | null;
+    name?: string | undefined;
+    jsonName?: string | undefined;
+    type?: string | undefined;
+    typeSimple?: string | undefined;
     isRequired?: boolean;
-    minLength?: number | null;
-    maxLength?: number | null;
-    minimum?: string | null;
-    maximum?: string | null;
-    regex?: string | null;
+    minLength?: number | undefined;
+    maxLength?: number | undefined;
+    minimum?: string | undefined;
+    maximum?: string | undefined;
+    regex?: string | undefined;
 
     constructor(data?: IPropertyApiDescriptionModel) {
         if (data) {
@@ -8337,16 +8198,16 @@ export class PropertyApiDescriptionModel implements IPropertyApiDescriptionModel
 
     init(_data?: any) {
         if (_data) {
-            this.name = _data["name"] !== undefined ? _data["name"] : <any>null;
-            this.jsonName = _data["jsonName"] !== undefined ? _data["jsonName"] : <any>null;
-            this.type = _data["type"] !== undefined ? _data["type"] : <any>null;
-            this.typeSimple = _data["typeSimple"] !== undefined ? _data["typeSimple"] : <any>null;
-            this.isRequired = _data["isRequired"] !== undefined ? _data["isRequired"] : <any>null;
-            this.minLength = _data["minLength"] !== undefined ? _data["minLength"] : <any>null;
-            this.maxLength = _data["maxLength"] !== undefined ? _data["maxLength"] : <any>null;
-            this.minimum = _data["minimum"] !== undefined ? _data["minimum"] : <any>null;
-            this.maximum = _data["maximum"] !== undefined ? _data["maximum"] : <any>null;
-            this.regex = _data["regex"] !== undefined ? _data["regex"] : <any>null;
+            this.name = _data["name"];
+            this.jsonName = _data["jsonName"];
+            this.type = _data["type"];
+            this.typeSimple = _data["typeSimple"];
+            this.isRequired = _data["isRequired"];
+            this.minLength = _data["minLength"];
+            this.maxLength = _data["maxLength"];
+            this.minimum = _data["minimum"];
+            this.maximum = _data["maximum"];
+            this.regex = _data["regex"];
         }
     }
 
@@ -8359,36 +8220,36 @@ export class PropertyApiDescriptionModel implements IPropertyApiDescriptionModel
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["name"] = this.name !== undefined ? this.name : <any>null;
-        data["jsonName"] = this.jsonName !== undefined ? this.jsonName : <any>null;
-        data["type"] = this.type !== undefined ? this.type : <any>null;
-        data["typeSimple"] = this.typeSimple !== undefined ? this.typeSimple : <any>null;
-        data["isRequired"] = this.isRequired !== undefined ? this.isRequired : <any>null;
-        data["minLength"] = this.minLength !== undefined ? this.minLength : <any>null;
-        data["maxLength"] = this.maxLength !== undefined ? this.maxLength : <any>null;
-        data["minimum"] = this.minimum !== undefined ? this.minimum : <any>null;
-        data["maximum"] = this.maximum !== undefined ? this.maximum : <any>null;
-        data["regex"] = this.regex !== undefined ? this.regex : <any>null;
+        data["name"] = this.name;
+        data["jsonName"] = this.jsonName;
+        data["type"] = this.type;
+        data["typeSimple"] = this.typeSimple;
+        data["isRequired"] = this.isRequired;
+        data["minLength"] = this.minLength;
+        data["maxLength"] = this.maxLength;
+        data["minimum"] = this.minimum;
+        data["maximum"] = this.maximum;
+        data["regex"] = this.regex;
         return data;
     }
 }
 
 export interface IPropertyApiDescriptionModel {
-    name?: string | null;
-    jsonName?: string | null;
-    type?: string | null;
-    typeSimple?: string | null;
+    name?: string | undefined;
+    jsonName?: string | undefined;
+    type?: string | undefined;
+    typeSimple?: string | undefined;
     isRequired?: boolean;
-    minLength?: number | null;
-    maxLength?: number | null;
-    minimum?: string | null;
-    maximum?: string | null;
-    regex?: string | null;
+    minLength?: number | undefined;
+    maxLength?: number | undefined;
+    minimum?: string | undefined;
+    maximum?: string | undefined;
+    regex?: string | undefined;
 }
 
 export class ReturnValueApiDescriptionModel implements IReturnValueApiDescriptionModel {
-    type?: string | null;
-    typeSimple?: string | null;
+    type?: string | undefined;
+    typeSimple?: string | undefined;
 
     constructor(data?: IReturnValueApiDescriptionModel) {
         if (data) {
@@ -8401,8 +8262,8 @@ export class ReturnValueApiDescriptionModel implements IReturnValueApiDescriptio
 
     init(_data?: any) {
         if (_data) {
-            this.type = _data["type"] !== undefined ? _data["type"] : <any>null;
-            this.typeSimple = _data["typeSimple"] !== undefined ? _data["typeSimple"] : <any>null;
+            this.type = _data["type"];
+            this.typeSimple = _data["typeSimple"];
         }
     }
 
@@ -8415,24 +8276,24 @@ export class ReturnValueApiDescriptionModel implements IReturnValueApiDescriptio
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["type"] = this.type !== undefined ? this.type : <any>null;
-        data["typeSimple"] = this.typeSimple !== undefined ? this.typeSimple : <any>null;
+        data["type"] = this.type;
+        data["typeSimple"] = this.typeSimple;
         return data;
     }
 }
 
 export interface IReturnValueApiDescriptionModel {
-    type?: string | null;
-    typeSimple?: string | null;
+    type?: string | undefined;
+    typeSimple?: string | undefined;
 }
 
 export class TypeApiDescriptionModel implements ITypeApiDescriptionModel {
-    baseType?: string | null;
+    baseType?: string | undefined;
     isEnum?: boolean;
-    enumNames?: string[] | null;
-    enumValues?: any[] | null;
-    genericArguments?: string[] | null;
-    properties?: PropertyApiDescriptionModel[] | null;
+    enumNames?: string[] | undefined;
+    enumValues?: any[] | undefined;
+    genericArguments?: string[] | undefined;
+    properties?: PropertyApiDescriptionModel[] | undefined;
 
     constructor(data?: ITypeApiDescriptionModel) {
         if (data) {
@@ -8445,39 +8306,27 @@ export class TypeApiDescriptionModel implements ITypeApiDescriptionModel {
 
     init(_data?: any) {
         if (_data) {
-            this.baseType = _data["baseType"] !== undefined ? _data["baseType"] : <any>null;
-            this.isEnum = _data["isEnum"] !== undefined ? _data["isEnum"] : <any>null;
+            this.baseType = _data["baseType"];
+            this.isEnum = _data["isEnum"];
             if (Array.isArray(_data["enumNames"])) {
                 this.enumNames = [] as any;
                 for (let item of _data["enumNames"])
                     this.enumNames!.push(item);
-            }
-            else {
-                this.enumNames = <any>null;
             }
             if (Array.isArray(_data["enumValues"])) {
                 this.enumValues = [] as any;
                 for (let item of _data["enumValues"])
                     this.enumValues!.push(item);
             }
-            else {
-                this.enumValues = <any>null;
-            }
             if (Array.isArray(_data["genericArguments"])) {
                 this.genericArguments = [] as any;
                 for (let item of _data["genericArguments"])
                     this.genericArguments!.push(item);
             }
-            else {
-                this.genericArguments = <any>null;
-            }
             if (Array.isArray(_data["properties"])) {
                 this.properties = [] as any;
                 for (let item of _data["properties"])
                     this.properties!.push(PropertyApiDescriptionModel.fromJS(item));
-            }
-            else {
-                this.properties = <any>null;
             }
         }
     }
@@ -8491,8 +8340,8 @@ export class TypeApiDescriptionModel implements ITypeApiDescriptionModel {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["baseType"] = this.baseType !== undefined ? this.baseType : <any>null;
-        data["isEnum"] = this.isEnum !== undefined ? this.isEnum : <any>null;
+        data["baseType"] = this.baseType;
+        data["isEnum"] = this.isEnum;
         if (Array.isArray(this.enumNames)) {
             data["enumNames"] = [];
             for (let item of this.enumNames)
@@ -8518,20 +8367,20 @@ export class TypeApiDescriptionModel implements ITypeApiDescriptionModel {
 }
 
 export interface ITypeApiDescriptionModel {
-    baseType?: string | null;
+    baseType?: string | undefined;
     isEnum?: boolean;
-    enumNames?: string[] | null;
-    enumValues?: any[] | null;
-    genericArguments?: string[] | null;
-    properties?: PropertyApiDescriptionModel[] | null;
+    enumNames?: string[] | undefined;
+    enumValues?: any[] | undefined;
+    genericArguments?: string[] | undefined;
+    properties?: PropertyApiDescriptionModel[] | undefined;
 }
 
 export class RemoteServiceErrorInfo implements IRemoteServiceErrorInfo {
-    code?: string | null;
-    message?: string | null;
-    details?: string | null;
-    data?: { [key: string]: any; } | null;
-    validationErrors?: RemoteServiceValidationErrorInfo[] | null;
+    code?: string | undefined;
+    message?: string | undefined;
+    details?: string | undefined;
+    data?: { [key: string]: any; } | undefined;
+    validationErrors?: RemoteServiceValidationErrorInfo[] | undefined;
 
     constructor(data?: IRemoteServiceErrorInfo) {
         if (data) {
@@ -8544,26 +8393,20 @@ export class RemoteServiceErrorInfo implements IRemoteServiceErrorInfo {
 
     init(_data?: any) {
         if (_data) {
-            this.code = _data["code"] !== undefined ? _data["code"] : <any>null;
-            this.message = _data["message"] !== undefined ? _data["message"] : <any>null;
-            this.details = _data["details"] !== undefined ? _data["details"] : <any>null;
+            this.code = _data["code"];
+            this.message = _data["message"];
+            this.details = _data["details"];
             if (_data["data"]) {
                 this.data = {} as any;
                 for (let key in _data["data"]) {
                     if (_data["data"].hasOwnProperty(key))
-                        (<any>this.data)![key] = _data["data"][key] !== undefined ? _data["data"][key] : <any>null;
+                        (<any>this.data)![key] = _data["data"][key];
                 }
-            }
-            else {
-                this.data = <any>null;
             }
             if (Array.isArray(_data["validationErrors"])) {
                 this.validationErrors = [] as any;
                 for (let item of _data["validationErrors"])
                     this.validationErrors!.push(RemoteServiceValidationErrorInfo.fromJS(item));
-            }
-            else {
-                this.validationErrors = <any>null;
             }
         }
     }
@@ -8577,14 +8420,14 @@ export class RemoteServiceErrorInfo implements IRemoteServiceErrorInfo {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["code"] = this.code !== undefined ? this.code : <any>null;
-        data["message"] = this.message !== undefined ? this.message : <any>null;
-        data["details"] = this.details !== undefined ? this.details : <any>null;
+        data["code"] = this.code;
+        data["message"] = this.message;
+        data["details"] = this.details;
         if (this.data) {
             data["data"] = {};
             for (let key in this.data) {
                 if (this.data.hasOwnProperty(key))
-                    (<any>data["data"])[key] = this.data[key] !== undefined ? this.data[key] : <any>null;
+                    (<any>data["data"])[key] = (<any>this.data)[key];
             }
         }
         if (Array.isArray(this.validationErrors)) {
@@ -8597,11 +8440,11 @@ export class RemoteServiceErrorInfo implements IRemoteServiceErrorInfo {
 }
 
 export interface IRemoteServiceErrorInfo {
-    code?: string | null;
-    message?: string | null;
-    details?: string | null;
-    data?: { [key: string]: any; } | null;
-    validationErrors?: RemoteServiceValidationErrorInfo[] | null;
+    code?: string | undefined;
+    message?: string | undefined;
+    details?: string | undefined;
+    data?: { [key: string]: any; } | undefined;
+    validationErrors?: RemoteServiceValidationErrorInfo[] | undefined;
 }
 
 export class RemoteServiceErrorResponse implements IRemoteServiceErrorResponse {
@@ -8618,7 +8461,7 @@ export class RemoteServiceErrorResponse implements IRemoteServiceErrorResponse {
 
     init(_data?: any) {
         if (_data) {
-            this.error = _data["error"] ? RemoteServiceErrorInfo.fromJS(_data["error"]) : <any>null;
+            this.error = _data["error"] ? RemoteServiceErrorInfo.fromJS(_data["error"]) : <any>undefined;
         }
     }
 
@@ -8631,7 +8474,7 @@ export class RemoteServiceErrorResponse implements IRemoteServiceErrorResponse {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["error"] = this.error ? this.error.toJSON() : <any>null;
+        data["error"] = this.error ? this.error.toJSON() : <any>undefined;
         return data;
     }
 }
@@ -8641,8 +8484,8 @@ export interface IRemoteServiceErrorResponse {
 }
 
 export class RemoteServiceValidationErrorInfo implements IRemoteServiceValidationErrorInfo {
-    message?: string | null;
-    members?: string[] | null;
+    message?: string | undefined;
+    members?: string[] | undefined;
 
     constructor(data?: IRemoteServiceValidationErrorInfo) {
         if (data) {
@@ -8655,14 +8498,11 @@ export class RemoteServiceValidationErrorInfo implements IRemoteServiceValidatio
 
     init(_data?: any) {
         if (_data) {
-            this.message = _data["message"] !== undefined ? _data["message"] : <any>null;
+            this.message = _data["message"];
             if (Array.isArray(_data["members"])) {
                 this.members = [] as any;
                 for (let item of _data["members"])
                     this.members!.push(item);
-            }
-            else {
-                this.members = <any>null;
             }
         }
     }
@@ -8676,7 +8516,7 @@ export class RemoteServiceValidationErrorInfo implements IRemoteServiceValidatio
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["message"] = this.message !== undefined ? this.message : <any>null;
+        data["message"] = this.message;
         if (Array.isArray(this.members)) {
             data["members"] = [];
             for (let item of this.members)
@@ -8687,12 +8527,12 @@ export class RemoteServiceValidationErrorInfo implements IRemoteServiceValidatio
 }
 
 export interface IRemoteServiceValidationErrorInfo {
-    message?: string | null;
-    members?: string[] | null;
+    message?: string | undefined;
+    members?: string[] | undefined;
 }
 
 export class IdentityRoleCreateDto implements IIdentityRoleCreateDto {
-    readonly extraProperties?: { [key: string]: any; } | null;
+    readonly extraProperties?: { [key: string]: any; } | undefined;
     name!: string;
     isDefault?: boolean;
     isPublic?: boolean;
@@ -8712,15 +8552,12 @@ export class IdentityRoleCreateDto implements IIdentityRoleCreateDto {
                 (<any>this).extraProperties = {} as any;
                 for (let key in _data["extraProperties"]) {
                     if (_data["extraProperties"].hasOwnProperty(key))
-                        (<any>(<any>this).extraProperties)![key] = _data["extraProperties"][key] !== undefined ? _data["extraProperties"][key] : <any>null;
+                        (<any>(<any>this).extraProperties)![key] = _data["extraProperties"][key];
                 }
             }
-            else {
-                (<any>this).extraProperties = <any>null;
-            }
-            this.name = _data["name"] !== undefined ? _data["name"] : <any>null;
-            this.isDefault = _data["isDefault"] !== undefined ? _data["isDefault"] : <any>null;
-            this.isPublic = _data["isPublic"] !== undefined ? _data["isPublic"] : <any>null;
+            this.name = _data["name"];
+            this.isDefault = _data["isDefault"];
+            this.isPublic = _data["isPublic"];
         }
     }
 
@@ -8737,31 +8574,31 @@ export class IdentityRoleCreateDto implements IIdentityRoleCreateDto {
             data["extraProperties"] = {};
             for (let key in this.extraProperties) {
                 if (this.extraProperties.hasOwnProperty(key))
-                    (<any>data["extraProperties"])[key] = this.extraProperties[key] !== undefined ? this.extraProperties[key] : <any>null;
+                    (<any>data["extraProperties"])[key] = (<any>this.extraProperties)[key];
             }
         }
-        data["name"] = this.name !== undefined ? this.name : <any>null;
-        data["isDefault"] = this.isDefault !== undefined ? this.isDefault : <any>null;
-        data["isPublic"] = this.isPublic !== undefined ? this.isPublic : <any>null;
+        data["name"] = this.name;
+        data["isDefault"] = this.isDefault;
+        data["isPublic"] = this.isPublic;
         return data;
     }
 }
 
 export interface IIdentityRoleCreateDto {
-    extraProperties?: { [key: string]: any; } | null;
+    extraProperties?: { [key: string]: any; } | undefined;
     name: string;
     isDefault?: boolean;
     isPublic?: boolean;
 }
 
 export class IdentityRoleDto implements IIdentityRoleDto {
-    readonly extraProperties?: { [key: string]: any; } | null;
+    readonly extraProperties?: { [key: string]: any; } | undefined;
     id?: string;
-    name?: string | null;
+    name?: string | undefined;
     isDefault?: boolean;
     isStatic?: boolean;
     isPublic?: boolean;
-    concurrencyStamp?: string | null;
+    concurrencyStamp?: string | undefined;
 
     constructor(data?: IIdentityRoleDto) {
         if (data) {
@@ -8778,18 +8615,15 @@ export class IdentityRoleDto implements IIdentityRoleDto {
                 (<any>this).extraProperties = {} as any;
                 for (let key in _data["extraProperties"]) {
                     if (_data["extraProperties"].hasOwnProperty(key))
-                        (<any>(<any>this).extraProperties)![key] = _data["extraProperties"][key] !== undefined ? _data["extraProperties"][key] : <any>null;
+                        (<any>(<any>this).extraProperties)![key] = _data["extraProperties"][key];
                 }
             }
-            else {
-                (<any>this).extraProperties = <any>null;
-            }
-            this.id = _data["id"] !== undefined ? _data["id"] : <any>null;
-            this.name = _data["name"] !== undefined ? _data["name"] : <any>null;
-            this.isDefault = _data["isDefault"] !== undefined ? _data["isDefault"] : <any>null;
-            this.isStatic = _data["isStatic"] !== undefined ? _data["isStatic"] : <any>null;
-            this.isPublic = _data["isPublic"] !== undefined ? _data["isPublic"] : <any>null;
-            this.concurrencyStamp = _data["concurrencyStamp"] !== undefined ? _data["concurrencyStamp"] : <any>null;
+            this.id = _data["id"];
+            this.name = _data["name"];
+            this.isDefault = _data["isDefault"];
+            this.isStatic = _data["isStatic"];
+            this.isPublic = _data["isPublic"];
+            this.concurrencyStamp = _data["concurrencyStamp"];
         }
     }
 
@@ -8806,35 +8640,35 @@ export class IdentityRoleDto implements IIdentityRoleDto {
             data["extraProperties"] = {};
             for (let key in this.extraProperties) {
                 if (this.extraProperties.hasOwnProperty(key))
-                    (<any>data["extraProperties"])[key] = this.extraProperties[key] !== undefined ? this.extraProperties[key] : <any>null;
+                    (<any>data["extraProperties"])[key] = (<any>this.extraProperties)[key];
             }
         }
-        data["id"] = this.id !== undefined ? this.id : <any>null;
-        data["name"] = this.name !== undefined ? this.name : <any>null;
-        data["isDefault"] = this.isDefault !== undefined ? this.isDefault : <any>null;
-        data["isStatic"] = this.isStatic !== undefined ? this.isStatic : <any>null;
-        data["isPublic"] = this.isPublic !== undefined ? this.isPublic : <any>null;
-        data["concurrencyStamp"] = this.concurrencyStamp !== undefined ? this.concurrencyStamp : <any>null;
+        data["id"] = this.id;
+        data["name"] = this.name;
+        data["isDefault"] = this.isDefault;
+        data["isStatic"] = this.isStatic;
+        data["isPublic"] = this.isPublic;
+        data["concurrencyStamp"] = this.concurrencyStamp;
         return data;
     }
 }
 
 export interface IIdentityRoleDto {
-    extraProperties?: { [key: string]: any; } | null;
+    extraProperties?: { [key: string]: any; } | undefined;
     id?: string;
-    name?: string | null;
+    name?: string | undefined;
     isDefault?: boolean;
     isStatic?: boolean;
     isPublic?: boolean;
-    concurrencyStamp?: string | null;
+    concurrencyStamp?: string | undefined;
 }
 
 export class IdentityRoleUpdateDto implements IIdentityRoleUpdateDto {
-    readonly extraProperties?: { [key: string]: any; } | null;
+    readonly extraProperties?: { [key: string]: any; } | undefined;
     name!: string;
     isDefault?: boolean;
     isPublic?: boolean;
-    concurrencyStamp?: string | null;
+    concurrencyStamp?: string | undefined;
 
     constructor(data?: IIdentityRoleUpdateDto) {
         if (data) {
@@ -8851,16 +8685,13 @@ export class IdentityRoleUpdateDto implements IIdentityRoleUpdateDto {
                 (<any>this).extraProperties = {} as any;
                 for (let key in _data["extraProperties"]) {
                     if (_data["extraProperties"].hasOwnProperty(key))
-                        (<any>(<any>this).extraProperties)![key] = _data["extraProperties"][key] !== undefined ? _data["extraProperties"][key] : <any>null;
+                        (<any>(<any>this).extraProperties)![key] = _data["extraProperties"][key];
                 }
             }
-            else {
-                (<any>this).extraProperties = <any>null;
-            }
-            this.name = _data["name"] !== undefined ? _data["name"] : <any>null;
-            this.isDefault = _data["isDefault"] !== undefined ? _data["isDefault"] : <any>null;
-            this.isPublic = _data["isPublic"] !== undefined ? _data["isPublic"] : <any>null;
-            this.concurrencyStamp = _data["concurrencyStamp"] !== undefined ? _data["concurrencyStamp"] : <any>null;
+            this.name = _data["name"];
+            this.isDefault = _data["isDefault"];
+            this.isPublic = _data["isPublic"];
+            this.concurrencyStamp = _data["concurrencyStamp"];
         }
     }
 
@@ -8877,35 +8708,35 @@ export class IdentityRoleUpdateDto implements IIdentityRoleUpdateDto {
             data["extraProperties"] = {};
             for (let key in this.extraProperties) {
                 if (this.extraProperties.hasOwnProperty(key))
-                    (<any>data["extraProperties"])[key] = this.extraProperties[key] !== undefined ? this.extraProperties[key] : <any>null;
+                    (<any>data["extraProperties"])[key] = (<any>this.extraProperties)[key];
             }
         }
-        data["name"] = this.name !== undefined ? this.name : <any>null;
-        data["isDefault"] = this.isDefault !== undefined ? this.isDefault : <any>null;
-        data["isPublic"] = this.isPublic !== undefined ? this.isPublic : <any>null;
-        data["concurrencyStamp"] = this.concurrencyStamp !== undefined ? this.concurrencyStamp : <any>null;
+        data["name"] = this.name;
+        data["isDefault"] = this.isDefault;
+        data["isPublic"] = this.isPublic;
+        data["concurrencyStamp"] = this.concurrencyStamp;
         return data;
     }
 }
 
 export interface IIdentityRoleUpdateDto {
-    extraProperties?: { [key: string]: any; } | null;
+    extraProperties?: { [key: string]: any; } | undefined;
     name: string;
     isDefault?: boolean;
     isPublic?: boolean;
-    concurrencyStamp?: string | null;
+    concurrencyStamp?: string | undefined;
 }
 
 export class IdentityUserCreateDto implements IIdentityUserCreateDto {
-    readonly extraProperties?: { [key: string]: any; } | null;
+    readonly extraProperties?: { [key: string]: any; } | undefined;
     userName!: string;
-    name?: string | null;
-    surname?: string | null;
+    name?: string | undefined;
+    surname?: string | undefined;
     email!: string;
-    phoneNumber?: string | null;
+    phoneNumber?: string | undefined;
     isActive?: boolean;
     lockoutEnabled?: boolean;
-    roleNames?: string[] | null;
+    roleNames?: string[] | undefined;
     password!: string;
 
     constructor(data?: IIdentityUserCreateDto) {
@@ -8923,28 +8754,22 @@ export class IdentityUserCreateDto implements IIdentityUserCreateDto {
                 (<any>this).extraProperties = {} as any;
                 for (let key in _data["extraProperties"]) {
                     if (_data["extraProperties"].hasOwnProperty(key))
-                        (<any>(<any>this).extraProperties)![key] = _data["extraProperties"][key] !== undefined ? _data["extraProperties"][key] : <any>null;
+                        (<any>(<any>this).extraProperties)![key] = _data["extraProperties"][key];
                 }
             }
-            else {
-                (<any>this).extraProperties = <any>null;
-            }
-            this.userName = _data["userName"] !== undefined ? _data["userName"] : <any>null;
-            this.name = _data["name"] !== undefined ? _data["name"] : <any>null;
-            this.surname = _data["surname"] !== undefined ? _data["surname"] : <any>null;
-            this.email = _data["email"] !== undefined ? _data["email"] : <any>null;
-            this.phoneNumber = _data["phoneNumber"] !== undefined ? _data["phoneNumber"] : <any>null;
-            this.isActive = _data["isActive"] !== undefined ? _data["isActive"] : <any>null;
-            this.lockoutEnabled = _data["lockoutEnabled"] !== undefined ? _data["lockoutEnabled"] : <any>null;
+            this.userName = _data["userName"];
+            this.name = _data["name"];
+            this.surname = _data["surname"];
+            this.email = _data["email"];
+            this.phoneNumber = _data["phoneNumber"];
+            this.isActive = _data["isActive"];
+            this.lockoutEnabled = _data["lockoutEnabled"];
             if (Array.isArray(_data["roleNames"])) {
                 this.roleNames = [] as any;
                 for (let item of _data["roleNames"])
                     this.roleNames!.push(item);
             }
-            else {
-                this.roleNames = <any>null;
-            }
-            this.password = _data["password"] !== undefined ? _data["password"] : <any>null;
+            this.password = _data["password"];
         }
     }
 
@@ -8961,61 +8786,61 @@ export class IdentityUserCreateDto implements IIdentityUserCreateDto {
             data["extraProperties"] = {};
             for (let key in this.extraProperties) {
                 if (this.extraProperties.hasOwnProperty(key))
-                    (<any>data["extraProperties"])[key] = this.extraProperties[key] !== undefined ? this.extraProperties[key] : <any>null;
+                    (<any>data["extraProperties"])[key] = (<any>this.extraProperties)[key];
             }
         }
-        data["userName"] = this.userName !== undefined ? this.userName : <any>null;
-        data["name"] = this.name !== undefined ? this.name : <any>null;
-        data["surname"] = this.surname !== undefined ? this.surname : <any>null;
-        data["email"] = this.email !== undefined ? this.email : <any>null;
-        data["phoneNumber"] = this.phoneNumber !== undefined ? this.phoneNumber : <any>null;
-        data["isActive"] = this.isActive !== undefined ? this.isActive : <any>null;
-        data["lockoutEnabled"] = this.lockoutEnabled !== undefined ? this.lockoutEnabled : <any>null;
+        data["userName"] = this.userName;
+        data["name"] = this.name;
+        data["surname"] = this.surname;
+        data["email"] = this.email;
+        data["phoneNumber"] = this.phoneNumber;
+        data["isActive"] = this.isActive;
+        data["lockoutEnabled"] = this.lockoutEnabled;
         if (Array.isArray(this.roleNames)) {
             data["roleNames"] = [];
             for (let item of this.roleNames)
                 data["roleNames"].push(item);
         }
-        data["password"] = this.password !== undefined ? this.password : <any>null;
+        data["password"] = this.password;
         return data;
     }
 }
 
 export interface IIdentityUserCreateDto {
-    extraProperties?: { [key: string]: any; } | null;
+    extraProperties?: { [key: string]: any; } | undefined;
     userName: string;
-    name?: string | null;
-    surname?: string | null;
+    name?: string | undefined;
+    surname?: string | undefined;
     email: string;
-    phoneNumber?: string | null;
+    phoneNumber?: string | undefined;
     isActive?: boolean;
     lockoutEnabled?: boolean;
-    roleNames?: string[] | null;
+    roleNames?: string[] | undefined;
     password: string;
 }
 
 export class IdentityUserDto implements IIdentityUserDto {
-    readonly extraProperties?: { [key: string]: any; } | null;
+    readonly extraProperties?: { [key: string]: any; } | undefined;
     id?: string;
     creationTime?: Date;
-    creatorId?: string | null;
-    lastModificationTime?: Date | null;
-    lastModifierId?: string | null;
+    creatorId?: string | undefined;
+    lastModificationTime?: Date | undefined;
+    lastModifierId?: string | undefined;
     isDeleted?: boolean;
-    deleterId?: string | null;
-    deletionTime?: Date | null;
-    tenantId?: string | null;
-    userName?: string | null;
-    name?: string | null;
-    surname?: string | null;
-    email?: string | null;
+    deleterId?: string | undefined;
+    deletionTime?: Date | undefined;
+    tenantId?: string | undefined;
+    userName?: string | undefined;
+    name?: string | undefined;
+    surname?: string | undefined;
+    email?: string | undefined;
     emailConfirmed?: boolean;
-    phoneNumber?: string | null;
+    phoneNumber?: string | undefined;
     phoneNumberConfirmed?: boolean;
     isActive?: boolean;
     lockoutEnabled?: boolean;
-    lockoutEnd?: Date | null;
-    concurrencyStamp?: string | null;
+    lockoutEnd?: Date | undefined;
+    concurrencyStamp?: string | undefined;
     entityVersion?: number;
 
     constructor(data?: IIdentityUserDto) {
@@ -9033,33 +8858,30 @@ export class IdentityUserDto implements IIdentityUserDto {
                 (<any>this).extraProperties = {} as any;
                 for (let key in _data["extraProperties"]) {
                     if (_data["extraProperties"].hasOwnProperty(key))
-                        (<any>(<any>this).extraProperties)![key] = _data["extraProperties"][key] !== undefined ? _data["extraProperties"][key] : <any>null;
+                        (<any>(<any>this).extraProperties)![key] = _data["extraProperties"][key];
                 }
             }
-            else {
-                (<any>this).extraProperties = <any>null;
-            }
-            this.id = _data["id"] !== undefined ? _data["id"] : <any>null;
-            this.creationTime = _data["creationTime"] ? new Date(_data["creationTime"].toString()) : <any>null;
-            this.creatorId = _data["creatorId"] !== undefined ? _data["creatorId"] : <any>null;
-            this.lastModificationTime = _data["lastModificationTime"] ? new Date(_data["lastModificationTime"].toString()) : <any>null;
-            this.lastModifierId = _data["lastModifierId"] !== undefined ? _data["lastModifierId"] : <any>null;
-            this.isDeleted = _data["isDeleted"] !== undefined ? _data["isDeleted"] : <any>null;
-            this.deleterId = _data["deleterId"] !== undefined ? _data["deleterId"] : <any>null;
-            this.deletionTime = _data["deletionTime"] ? new Date(_data["deletionTime"].toString()) : <any>null;
-            this.tenantId = _data["tenantId"] !== undefined ? _data["tenantId"] : <any>null;
-            this.userName = _data["userName"] !== undefined ? _data["userName"] : <any>null;
-            this.name = _data["name"] !== undefined ? _data["name"] : <any>null;
-            this.surname = _data["surname"] !== undefined ? _data["surname"] : <any>null;
-            this.email = _data["email"] !== undefined ? _data["email"] : <any>null;
-            this.emailConfirmed = _data["emailConfirmed"] !== undefined ? _data["emailConfirmed"] : <any>null;
-            this.phoneNumber = _data["phoneNumber"] !== undefined ? _data["phoneNumber"] : <any>null;
-            this.phoneNumberConfirmed = _data["phoneNumberConfirmed"] !== undefined ? _data["phoneNumberConfirmed"] : <any>null;
-            this.isActive = _data["isActive"] !== undefined ? _data["isActive"] : <any>null;
-            this.lockoutEnabled = _data["lockoutEnabled"] !== undefined ? _data["lockoutEnabled"] : <any>null;
-            this.lockoutEnd = _data["lockoutEnd"] ? new Date(_data["lockoutEnd"].toString()) : <any>null;
-            this.concurrencyStamp = _data["concurrencyStamp"] !== undefined ? _data["concurrencyStamp"] : <any>null;
-            this.entityVersion = _data["entityVersion"] !== undefined ? _data["entityVersion"] : <any>null;
+            this.id = _data["id"];
+            this.creationTime = _data["creationTime"] ? new Date(_data["creationTime"].toString()) : <any>undefined;
+            this.creatorId = _data["creatorId"];
+            this.lastModificationTime = _data["lastModificationTime"] ? new Date(_data["lastModificationTime"].toString()) : <any>undefined;
+            this.lastModifierId = _data["lastModifierId"];
+            this.isDeleted = _data["isDeleted"];
+            this.deleterId = _data["deleterId"];
+            this.deletionTime = _data["deletionTime"] ? new Date(_data["deletionTime"].toString()) : <any>undefined;
+            this.tenantId = _data["tenantId"];
+            this.userName = _data["userName"];
+            this.name = _data["name"];
+            this.surname = _data["surname"];
+            this.email = _data["email"];
+            this.emailConfirmed = _data["emailConfirmed"];
+            this.phoneNumber = _data["phoneNumber"];
+            this.phoneNumberConfirmed = _data["phoneNumberConfirmed"];
+            this.isActive = _data["isActive"];
+            this.lockoutEnabled = _data["lockoutEnabled"];
+            this.lockoutEnd = _data["lockoutEnd"] ? new Date(_data["lockoutEnd"].toString()) : <any>undefined;
+            this.concurrencyStamp = _data["concurrencyStamp"];
+            this.entityVersion = _data["entityVersion"];
         }
     }
 
@@ -9076,71 +8898,71 @@ export class IdentityUserDto implements IIdentityUserDto {
             data["extraProperties"] = {};
             for (let key in this.extraProperties) {
                 if (this.extraProperties.hasOwnProperty(key))
-                    (<any>data["extraProperties"])[key] = this.extraProperties[key] !== undefined ? this.extraProperties[key] : <any>null;
+                    (<any>data["extraProperties"])[key] = (<any>this.extraProperties)[key];
             }
         }
-        data["id"] = this.id !== undefined ? this.id : <any>null;
-        data["creationTime"] = this.creationTime ? this.creationTime.toISOString() : <any>null;
-        data["creatorId"] = this.creatorId !== undefined ? this.creatorId : <any>null;
-        data["lastModificationTime"] = this.lastModificationTime ? this.lastModificationTime.toISOString() : <any>null;
-        data["lastModifierId"] = this.lastModifierId !== undefined ? this.lastModifierId : <any>null;
-        data["isDeleted"] = this.isDeleted !== undefined ? this.isDeleted : <any>null;
-        data["deleterId"] = this.deleterId !== undefined ? this.deleterId : <any>null;
-        data["deletionTime"] = this.deletionTime ? this.deletionTime.toISOString() : <any>null;
-        data["tenantId"] = this.tenantId !== undefined ? this.tenantId : <any>null;
-        data["userName"] = this.userName !== undefined ? this.userName : <any>null;
-        data["name"] = this.name !== undefined ? this.name : <any>null;
-        data["surname"] = this.surname !== undefined ? this.surname : <any>null;
-        data["email"] = this.email !== undefined ? this.email : <any>null;
-        data["emailConfirmed"] = this.emailConfirmed !== undefined ? this.emailConfirmed : <any>null;
-        data["phoneNumber"] = this.phoneNumber !== undefined ? this.phoneNumber : <any>null;
-        data["phoneNumberConfirmed"] = this.phoneNumberConfirmed !== undefined ? this.phoneNumberConfirmed : <any>null;
-        data["isActive"] = this.isActive !== undefined ? this.isActive : <any>null;
-        data["lockoutEnabled"] = this.lockoutEnabled !== undefined ? this.lockoutEnabled : <any>null;
-        data["lockoutEnd"] = this.lockoutEnd ? this.lockoutEnd.toISOString() : <any>null;
-        data["concurrencyStamp"] = this.concurrencyStamp !== undefined ? this.concurrencyStamp : <any>null;
-        data["entityVersion"] = this.entityVersion !== undefined ? this.entityVersion : <any>null;
+        data["id"] = this.id;
+        data["creationTime"] = this.creationTime ? this.creationTime.toISOString() : <any>undefined;
+        data["creatorId"] = this.creatorId;
+        data["lastModificationTime"] = this.lastModificationTime ? this.lastModificationTime.toISOString() : <any>undefined;
+        data["lastModifierId"] = this.lastModifierId;
+        data["isDeleted"] = this.isDeleted;
+        data["deleterId"] = this.deleterId;
+        data["deletionTime"] = this.deletionTime ? this.deletionTime.toISOString() : <any>undefined;
+        data["tenantId"] = this.tenantId;
+        data["userName"] = this.userName;
+        data["name"] = this.name;
+        data["surname"] = this.surname;
+        data["email"] = this.email;
+        data["emailConfirmed"] = this.emailConfirmed;
+        data["phoneNumber"] = this.phoneNumber;
+        data["phoneNumberConfirmed"] = this.phoneNumberConfirmed;
+        data["isActive"] = this.isActive;
+        data["lockoutEnabled"] = this.lockoutEnabled;
+        data["lockoutEnd"] = this.lockoutEnd ? this.lockoutEnd.toISOString() : <any>undefined;
+        data["concurrencyStamp"] = this.concurrencyStamp;
+        data["entityVersion"] = this.entityVersion;
         return data;
     }
 }
 
 export interface IIdentityUserDto {
-    extraProperties?: { [key: string]: any; } | null;
+    extraProperties?: { [key: string]: any; } | undefined;
     id?: string;
     creationTime?: Date;
-    creatorId?: string | null;
-    lastModificationTime?: Date | null;
-    lastModifierId?: string | null;
+    creatorId?: string | undefined;
+    lastModificationTime?: Date | undefined;
+    lastModifierId?: string | undefined;
     isDeleted?: boolean;
-    deleterId?: string | null;
-    deletionTime?: Date | null;
-    tenantId?: string | null;
-    userName?: string | null;
-    name?: string | null;
-    surname?: string | null;
-    email?: string | null;
+    deleterId?: string | undefined;
+    deletionTime?: Date | undefined;
+    tenantId?: string | undefined;
+    userName?: string | undefined;
+    name?: string | undefined;
+    surname?: string | undefined;
+    email?: string | undefined;
     emailConfirmed?: boolean;
-    phoneNumber?: string | null;
+    phoneNumber?: string | undefined;
     phoneNumberConfirmed?: boolean;
     isActive?: boolean;
     lockoutEnabled?: boolean;
-    lockoutEnd?: Date | null;
-    concurrencyStamp?: string | null;
+    lockoutEnd?: Date | undefined;
+    concurrencyStamp?: string | undefined;
     entityVersion?: number;
 }
 
 export class IdentityUserUpdateDto implements IIdentityUserUpdateDto {
-    readonly extraProperties?: { [key: string]: any; } | null;
+    readonly extraProperties?: { [key: string]: any; } | undefined;
     userName!: string;
-    name?: string | null;
-    surname?: string | null;
+    name?: string | undefined;
+    surname?: string | undefined;
     email!: string;
-    phoneNumber?: string | null;
+    phoneNumber?: string | undefined;
     isActive?: boolean;
     lockoutEnabled?: boolean;
-    roleNames?: string[] | null;
-    password?: string | null;
-    concurrencyStamp?: string | null;
+    roleNames?: string[] | undefined;
+    password?: string | undefined;
+    concurrencyStamp?: string | undefined;
 
     constructor(data?: IIdentityUserUpdateDto) {
         if (data) {
@@ -9157,29 +8979,23 @@ export class IdentityUserUpdateDto implements IIdentityUserUpdateDto {
                 (<any>this).extraProperties = {} as any;
                 for (let key in _data["extraProperties"]) {
                     if (_data["extraProperties"].hasOwnProperty(key))
-                        (<any>(<any>this).extraProperties)![key] = _data["extraProperties"][key] !== undefined ? _data["extraProperties"][key] : <any>null;
+                        (<any>(<any>this).extraProperties)![key] = _data["extraProperties"][key];
                 }
             }
-            else {
-                (<any>this).extraProperties = <any>null;
-            }
-            this.userName = _data["userName"] !== undefined ? _data["userName"] : <any>null;
-            this.name = _data["name"] !== undefined ? _data["name"] : <any>null;
-            this.surname = _data["surname"] !== undefined ? _data["surname"] : <any>null;
-            this.email = _data["email"] !== undefined ? _data["email"] : <any>null;
-            this.phoneNumber = _data["phoneNumber"] !== undefined ? _data["phoneNumber"] : <any>null;
-            this.isActive = _data["isActive"] !== undefined ? _data["isActive"] : <any>null;
-            this.lockoutEnabled = _data["lockoutEnabled"] !== undefined ? _data["lockoutEnabled"] : <any>null;
+            this.userName = _data["userName"];
+            this.name = _data["name"];
+            this.surname = _data["surname"];
+            this.email = _data["email"];
+            this.phoneNumber = _data["phoneNumber"];
+            this.isActive = _data["isActive"];
+            this.lockoutEnabled = _data["lockoutEnabled"];
             if (Array.isArray(_data["roleNames"])) {
                 this.roleNames = [] as any;
                 for (let item of _data["roleNames"])
                     this.roleNames!.push(item);
             }
-            else {
-                this.roleNames = <any>null;
-            }
-            this.password = _data["password"] !== undefined ? _data["password"] : <any>null;
-            this.concurrencyStamp = _data["concurrencyStamp"] !== undefined ? _data["concurrencyStamp"] : <any>null;
+            this.password = _data["password"];
+            this.concurrencyStamp = _data["concurrencyStamp"];
         }
     }
 
@@ -9196,39 +9012,39 @@ export class IdentityUserUpdateDto implements IIdentityUserUpdateDto {
             data["extraProperties"] = {};
             for (let key in this.extraProperties) {
                 if (this.extraProperties.hasOwnProperty(key))
-                    (<any>data["extraProperties"])[key] = this.extraProperties[key] !== undefined ? this.extraProperties[key] : <any>null;
+                    (<any>data["extraProperties"])[key] = (<any>this.extraProperties)[key];
             }
         }
-        data["userName"] = this.userName !== undefined ? this.userName : <any>null;
-        data["name"] = this.name !== undefined ? this.name : <any>null;
-        data["surname"] = this.surname !== undefined ? this.surname : <any>null;
-        data["email"] = this.email !== undefined ? this.email : <any>null;
-        data["phoneNumber"] = this.phoneNumber !== undefined ? this.phoneNumber : <any>null;
-        data["isActive"] = this.isActive !== undefined ? this.isActive : <any>null;
-        data["lockoutEnabled"] = this.lockoutEnabled !== undefined ? this.lockoutEnabled : <any>null;
+        data["userName"] = this.userName;
+        data["name"] = this.name;
+        data["surname"] = this.surname;
+        data["email"] = this.email;
+        data["phoneNumber"] = this.phoneNumber;
+        data["isActive"] = this.isActive;
+        data["lockoutEnabled"] = this.lockoutEnabled;
         if (Array.isArray(this.roleNames)) {
             data["roleNames"] = [];
             for (let item of this.roleNames)
                 data["roleNames"].push(item);
         }
-        data["password"] = this.password !== undefined ? this.password : <any>null;
-        data["concurrencyStamp"] = this.concurrencyStamp !== undefined ? this.concurrencyStamp : <any>null;
+        data["password"] = this.password;
+        data["concurrencyStamp"] = this.concurrencyStamp;
         return data;
     }
 }
 
 export interface IIdentityUserUpdateDto {
-    extraProperties?: { [key: string]: any; } | null;
+    extraProperties?: { [key: string]: any; } | undefined;
     userName: string;
-    name?: string | null;
-    surname?: string | null;
+    name?: string | undefined;
+    surname?: string | undefined;
     email: string;
-    phoneNumber?: string | null;
+    phoneNumber?: string | undefined;
     isActive?: boolean;
     lockoutEnabled?: boolean;
-    roleNames?: string[] | null;
-    password?: string | null;
-    concurrencyStamp?: string | null;
+    roleNames?: string[] | undefined;
+    password?: string | undefined;
+    concurrencyStamp?: string | undefined;
 }
 
 export class IdentityUserUpdateRolesDto implements IIdentityUserUpdateRolesDto {
@@ -9252,9 +9068,6 @@ export class IdentityUserUpdateRolesDto implements IIdentityUserUpdateRolesDto {
                 this.roleNames = [] as any;
                 for (let item of _data["roleNames"])
                     this.roleNames!.push(item);
-            }
-            else {
-                this.roleNames = <any>null;
             }
         }
     }
@@ -9282,11 +9095,11 @@ export interface IIdentityUserUpdateRolesDto {
 }
 
 export class LanguageInfo implements ILanguageInfo {
-    cultureName?: string | null;
-    uiCultureName?: string | null;
-    displayName?: string | null;
-    readonly twoLetterISOLanguageName?: string | null;
-    flagIcon?: string | null;
+    cultureName?: string | undefined;
+    uiCultureName?: string | undefined;
+    displayName?: string | undefined;
+    readonly twoLetterISOLanguageName?: string | undefined;
+    flagIcon?: string | undefined;
 
     constructor(data?: ILanguageInfo) {
         if (data) {
@@ -9299,11 +9112,11 @@ export class LanguageInfo implements ILanguageInfo {
 
     init(_data?: any) {
         if (_data) {
-            this.cultureName = _data["cultureName"] !== undefined ? _data["cultureName"] : <any>null;
-            this.uiCultureName = _data["uiCultureName"] !== undefined ? _data["uiCultureName"] : <any>null;
-            this.displayName = _data["displayName"] !== undefined ? _data["displayName"] : <any>null;
-            (<any>this).twoLetterISOLanguageName = _data["twoLetterISOLanguageName"] !== undefined ? _data["twoLetterISOLanguageName"] : <any>null;
-            this.flagIcon = _data["flagIcon"] !== undefined ? _data["flagIcon"] : <any>null;
+            this.cultureName = _data["cultureName"];
+            this.uiCultureName = _data["uiCultureName"];
+            this.displayName = _data["displayName"];
+            (<any>this).twoLetterISOLanguageName = _data["twoLetterISOLanguageName"];
+            this.flagIcon = _data["flagIcon"];
         }
     }
 
@@ -9316,26 +9129,26 @@ export class LanguageInfo implements ILanguageInfo {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["cultureName"] = this.cultureName !== undefined ? this.cultureName : <any>null;
-        data["uiCultureName"] = this.uiCultureName !== undefined ? this.uiCultureName : <any>null;
-        data["displayName"] = this.displayName !== undefined ? this.displayName : <any>null;
-        data["twoLetterISOLanguageName"] = this.twoLetterISOLanguageName !== undefined ? this.twoLetterISOLanguageName : <any>null;
-        data["flagIcon"] = this.flagIcon !== undefined ? this.flagIcon : <any>null;
+        data["cultureName"] = this.cultureName;
+        data["uiCultureName"] = this.uiCultureName;
+        data["displayName"] = this.displayName;
+        data["twoLetterISOLanguageName"] = this.twoLetterISOLanguageName;
+        data["flagIcon"] = this.flagIcon;
         return data;
     }
 }
 
 export interface ILanguageInfo {
-    cultureName?: string | null;
-    uiCultureName?: string | null;
-    displayName?: string | null;
-    twoLetterISOLanguageName?: string | null;
-    flagIcon?: string | null;
+    cultureName?: string | undefined;
+    uiCultureName?: string | undefined;
+    displayName?: string | undefined;
+    twoLetterISOLanguageName?: string | undefined;
+    flagIcon?: string | undefined;
 }
 
 export class NameValue implements INameValue {
-    name?: string | null;
-    value?: string | null;
+    name?: string | undefined;
+    value?: string | undefined;
 
     constructor(data?: INameValue) {
         if (data) {
@@ -9348,8 +9161,8 @@ export class NameValue implements INameValue {
 
     init(_data?: any) {
         if (_data) {
-            this.name = _data["name"] !== undefined ? _data["name"] : <any>null;
-            this.value = _data["value"] !== undefined ? _data["value"] : <any>null;
+            this.name = _data["name"];
+            this.value = _data["value"];
         }
     }
 
@@ -9362,20 +9175,20 @@ export class NameValue implements INameValue {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["name"] = this.name !== undefined ? this.name : <any>null;
-        data["value"] = this.value !== undefined ? this.value : <any>null;
+        data["name"] = this.name;
+        data["value"] = this.value;
         return data;
     }
 }
 
 export interface INameValue {
-    name?: string | null;
-    value?: string | null;
+    name?: string | undefined;
+    value?: string | undefined;
 }
 
 export class GetPermissionListResultDto implements IGetPermissionListResultDto {
-    entityDisplayName?: string | null;
-    groups?: PermissionGroupDto[] | null;
+    entityDisplayName?: string | undefined;
+    groups?: PermissionGroupDto[] | undefined;
 
     constructor(data?: IGetPermissionListResultDto) {
         if (data) {
@@ -9388,14 +9201,11 @@ export class GetPermissionListResultDto implements IGetPermissionListResultDto {
 
     init(_data?: any) {
         if (_data) {
-            this.entityDisplayName = _data["entityDisplayName"] !== undefined ? _data["entityDisplayName"] : <any>null;
+            this.entityDisplayName = _data["entityDisplayName"];
             if (Array.isArray(_data["groups"])) {
                 this.groups = [] as any;
                 for (let item of _data["groups"])
                     this.groups!.push(PermissionGroupDto.fromJS(item));
-            }
-            else {
-                this.groups = <any>null;
             }
         }
     }
@@ -9409,7 +9219,7 @@ export class GetPermissionListResultDto implements IGetPermissionListResultDto {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["entityDisplayName"] = this.entityDisplayName !== undefined ? this.entityDisplayName : <any>null;
+        data["entityDisplayName"] = this.entityDisplayName;
         if (Array.isArray(this.groups)) {
             data["groups"] = [];
             for (let item of this.groups)
@@ -9420,17 +9230,17 @@ export class GetPermissionListResultDto implements IGetPermissionListResultDto {
 }
 
 export interface IGetPermissionListResultDto {
-    entityDisplayName?: string | null;
-    groups?: PermissionGroupDto[] | null;
+    entityDisplayName?: string | undefined;
+    groups?: PermissionGroupDto[] | undefined;
 }
 
 export class PermissionGrantInfoDto implements IPermissionGrantInfoDto {
-    name?: string | null;
-    displayName?: string | null;
-    parentName?: string | null;
+    name?: string | undefined;
+    displayName?: string | undefined;
+    parentName?: string | undefined;
     isGranted?: boolean;
-    allowedProviders?: string[] | null;
-    grantedProviders?: ProviderInfoDto[] | null;
+    allowedProviders?: string[] | undefined;
+    grantedProviders?: ProviderInfoDto[] | undefined;
 
     constructor(data?: IPermissionGrantInfoDto) {
         if (data) {
@@ -9443,25 +9253,19 @@ export class PermissionGrantInfoDto implements IPermissionGrantInfoDto {
 
     init(_data?: any) {
         if (_data) {
-            this.name = _data["name"] !== undefined ? _data["name"] : <any>null;
-            this.displayName = _data["displayName"] !== undefined ? _data["displayName"] : <any>null;
-            this.parentName = _data["parentName"] !== undefined ? _data["parentName"] : <any>null;
-            this.isGranted = _data["isGranted"] !== undefined ? _data["isGranted"] : <any>null;
+            this.name = _data["name"];
+            this.displayName = _data["displayName"];
+            this.parentName = _data["parentName"];
+            this.isGranted = _data["isGranted"];
             if (Array.isArray(_data["allowedProviders"])) {
                 this.allowedProviders = [] as any;
                 for (let item of _data["allowedProviders"])
                     this.allowedProviders!.push(item);
             }
-            else {
-                this.allowedProviders = <any>null;
-            }
             if (Array.isArray(_data["grantedProviders"])) {
                 this.grantedProviders = [] as any;
                 for (let item of _data["grantedProviders"])
                     this.grantedProviders!.push(ProviderInfoDto.fromJS(item));
-            }
-            else {
-                this.grantedProviders = <any>null;
             }
         }
     }
@@ -9475,10 +9279,10 @@ export class PermissionGrantInfoDto implements IPermissionGrantInfoDto {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["name"] = this.name !== undefined ? this.name : <any>null;
-        data["displayName"] = this.displayName !== undefined ? this.displayName : <any>null;
-        data["parentName"] = this.parentName !== undefined ? this.parentName : <any>null;
-        data["isGranted"] = this.isGranted !== undefined ? this.isGranted : <any>null;
+        data["name"] = this.name;
+        data["displayName"] = this.displayName;
+        data["parentName"] = this.parentName;
+        data["isGranted"] = this.isGranted;
         if (Array.isArray(this.allowedProviders)) {
             data["allowedProviders"] = [];
             for (let item of this.allowedProviders)
@@ -9494,20 +9298,20 @@ export class PermissionGrantInfoDto implements IPermissionGrantInfoDto {
 }
 
 export interface IPermissionGrantInfoDto {
-    name?: string | null;
-    displayName?: string | null;
-    parentName?: string | null;
+    name?: string | undefined;
+    displayName?: string | undefined;
+    parentName?: string | undefined;
     isGranted?: boolean;
-    allowedProviders?: string[] | null;
-    grantedProviders?: ProviderInfoDto[] | null;
+    allowedProviders?: string[] | undefined;
+    grantedProviders?: ProviderInfoDto[] | undefined;
 }
 
 export class PermissionGroupDto implements IPermissionGroupDto {
-    name?: string | null;
-    displayName?: string | null;
-    displayNameKey?: string | null;
-    displayNameResource?: string | null;
-    permissions?: PermissionGrantInfoDto[] | null;
+    name?: string | undefined;
+    displayName?: string | undefined;
+    displayNameKey?: string | undefined;
+    displayNameResource?: string | undefined;
+    permissions?: PermissionGrantInfoDto[] | undefined;
 
     constructor(data?: IPermissionGroupDto) {
         if (data) {
@@ -9520,17 +9324,14 @@ export class PermissionGroupDto implements IPermissionGroupDto {
 
     init(_data?: any) {
         if (_data) {
-            this.name = _data["name"] !== undefined ? _data["name"] : <any>null;
-            this.displayName = _data["displayName"] !== undefined ? _data["displayName"] : <any>null;
-            this.displayNameKey = _data["displayNameKey"] !== undefined ? _data["displayNameKey"] : <any>null;
-            this.displayNameResource = _data["displayNameResource"] !== undefined ? _data["displayNameResource"] : <any>null;
+            this.name = _data["name"];
+            this.displayName = _data["displayName"];
+            this.displayNameKey = _data["displayNameKey"];
+            this.displayNameResource = _data["displayNameResource"];
             if (Array.isArray(_data["permissions"])) {
                 this.permissions = [] as any;
                 for (let item of _data["permissions"])
                     this.permissions!.push(PermissionGrantInfoDto.fromJS(item));
-            }
-            else {
-                this.permissions = <any>null;
             }
         }
     }
@@ -9544,10 +9345,10 @@ export class PermissionGroupDto implements IPermissionGroupDto {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["name"] = this.name !== undefined ? this.name : <any>null;
-        data["displayName"] = this.displayName !== undefined ? this.displayName : <any>null;
-        data["displayNameKey"] = this.displayNameKey !== undefined ? this.displayNameKey : <any>null;
-        data["displayNameResource"] = this.displayNameResource !== undefined ? this.displayNameResource : <any>null;
+        data["name"] = this.name;
+        data["displayName"] = this.displayName;
+        data["displayNameKey"] = this.displayNameKey;
+        data["displayNameResource"] = this.displayNameResource;
         if (Array.isArray(this.permissions)) {
             data["permissions"] = [];
             for (let item of this.permissions)
@@ -9558,16 +9359,16 @@ export class PermissionGroupDto implements IPermissionGroupDto {
 }
 
 export interface IPermissionGroupDto {
-    name?: string | null;
-    displayName?: string | null;
-    displayNameKey?: string | null;
-    displayNameResource?: string | null;
-    permissions?: PermissionGrantInfoDto[] | null;
+    name?: string | undefined;
+    displayName?: string | undefined;
+    displayNameKey?: string | undefined;
+    displayNameResource?: string | undefined;
+    permissions?: PermissionGrantInfoDto[] | undefined;
 }
 
 export class ProviderInfoDto implements IProviderInfoDto {
-    providerName?: string | null;
-    providerKey?: string | null;
+    providerName?: string | undefined;
+    providerKey?: string | undefined;
 
     constructor(data?: IProviderInfoDto) {
         if (data) {
@@ -9580,8 +9381,8 @@ export class ProviderInfoDto implements IProviderInfoDto {
 
     init(_data?: any) {
         if (_data) {
-            this.providerName = _data["providerName"] !== undefined ? _data["providerName"] : <any>null;
-            this.providerKey = _data["providerKey"] !== undefined ? _data["providerKey"] : <any>null;
+            this.providerName = _data["providerName"];
+            this.providerKey = _data["providerKey"];
         }
     }
 
@@ -9594,19 +9395,19 @@ export class ProviderInfoDto implements IProviderInfoDto {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["providerName"] = this.providerName !== undefined ? this.providerName : <any>null;
-        data["providerKey"] = this.providerKey !== undefined ? this.providerKey : <any>null;
+        data["providerName"] = this.providerName;
+        data["providerKey"] = this.providerKey;
         return data;
     }
 }
 
 export interface IProviderInfoDto {
-    providerName?: string | null;
-    providerKey?: string | null;
+    providerName?: string | undefined;
+    providerKey?: string | undefined;
 }
 
 export class UpdatePermissionDto implements IUpdatePermissionDto {
-    name?: string | null;
+    name?: string | undefined;
     isGranted?: boolean;
 
     constructor(data?: IUpdatePermissionDto) {
@@ -9620,8 +9421,8 @@ export class UpdatePermissionDto implements IUpdatePermissionDto {
 
     init(_data?: any) {
         if (_data) {
-            this.name = _data["name"] !== undefined ? _data["name"] : <any>null;
-            this.isGranted = _data["isGranted"] !== undefined ? _data["isGranted"] : <any>null;
+            this.name = _data["name"];
+            this.isGranted = _data["isGranted"];
         }
     }
 
@@ -9634,19 +9435,19 @@ export class UpdatePermissionDto implements IUpdatePermissionDto {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["name"] = this.name !== undefined ? this.name : <any>null;
-        data["isGranted"] = this.isGranted !== undefined ? this.isGranted : <any>null;
+        data["name"] = this.name;
+        data["isGranted"] = this.isGranted;
         return data;
     }
 }
 
 export interface IUpdatePermissionDto {
-    name?: string | null;
+    name?: string | undefined;
     isGranted?: boolean;
 }
 
 export class UpdatePermissionsDto implements IUpdatePermissionsDto {
-    permissions?: UpdatePermissionDto[] | null;
+    permissions?: UpdatePermissionDto[] | undefined;
 
     constructor(data?: IUpdatePermissionsDto) {
         if (data) {
@@ -9663,9 +9464,6 @@ export class UpdatePermissionsDto implements IUpdatePermissionsDto {
                 this.permissions = [] as any;
                 for (let item of _data["permissions"])
                     this.permissions!.push(UpdatePermissionDto.fromJS(item));
-            }
-            else {
-                this.permissions = <any>null;
             }
         }
     }
@@ -9689,19 +9487,19 @@ export class UpdatePermissionsDto implements IUpdatePermissionsDto {
 }
 
 export interface IUpdatePermissionsDto {
-    permissions?: UpdatePermissionDto[] | null;
+    permissions?: UpdatePermissionDto[] | undefined;
 }
 
 export class EmailSettingsDto implements IEmailSettingsDto {
-    smtpHost?: string | null;
+    smtpHost?: string | undefined;
     smtpPort?: number;
-    smtpUserName?: string | null;
-    smtpPassword?: string | null;
-    smtpDomain?: string | null;
+    smtpUserName?: string | undefined;
+    smtpPassword?: string | undefined;
+    smtpDomain?: string | undefined;
     smtpEnableSsl?: boolean;
     smtpUseDefaultCredentials?: boolean;
-    defaultFromAddress?: string | null;
-    defaultFromDisplayName?: string | null;
+    defaultFromAddress?: string | undefined;
+    defaultFromDisplayName?: string | undefined;
 
     constructor(data?: IEmailSettingsDto) {
         if (data) {
@@ -9714,15 +9512,15 @@ export class EmailSettingsDto implements IEmailSettingsDto {
 
     init(_data?: any) {
         if (_data) {
-            this.smtpHost = _data["smtpHost"] !== undefined ? _data["smtpHost"] : <any>null;
-            this.smtpPort = _data["smtpPort"] !== undefined ? _data["smtpPort"] : <any>null;
-            this.smtpUserName = _data["smtpUserName"] !== undefined ? _data["smtpUserName"] : <any>null;
-            this.smtpPassword = _data["smtpPassword"] !== undefined ? _data["smtpPassword"] : <any>null;
-            this.smtpDomain = _data["smtpDomain"] !== undefined ? _data["smtpDomain"] : <any>null;
-            this.smtpEnableSsl = _data["smtpEnableSsl"] !== undefined ? _data["smtpEnableSsl"] : <any>null;
-            this.smtpUseDefaultCredentials = _data["smtpUseDefaultCredentials"] !== undefined ? _data["smtpUseDefaultCredentials"] : <any>null;
-            this.defaultFromAddress = _data["defaultFromAddress"] !== undefined ? _data["defaultFromAddress"] : <any>null;
-            this.defaultFromDisplayName = _data["defaultFromDisplayName"] !== undefined ? _data["defaultFromDisplayName"] : <any>null;
+            this.smtpHost = _data["smtpHost"];
+            this.smtpPort = _data["smtpPort"];
+            this.smtpUserName = _data["smtpUserName"];
+            this.smtpPassword = _data["smtpPassword"];
+            this.smtpDomain = _data["smtpDomain"];
+            this.smtpEnableSsl = _data["smtpEnableSsl"];
+            this.smtpUseDefaultCredentials = _data["smtpUseDefaultCredentials"];
+            this.defaultFromAddress = _data["defaultFromAddress"];
+            this.defaultFromDisplayName = _data["defaultFromDisplayName"];
         }
     }
 
@@ -9735,36 +9533,36 @@ export class EmailSettingsDto implements IEmailSettingsDto {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["smtpHost"] = this.smtpHost !== undefined ? this.smtpHost : <any>null;
-        data["smtpPort"] = this.smtpPort !== undefined ? this.smtpPort : <any>null;
-        data["smtpUserName"] = this.smtpUserName !== undefined ? this.smtpUserName : <any>null;
-        data["smtpPassword"] = this.smtpPassword !== undefined ? this.smtpPassword : <any>null;
-        data["smtpDomain"] = this.smtpDomain !== undefined ? this.smtpDomain : <any>null;
-        data["smtpEnableSsl"] = this.smtpEnableSsl !== undefined ? this.smtpEnableSsl : <any>null;
-        data["smtpUseDefaultCredentials"] = this.smtpUseDefaultCredentials !== undefined ? this.smtpUseDefaultCredentials : <any>null;
-        data["defaultFromAddress"] = this.defaultFromAddress !== undefined ? this.defaultFromAddress : <any>null;
-        data["defaultFromDisplayName"] = this.defaultFromDisplayName !== undefined ? this.defaultFromDisplayName : <any>null;
+        data["smtpHost"] = this.smtpHost;
+        data["smtpPort"] = this.smtpPort;
+        data["smtpUserName"] = this.smtpUserName;
+        data["smtpPassword"] = this.smtpPassword;
+        data["smtpDomain"] = this.smtpDomain;
+        data["smtpEnableSsl"] = this.smtpEnableSsl;
+        data["smtpUseDefaultCredentials"] = this.smtpUseDefaultCredentials;
+        data["defaultFromAddress"] = this.defaultFromAddress;
+        data["defaultFromDisplayName"] = this.defaultFromDisplayName;
         return data;
     }
 }
 
 export interface IEmailSettingsDto {
-    smtpHost?: string | null;
+    smtpHost?: string | undefined;
     smtpPort?: number;
-    smtpUserName?: string | null;
-    smtpPassword?: string | null;
-    smtpDomain?: string | null;
+    smtpUserName?: string | undefined;
+    smtpPassword?: string | undefined;
+    smtpDomain?: string | undefined;
     smtpEnableSsl?: boolean;
     smtpUseDefaultCredentials?: boolean;
-    defaultFromAddress?: string | null;
-    defaultFromDisplayName?: string | null;
+    defaultFromAddress?: string | undefined;
+    defaultFromDisplayName?: string | undefined;
 }
 
 export class SendTestEmailInput implements ISendTestEmailInput {
     senderEmailAddress!: string;
     targetEmailAddress!: string;
     subject!: string;
-    body?: string | null;
+    body?: string | undefined;
 
     constructor(data?: ISendTestEmailInput) {
         if (data) {
@@ -9777,10 +9575,10 @@ export class SendTestEmailInput implements ISendTestEmailInput {
 
     init(_data?: any) {
         if (_data) {
-            this.senderEmailAddress = _data["senderEmailAddress"] !== undefined ? _data["senderEmailAddress"] : <any>null;
-            this.targetEmailAddress = _data["targetEmailAddress"] !== undefined ? _data["targetEmailAddress"] : <any>null;
-            this.subject = _data["subject"] !== undefined ? _data["subject"] : <any>null;
-            this.body = _data["body"] !== undefined ? _data["body"] : <any>null;
+            this.senderEmailAddress = _data["senderEmailAddress"];
+            this.targetEmailAddress = _data["targetEmailAddress"];
+            this.subject = _data["subject"];
+            this.body = _data["body"];
         }
     }
 
@@ -9793,10 +9591,10 @@ export class SendTestEmailInput implements ISendTestEmailInput {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["senderEmailAddress"] = this.senderEmailAddress !== undefined ? this.senderEmailAddress : <any>null;
-        data["targetEmailAddress"] = this.targetEmailAddress !== undefined ? this.targetEmailAddress : <any>null;
-        data["subject"] = this.subject !== undefined ? this.subject : <any>null;
-        data["body"] = this.body !== undefined ? this.body : <any>null;
+        data["senderEmailAddress"] = this.senderEmailAddress;
+        data["targetEmailAddress"] = this.targetEmailAddress;
+        data["subject"] = this.subject;
+        data["body"] = this.body;
         return data;
     }
 }
@@ -9805,15 +9603,15 @@ export interface ISendTestEmailInput {
     senderEmailAddress: string;
     targetEmailAddress: string;
     subject: string;
-    body?: string | null;
+    body?: string | undefined;
 }
 
 export class UpdateEmailSettingsDto implements IUpdateEmailSettingsDto {
-    smtpHost?: string | null;
+    smtpHost?: string | undefined;
     smtpPort?: number;
-    smtpUserName?: string | null;
-    smtpPassword?: string | null;
-    smtpDomain?: string | null;
+    smtpUserName?: string | undefined;
+    smtpPassword?: string | undefined;
+    smtpDomain?: string | undefined;
     smtpEnableSsl?: boolean;
     smtpUseDefaultCredentials?: boolean;
     defaultFromAddress!: string;
@@ -9830,15 +9628,15 @@ export class UpdateEmailSettingsDto implements IUpdateEmailSettingsDto {
 
     init(_data?: any) {
         if (_data) {
-            this.smtpHost = _data["smtpHost"] !== undefined ? _data["smtpHost"] : <any>null;
-            this.smtpPort = _data["smtpPort"] !== undefined ? _data["smtpPort"] : <any>null;
-            this.smtpUserName = _data["smtpUserName"] !== undefined ? _data["smtpUserName"] : <any>null;
-            this.smtpPassword = _data["smtpPassword"] !== undefined ? _data["smtpPassword"] : <any>null;
-            this.smtpDomain = _data["smtpDomain"] !== undefined ? _data["smtpDomain"] : <any>null;
-            this.smtpEnableSsl = _data["smtpEnableSsl"] !== undefined ? _data["smtpEnableSsl"] : <any>null;
-            this.smtpUseDefaultCredentials = _data["smtpUseDefaultCredentials"] !== undefined ? _data["smtpUseDefaultCredentials"] : <any>null;
-            this.defaultFromAddress = _data["defaultFromAddress"] !== undefined ? _data["defaultFromAddress"] : <any>null;
-            this.defaultFromDisplayName = _data["defaultFromDisplayName"] !== undefined ? _data["defaultFromDisplayName"] : <any>null;
+            this.smtpHost = _data["smtpHost"];
+            this.smtpPort = _data["smtpPort"];
+            this.smtpUserName = _data["smtpUserName"];
+            this.smtpPassword = _data["smtpPassword"];
+            this.smtpDomain = _data["smtpDomain"];
+            this.smtpEnableSsl = _data["smtpEnableSsl"];
+            this.smtpUseDefaultCredentials = _data["smtpUseDefaultCredentials"];
+            this.defaultFromAddress = _data["defaultFromAddress"];
+            this.defaultFromDisplayName = _data["defaultFromDisplayName"];
         }
     }
 
@@ -9851,25 +9649,25 @@ export class UpdateEmailSettingsDto implements IUpdateEmailSettingsDto {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["smtpHost"] = this.smtpHost !== undefined ? this.smtpHost : <any>null;
-        data["smtpPort"] = this.smtpPort !== undefined ? this.smtpPort : <any>null;
-        data["smtpUserName"] = this.smtpUserName !== undefined ? this.smtpUserName : <any>null;
-        data["smtpPassword"] = this.smtpPassword !== undefined ? this.smtpPassword : <any>null;
-        data["smtpDomain"] = this.smtpDomain !== undefined ? this.smtpDomain : <any>null;
-        data["smtpEnableSsl"] = this.smtpEnableSsl !== undefined ? this.smtpEnableSsl : <any>null;
-        data["smtpUseDefaultCredentials"] = this.smtpUseDefaultCredentials !== undefined ? this.smtpUseDefaultCredentials : <any>null;
-        data["defaultFromAddress"] = this.defaultFromAddress !== undefined ? this.defaultFromAddress : <any>null;
-        data["defaultFromDisplayName"] = this.defaultFromDisplayName !== undefined ? this.defaultFromDisplayName : <any>null;
+        data["smtpHost"] = this.smtpHost;
+        data["smtpPort"] = this.smtpPort;
+        data["smtpUserName"] = this.smtpUserName;
+        data["smtpPassword"] = this.smtpPassword;
+        data["smtpDomain"] = this.smtpDomain;
+        data["smtpEnableSsl"] = this.smtpEnableSsl;
+        data["smtpUseDefaultCredentials"] = this.smtpUseDefaultCredentials;
+        data["defaultFromAddress"] = this.defaultFromAddress;
+        data["defaultFromDisplayName"] = this.defaultFromDisplayName;
         return data;
     }
 }
 
 export interface IUpdateEmailSettingsDto {
-    smtpHost?: string | null;
+    smtpHost?: string | undefined;
     smtpPort?: number;
-    smtpUserName?: string | null;
-    smtpPassword?: string | null;
-    smtpDomain?: string | null;
+    smtpUserName?: string | undefined;
+    smtpPassword?: string | undefined;
+    smtpDomain?: string | undefined;
     smtpEnableSsl?: boolean;
     smtpUseDefaultCredentials?: boolean;
     defaultFromAddress: string;
@@ -9877,7 +9675,7 @@ export interface IUpdateEmailSettingsDto {
 }
 
 export class TenantCreateDto implements ITenantCreateDto {
-    readonly extraProperties?: { [key: string]: any; } | null;
+    readonly extraProperties?: { [key: string]: any; } | undefined;
     name!: string;
     adminEmailAddress!: string;
     adminPassword!: string;
@@ -9897,15 +9695,12 @@ export class TenantCreateDto implements ITenantCreateDto {
                 (<any>this).extraProperties = {} as any;
                 for (let key in _data["extraProperties"]) {
                     if (_data["extraProperties"].hasOwnProperty(key))
-                        (<any>(<any>this).extraProperties)![key] = _data["extraProperties"][key] !== undefined ? _data["extraProperties"][key] : <any>null;
+                        (<any>(<any>this).extraProperties)![key] = _data["extraProperties"][key];
                 }
             }
-            else {
-                (<any>this).extraProperties = <any>null;
-            }
-            this.name = _data["name"] !== undefined ? _data["name"] : <any>null;
-            this.adminEmailAddress = _data["adminEmailAddress"] !== undefined ? _data["adminEmailAddress"] : <any>null;
-            this.adminPassword = _data["adminPassword"] !== undefined ? _data["adminPassword"] : <any>null;
+            this.name = _data["name"];
+            this.adminEmailAddress = _data["adminEmailAddress"];
+            this.adminPassword = _data["adminPassword"];
         }
     }
 
@@ -9922,28 +9717,28 @@ export class TenantCreateDto implements ITenantCreateDto {
             data["extraProperties"] = {};
             for (let key in this.extraProperties) {
                 if (this.extraProperties.hasOwnProperty(key))
-                    (<any>data["extraProperties"])[key] = this.extraProperties[key] !== undefined ? this.extraProperties[key] : <any>null;
+                    (<any>data["extraProperties"])[key] = (<any>this.extraProperties)[key];
             }
         }
-        data["name"] = this.name !== undefined ? this.name : <any>null;
-        data["adminEmailAddress"] = this.adminEmailAddress !== undefined ? this.adminEmailAddress : <any>null;
-        data["adminPassword"] = this.adminPassword !== undefined ? this.adminPassword : <any>null;
+        data["name"] = this.name;
+        data["adminEmailAddress"] = this.adminEmailAddress;
+        data["adminPassword"] = this.adminPassword;
         return data;
     }
 }
 
 export interface ITenantCreateDto {
-    extraProperties?: { [key: string]: any; } | null;
+    extraProperties?: { [key: string]: any; } | undefined;
     name: string;
     adminEmailAddress: string;
     adminPassword: string;
 }
 
 export class TenantDto implements ITenantDto {
-    readonly extraProperties?: { [key: string]: any; } | null;
+    readonly extraProperties?: { [key: string]: any; } | undefined;
     id?: string;
-    name?: string | null;
-    concurrencyStamp?: string | null;
+    name?: string | undefined;
+    concurrencyStamp?: string | undefined;
 
     constructor(data?: ITenantDto) {
         if (data) {
@@ -9960,15 +9755,12 @@ export class TenantDto implements ITenantDto {
                 (<any>this).extraProperties = {} as any;
                 for (let key in _data["extraProperties"]) {
                     if (_data["extraProperties"].hasOwnProperty(key))
-                        (<any>(<any>this).extraProperties)![key] = _data["extraProperties"][key] !== undefined ? _data["extraProperties"][key] : <any>null;
+                        (<any>(<any>this).extraProperties)![key] = _data["extraProperties"][key];
                 }
             }
-            else {
-                (<any>this).extraProperties = <any>null;
-            }
-            this.id = _data["id"] !== undefined ? _data["id"] : <any>null;
-            this.name = _data["name"] !== undefined ? _data["name"] : <any>null;
-            this.concurrencyStamp = _data["concurrencyStamp"] !== undefined ? _data["concurrencyStamp"] : <any>null;
+            this.id = _data["id"];
+            this.name = _data["name"];
+            this.concurrencyStamp = _data["concurrencyStamp"];
         }
     }
 
@@ -9985,27 +9777,27 @@ export class TenantDto implements ITenantDto {
             data["extraProperties"] = {};
             for (let key in this.extraProperties) {
                 if (this.extraProperties.hasOwnProperty(key))
-                    (<any>data["extraProperties"])[key] = this.extraProperties[key] !== undefined ? this.extraProperties[key] : <any>null;
+                    (<any>data["extraProperties"])[key] = (<any>this.extraProperties)[key];
             }
         }
-        data["id"] = this.id !== undefined ? this.id : <any>null;
-        data["name"] = this.name !== undefined ? this.name : <any>null;
-        data["concurrencyStamp"] = this.concurrencyStamp !== undefined ? this.concurrencyStamp : <any>null;
+        data["id"] = this.id;
+        data["name"] = this.name;
+        data["concurrencyStamp"] = this.concurrencyStamp;
         return data;
     }
 }
 
 export interface ITenantDto {
-    extraProperties?: { [key: string]: any; } | null;
+    extraProperties?: { [key: string]: any; } | undefined;
     id?: string;
-    name?: string | null;
-    concurrencyStamp?: string | null;
+    name?: string | undefined;
+    concurrencyStamp?: string | undefined;
 }
 
 export class TenantUpdateDto implements ITenantUpdateDto {
-    readonly extraProperties?: { [key: string]: any; } | null;
+    readonly extraProperties?: { [key: string]: any; } | undefined;
     name!: string;
-    concurrencyStamp?: string | null;
+    concurrencyStamp?: string | undefined;
 
     constructor(data?: ITenantUpdateDto) {
         if (data) {
@@ -10022,14 +9814,11 @@ export class TenantUpdateDto implements ITenantUpdateDto {
                 (<any>this).extraProperties = {} as any;
                 for (let key in _data["extraProperties"]) {
                     if (_data["extraProperties"].hasOwnProperty(key))
-                        (<any>(<any>this).extraProperties)![key] = _data["extraProperties"][key] !== undefined ? _data["extraProperties"][key] : <any>null;
+                        (<any>(<any>this).extraProperties)![key] = _data["extraProperties"][key];
                 }
             }
-            else {
-                (<any>this).extraProperties = <any>null;
-            }
-            this.name = _data["name"] !== undefined ? _data["name"] : <any>null;
-            this.concurrencyStamp = _data["concurrencyStamp"] !== undefined ? _data["concurrencyStamp"] : <any>null;
+            this.name = _data["name"];
+            this.concurrencyStamp = _data["concurrencyStamp"];
         }
     }
 
@@ -10046,33 +9835,33 @@ export class TenantUpdateDto implements ITenantUpdateDto {
             data["extraProperties"] = {};
             for (let key in this.extraProperties) {
                 if (this.extraProperties.hasOwnProperty(key))
-                    (<any>data["extraProperties"])[key] = this.extraProperties[key] !== undefined ? this.extraProperties[key] : <any>null;
+                    (<any>data["extraProperties"])[key] = (<any>this.extraProperties)[key];
             }
         }
-        data["name"] = this.name !== undefined ? this.name : <any>null;
-        data["concurrencyStamp"] = this.concurrencyStamp !== undefined ? this.concurrencyStamp : <any>null;
+        data["name"] = this.name;
+        data["concurrencyStamp"] = this.concurrencyStamp;
         return data;
     }
 }
 
 export interface ITenantUpdateDto {
-    extraProperties?: { [key: string]: any; } | null;
+    extraProperties?: { [key: string]: any; } | undefined;
     name: string;
-    concurrencyStamp?: string | null;
+    concurrencyStamp?: string | undefined;
 }
 
 export class UserData implements IUserData {
     id?: string;
-    tenantId?: string | null;
-    userName?: string | null;
-    name?: string | null;
-    surname?: string | null;
+    tenantId?: string | undefined;
+    userName?: string | undefined;
+    name?: string | undefined;
+    surname?: string | undefined;
     isActive?: boolean;
-    email?: string | null;
+    email?: string | undefined;
     emailConfirmed?: boolean;
-    phoneNumber?: string | null;
+    phoneNumber?: string | undefined;
     phoneNumberConfirmed?: boolean;
-    readonly extraProperties?: { [key: string]: any; } | null;
+    readonly extraProperties?: { [key: string]: any; } | undefined;
 
     constructor(data?: IUserData) {
         if (data) {
@@ -10085,25 +9874,22 @@ export class UserData implements IUserData {
 
     init(_data?: any) {
         if (_data) {
-            this.id = _data["id"] !== undefined ? _data["id"] : <any>null;
-            this.tenantId = _data["tenantId"] !== undefined ? _data["tenantId"] : <any>null;
-            this.userName = _data["userName"] !== undefined ? _data["userName"] : <any>null;
-            this.name = _data["name"] !== undefined ? _data["name"] : <any>null;
-            this.surname = _data["surname"] !== undefined ? _data["surname"] : <any>null;
-            this.isActive = _data["isActive"] !== undefined ? _data["isActive"] : <any>null;
-            this.email = _data["email"] !== undefined ? _data["email"] : <any>null;
-            this.emailConfirmed = _data["emailConfirmed"] !== undefined ? _data["emailConfirmed"] : <any>null;
-            this.phoneNumber = _data["phoneNumber"] !== undefined ? _data["phoneNumber"] : <any>null;
-            this.phoneNumberConfirmed = _data["phoneNumberConfirmed"] !== undefined ? _data["phoneNumberConfirmed"] : <any>null;
+            this.id = _data["id"];
+            this.tenantId = _data["tenantId"];
+            this.userName = _data["userName"];
+            this.name = _data["name"];
+            this.surname = _data["surname"];
+            this.isActive = _data["isActive"];
+            this.email = _data["email"];
+            this.emailConfirmed = _data["emailConfirmed"];
+            this.phoneNumber = _data["phoneNumber"];
+            this.phoneNumberConfirmed = _data["phoneNumberConfirmed"];
             if (_data["extraProperties"]) {
                 (<any>this).extraProperties = {} as any;
                 for (let key in _data["extraProperties"]) {
                     if (_data["extraProperties"].hasOwnProperty(key))
-                        (<any>(<any>this).extraProperties)![key] = _data["extraProperties"][key] !== undefined ? _data["extraProperties"][key] : <any>null;
+                        (<any>(<any>this).extraProperties)![key] = _data["extraProperties"][key];
                 }
-            }
-            else {
-                (<any>this).extraProperties = <any>null;
             }
         }
     }
@@ -10117,21 +9903,21 @@ export class UserData implements IUserData {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["id"] = this.id !== undefined ? this.id : <any>null;
-        data["tenantId"] = this.tenantId !== undefined ? this.tenantId : <any>null;
-        data["userName"] = this.userName !== undefined ? this.userName : <any>null;
-        data["name"] = this.name !== undefined ? this.name : <any>null;
-        data["surname"] = this.surname !== undefined ? this.surname : <any>null;
-        data["isActive"] = this.isActive !== undefined ? this.isActive : <any>null;
-        data["email"] = this.email !== undefined ? this.email : <any>null;
-        data["emailConfirmed"] = this.emailConfirmed !== undefined ? this.emailConfirmed : <any>null;
-        data["phoneNumber"] = this.phoneNumber !== undefined ? this.phoneNumber : <any>null;
-        data["phoneNumberConfirmed"] = this.phoneNumberConfirmed !== undefined ? this.phoneNumberConfirmed : <any>null;
+        data["id"] = this.id;
+        data["tenantId"] = this.tenantId;
+        data["userName"] = this.userName;
+        data["name"] = this.name;
+        data["surname"] = this.surname;
+        data["isActive"] = this.isActive;
+        data["email"] = this.email;
+        data["emailConfirmed"] = this.emailConfirmed;
+        data["phoneNumber"] = this.phoneNumber;
+        data["phoneNumberConfirmed"] = this.phoneNumberConfirmed;
         if (this.extraProperties) {
             data["extraProperties"] = {};
             for (let key in this.extraProperties) {
                 if (this.extraProperties.hasOwnProperty(key))
-                    (<any>data["extraProperties"])[key] = this.extraProperties[key] !== undefined ? this.extraProperties[key] : <any>null;
+                    (<any>data["extraProperties"])[key] = (<any>this.extraProperties)[key];
             }
         }
         return data;
@@ -10140,21 +9926,21 @@ export class UserData implements IUserData {
 
 export interface IUserData {
     id?: string;
-    tenantId?: string | null;
-    userName?: string | null;
-    name?: string | null;
-    surname?: string | null;
+    tenantId?: string | undefined;
+    userName?: string | undefined;
+    name?: string | undefined;
+    surname?: string | undefined;
     isActive?: boolean;
-    email?: string | null;
+    email?: string | undefined;
     emailConfirmed?: boolean;
-    phoneNumber?: string | null;
+    phoneNumber?: string | undefined;
     phoneNumberConfirmed?: boolean;
-    extraProperties?: { [key: string]: any; } | null;
+    extraProperties?: { [key: string]: any; } | undefined;
 }
 
 export class IStringValueType implements IIStringValueType {
-    readonly name?: string | null;
-    readonly properties?: { [key: string]: any; } | null;
+    readonly name?: string | undefined;
+    readonly properties?: { [key: string]: any; } | undefined;
     validator?: IValueValidator;
 
     constructor(data?: IIStringValueType) {
@@ -10168,18 +9954,15 @@ export class IStringValueType implements IIStringValueType {
 
     init(_data?: any) {
         if (_data) {
-            (<any>this).name = _data["name"] !== undefined ? _data["name"] : <any>null;
+            (<any>this).name = _data["name"];
             if (_data["properties"]) {
                 (<any>this).properties = {} as any;
                 for (let key in _data["properties"]) {
                     if (_data["properties"].hasOwnProperty(key))
-                        (<any>(<any>this).properties)![key] = _data["properties"][key] !== undefined ? _data["properties"][key] : <any>null;
+                        (<any>(<any>this).properties)![key] = _data["properties"][key];
                 }
             }
-            else {
-                (<any>this).properties = <any>null;
-            }
-            this.validator = _data["validator"] ? IValueValidator.fromJS(_data["validator"]) : <any>null;
+            this.validator = _data["validator"] ? IValueValidator.fromJS(_data["validator"]) : <any>undefined;
         }
     }
 
@@ -10192,28 +9975,28 @@ export class IStringValueType implements IIStringValueType {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["name"] = this.name !== undefined ? this.name : <any>null;
+        data["name"] = this.name;
         if (this.properties) {
             data["properties"] = {};
             for (let key in this.properties) {
                 if (this.properties.hasOwnProperty(key))
-                    (<any>data["properties"])[key] = this.properties[key] !== undefined ? this.properties[key] : <any>null;
+                    (<any>data["properties"])[key] = (<any>this.properties)[key];
             }
         }
-        data["validator"] = this.validator ? this.validator.toJSON() : <any>null;
+        data["validator"] = this.validator ? this.validator.toJSON() : <any>undefined;
         return data;
     }
 }
 
 export interface IIStringValueType {
-    name?: string | null;
-    properties?: { [key: string]: any; } | null;
+    name?: string | undefined;
+    properties?: { [key: string]: any; } | undefined;
     validator?: IValueValidator;
 }
 
 export class IValueValidator implements IIValueValidator {
-    readonly name?: string | null;
-    readonly properties?: { [key: string]: any; } | null;
+    readonly name?: string | undefined;
+    readonly properties?: { [key: string]: any; } | undefined;
 
     constructor(data?: IIValueValidator) {
         if (data) {
@@ -10226,16 +10009,13 @@ export class IValueValidator implements IIValueValidator {
 
     init(_data?: any) {
         if (_data) {
-            (<any>this).name = _data["name"] !== undefined ? _data["name"] : <any>null;
+            (<any>this).name = _data["name"];
             if (_data["properties"]) {
                 (<any>this).properties = {} as any;
                 for (let key in _data["properties"]) {
                     if (_data["properties"].hasOwnProperty(key))
-                        (<any>(<any>this).properties)![key] = _data["properties"][key] !== undefined ? _data["properties"][key] : <any>null;
+                        (<any>(<any>this).properties)![key] = _data["properties"][key];
                 }
-            }
-            else {
-                (<any>this).properties = <any>null;
             }
         }
     }
@@ -10249,12 +10029,12 @@ export class IValueValidator implements IIValueValidator {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["name"] = this.name !== undefined ? this.name : <any>null;
+        data["name"] = this.name;
         if (this.properties) {
             data["properties"] = {};
             for (let key in this.properties) {
                 if (this.properties.hasOwnProperty(key))
-                    (<any>data["properties"])[key] = this.properties[key] !== undefined ? this.properties[key] : <any>null;
+                    (<any>data["properties"])[key] = (<any>this.properties)[key];
             }
         }
         return data;
@@ -10262,12 +10042,12 @@ export class IValueValidator implements IIValueValidator {
 }
 
 export interface IIValueValidator {
-    name?: string | null;
-    properties?: { [key: string]: any; } | null;
+    name?: string | undefined;
+    properties?: { [key: string]: any; } | undefined;
 }
 
 export class ApiException extends Error {
-    override message: string;
+    message: string;
     status: number;
     response: string;
     headers: { [key: string]: any; };
