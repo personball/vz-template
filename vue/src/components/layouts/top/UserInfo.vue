@@ -32,7 +32,7 @@ import IconUser from '~icons/ep/user'
 
 const { state: oidcState } = useOidcStore()
 
-console.log('oidcState.value.user?.expires_at:', new Date(oidcState.value.user?.expires_at ?? 0 * 1000))
+console.log('oidcState.value.user?.expires_at:', new Date((oidcState.value.user?.expires_at ?? 0) * 1000))
 
 const appStore = useAppStore()
 

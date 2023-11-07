@@ -15,33 +15,39 @@
         "name": "Name",
         "userName": "User Name",
         "email": "Email",
-        "phoneNumber": "Phone"
+        "phoneNumber": "Phone",
+        "password": "Password"
     },
     "common": {
         "pwdOld": "Origin Password",
         "pwdNew": "New Password",
         "pwdConfirm": "Confirm",
         "modify": "Modify",
+        "save": "Save",
+        "submit": "Submit",
         "editProfile": "Profile",
         "changePwd": "Change Password",
         "modifySuccess": "Modify Success",
+        "submitSuccess": "Submit Success",
         "logout": "Sign Out",
         "query": "Query",
         "reset": "Reset",
         "create": "New",
         "edit": "Edit",
+        "detail": "Detail",
         "delete": "Del",
         "columnActions": "Actions",
-        "confirm-delete": "Are you sure to delete this?"
+        "confirmDelete": "Are you sure to delete this?",
+        "creationTime":"Creation Time"
     },
     "sys": {
         "users": {
-            "fullName": "FullName 1",
-            "surname": "Surname 1",
-            "name": "Name 1",
-            "userName": "User Name 1",
-            "email": "Email 1",
-            "phoneNumber": "Phone 1"
+            "fullName": "Full Name",
+            "surname": "Surname",
+            "name": "Name",
+            "userName": "User Name",
+            "email": "Email",
+            "phoneNumber": "Phone"
         }
     },
     "Account::Key": {

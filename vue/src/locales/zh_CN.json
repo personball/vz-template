@@ -15,7 +15,8 @@
         "name": "名",
         "userName": "用户名",
         "email": "Email",
-        "phoneNumber": "手机号"
+        "phoneNumber": "手机号",
+        "password": "密码"
     },
     "common": {
         "editProfile": "个人资料",
@@ -24,15 +25,20 @@
         "pwdNew": "新密码",
         "pwdConfirm": "确认新密码",
         "modify": "修改",
+        "save": "保存",
+        "submit": "提交",
         "modifySuccess": "修改成功",
+        "submitSuccess": "提交成功",
         "logout": "退出登录",
         "query": "查询",
         "reset": "重置",
         "create": "新建",
         "edit": "编辑",
+        "detail": "详情",
         "delete": "删除",
         "columnActions": "操作",
-        "confirm-delete": "确定删除？"
+        "confirmDelete": "确定删除？",
+        "creationTime":"创建时间"
     },
     "sys": {
         "users": {
@@ -40,7 +46,7 @@
             "surname": "姓氏",
             "name": "名",
             "userName": "用户名",
-            "email": "Email zh",
+            "email": "邮箱",
             "phoneNumber": "手机号"
         }
     },

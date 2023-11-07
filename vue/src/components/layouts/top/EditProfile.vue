@@ -2,9 +2,7 @@
     <ElDialog v-model="show" width="500px" destroy-on-close lock-scroll draggable top="0" :close-on-click-modal="false">
         <template #header="{ close }">
             <div class="flex justify-between items-center h-54px pl-15px pr-15px relative">
-                <slot name="title">
-                    {{ t('common.editProfile') }}
-                </slot>
+                {{ t('common.editProfile') }}
                 <!-- <div class="h-54px flex justify-between items-center absolute top-[50%] right-15px translate-y-[-50%]">
                     <Icon v-if="fullscreen" class="cursor-pointer is-hover !h-54px mr-10px"
                         :icon="isFullscreen ? 'radix-icons:exit-full-screen' : 'radix-icons:enter-full-screen'"
@@ -14,18 +12,18 @@
                 </div> -->
             </div>
         </template>
-        <FormProvider :form="form">
+        <Form :form="form">
             <SchemaField :schema="schema" />
-            <Submit @submit="onSubmit">{{ t('common.modify') }}</Submit>
-        </FormProvider>
+            <Submit @submit="onSubmit">{{ t('common.save') }}</Submit>
+        </Form>
     </ElDialog>
 </template>
 
 <script lang="ts" setup>
-import { createForm, registerValidateRules } from '@formily/core'
-import { createSchemaField, FormProvider } from '@formily/vue'
+import { createForm } from '@formily/core'
+import { createSchemaField } from '@formily/vue'
 import { ISchema } from '@formily/json-schema'
-import { FormItem, Input, Password, Submit } from '@formily/element-plus'
+import { Form, FormItem, Input, Submit } from '@formily/element-plus'
 import { ProfileServiceProxy, UpdateProfileDto } from '~/api/ServiceProxies'
 import { ElMessage } from 'element-plus/es'
 

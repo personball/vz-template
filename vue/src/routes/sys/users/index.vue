@@ -1,26 +1,32 @@
 <template>
-    <ListPage :searchFormSchema="searchFormSchema" :listColumns="listColumns" @queryList="getData">
+    <ListPage ref="list" :searchFormSchema="searchFormSchema" :listColumns="listColumns" @queryList="getData">
         <template #listActions>
-            <el-button type="primary">{{ t('common.create') }}</el-button>
+            <el-button type="primary" @click="showAdd()">{{ t('common.create') }}</el-button>
         </template>
         <template #columnActions="{ row }">
-            <el-button @click="edit(row)" type="primary">{{ t('common.edit') }}</el-button>
-            <el-popconfirm :title="t('common.confirm-delete')" @confirm="del(row)">
+            <el-button @click="showEdit(row)" type="primary">{{ t('common.edit') }}</el-button>
+            <el-button @click="showDetail(row)" type="success">{{ t('common.detail') }}</el-button>
+            <el-popconfirm :title="t('common.confirmDelete')" @confirm="del(row)">
                 <template #reference>
                     <el-button type="danger">{{ t('common.delete') }}</el-button>
                 </template>
             </el-popconfirm>
         </template>
     </ListPage>
+    <CreateOrEditSysUser v-if="openDialog" v-model="openDialog" :mode="dialogMode" :data="data"
+        @submit-success="list.reload()">
+    </CreateOrEditSysUser>
 </template>
 
 <script lang="ts" setup>
 import { ISchema } from '@formily/vue';
 import { IdentityUserDto, UserServiceProxy } from '~/api/ServiceProxies';
 import type { QueryListHander } from '~/components/pages/types'
+import CreateOrEditSysUser from "./__CreateOrEdit.vue";
+import dayjs from 'dayjs';
 
 const { t } = useI18n()
-
+const list = ref()
 const searchFormSchema: ISchema = {
     type: 'object',
     properties: {
@@ -36,7 +42,7 @@ const searchFormSchema: ISchema = {
                     title: '关键词',
                     'x-component': 'Input',
                     'x-component-props': {
-                        placeholder: '用户名/手机号',
+                        placeholder: '用户名/邮箱',
                         clearable: true,
                         style: 'width:150px'
                     },
@@ -44,39 +50,6 @@ const searchFormSchema: ISchema = {
                     'x-decorator-props': {
                         wrapperStyle: '.el-form--inline'
                     }
-                },
-                filter2: {
-                    type: 'string',
-                    title: '关键词2',
-                    'x-component': 'Input',
-                    'x-component-props': {
-                        placeholder: '用户名/手机号',
-                        clearable: true,
-                        style: 'width:150px'
-                    },
-                    'x-decorator': 'FormItem'
-                },
-                filter3: {
-                    type: 'string',
-                    title: '关键词2',
-                    'x-component': 'Input',
-                    'x-component-props': {
-                        placeholder: '用户名/手机号',
-                        clearable: true,
-                        style: 'width:150px'
-                    },
-                    'x-decorator': 'FormItem'
-                },
-                filter4: {
-                    type: 'string',
-                    title: '关键词2',
-                    'x-component': 'Input',
-                    'x-component-props': {
-                        placeholder: '用户名/手机号',
-                        clearable: true,
-                        style: 'width:150px'
-                    },
-                    'x-decorator': 'FormItem'
                 }
             }
         }
@@ -88,26 +61,46 @@ const listColumns = ref([
     { label: 'sys.users.surname', prop: 'surname', width: '100px' },
     { label: 'sys.users.name', prop: 'name' },
     { label: 'sys.users.userName', prop: 'userName' },
-    { label: 'sys.users.email', prop: 'email' }
+    { label: 'sys.users.email', prop: 'email' },
+    { label: 'common.creationTime', prop: 'creationTime', formatter: (row: any) => dayjs(row.creationTime).format('YYYY-MM-DD HH:mm') }
 ])
 
 const client = new UserServiceProxy(undefined, axios)
 
-const getData: QueryListHander<IdentityUserDto> = async (queryForm, skipCount, maxResultCount, updateList) => {
+const getData: QueryListHander<IdentityUserDto> = async ({ queryForm, skipCount, maxResultCount, updateList }) => {
     const { totalCount, items } = await client.usersGET2(queryForm.filter, 'CreationTime desc', unref(skipCount), unref(maxResultCount))
-    updateList(items, totalCount)
+    updateList(items ?? [], totalCount ?? 0)
 }
 
-const edit = (row: any) => {
-    console.log('edit click!')
+const openDialog = ref(false)
+const dialogMode = ref<'create' | 'edit' | 'detail'>('create')
+const data = ref()
+
+const showAdd = () => {
+    dialogMode.value = 'create'
+    openDialog.value = true
 }
 
-const del = (row: any) => {
-    console.log('del click!')
+const showEdit = (row: any) => {
+    data.value = row
+    dialogMode.value = 'edit'
+    openDialog.value = true
+}
+
+const showDetail = (row: any) => {
+    data.value = row
+    dialogMode.value = 'detail'
+    openDialog.value = true
+}
+
+const del = async (row: any) => {
+    const client = new UserServiceProxy(undefined, axios)
+    await client.usersDELETE(row.id)
+    list.value.reload()
 }
 
 
-// TODO: 查询用户列表，搜索用户
+// 查询用户列表，搜索用户
 // TODO: 查询指定用户详情
 // TODO: 修改用户信息
 // TODO: 删除用户
