@@ -30,6 +30,23 @@
             "presentation": {
                 "reveal": "always"
             }
+        }, 
+        {
+            "label": "start-vz-t-dev",
+            "command": "vz",
+            "type": "shell",
+            "args": [
+                "g",
+                "-p",
+                "vue.crud",
+                "-w",
+                "--output",
+                "./src/routes/sys/roles/"
+            ],
+            "group": "none",
+            "presentation": {
+                "reveal": "always"
+            }
         }
     ]
 }

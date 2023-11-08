@@ -7,5 +7,5 @@
             "url": "./.vz/generate.settings.schema.json"
         }
     ],
-    "explorer.excludeGitIgnore": true,
+    "explorer.excludeGitIgnore": true
 }

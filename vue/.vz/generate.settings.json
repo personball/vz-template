@@ -10,5 +10,22 @@
       }
     ],
     "output": "./src/stores/{{store___camel_case}}.ts"
+  },
+  {
+    "option": "vue.crud",
+    "templateSyntax": "Liquid",
+    "templatePath": "./.vz/templates/vue/crud/",
+    "variables": [
+      {
+        "name": "path",
+        "type": "String",
+        "defaultValue": "/api/identity/roles"
+      },
+      {
+        "name": "swagger",
+        "type": "JsonFile",
+        "defaultValue": "./swagger.json"
+      }
+    ]
   }
 ]
