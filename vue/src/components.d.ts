@@ -50,11 +50,13 @@ declare module 'vue' {
     Logo: typeof import('./components/layouts/left/Logo.vue')['default']
     Menu: typeof import('./components/layouts/left/Menu.vue')['default']
     MenuItem: typeof import('./components/layouts/left/MenuItem.vue')['default']
+    RoleLookup: typeof import('./components/lookup/RoleLookup.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     ToolHeader: typeof import('./components/layouts/top/ToolHeader.vue')['default']
     UserInfo: typeof import('./components/layouts/top/UserInfo.vue')['default']
     UserLookup: typeof import('./components/lookup/UserLookup.vue')['default']
+    UserSelect: typeof import('./components/lookup/UserSelect.vue')['default']
   }
   export interface ComponentCustomProperties {
     vLoading: typeof import('element-plus/es')['ElLoadingDirective']
