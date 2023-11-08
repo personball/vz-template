@@ -39,7 +39,7 @@
     </CreateOrEditSys{{ tag }}>
 </template>
 
-<script lang="ts" setup>
+<script lang="tsx" setup>
 import { ISchema } from '@formily/vue';
 import { {{ itemType }}, {{ tag }}ServiceProxy } from '~/api/ServiceProxies';
 import type { QueryListHander } from '~/components/pages/types'
@@ -90,15 +90,23 @@ const searchFormSchema: ISchema = {
 }
 
 const listColumns = ref([
-{{for key in itemTypeSchema.properties|object.keys 
-    if key =='concurrencyStamp'|| key =='extraProperties' 
+{{~for key in itemTypeSchema.properties|object.keys 
+    if key =='concurrencyStamp'|| key =='extraProperties' || key=='id'
         continue 
     end
-~}}
-{{~val= itemTypeSchema.properties[key]~}}
-        {label:'sys.{{tag|pluralize|string.downcase}}.{{key}}',prop:'{{key}}'},
+    val= itemTypeSchema.properties[key]
+    if val.type=='string' ~}}
+    {label:'sys.{{tag|pluralize|string.downcase}}.{{key}}',prop:'{{key}}' {{if val.format=='date-time' }},
+        formatter: (row: any) => row.{{key}}?dayjs(row.{{key}}).format('YYYY-MM-DD HH:mm'):'-' {{end}} },
+    {{~end
+    if val.type=='boolean' ~}}
+    {label:'sys.{{tag|pluralize|string.downcase}}.{{key}}',prop:'{{key}}',
+        formatter: (row: any) => {
+                return row.{{key}} ? (<ElTag type='success'>{t('common.yes')}</ElTag>) : (<ElTag type='info'>{t('common.no')}</ElTag>)
+        }
+    },
+    {{~end~}}
 {{~end~}}
-        {label: 'common.creationTime', prop: 'creationTime', formatter: (row: any) => dayjs(row.creationTime).format('YYYY-MM-DD HH:mm') }
 ])
 
 const client = new {{tag}}ServiceProxy(undefined, axios)

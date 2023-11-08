@@ -39,10 +39,10 @@ const searchFormSchema: ISchema = {
             properties: {
                 filter: {
                     type: 'string',
-                    title: 'filter',
+                    title: '关键词',
                     'x-component': 'Input',
                     'x-component-props': {
-                        placeholder: 'filter',
+                        placeholder: '租户名称',
                         clearable: true,
                         style: 'width:150px'
                     },
@@ -57,9 +57,7 @@ const searchFormSchema: ISchema = {
 }
 
 const listColumns = ref([
-    { label: 'sys.tenants.id', prop: 'id' },
-    { label: 'sys.tenants.name', prop: 'name' },
-    { label: 'common.creationTime', prop: 'creationTime', formatter: (row: any) => dayjs(row.creationTime).format('YYYY-MM-DD HH:mm') }
+    { label: 'sys.tenants.name', prop: 'name' }
 ])
 
 const client = new TenantServiceProxy(undefined, axios)

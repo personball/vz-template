@@ -8,7 +8,7 @@
         "users": "用户管理",
         "roles": "角色管理",
         "settings": "配置管理",
-        "tenants":"租户管理",
+        "tenants": "租户管理",
         "logs": "审计日志"
     },
     "profile": {
@@ -20,6 +20,8 @@
         "password": "密码"
     },
     "common": {
+        "yes": "是",
+        "no": "否",
         "editProfile": "个人资料",
         "changePwd": "修改密码",
         "pwdOld": "原密码",
@@ -39,16 +41,30 @@
         "delete": "删除",
         "columnActions": "操作",
         "confirmDelete": "确定删除？",
-        "creationTime":"创建时间"
+        "creationTime": "创建时间"
     },
     "sys": {
+        "tenants": {
+            "name": "租户名称",
+            "adminEmailAddress": "管理员邮箱",
+            "adminPassword": "管理员密码"
+        },
+        "roles": {
+            "name": "角色名",
+            "isDefault": "是否默认",
+            "isPublic": "是否公开",
+            "isStatic": "静态角色"
+        },
         "users": {
             "fullName": "全名",
             "surname": "姓氏",
             "name": "名",
             "userName": "用户名",
             "email": "邮箱",
-            "phoneNumber": "手机号"
+            "phoneNumber": "手机号",
+            "isActive": "是否启用",
+            "lockoutEnabled": "锁定机制",
+            "lockoutEnd": "锁定期限"
         }
     },
     "Account::Key": {

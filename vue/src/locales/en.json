@@ -19,6 +19,8 @@
         "password": "Password"
     },
     "common": {
+        "yes": "Yes",
+        "no": "No",
         "pwdOld": "Origin Password",
         "pwdNew": "New Password",
         "pwdConfirm": "Confirm",
@@ -38,9 +40,20 @@
         "delete": "Del",
         "columnActions": "Actions",
         "confirmDelete": "Are you sure to delete this?",
-        "creationTime":"Creation Time"
+        "creationTime": "Creation Time"
     },
     "sys": {
+        "tenants": {
+            "name": "Name",
+            "adminEmailAddress": "Admin Email",
+            "adminPassword": "Admin Password"
+        },
+        "roles": {
+            "name": "Role Name",
+            "isDefault": "Is Default",
+            "isPublic": "Is Public",
+            "isStatic": "Is Static"
+        },
         "users": {
             "fullName": "Full Name",
             "surname": "Surname",

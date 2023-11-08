@@ -18,12 +18,13 @@
     </CreateOrEditSysUser>
 </template>
 
-<script lang="ts" setup>
+<script lang="tsx" setup>
 import { ISchema } from '@formily/vue';
 import { IdentityUserDto, UserServiceProxy } from '~/api/ServiceProxies';
 import type { QueryListHander } from '~/components/pages/types'
 import CreateOrEditSysUser from "./__CreateOrEdit.vue";
 import dayjs from 'dayjs';
+import { ElTooltip } from 'element-plus/es';
 
 const { t } = useI18n()
 const list = ref()
@@ -57,11 +58,38 @@ const searchFormSchema: ISchema = {
 }
 
 const listColumns = ref([
-    { label: 'sys.users.fullName', formatter: (row: any) => row.surname + ' ' + row.name },
-    { label: 'sys.users.surname', prop: 'surname', width: '100px' },
-    { label: 'sys.users.name', prop: 'name' },
     { label: 'sys.users.userName', prop: 'userName' },
-    { label: 'sys.users.email', prop: 'email' },
+    { label: 'sys.users.fullName', prop: 'name', formatter: (row: any) => row.name + ' ' + row.surname },
+    {
+        label: 'sys.users.email', prop: 'email', formatter: (row: any) => {
+            return row.emailConfirmed ? (<ElTag type='success' > {row.email}</ElTag >) : (<ElTooltip content='not verified'><ElTag type='info'>{row.email}</ElTag></ElTooltip>)
+        }
+    },
+    {
+        label: 'sys.users.phoneNumber', prop: 'phoneNumber', formatter: (row: any) => {
+            if (!row.phoneNumber) {
+                return;
+            }
+
+            return row.phoneNumberConfirmed ? (<ElTag type='success'>{row.phoneNumber}</ElTag>) : (<ElTooltip content='not verified'><ElTag type='info'>{row.phoneNumber}</ElTag></ElTooltip>)
+        }
+    },
+    {
+        label: 'sys.users.isActive', prop: 'isActive',
+        formatter: (row: any) => {
+            return row.isActive ? (<ElTag type='success'>{t('common.yes')}</ElTag>) : (<ElTag type='info'>{t('common.no')}</ElTag>)
+        }
+    },
+    {
+        label: 'sys.users.lockoutEnabled', prop: 'lockoutEnabled',
+        formatter: (row: any) => {
+            return row.lockoutEnabled ? (<ElTag type='success'>{t('common.yes')}</ElTag>) : (<ElTag type='info'>{t('common.no')}</ElTag>)
+        }
+    },
+    {
+        label: 'sys.users.lockoutEnd', prop: 'lockoutEnd',
+        formatter: (row: any) => row.lockoutEnd ? dayjs(row.lockoutEnd).format('YYYY-MM-DD HH:mm') : '-'
+    },
     { label: 'common.creationTime', prop: 'creationTime', formatter: (row: any) => dayjs(row.creationTime).format('YYYY-MM-DD HH:mm') }
 ])
 

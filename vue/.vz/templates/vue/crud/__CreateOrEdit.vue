@@ -1,16 +1,35 @@
 <!--
-{{~api=swagger.paths[path].post~}}
-{{api}}
+{{~ api=swagger.paths[path].post ~}}
+{{~ api ~}}
 
-{{~requestTypeRef=api.requestBody.content["application/json"].schema["$ref"]~}}
-{{~requestTypeSchema=swagger.components.schemas[requestTypeRef|regex.split `\/`|array.last]~}}
-{{requestTypeSchema}}
+{{~ requestTypeRef=api.requestBody.content["application/json"].schema["$ref"] ~}}
+{{~ requestTypeSchema=swagger.components.schemas[requestTypeRef|regex.split `\/`|array.last] ~}}
 
-{{~requestType=requestTypeRef|regex.split `\.`|array.last~}}
+{{~ requestTypeSchema ~}}
 
-{{~tag=api.tags[0]~}}
-{{tag}}
+{{~ requestType=requestTypeRef|regex.split `\.`|array.last ~}}
 
+{{~ tag=api.tags[0] ~}}
+{{~ tag ~}}
+
+{{~# for detail form schema and api ~}}
+{{~ getApi=swagger.paths[path+"/{id}"].get ~}}
+{{~ if getApi!=null ~}}
+get detail:
+{{ getApi }}
+{{~end~}}
+
+{{~# for edit form schema and api~}}
+{{~ putApi=swagger.paths[path+"/{id}"].put ~}}
+{{~ if putApi!=null ~}}
+put single:
+{{ putApi.requestBody.content["application/json"].schema["$ref"]}}
+
+    {{~for p in putApi.parameters~}}
+    {{p}}
+    {{~end~}}
+
+{{~end~}}
 -->
 <template>
     <el-dialog v-model="show" width="600px" destroy-on-close lock-scroll draggable top="0" :close-on-click-modal="false">

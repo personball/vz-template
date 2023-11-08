@@ -1,14 +1,3 @@
-<!--
-{tags: ["Role"], parameters: [{name: "Filter", in: "query", schema: {type: "string"}}, {name: "Sorting", in: "query", schema: {type: "string"}}, {name: "SkipCount", in: "query", schema: {maximum: 2147483647, minimum: 0, type: "integer", format: "int32"}}, {name: "MaxResultCount", in: "query", schema: {maximum: 2147483647, minimum: 1, type: "integer", format: "int32"}}], responses: {"200": {description: "Success", content: {"text/plain": {schema: {"$ref": "#/components/schemas/Volo.Abp.Application.Dtos.PagedResultDto<Volo.Abp.Identity.IdentityRoleDto>"}}, "application/json": {schema: {"$ref": "#/components/schemas/Volo.Abp.Application.Dtos.PagedResultDto<Volo.Abp.Identity.IdentityRoleDto>"}}, "text/json": {schema: {"$ref": "#/components/schemas/Volo.Abp.Application.Dtos.PagedResultDto<Volo.Abp.Identity.IdentityRoleDto>"}}}}, "403": {description: "Forbidden", content: {"text/plain": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}, "application/json": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}, "text/json": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}}}, "401": {description: "Unauthorized", content: {"text/plain": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}, "application/json": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}, "text/json": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}}}, "400": {description: "Bad Request", content: {"text/plain": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}, "application/json": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}, "text/json": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}}}, "404": {description: "Not Found", content: {"text/plain": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}, "application/json": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}, "text/json": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}}}, "501": {description: "Server Error", content: {"text/plain": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}, "application/json": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}, "text/json": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}}}, "500": {description: "Server Error", content: {"text/plain": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}, "application/json": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}, "text/json": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}}}}}
-[{name: "Filter", in: "query", schema: {type: "string"}}, {name: "Sorting", in: "query", schema: {type: "string"}}, {name: "SkipCount", in: "query", schema: {maximum: 2147483647, minimum: 0, type: "integer", format: "int32"}}, {name: "MaxResultCount", in: "query", schema: {maximum: 2147483647, minimum: 1, type: "integer", format: "int32"}}]
-Role
-
-Volo.Abp.Application.Dtos.PagedResultDto<Volo.Abp.Identity.IdentityRoleDto>
-
-IdentityRoleDto
-#/components/schemas/Volo.Abp.Identity.IdentityRoleDto
--->
-
 <template>
     <ListPage ref="list" :searchFormSchema="searchFormSchema" :listColumns="listColumns" @queryList="getData">
         <template #listActions>
@@ -17,7 +6,7 @@ IdentityRoleDto
         <template #columnActions="{ row }">
             <el-button @click="showEdit(row)" type="primary">{{ t('common.edit') }}</el-button>
             <el-button @click="showDetail(row)" type="success">{{ t('common.detail') }}</el-button>
-            <el-popconfirm :title="t('common.confirmDelete')" @confirm="del(row)">
+            <el-popconfirm v-if="!row.isStatic" :title="t('common.confirmDelete')" @confirm="del(row)">
                 <template #reference>
                     <el-button type="danger">{{ t('common.delete') }}</el-button>
                 </template>
@@ -29,12 +18,12 @@ IdentityRoleDto
     </CreateOrEditSysRole>
 </template>
 
-<script lang="ts" setup>
+<script lang="tsx" setup>
 import { ISchema } from '@formily/vue';
 import { IdentityRoleDto, RoleServiceProxy } from '~/api/ServiceProxies';
 import type { QueryListHander } from '~/components/pages/types'
 import CreateOrEditSysRole from "./__CreateOrEdit.vue";
-import dayjs from 'dayjs';
+import { ElTag } from 'element-plus/es';
 
 const { t } = useI18n()
 const list = ref()
@@ -48,17 +37,17 @@ const searchFormSchema: ISchema = {
                 layout: 'inline',
             },
             properties: {
-                filter:{
-                    type:'string',
-                    title:'filter',
-                    'x-component':'Input',
-                    'x-component-props':{
-                        placeholder:'filter',
-                        clearable:true,
-                        style:'width:150px'
+                filter: {
+                    type: 'string',
+                    title: '关键词',
+                    'x-component': 'Input',
+                    'x-component-props': {
+                        placeholder: '角色名',
+                        clearable: true,
+                        style: 'width:150px'
                     },
-                    'x-decorator':'FormItem',
-                    'x-decorator-props':{
+                    'x-decorator': 'FormItem',
+                    'x-decorator-props': {
                         wrapperStyle: '.el-form--inline'
                     }
                 },
@@ -68,19 +57,32 @@ const searchFormSchema: ISchema = {
 }
 
 const listColumns = ref([
-        {label:'sys.roles.id',prop:'id'},
-        {label:'sys.roles.name',prop:'name'},
-        {label:'sys.roles.isDefault',prop:'isDefault'},
-        {label:'sys.roles.isStatic',prop:'isStatic'},
-        {label:'sys.roles.isPublic',prop:'isPublic'},
-        {label: 'common.creationTime', prop: 'creationTime', formatter: (row: any) => dayjs(row.creationTime).format('YYYY-MM-DD HH:mm') }
+    { label: 'sys.roles.name', prop: 'name' },
+    {
+        label: 'sys.roles.isDefault', prop: 'isDefault',
+        formatter: (row: any) => {
+            return row.isDefault ? (<ElTag type='success'>{t('common.yes')}</ElTag>) : (<ElTag type='info'>{t('common.no')}</ElTag>)
+        }
+    },
+    {
+        label: 'sys.roles.isStatic', prop: 'isStatic',
+        formatter: (row: any) => {
+            return row.isStatic ? (<ElTag type='success'>{t('common.yes')}</ElTag>) : (<ElTag type='info'>{t('common.no')}</ElTag>)
+        }
+    },
+    {
+        label: 'sys.roles.isPublic', prop: 'isPublic',
+        formatter: (row: any) => {
+            return row.isPublic ? (<ElTag type='success'>{t('common.yes')}</ElTag>) : (<ElTag type='info'>{t('common.no')}</ElTag>)
+        }
+    }
 ])
 
 const client = new RoleServiceProxy(undefined, axios)
 
 const getData: QueryListHander<IdentityRoleDto> = async ({ queryForm, skipCount, maxResultCount, updateList }) => {
-     const { totalCount, items } = await client.rolesGET(queryForm.filter, '', unref(skipCount), unref(maxResultCount))
-     updateList(items ?? [], totalCount ?? 0)
+    const { totalCount, items } = await client.rolesGET(queryForm.filter, '', unref(skipCount), unref(maxResultCount))
+    updateList(items ?? [], totalCount ?? 0)
 }
 
 const openDialog = ref(false)

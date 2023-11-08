@@ -41,7 +41,7 @@
                 "vue.crud",
                 "-w",
                 "--output",
-                "./src/routes/sys/tenants/"
+                "./src/routes/sys/demo/"
             ],
             "group": "none",
             "presentation": {

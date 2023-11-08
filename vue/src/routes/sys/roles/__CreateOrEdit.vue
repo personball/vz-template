@@ -1,12 +1,3 @@
-<!--
-{tags: ["Role"], requestBody: {content: {"application/json": {schema: {"$ref": "#/components/schemas/Volo.Abp.Identity.IdentityRoleCreateDto"}}, "text/json": {schema: {"$ref": "#/components/schemas/Volo.Abp.Identity.IdentityRoleCreateDto"}}, "application/*+json": {schema: {"$ref": "#/components/schemas/Volo.Abp.Identity.IdentityRoleCreateDto"}}}}, responses: {"200": {description: "Success", content: {"text/plain": {schema: {"$ref": "#/components/schemas/Volo.Abp.Identity.IdentityRoleDto"}}, "application/json": {schema: {"$ref": "#/components/schemas/Volo.Abp.Identity.IdentityRoleDto"}}, "text/json": {schema: {"$ref": "#/components/schemas/Volo.Abp.Identity.IdentityRoleDto"}}}}, "403": {description: "Forbidden", content: {"text/plain": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}, "application/json": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}, "text/json": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}}}, "401": {description: "Unauthorized", content: {"text/plain": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}, "application/json": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}, "text/json": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}}}, "400": {description: "Bad Request", content: {"text/plain": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}, "application/json": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}, "text/json": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}}}, "404": {description: "Not Found", content: {"text/plain": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}, "application/json": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}, "text/json": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}}}, "501": {description: "Server Error", content: {"text/plain": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}, "application/json": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}, "text/json": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}}}, "500": {description: "Server Error", content: {"text/plain": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}, "application/json": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}, "text/json": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}}}}}
-
-{required: ["name"], type: "object", properties: {extraProperties: {type: "object", additionalProperties: {}, nullable: true, readOnly: true}, name: {maxLength: 256, minLength: 0, type: "string"}, isDefault: {type: "boolean"}, isPublic: {type: "boolean"}}, additionalProperties: false}
-
-
-Role
-
--->
 <template>
     <el-dialog v-model="show" width="600px" destroy-on-close lock-scroll draggable top="0" :close-on-click-modal="false">
         <template #header>
@@ -69,34 +60,34 @@ const { SchemaField } = createSchemaField({
 const schema: ISchema = {
     type: 'object',
     properties: {
-        name:{
-            type:'string',
-            title:'name',
-            maxLength:256,
-            minLength:0,
-            'x-component':'Input',
-            'x-decorator':'FormItem',
-            'x-decorator-props':{
-                labelWidth:100,
+        name: {
+            type: 'string',
+            title: t('sys.roles.name'),
+            maxLength: 256,
+            minLength: 0,
+            'x-component': 'Input',
+            'x-decorator': 'FormItem',
+            'x-decorator-props': {
+                labelWidth: 100,
             }
         },
-        isDefault:{
-            type:'boolean',
-            title:'isDefault',
-            'x-component':'Switch',
-            'x-decorator':'FormItem',
-            'x-decorator-props':{
-                labelWidth:100,
+        isDefault: {
+            type: 'boolean',
+            title: t('sys.roles.isDefault'),
+            'x-component': 'Switch',
+            'x-decorator': 'FormItem',
+            'x-decorator-props': {
+                labelWidth: 100,
                 style: 'text-align:left'
             }
         },
-        isPublic:{
-            type:'boolean',
-            title:'isPublic',
-            'x-component':'Switch',
-            'x-decorator':'FormItem',
-            'x-decorator-props':{
-                labelWidth:100,
+        isPublic: {
+            type: 'boolean',
+            title: t('sys.roles.isPublic'),
+            'x-component': 'Switch',
+            'x-decorator': 'FormItem',
+            'x-decorator-props': {
+                labelWidth: 100,
                 style: 'text-align:left'
             }
         },

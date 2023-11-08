@@ -11,6 +11,7 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import Layouts from 'vite-plugin-vue-layouts'
 import Icons from 'unplugin-icons/vite'
 import Unocss from 'unocss/vite'
+import vueJsx from '@vitejs/plugin-vue-jsx'
 
 import vitePluginImp from 'vite-plugin-imp'
 
@@ -39,6 +40,7 @@ export default defineConfig({
       importMode: 'async'
     }),
     vue(),
+    vueJsx(),
     Components({
       // allow auto load markdown components under `./src/components/`
       extensions: ['vue', 'md'],

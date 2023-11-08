@@ -14,7 +14,7 @@
 
 <script lang="ts" setup>
 import { createForm } from '@formily/core'
-import { Form, FormItem, Input, Select, Submit, Switch } from '@formily/element-plus'
+import { Form, FormItem, Input, Password, Select, Submit, Switch } from '@formily/element-plus'
 import { ISchema, createSchemaField } from '@formily/vue'
 import { ElMessage } from 'element-plus/es'
 import { TenantCreateDto, TenantUpdateDto, TenantServiceProxy } from '~/api/ServiceProxies'
@@ -53,6 +53,7 @@ const { SchemaField } = createSchemaField({
     components: {
         FormItem,
         Input,
+        Password,
         Switch,
         Select
     },
@@ -62,45 +63,46 @@ const schema: ISchema = {
     properties: {
         name: {
             type: 'string',
-            title: 'name',
+            title: t('sys.tenants.name'),
             maxLength: 64,
             minLength: 0,
             required: true,
             'x-component': 'Input',
             'x-decorator': 'FormItem',
             'x-decorator-props': {
-                labelWidth: 100,
+                labelWidth: 150,
             }
         },
         adminEmailAddress: {
             type: 'string',
-            title: 'adminEmailAddress',
+            title: t('sys.tenants.adminEmailAddress'),
             maxLength: 256,
             required: true,
             format: 'email',
             'x-component': 'Input',
             'x-decorator': 'FormItem',
             'x-decorator-props': {
-                labelWidth: 100,
+                labelWidth: 150,
             }
         },
         adminPassword: {
             type: 'string',
-            title: 'adminPassword',
+            title: t('sys.tenants.adminPassword'),
             maxLength: 128,
             required: true,
             'x-component': 'Password',
             'x-decorator': 'FormItem',
             'x-decorator-props': {
-                labelWidth: 100,
+                labelWidth: 150,
             }
         },
     },
 }
 
-// if (props.mode !== 'create') {
-//     delete schema.properties!.password
-// }
+if (props.mode !== 'create') {
+    delete schema.properties!.adminEmailAddress
+    delete schema.properties!.adminPassword
+}
 
 const onSubmit = async (value: any) => {
 
