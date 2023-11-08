@@ -112,7 +112,17 @@ const listColumns = ref([
 const client = new {{tag}}ServiceProxy(undefined, axios)
 
 const getData: QueryListHander<{{ itemType }}> = async ({ queryForm, skipCount, maxResultCount, updateList }) => {
-     const { totalCount, items } = await client.{{tag|pluralize|string.downcase}}GET(queryForm.filter, '', unref(skipCount), unref(maxResultCount))
+     const { totalCount, items } = await client.{{tag|pluralize|string.downcase}}GET(
+        {{~for p in api.parameters 
+            if p.name=='Sorting'|| p.name=='SkipCount'||p.name=='MaxResultCount' 
+                continue
+            end~}}
+        queryForm.{{p.name|camel_case}},
+        {{~end~}} 
+        '', 
+        skipCount, 
+        maxResultCount)
+        
      updateList(items ?? [], totalCount ?? 0)
 }
 
