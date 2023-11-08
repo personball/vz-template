@@ -11,7 +11,14 @@ export function useMenus() {
             icon: markRaw(IconDashboard),
             title: 'menu.dashboard',
             url: '/'
-        }, {
+        }, 
+        {
+            icon: markRaw(IconDashboard),
+            title: 'menu.tenants',
+            url: '/sys/tenants',
+            acl: ['AbpTenantManagement.Tenants']
+        },
+        {
             icon: markRaw(IconSetting),
             title: 'menu.sys',
             url: '/sys/',

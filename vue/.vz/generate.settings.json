@@ -19,7 +19,7 @@
       {
         "name": "path",
         "type": "String",
-        "defaultValue": "/api/identity/roles"
+        "defaultValue": "/api/multi-tenancy/tenants"
       },
       {
         "name": "swagger",

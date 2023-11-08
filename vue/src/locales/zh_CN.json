@@ -8,6 +8,7 @@
         "users": "用户管理",
         "roles": "角色管理",
         "settings": "配置管理",
+        "tenants":"租户管理",
         "logs": "审计日志"
     },
     "profile": {

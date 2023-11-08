@@ -31,7 +31,7 @@ import { createForm } from '@formily/core'
 import { Form, FormItem, Input, Select, Submit, Switch } from '@formily/element-plus'
 import { ISchema, createSchemaField } from '@formily/vue'
 import { ElMessage } from 'element-plus/es'
-import { {{requestType}}, Identity{{tag}}UpdateDto, {{tag}}ServiceProxy } from '~/api/ServiceProxies'
+import { {{requestType}}, {{tag}}UpdateDto, {{tag}}ServiceProxy } from '~/api/ServiceProxies'
 
 const { t } = useI18n()
 
@@ -89,18 +89,18 @@ const schema: ISchema = {
             {{~if p.minLength!=null~}}
             minLength:{{p.minLength}},
             {{~end~}}
-            {{~if p.nullable!=null~}}
+            {{~if p.nullable==null~}}
             required:true,
             {{~end~}}
-            {{~if key|regex.match `phone` i|array.size>0~}}
+            {{~if (key |string.downcase| string.index_of 'phone') > -1 ~}}
             format: 'phone',
             {{~end~}}
-            {{~if  key|regex.match `email` i|array.size>0~}}
+            {{~if (key|string.downcase| string.index_of  'email') > -1 ~}}
             format: 'email',
             {{~end~}}
             {{~ # x-commponent ~}}
             {{~if p.type=='string'~}}
-            'x-component':'Input',
+            'x-component':'{{(key|string.downcase|string.index_of `password`) > -1?'Password':'Input' }}',
             {{~end~}}
             {{~if p.type=='boolean'~}}
             'x-component':'Switch',
@@ -127,7 +127,7 @@ const onSubmit = async (value: any) => {
     if (props.mode === 'create') {
         await client.{{tag|pluralize|string.downcase}}POST({{requestType}}.fromJS(value))
     } else {
-        await client.{{tag|pluralize|string.downcase}}PUT(props.data.id, Identity{{tag}}UpdateDto.fromJS(value))
+        await client.{{tag|pluralize|string.downcase}}PUT(props.data.id, {{tag}}UpdateDto.fromJS(value))
     }
 
     ElMessage.success(t('common.submitSuccess'))
