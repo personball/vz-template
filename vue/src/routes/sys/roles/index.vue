@@ -1,45 +1,12 @@
 <!--
-
 {tags: ["Role"], parameters: [{name: "Filter", in: "query", schema: {type: "string"}}, {name: "Sorting", in: "query", schema: {type: "string"}}, {name: "SkipCount", in: "query", schema: {maximum: 2147483647, minimum: 0, type: "integer", format: "int32"}}, {name: "MaxResultCount", in: "query", schema: {maximum: 2147483647, minimum: 1, type: "integer", format: "int32"}}], responses: {"200": {description: "Success", content: {"text/plain": {schema: {"$ref": "#/components/schemas/Volo.Abp.Application.Dtos.PagedResultDto<Volo.Abp.Identity.IdentityRoleDto>"}}, "application/json": {schema: {"$ref": "#/components/schemas/Volo.Abp.Application.Dtos.PagedResultDto<Volo.Abp.Identity.IdentityRoleDto>"}}, "text/json": {schema: {"$ref": "#/components/schemas/Volo.Abp.Application.Dtos.PagedResultDto<Volo.Abp.Identity.IdentityRoleDto>"}}}}, "403": {description: "Forbidden", content: {"text/plain": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}, "application/json": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}, "text/json": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}}}, "401": {description: "Unauthorized", content: {"text/plain": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}, "application/json": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}, "text/json": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}}}, "400": {description: "Bad Request", content: {"text/plain": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}, "application/json": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}, "text/json": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}}}, "404": {description: "Not Found", content: {"text/plain": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}, "application/json": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}, "text/json": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}}}, "501": {description: "Server Error", content: {"text/plain": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}, "application/json": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}, "text/json": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}}}, "500": {description: "Server Error", content: {"text/plain": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}, "application/json": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}, "text/json": {schema: {"$ref": "#/components/schemas/Volo.Abp.Http.RemoteServiceErrorResponse"}}}}}}
 [{name: "Filter", in: "query", schema: {type: "string"}}, {name: "Sorting", in: "query", schema: {type: "string"}}, {name: "SkipCount", in: "query", schema: {maximum: 2147483647, minimum: 0, type: "integer", format: "int32"}}, {name: "MaxResultCount", in: "query", schema: {maximum: 2147483647, minimum: 1, type: "integer", format: "int32"}}]
-
-
 Role
-
-
-
 
 Volo.Abp.Application.Dtos.PagedResultDto<Volo.Abp.Identity.IdentityRoleDto>
 
-
-
-
 IdentityRoleDto
 #/components/schemas/Volo.Abp.Identity.IdentityRoleDto
-
-
-
-extraProperties:
-{type: "object", additionalProperties: {}, nullable: true, readOnly: true}
-
-id:
-{type: "string", format: "uuid"}
-
-name:
-{type: "string", nullable: true}
-
-isDefault:
-{type: "boolean"}
-
-isStatic:
-{type: "boolean"}
-
-isPublic:
-{type: "boolean"}
-
-concurrencyStamp:
-{type: "string", nullable: true}
-
 -->
 
 <template>
@@ -84,7 +51,7 @@ const searchFormSchema: ISchema = {
                 filter:{
                     type:'string',
                     title:'filter',
-                    'x-component':'Input', // TODO: 根据参数类型进行组件调整
+                    'x-component':'Input',
                     'x-component-props':{
                         placeholder:'filter',
                         clearable:true,

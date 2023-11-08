@@ -1,27 +1,22 @@
 <!--
-{{ api = swagger.paths[path].get }}
+{{~ api = swagger.paths[path].get ~}}
 {{api}}
-{{api.parameters}}
+{{api.parameters ~}}
 
-{{ tag = api.tags[0] }}
-{{tag}}
+{{~ tag = api.tags[0] ~}}
+{{tag ~}}
 
-{{respRef=api.responses["200"].content["application/json"].schema["$ref"]}}
-{{respType=regex.split respRef `\/`}}
+{{~ respRef=api.responses["200"].content["application/json"].schema["$ref"] ~}}
+{{~ respType=regex.split respRef `\/` ~}}
 
-{{respType[-1]}}
+{{~ respType[-1] ~}}
 
-{{respItemTypeRef=swagger.components.schemas[respType[-1]].properties.items.items["$ref"]}}
+{{~ respItemTypeRef=swagger.components.schemas[respType[-1]].properties.items.items["$ref"] ~}}
 
-{{itemType= respItemTypeRef|regex.split `\.`|array.last}}
+{{~ itemType= respItemTypeRef|regex.split `\.`|array.last ~}}
 {{itemType}}
 {{respItemTypeRef}}
-{{ itemTypeSchema=swagger.components.schemas[(respItemTypeRef |regex.split `\/`|array.last)]}}
-
-{{for key in itemTypeSchema.properties|object.keys }}
-{{key}}:
-{{itemTypeSchema.properties[key]}}
-{{end}}
+{{~ itemTypeSchema=swagger.components.schemas[(respItemTypeRef |regex.split `\/`|array.last)] ~}}
 -->
 
 <template>
@@ -71,7 +66,13 @@ const searchFormSchema: ISchema = {
                 {{p.name|camel_case}}:{
                     type:'{{p.schema.type}}',
                     title:'{{p.name|camel_case}}',
-                    'x-component':'Input', // TODO: 根据参数类型进行组件调整
+                    {{~ # x-commponent ~}}
+                    {{~if p.schema.type=='string'~}}
+                    'x-component':'Input',
+                    {{~end~}}
+                    {{~if p.schema.type=='boolean'~}}
+                    'x-component':'Switch',
+                    {{~end~}}
                     'x-component-props':{
                         placeholder:'{{p.name|camel_case}}',
                         clearable:true,
