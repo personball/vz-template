@@ -19,6 +19,7 @@
             },
             "env": {
                 "ASPNETCORE_ENVIRONMENT": "Development",
+                // "ASPNETCORE_URLS":"http://0.0.0.0:80",
                 // "ASPNETCORE_HOSTINGSTARTUPASSEMBLIES":"SkyAPM.Agent.AspNetCore",
                 "COMPlus_ZapDisable": "1",
                 "COMPlus_ReadyToRun": "0"
@@ -42,6 +43,7 @@
             },
             "env": {
                 "ASPNETCORE_ENVIRONMENT": "Development",
+                 // "ASPNETCORE_URLS":"http://0.0.0.0:80",
                  // "ASPNETCORE_HOSTINGSTARTUPASSEMBLIES":"SkyAPM.Agent.AspNetCore",
                  "COMPlus_ZapDisable": "1",
                  "COMPlus_ReadyToRun": "0"
@@ -65,6 +67,7 @@
             },
             "env": {
                 "ASPNETCORE_ENVIRONMENT": "Development",
+                // "ASPNETCORE_URLS":"http://0.0.0.0:80",
                 // "ASPNETCORE_HOSTINGSTARTUPASSEMBLIES":"SkyAPM.Agent.AspNetCore",
                 "COMPlus_ZapDisable": "1",
                 "COMPlus_ReadyToRun": "0"

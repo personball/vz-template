@@ -178,11 +178,17 @@ export default defineConfig({
     globals: true,
     environment: 'happy-dom'
   },
-  build:{
-    rollupOptions:{
-      external:[
+  build: {
+    target: 'esnext',
+    rollupOptions: {
+      external: [
         '.vz'
       ]
+    }
+  },
+  optimizeDeps: {
+    esbuildOptions: {
+      target: 'esnext'
     }
   }
 })
