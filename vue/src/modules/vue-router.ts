@@ -65,6 +65,7 @@ export const install: any = (app: App<Element>) => {
                 background: 'rgba(128, 128, 128, 0.5)'
             });
             await autoAuthenticate('/#' + to.fullPath);
+            await appStore.init();
             loading.close();
         }
     })
