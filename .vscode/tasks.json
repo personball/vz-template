@@ -10,7 +10,7 @@
             "args": [
                 "run",
                 "--project",
-                "../CompanyName.ProjectName/src/CompanyName.ProjectName.AuthServer/CompanyName.ProjectName.AuthServer.csproj"
+                "../vz-abp/CompanyName.ProjectName/src/CompanyName.ProjectName.AuthServer/CompanyName.ProjectName.AuthServer.csproj"
             ],
             "group": "none",
             "presentation": {
@@ -24,7 +24,7 @@
             "args": [
                 "run",
                 "--project",
-                "../CompanyName.ProjectName/src/CompanyName.ProjectName.HttpApi.Host/CompanyName.ProjectName.HttpApi.Host.csproj"
+                "../vz-abp/CompanyName.ProjectName/src/CompanyName.ProjectName.HttpApi.Host/CompanyName.ProjectName.HttpApi.Host.csproj"
             ],
             "group": "none",
             "presentation": {
