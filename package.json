@@ -2,7 +2,7 @@
   "name": "ProjectName",
   "type": "module",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
     "build:stage": "vite build --mode development",
@@ -12,7 +12,8 @@
     "check": "tsc --incremental --noEmit",
     "test": "vitest",
     "coverage": "vitest run --coverage",
-    "nswag": "node_modules/.bin/nswag run"
+    "nswag": "node_modules/.bin/nswag run",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
   "simple-git-hooks": {
     "pre-commit": "yarn lint-staged",
@@ -33,6 +34,7 @@
     "@formily/vue": "^2.3.0",
     "@vueuse/core": "^10.3.0",
     "axios": "^1.4.0",
+    "conventional-changelog-cli": "^4.1.0",
     "dayjs": "^1.11.9",
     "element-plus": "^2.3.14",
     "mitt": "^3.0.1",
