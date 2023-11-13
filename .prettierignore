@@ -2,3 +2,4 @@ dist
 swagger.json
 .vz
 src/api/ServiceProxies.ts
+src/*.d.ts
