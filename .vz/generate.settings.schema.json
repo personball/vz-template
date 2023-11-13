@@ -8,9 +8,7 @@
         "description": "Unique option name for CLI select."
       },
       "templateSyntax": {
-        "enum": [
-          "Liquid"
-        ],
+        "enum": ["Liquid"],
         "description": "Liquid or Razor(not supported yet) according to your preferred template syntax."
       },
       "templatePath": {
@@ -26,19 +24,13 @@
               "type": "string"
             },
             "type": {
-              "enum": [
-                "String",
-                "JsonFile",
-                "YamlFile"
-              ]
+              "enum": ["String", "JsonFile", "YamlFile"]
             },
             "defaultValue": {
               "type": "string"
             }
           },
-          "required": [
-            "name"
-          ],
+          "required": ["name"],
           "description": "Variables declarations, can be overrided by --var a=b or --var-json-file a=./xxx/1.json ."
         },
         "description": "Variables declarations, can be overrided by --var a=b or --var-json-file a=./xxx/1.json ."
@@ -48,9 +40,6 @@
         "description": "Path for output. If output is a directory, make sure ends with / or \\ ."
       }
     },
-    "required": [
-      "option",
-      "templatePath"
-    ]
+    "required": ["option", "templatePath"]
   }
 }

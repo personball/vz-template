@@ -1,3 +1,3 @@
 <template>
-    <div>todo logs</div>
+  <div>todo logs</div>
 </template>

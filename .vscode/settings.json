@@ -1,11 +1,9 @@
 {
-    "json.schemas": [
-        {
-            "fileMatch": [
-                ".vz/generate.settings.json"
-            ],
-            "url": "./.vz/generate.settings.schema.json"
-        }
-    ],
-    "explorer.excludeGitIgnore": true
+  "json.schemas": [
+    {
+      "fileMatch": [".vz/generate.settings.json"],
+      "url": "./.vz/generate.settings.schema.json"
+    }
+  ],
+  "explorer.excludeGitIgnore": true
 }

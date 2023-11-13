@@ -7,9 +7,7 @@
   "paths": {
     "/api/abp/api-definition": {
       "get": {
-        "tags": [
-          "AbpApiDefinition"
-        ],
+        "tags": ["AbpApiDefinition"],
         "parameters": [
           {
             "name": "IncludeTypes",
@@ -165,9 +163,7 @@
     },
     "/api/abp/application-configuration": {
       "get": {
-        "tags": [
-          "AbpApplicationConfiguration"
-        ],
+        "tags": ["AbpApplicationConfiguration"],
         "parameters": [
           {
             "name": "IncludeLocalizationResources",
@@ -323,9 +319,7 @@
     },
     "/api/abp/application-localization": {
       "get": {
-        "tags": [
-          "AbpApplicationLocalization"
-        ],
+        "tags": ["AbpApplicationLocalization"],
         "parameters": [
           {
             "name": "CultureName",
@@ -489,9 +483,7 @@
     },
     "/api/abp/multi-tenancy/tenants/by-name/{name}": {
       "get": {
-        "tags": [
-          "AbpTenant"
-        ],
+        "tags": ["AbpTenant"],
         "parameters": [
           {
             "name": "name",
@@ -648,9 +640,7 @@
     },
     "/api/abp/multi-tenancy/tenants/by-id/{id}": {
       "get": {
-        "tags": [
-          "AbpTenant"
-        ],
+        "tags": ["AbpTenant"],
         "parameters": [
           {
             "name": "id",
@@ -808,9 +798,7 @@
     },
     "/api/account/register": {
       "post": {
-        "tags": [
-          "Account"
-        ],
+        "tags": ["Account"],
         "requestBody": {
           "content": {
             "application/json": {
@@ -976,9 +964,7 @@
     },
     "/api/account/send-password-reset-code": {
       "post": {
-        "tags": [
-          "Account"
-        ],
+        "tags": ["Account"],
         "requestBody": {
           "content": {
             "application/json": {
@@ -1127,9 +1113,7 @@
     },
     "/api/account/verify-password-reset-token": {
       "post": {
-        "tags": [
-          "Account"
-        ],
+        "tags": ["Account"],
         "requestBody": {
           "content": {
             "application/json": {
@@ -1295,9 +1279,7 @@
     },
     "/api/account/reset-password": {
       "post": {
-        "tags": [
-          "Account"
-        ],
+        "tags": ["Account"],
         "requestBody": {
           "content": {
             "application/json": {
@@ -1446,9 +1428,7 @@
     },
     "/api/setting-management/emailing": {
       "get": {
-        "tags": [
-          "EmailSettings"
-        ],
+        "tags": ["EmailSettings"],
         "responses": {
           "200": {
             "description": "Success",
@@ -1593,9 +1573,7 @@
         }
       },
       "post": {
-        "tags": [
-          "EmailSettings"
-        ],
+        "tags": ["EmailSettings"],
         "requestBody": {
           "content": {
             "application/json": {
@@ -1744,9 +1722,7 @@
     },
     "/api/setting-management/emailing/send-test-email": {
       "post": {
-        "tags": [
-          "EmailSettings"
-        ],
+        "tags": ["EmailSettings"],
         "requestBody": {
           "content": {
             "application/json": {
@@ -1895,9 +1871,7 @@
     },
     "/api/feature-management/features": {
       "get": {
-        "tags": [
-          "Features"
-        ],
+        "tags": ["Features"],
         "parameters": [
           {
             "name": "providerName",
@@ -2058,9 +2032,7 @@
         }
       },
       "put": {
-        "tags": [
-          "Features"
-        ],
+        "tags": ["Features"],
         "parameters": [
           {
             "name": "providerName",
@@ -2223,9 +2195,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "Features"
-        ],
+        "tags": ["Features"],
         "parameters": [
           {
             "name": "providerName",
@@ -2371,9 +2341,7 @@
     },
     "/api/permission-management/permissions": {
       "get": {
-        "tags": [
-          "Permissions"
-        ],
+        "tags": ["Permissions"],
         "parameters": [
           {
             "name": "providerName",
@@ -2534,9 +2502,7 @@
         }
       },
       "put": {
-        "tags": [
-          "Permissions"
-        ],
+        "tags": ["Permissions"],
         "parameters": [
           {
             "name": "providerName",
@@ -2701,9 +2667,7 @@
     },
     "/api/account/my-profile": {
       "get": {
-        "tags": [
-          "Profile"
-        ],
+        "tags": ["Profile"],
         "responses": {
           "200": {
             "description": "Success",
@@ -2848,9 +2812,7 @@
         }
       },
       "put": {
-        "tags": [
-          "Profile"
-        ],
+        "tags": ["Profile"],
         "requestBody": {
           "content": {
             "application/json": {
@@ -3016,9 +2978,7 @@
     },
     "/api/account/my-profile/change-password": {
       "post": {
-        "tags": [
-          "Profile"
-        ],
+        "tags": ["Profile"],
         "requestBody": {
           "content": {
             "application/json": {
@@ -3167,9 +3127,7 @@
     },
     "/api/identity/roles/all": {
       "get": {
-        "tags": [
-          "Role"
-        ],
+        "tags": ["Role"],
         "responses": {
           "200": {
             "description": "Success",
@@ -3316,9 +3274,7 @@
     },
     "/api/identity/roles": {
       "get": {
-        "tags": [
-          "Role"
-        ],
+        "tags": ["Role"],
         "parameters": [
           {
             "name": "Filter",
@@ -3499,9 +3455,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Role"
-        ],
+        "tags": ["Role"],
         "requestBody": {
           "content": {
             "application/json": {
@@ -3667,9 +3621,7 @@
     },
     "/api/identity/roles/{id}": {
       "get": {
-        "tags": [
-          "Role"
-        ],
+        "tags": ["Role"],
         "parameters": [
           {
             "name": "id",
@@ -3825,9 +3777,7 @@
         }
       },
       "put": {
-        "tags": [
-          "Role"
-        ],
+        "tags": ["Role"],
         "parameters": [
           {
             "name": "id",
@@ -4002,9 +3952,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "Role"
-        ],
+        "tags": ["Role"],
         "parameters": [
           {
             "name": "id",
@@ -4145,9 +4093,7 @@
     },
     "/api/multi-tenancy/tenants/{id}": {
       "get": {
-        "tags": [
-          "Tenant"
-        ],
+        "tags": ["Tenant"],
         "parameters": [
           {
             "name": "id",
@@ -4303,9 +4249,7 @@
         }
       },
       "put": {
-        "tags": [
-          "Tenant"
-        ],
+        "tags": ["Tenant"],
         "parameters": [
           {
             "name": "id",
@@ -4480,9 +4424,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "Tenant"
-        ],
+        "tags": ["Tenant"],
         "parameters": [
           {
             "name": "id",
@@ -4623,9 +4565,7 @@
     },
     "/api/multi-tenancy/tenants": {
       "get": {
-        "tags": [
-          "Tenant"
-        ],
+        "tags": ["Tenant"],
         "parameters": [
           {
             "name": "Filter",
@@ -4806,9 +4746,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Tenant"
-        ],
+        "tags": ["Tenant"],
         "requestBody": {
           "content": {
             "application/json": {
@@ -4974,9 +4912,7 @@
     },
     "/api/multi-tenancy/tenants/{id}/default-connection-string": {
       "get": {
-        "tags": [
-          "Tenant"
-        ],
+        "tags": ["Tenant"],
         "parameters": [
           {
             "name": "id",
@@ -5132,9 +5068,7 @@
         }
       },
       "put": {
-        "tags": [
-          "Tenant"
-        ],
+        "tags": ["Tenant"],
         "parameters": [
           {
             "name": "id",
@@ -5280,9 +5214,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "Tenant"
-        ],
+        "tags": ["Tenant"],
         "parameters": [
           {
             "name": "id",
@@ -5423,9 +5355,7 @@
     },
     "/api/identity/users/{id}": {
       "get": {
-        "tags": [
-          "User"
-        ],
+        "tags": ["User"],
         "parameters": [
           {
             "name": "id",
@@ -5581,9 +5511,7 @@
         }
       },
       "put": {
-        "tags": [
-          "User"
-        ],
+        "tags": ["User"],
         "parameters": [
           {
             "name": "id",
@@ -5758,9 +5686,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "User"
-        ],
+        "tags": ["User"],
         "parameters": [
           {
             "name": "id",
@@ -5901,9 +5827,7 @@
     },
     "/api/identity/users": {
       "get": {
-        "tags": [
-          "User"
-        ],
+        "tags": ["User"],
         "parameters": [
           {
             "name": "Filter",
@@ -6084,9 +6008,7 @@
         }
       },
       "post": {
-        "tags": [
-          "User"
-        ],
+        "tags": ["User"],
         "requestBody": {
           "content": {
             "application/json": {
@@ -6252,9 +6174,7 @@
     },
     "/api/identity/users/{id}/roles": {
       "get": {
-        "tags": [
-          "User"
-        ],
+        "tags": ["User"],
         "parameters": [
           {
             "name": "id",
@@ -6410,9 +6330,7 @@
         }
       },
       "put": {
-        "tags": [
-          "User"
-        ],
+        "tags": ["User"],
         "parameters": [
           {
             "name": "id",
@@ -6572,9 +6490,7 @@
     },
     "/api/identity/users/assignable-roles": {
       "get": {
-        "tags": [
-          "User"
-        ],
+        "tags": ["User"],
         "responses": {
           "200": {
             "description": "Success",
@@ -6721,9 +6637,7 @@
     },
     "/api/identity/users/by-username/{userName}": {
       "get": {
-        "tags": [
-          "User"
-        ],
+        "tags": ["User"],
         "parameters": [
           {
             "name": "userName",
@@ -6880,9 +6794,7 @@
     },
     "/api/identity/users/by-email/{email}": {
       "get": {
-        "tags": [
-          "User"
-        ],
+        "tags": ["User"],
         "parameters": [
           {
             "name": "email",
@@ -7039,9 +6951,7 @@
     },
     "/api/identity/users/lookup/{id}": {
       "get": {
-        "tags": [
-          "UserLookup"
-        ],
+        "tags": ["UserLookup"],
         "parameters": [
           {
             "name": "id",
@@ -7199,9 +7109,7 @@
     },
     "/api/identity/users/lookup/by-username/{userName}": {
       "get": {
-        "tags": [
-          "UserLookup"
-        ],
+        "tags": ["UserLookup"],
         "parameters": [
           {
             "name": "userName",
@@ -7358,9 +7266,7 @@
     },
     "/api/identity/users/lookup/search": {
       "get": {
-        "tags": [
-          "UserLookup"
-        ],
+        "tags": ["UserLookup"],
         "parameters": [
           {
             "name": "Filter",
@@ -7543,9 +7449,7 @@
     },
     "/api/identity/users/lookup/count": {
       "get": {
-        "tags": [
-          "UserLookup"
-        ],
+        "tags": ["UserLookup"],
         "parameters": [
           {
             "name": "Filter",
@@ -7706,9 +7610,7 @@
   "components": {
     "schemas": {
       "Volo.Abp.Account.ChangePasswordInput": {
-        "required": [
-          "newPassword"
-        ],
+        "required": ["newPassword"],
         "type": "object",
         "properties": {
           "currentPassword": {
@@ -7730,7 +7632,7 @@
         "properties": {
           "extraProperties": {
             "type": "object",
-            "additionalProperties": { },
+            "additionalProperties": {},
             "nullable": true,
             "readOnly": true
           },
@@ -7768,17 +7670,12 @@
         "additionalProperties": false
       },
       "Volo.Abp.Account.RegisterDto": {
-        "required": [
-          "appName",
-          "emailAddress",
-          "password",
-          "userName"
-        ],
+        "required": ["appName", "emailAddress", "password", "userName"],
         "type": "object",
         "properties": {
           "extraProperties": {
             "type": "object",
-            "additionalProperties": { },
+            "additionalProperties": {},
             "nullable": true,
             "readOnly": true
           },
@@ -7806,10 +7703,7 @@
         "additionalProperties": false
       },
       "Volo.Abp.Account.ResetPasswordDto": {
-        "required": [
-          "password",
-          "resetToken"
-        ],
+        "required": ["password", "resetToken"],
         "type": "object",
         "properties": {
           "userId": {
@@ -7826,10 +7720,7 @@
         "additionalProperties": false
       },
       "Volo.Abp.Account.SendPasswordResetCodeDto": {
-        "required": [
-          "appName",
-          "email"
-        ],
+        "required": ["appName", "email"],
         "type": "object",
         "properties": {
           "email": {
@@ -7857,7 +7748,7 @@
         "properties": {
           "extraProperties": {
             "type": "object",
-            "additionalProperties": { },
+            "additionalProperties": {},
             "nullable": true,
             "readOnly": true
           },
@@ -7899,9 +7790,7 @@
         "additionalProperties": false
       },
       "Volo.Abp.Account.VerifyPasswordResetTokenInput": {
-        "required": [
-          "resetToken"
-        ],
+        "required": ["resetToken"],
         "type": "object",
         "properties": {
           "userId": {
@@ -8043,7 +7932,7 @@
           },
           "extraProperties": {
             "type": "object",
-            "additionalProperties": { },
+            "additionalProperties": {},
             "nullable": true
           }
         },
@@ -9137,7 +9026,7 @@
           },
           "enumValues": {
             "type": "array",
-            "items": { },
+            "items": {},
             "nullable": true
           },
           "genericArguments": {
@@ -9174,7 +9063,7 @@
           },
           "data": {
             "type": "object",
-            "additionalProperties": { },
+            "additionalProperties": {},
             "nullable": true
           },
           "validationErrors": {
@@ -9214,14 +9103,12 @@
         "additionalProperties": false
       },
       "Volo.Abp.Identity.IdentityRoleCreateDto": {
-        "required": [
-          "name"
-        ],
+        "required": ["name"],
         "type": "object",
         "properties": {
           "extraProperties": {
             "type": "object",
-            "additionalProperties": { },
+            "additionalProperties": {},
             "nullable": true,
             "readOnly": true
           },
@@ -9244,7 +9131,7 @@
         "properties": {
           "extraProperties": {
             "type": "object",
-            "additionalProperties": { },
+            "additionalProperties": {},
             "nullable": true,
             "readOnly": true
           },
@@ -9273,14 +9160,12 @@
         "additionalProperties": false
       },
       "Volo.Abp.Identity.IdentityRoleUpdateDto": {
-        "required": [
-          "name"
-        ],
+        "required": ["name"],
         "type": "object",
         "properties": {
           "extraProperties": {
             "type": "object",
-            "additionalProperties": { },
+            "additionalProperties": {},
             "nullable": true,
             "readOnly": true
           },
@@ -9303,16 +9188,12 @@
         "additionalProperties": false
       },
       "Volo.Abp.Identity.IdentityUserCreateDto": {
-        "required": [
-          "email",
-          "password",
-          "userName"
-        ],
+        "required": ["email", "password", "userName"],
         "type": "object",
         "properties": {
           "extraProperties": {
             "type": "object",
-            "additionalProperties": { },
+            "additionalProperties": {},
             "nullable": true,
             "readOnly": true
           },
@@ -9371,7 +9252,7 @@
         "properties": {
           "extraProperties": {
             "type": "object",
-            "additionalProperties": { },
+            "additionalProperties": {},
             "nullable": true,
             "readOnly": true
           },
@@ -9465,15 +9346,12 @@
         "additionalProperties": false
       },
       "Volo.Abp.Identity.IdentityUserUpdateDto": {
-        "required": [
-          "email",
-          "userName"
-        ],
+        "required": ["email", "userName"],
         "type": "object",
         "properties": {
           "extraProperties": {
             "type": "object",
-            "additionalProperties": { },
+            "additionalProperties": {},
             "nullable": true,
             "readOnly": true
           },
@@ -9533,9 +9411,7 @@
         "additionalProperties": false
       },
       "Volo.Abp.Identity.IdentityUserUpdateRolesDto": {
-        "required": [
-          "roleNames"
-        ],
+        "required": ["roleNames"],
         "type": "object",
         "properties": {
           "roleNames": {
@@ -9750,11 +9626,7 @@
         "additionalProperties": false
       },
       "Volo.Abp.SettingManagement.SendTestEmailInput": {
-        "required": [
-          "senderEmailAddress",
-          "subject",
-          "targetEmailAddress"
-        ],
+        "required": ["senderEmailAddress", "subject", "targetEmailAddress"],
         "type": "object",
         "properties": {
           "senderEmailAddress": {
@@ -9774,10 +9646,7 @@
         "additionalProperties": false
       },
       "Volo.Abp.SettingManagement.UpdateEmailSettingsDto": {
-        "required": [
-          "defaultFromAddress",
-          "defaultFromDisplayName"
-        ],
+        "required": ["defaultFromAddress", "defaultFromDisplayName"],
         "type": "object",
         "properties": {
           "smtpHost": {
@@ -9825,16 +9694,12 @@
         "additionalProperties": false
       },
       "Volo.Abp.TenantManagement.TenantCreateDto": {
-        "required": [
-          "adminEmailAddress",
-          "adminPassword",
-          "name"
-        ],
+        "required": ["adminEmailAddress", "adminPassword", "name"],
         "type": "object",
         "properties": {
           "extraProperties": {
             "type": "object",
-            "additionalProperties": { },
+            "additionalProperties": {},
             "nullable": true,
             "readOnly": true
           },
@@ -9860,7 +9725,7 @@
         "properties": {
           "extraProperties": {
             "type": "object",
-            "additionalProperties": { },
+            "additionalProperties": {},
             "nullable": true,
             "readOnly": true
           },
@@ -9880,14 +9745,12 @@
         "additionalProperties": false
       },
       "Volo.Abp.TenantManagement.TenantUpdateDto": {
-        "required": [
-          "name"
-        ],
+        "required": ["name"],
         "type": "object",
         "properties": {
           "extraProperties": {
             "type": "object",
-            "additionalProperties": { },
+            "additionalProperties": {},
             "nullable": true,
             "readOnly": true
           },
@@ -9946,7 +9809,7 @@
           },
           "extraProperties": {
             "type": "object",
-            "additionalProperties": { },
+            "additionalProperties": {},
             "nullable": true,
             "readOnly": true
           }
@@ -9985,7 +9848,7 @@
           },
           "properties": {
             "type": "object",
-            "additionalProperties": { },
+            "additionalProperties": {},
             "nullable": true,
             "readOnly": true
           }
@@ -10010,7 +9873,7 @@
   },
   "security": [
     {
-      "oauth2": [ ]
+      "oauth2": []
     }
   ],
   "tags": [

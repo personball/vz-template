@@ -1,3 +1,3 @@
 <template>
-    <div>todo settings</div>
+  <div>todo settings</div>
 </template>

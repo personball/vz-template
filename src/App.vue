@@ -1,7 +1,11 @@
 <template>
-  <el-config-provider namespace="el" size="default" :locale="locale" :message="{ max: 1 }">
-    <router-view>
-    </router-view>
+  <el-config-provider
+    namespace="el"
+    size="default"
+    :locale="locale"
+    :message="{ max: 1 }"
+  >
+    <router-view> </router-view>
   </el-config-provider>
 </template>
 
@@ -11,10 +15,9 @@ import en from 'element-plus/es/locale/lang/en'
 
 const langStore = useLanguageStore()
 
-const locale = computed(() => langStore.curLang === 'en' ? en : zhCn)
+const locale = computed(() => (langStore.curLang === 'en' ? en : zhCn))
 
-console.log('say app');
-
+console.log('say app')
 </script>
 
 <style>

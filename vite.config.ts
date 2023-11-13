@@ -21,15 +21,15 @@ const pathSrc = path.resolve(__dirname, 'src')
 export default defineConfig({
   resolve: {
     alias: {
-      '~/': `${pathSrc}/`,
-    },
+      '~/': `${pathSrc}/`
+    }
   },
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@use "~/styles/element/index.scss" as *;`,
-      },
-    },
+        additionalData: `@use "~/styles/element/index.scss" as *;`
+      }
+    }
   },
   plugins: [
     VueRouter({
@@ -48,15 +48,17 @@ export default defineConfig({
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
       resolvers: [
         ElementPlusResolver({
-          importStyle: 'sass',
-        }),
+          importStyle: 'sass'
+        })
       ],
       // dirs:['src/components','src/views'],// only global components
       dts: 'src/components.d.ts',
-      types: [{
-        from: 'vue-router',
-        names: ['RouterLink', 'RouterView']
-      }]
+      types: [
+        {
+          from: 'vue-router',
+          names: ['RouterLink', 'RouterView']
+        }
+      ]
     }),
 
     // https://github.com/antfu/unocss
@@ -67,8 +69,9 @@ export default defineConfig({
       // targets to transform
       include: [
         /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
-        /\.vue$/, /\.vue\?vue/, // .vue
-        /\.md$/, // .md
+        /\.vue$/,
+        /\.vue\?vue/, // .vue
+        /\.md$/ // .md
       ],
 
       // global imports to register
@@ -77,7 +80,7 @@ export default defineConfig({
         'vue',
         VueRouterAutoImports,
         {
-          'pinia': ['storeToRefs'],
+          pinia: ['storeToRefs'],
           'vue-router/auto': ['useLink'],
           'vue3-oidc': ['useOidcStore', 'useAuth'],
           'vue-i18n': ['useI18n'],
@@ -85,10 +88,10 @@ export default defineConfig({
           // '@formily/core': ['createForm'],
           // '@formily/vue': ['FormProvider', 'createSchemaField'],
           // '@formily/element-plus': ['FormItem', 'Input', 'Submit']
-          'axios': [
-            ['default', 'axios'], // import { default as axios } from 'axios',
-          ],
-        },
+          axios: [
+            ['default', 'axios'] // import { default as axios } from 'axios',
+          ]
+        }
         // {
         //   from: '@formily/json-schema',
         //   imports: ['Schema'],
@@ -154,8 +157,8 @@ export default defineConfig({
       eslintrc: {
         enabled: false, // Default `false`
         filepath: './.eslintrc-auto-import.json', // Default `./.eslintrc-auto-import.json`
-        globalsPropValue: true, // Default `true`, (true | false | 'readonly' | 'readable' | 'writable' | 'writeable')
-      },
+        globalsPropValue: true // Default `true`, (true | false | 'readonly' | 'readable' | 'writable' | 'writeable')
+      }
     }),
     Layouts(),
     Icons({
@@ -168,10 +171,10 @@ export default defineConfig({
           libDirectory: 'esm',
           style(name) {
             return `@formily/element-plus/esm/${name}/style.js`
-          },
-        },
-      ],
-    }),
+          }
+        }
+      ]
+    })
   ],
   // https://cn.vitest.dev/config/
   test: {
@@ -181,9 +184,7 @@ export default defineConfig({
   build: {
     target: 'esnext',
     rollupOptions: {
-      external: [
-        '.vz'
-      ]
+      external: ['.vz']
     }
   },
   optimizeDeps: {

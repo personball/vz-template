@@ -1,5 +1,5 @@
 <template>
-   <ElRow :gutter="20" justify="space-between">
+  <ElRow :gutter="20" justify="space-between">
     <ElCol :xl="10" :lg="10" :md="24" :sm="24" :xs="24">
       <ElCard shadow="hover" class="mb-20px">
         <ElSkeleton :loading="loading" animated>
@@ -35,14 +35,14 @@
 </template>
 
 <script lang="ts" setup>
-import { storeToRefs } from "pinia";
-import { useAppStore } from "~/stores/app";
+import { storeToRefs } from 'pinia'
+import { useAppStore } from '~/stores/app'
 const { t } = useI18n()
-const appStore = useAppStore();
-const { multiTenancy } = storeToRefs(appStore);
+const appStore = useAppStore()
+const { multiTenancy } = storeToRefs(appStore)
 
 const color2 = ref()
-const loading=ref(true)
+const loading = ref(true)
 </script>
 
 <route lang="yaml">

@@ -128,11 +128,8 @@ export default defineConfig({
     presetWebFonts({
       fonts: {
         // ...
-      },
-    }),
+      }
+    })
   ],
-  transformers: [
-    transformerDirectives(),
-    transformerVariantGroup(),
-  ],
+  transformers: [transformerDirectives(), transformerVariantGroup()]
 })

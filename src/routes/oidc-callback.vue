@@ -1,6 +1,4 @@
-<template>
-    Logining...
-</template>
+<template>Logining...</template>
 
 <route lang="yaml">
 meta:

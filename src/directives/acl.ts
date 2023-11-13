@@ -1,37 +1,36 @@
-import { App, Directive } from "vue";
-import { isGranted, isGrantedAnyOf } from "~/composables/acl";
+import { App, Directive } from 'vue'
+import { isGranted, isGrantedAnyOf } from '~/composables/acl'
 
 export const vzAcl: Directive = (el, binding) => {
+  let perms: string[] = []
 
-    let perms: string[] = []
+  if (Array.isArray(binding.value)) {
+    /* v-acl="['p1','p2']" */
+    /* v-acl.any="['p1','p2']" */
+    perms = binding.value
+  } else {
+    /* v-acl="'p1'" */
+    perms.push(binding.value)
+  }
 
-    if (Array.isArray(binding.value)) {
-        /* v-acl="['p1','p2']" */
-        /* v-acl.any="['p1','p2']" */
-        perms = binding.value
-    } else {
-        /* v-acl="'p1'" */
-        perms.push(binding.value)
+  let mod_anyof = false
+  if (binding.modifiers && binding.modifiers.any) {
+    mod_anyof = true
+  }
+
+  if (mod_anyof) {
+    if (!isGrantedAnyOf(...perms)) {
+      el.parentNode.removeChild(el)
     }
-
-    let mod_anyof = false
-    if (binding.modifiers && binding.modifiers.any) {
-        mod_anyof = true
+  } else {
+    if (!isGranted(...perms)) {
+      el.parentNode.removeChild(el)
     }
-
-    if (mod_anyof) {
-        if (!isGrantedAnyOf(...perms)) {
-            el.parentNode.removeChild(el)
-        }
-    } else {
-        if (!isGranted(...perms)) {
-            el.parentNode.removeChild(el)
-        }
-    }
+  }
 }
 
 export const setup: any = (app: App<Element>) => {
-    app.directive('acl', vzAcl)
+  app.directive('acl', vzAcl)
 }
 /*
 

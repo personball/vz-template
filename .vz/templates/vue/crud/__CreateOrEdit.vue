@@ -32,17 +32,27 @@ put single:
 {{~end~}}
 -->
 <template>
-    <el-dialog v-model="show" width="600px" destroy-on-close lock-scroll draggable top="0" :close-on-click-modal="false">
-        <template #header>
-            <div class="flex justify-between items-center h-54px pl-15px pr-15px relative">
-                {%{{{ t('common.' + mode) }}}%}
-            </div>
-        </template>
-        <Form :form="form" preview-text-placeholder="-">
-            <SchemaField :schema="schema" />
-            <Submit v-if="mode !== 'detail'" @submit="onSubmit">提交</Submit>
-        </Form>
-    </el-dialog>
+  <el-dialog
+    v-model="show"
+    width="600px"
+    destroy-on-close
+    lock-scroll
+    draggable
+    top="0"
+    :close-on-click-modal="false"
+  >
+    <template #header>
+      <div
+        class="flex justify-between items-center h-54px pl-15px pr-15px relative"
+      >
+        {%{{{ t('common.' + mode) }}}%}
+      </div>
+    </template>
+    <Form :form="form" preview-text-placeholder="-">
+      <SchemaField :schema="schema" />
+      <Submit v-if="mode !== 'detail'" @submit="onSubmit">提交</Submit>
+    </Form>
+  </el-dialog>
 </template>
 
 <script lang="ts" setup>
@@ -153,5 +163,4 @@ const onSubmit = async (value: any) => {
     show.value = false;
     emit('submitSuccess')
 }
-
 </script>

@@ -1,3 +1,3 @@
 <template>
-    <div>todo features</div>
+  <div>todo features</div>
 </template>

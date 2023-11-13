@@ -1,4 +1,4 @@
 export interface IPagedResultRequest {
-    skipCount?: number | undefined,
-    maxResultCount?: number | undefined
+  skipCount?: number | undefined
+  maxResultCount?: number | undefined
 }
