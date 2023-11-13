@@ -6,8 +6,6 @@
 export {}
 declare global {
   const EffectScope: (typeof import('vue'))['EffectScope']
-  const FormKit: (typeof import('@formkit/vue'))['FormKit']
-  const FormKitSchema: (typeof import('@formkit/vue'))['FormKitSchema']
   const LangMapAbp: (typeof import('./composables/abp-locale-i18n'))['LangMapAbp']
   const LangMapI18N: (typeof import('./composables/abp-locale-i18n'))['LangMapI18N']
   const axios: (typeof import('axios'))['default']

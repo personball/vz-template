@@ -84,7 +84,6 @@ export default defineConfig({
           'vue-router/auto': ['useLink'],
           'vue3-oidc': ['useOidcStore', 'useAuth'],
           'vue-i18n': ['useI18n'],
-          '@formkit/vue': ['FormKitSchema', 'FormKit'],
           // '@formily/core': ['createForm'],
           // '@formily/vue': ['FormProvider', 'createSchemaField'],
           // '@formily/element-plus': ['FormItem', 'Input', 'Submit']

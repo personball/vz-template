@@ -14,8 +14,9 @@ vz rn vz-vue -r ProjectName=Demo -o ./demo/
 
 ```bash
 yarn
-npm run dev
-npm run build
+npx simple-git-hooks  # setup git hooks
+npm run dev           # develop 
+npm run build:prod    # build production
 ```
 
 ### Custom theme
@@ -52,8 +53,9 @@ See `src/styles/element/index.scss`.
   - [x] settings `useSettingStore()`;
 - [x] nswag auto generate api proxies;
 - [x] [mitt](https://github.com/developit/mitt);
-- [x] integrate [formkit](https://formkit.com) with [formkit-element](https://github.com/mathsgod/formkit-element)/ alternative [form-create](https://github.com/xaboy/form-create);
+- [x] [formily](https://formilyjs.org), add [formilyjs/element-plus](https://github.com/formilyjs/element-plus)
 - [x] [unplugin-icons](https://github.com/unplugin/unplugin-icons)
+- [x] jsx/tsx use [vuejs/babel-plugin-jsx](https://github.com/vuejs/babel-plugin-jsx) through [vitejs/plugin-vue-jsx](https://github.com/vitejs/vite-plugin-vue/tree/main/packages/plugin-vue-jsx)
 
 # Folder Structure
 
@@ -106,15 +108,11 @@ alternative ui:
 
 alternative form fw:
 
-- [x] [formily](https://formilyjs.org)，[表单设计器](https://formilyjs.org/zh-CN/guide/form-builder)
-- [x] add [formilyjs/element-plus](https://github.com/formilyjs/element-plus)
-
 TODO:
 
-- [x] 尝试 formilyjs/element-plus
+- [ ] [表单设计器](https://formilyjs.org/zh-CN/guide/form-builder)
 - [ ] 分离前后端代码库，保留 element-plus，单独拎一个前端项目切换到 antdv
 - [ ] 尝试 formily/form-builder (这是个 react 项目)
 - [ ] 为 formily 适配 naiveui, formily/naiveui ?
-- [x] jsx/tsx use [vuejs/babel-plugin-jsx](https://github.com/vuejs/babel-plugin-jsx) through [vitejs/plugin-vue-jsx](https://github.com/vitejs/vite-plugin-vue/tree/main/packages/plugin-vue-jsx)
 
 keep eye on [shoelace](https://shoelace.style)
